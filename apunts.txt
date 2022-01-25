@@ -155,10 +155,19 @@ El ORM usualmente funciona sobre la MVC, cada tabla en tu base de datos deberá 
 # Entramos des del terminal al proyecto.
 # Creamos la base de datos
 # Abrimos el .env en la raíz del proyecto para configurar la conexión a la base datos.
+
+** OLD versión **
 # composer require laravel/ui -> para agregar laraverl/ui (autenticación)
 # php artisan ui:auth -> para completar la autenticación
 # php artisan ui vue -> agregar vue.
 # php artisan ui bootstrap -> para instalar bootstrap. Por defecto laravel trabaja con bootstrap.
+** END **
+** New versión **
+# composer require laravel/jestream
+# php artisan jestream:install livewire
+# npm install && npm run dev
+** END **
+
 # npm i -> para instalar las dependecias.
 # npm run watch -> para compilar todo.
 # https://stackoverflow.com/questions/51249164/php-artisan-migrate-error-illuminate-database-queryexception-sqlstatehy00 -> error con use Illuminate\Support\Facades\Schema
@@ -241,6 +250,15 @@ https://stackoverflow.com/questions/23786359/laravel-migration-unique-key-is-too
 # Kilobytes a Megabytes
 # max:10240 = max 10 MB.
 
+
+** ERROR in ./resources/js/components/ExampleComponent.vue 1:0 Module parse failed: Unexpected token (1:0) ** 
+# Añadir .vue() en webpack.min.js : 
+mix.js("resources/js/app.js", "public/js")
+    .vue()
+    .sass("resources/sass/app.scss", "public/css")
+    .sourceMaps();
+I instalar: npm i vue-loader
+https://stackoverflow.com/questions/63021856/cannot-find-module-webpack-lib-rules-basiceffectruleplugin
 
 
 
