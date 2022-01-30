@@ -14,4 +14,12 @@ const mix = require("laravel-mix");
 mix.js("resources/js/app.js", "public/js")
     .vue()
     .sass("resources/sass/app.scss", "public/css")
+    .postCss('public/backend/css/style.css', 'public/backend/css/mim')
+        .options({
+            processCssUrls: false
+        })
     .sourceMaps();
+
+// mix.browserSync({
+//     proxy: 'my-domain.test'
+// });

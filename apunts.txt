@@ -260,6 +260,9 @@ mix.js("resources/js/app.js", "public/js")
 I instalar: npm i vue-loader
 https://stackoverflow.com/questions/63021856/cannot-find-module-webpack-lib-rules-basiceffectruleplugin
 
+** Mim css, js, ... **
+# https://styde.net/laravel-6-doc-compilacion-de-assets-laravel-mix/
+
 
 
 
