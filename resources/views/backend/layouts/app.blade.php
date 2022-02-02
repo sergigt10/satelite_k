@@ -73,13 +73,14 @@
                             </span>
                         </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#general-pages" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages">
-                            <i class="mdi mdi-table-edit  menu-icon"></i>
-                            <span class="menu-title">Blog</span>
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-1" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-1">
+                            <i class="mdi mdi-music  menu-icon"></i>
+                            <span class="menu-title">Artistes</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages">
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-1">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
                                     <a class="nav-link" href="#">
@@ -96,6 +97,103 @@
                             </ul>
                         </div>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-2" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-2">
+                            <i class="mdi mdi-disc menu-icon"></i>
+                            <span class="menu-title">Single, EP, Àlbum, Pack</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-2">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link" href="#">
+                                        Inserir
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link" href="#">
+                                        Modificar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-3" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-3">
+                            <i class="mdi mdi-book-open-variant menu-icon"></i>
+                            <span class="menu-title">Llibres</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-3">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link" href="#">
+                                        Inserir
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link" href="#">
+                                        Modificar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-4" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-4">
+                            <i class="mdi mdi-audiobook  menu-icon"></i>
+                            <span class="menu-title">Gèneres</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-4">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link" href="#">
+                                        Inserir
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link" href="#">
+                                        Modificar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-5" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-5">
+                            <i class="mdi mdi-table-edit  menu-icon"></i>
+                            <span class="menu-title">Blog</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-5">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link" href="#">
+                                        Inserir
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link" href="#">
+                                        Modificar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
                 </ul>
             </nav>
             <!-- NAVBAR FI -->
