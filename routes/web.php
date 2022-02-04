@@ -19,5 +19,6 @@ Route::get('/', function () {
 
 // Route::get('/home', [App\Http\Controllers\HomeBackendController::class, 'index'])->name('home');
 Route::get('backend/index', 'HomeBackendController@index')->name('backend.index');
+Route::get('backend/artistes/create', 'ArtistaController@create')->name('backend.artistes.create');
 
 Auth::routes();
