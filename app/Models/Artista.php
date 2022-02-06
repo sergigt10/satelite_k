@@ -2,10 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Artista extends Model
 {
-    use HasFactory;
+    public $timestamps = false;
+    protected $table = 'artistes';
+
+    protected $fillable = [
+        'nom',
+        'foto',
+        'biografia_cat',
+        'biografia_esp',
+        'link_web',
+        'generes_id'
+    ];
 }

@@ -19,6 +19,12 @@
     <link rel="shortcut icon" href="{{ asset('backend/images/favicon.ico') }}" />
 </head>
 
+    <style>
+        .content-wrapper {
+            background: #fff;
+        }
+    </style>
+
 <body>
 
     <div class="container-scroller">

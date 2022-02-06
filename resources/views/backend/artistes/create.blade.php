@@ -15,27 +15,27 @@
                             <h2>Inserir nou artista</h2>
                             <p> * Camps obligatoris </p>
                             <br>
-                            <form class="forms-sample" method="POST" action="#" enctype="multipart/form-data" novalidate>
+                            <form class="forms-sample" method="POST" action="{{ route('backend.artistes.store') }}" enctype="multipart/form-data" novalidate>
                                 @csrf
                                 @error('nom')
                                     <div class='alert alert-danger' role='alert'>
                                         <strong>{{ $message }}</strong>
-                                    </span>
+                                    </div>
                                 @enderror
                                 @error('biografia_cat')
                                     <div class='alert alert-danger' role='alert'>
                                         <strong>{{ $message }}</strong>
-                                    </span>
+                                    </div>
                                 @enderror
                                 @error('biografia_esp')
                                     <div class='alert alert-danger' role='alert'>
                                         <strong>{{ $message }}</strong>
-                                    </span>
+                                    </div>
                                 @enderror
                                 @error('foto')
                                     <div class='alert alert-danger' role='alert'>
                                         <strong>{{ $message }}</strong>
-                                    </span>
+                                    </div>
                                 @enderror
 
                                 <div class="form-group">
@@ -84,7 +84,7 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
                                                     <div class="form-group">
-                                                        <label>Pujar imatge</label>
+                                                        <label>Imatge artista</label>
                                                         <input name="foto" type="file" class="file-upload-default">
                                                         <div class="input-group col-xs-12">
                                                             <input name="foto" type="text" class="form-control @error('foto') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto" value="{{ old('foto') }}">

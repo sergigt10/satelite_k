@@ -263,7 +263,9 @@ https://stackoverflow.com/questions/63021856/cannot-find-module-webpack-lib-rule
 ** Mim css, js, ... **
 # https://styde.net/laravel-6-doc-compilacion-de-assets-laravel-mix/
 
-
+** Configura base de datos (Modelo) **
+# public $timestamps = false; -> Añadimos al modelo para que no pida timestamps.
+# protected $table = 'artistes'; -> Indicamos en el modelo que la base de datos tiene otro nombre.
 
 
 

@@ -31,7 +31,6 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
                 <a class="navbar-brand brand-logo" href="index.php"><img src="{{ asset('backend/images/logo.png') }}" alt="logo"/></a>
-                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('backend/images/logo-mini.svg') }}" alt="logo"/></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center">
                 <ul class="navbar-nav navbar-nav-left">
@@ -80,17 +79,17 @@
                             <span class="menu-title">Artistes</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"artistes/create") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-1">
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"artistes") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-1">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'] ,"artistes/create") !== false) ? 'active"' : ''; ?>" href="{{ route('backend.artistes.create') }}">
+                                    <a class="nav-link {{ (request()->is('backend/artistes/create')) ? 'active' : '' }}" href="{{ route('backend.artistes.create') }}">
                                         Inserir
                                     </a>
                                 </li>
                             </ul>
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link {{ ( (request()->is('backend/artistes')) ||  (request()->is('backend/artistes/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.artistes.index') }}">
                                         Modificar
                                     </a>
                                 </li>
