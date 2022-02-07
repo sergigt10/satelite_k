@@ -68,7 +68,7 @@ class ArtistaController extends Controller
         $artista->save();
 
         // Redireccionar
-        return redirect()->action('ArtistaController@index')->with('estat', 'Artista actualitzat correctament.');;
+        return redirect()->action('ArtistaController@index')->with('estat', 'Artista actualitzat correctament.');
     }
 
     /**
@@ -150,12 +150,11 @@ class ArtistaController extends Controller
      */
     public function destroy(Artista $artista)
     {
-        // Eliminamos las imágenes
+        // Eliminar imatges
         if (File::exists(storage_path("app/public/$artista->foto"))) {
             File::delete(storage_path("app/public/$artista->foto"));
         }
 
-        // Eliminar la receta
         $artista->delete();
 
         return redirect()->action('ArtistaController@index');

@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genere extends Model
 {
-    use HasFactory;
+    public $timestamps = false;
+
+    protected $fillable = [
+        'nom_cat',
+        'nom_esp'
+    ];
 }

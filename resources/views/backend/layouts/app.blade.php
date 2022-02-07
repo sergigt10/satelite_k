@@ -30,7 +30,7 @@
     <div class="container-scroller">
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="index.php"><img src="{{ asset('backend/images/logo.png') }}" alt="logo"/></a>
+                <a class="navbar-brand brand-logo" href="{{ route('backend.index') }}"><img src="{{ asset('backend/images/logo.png') }}" alt="logo"/></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center">
                 <ul class="navbar-nav navbar-nav-left">
@@ -74,7 +74,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#general-pages-1" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-1">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-1" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"artistes") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-1">
                             <i class="mdi mdi-music  menu-icon"></i>
                             <span class="menu-title">Artistes</span>
                             <i class="menu-arrow"></i>
@@ -146,22 +146,22 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#general-pages-4" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-4">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-4" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"generes") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-4">
                             <i class="mdi mdi-audiobook  menu-icon"></i>
                             <span class="menu-title">Gèneres</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-4">
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"generes") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-4">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link {{ (request()->is('backend/generes/create')) ? 'active' : '' }}" href="{{ route('backend.generes.create') }}">
                                         Inserir
                                     </a>
                                 </li>
                             </ul>
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link {{ ( (request()->is('backend/generes')) ||  (request()->is('backend/generes/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.generes.index') }}">
                                         Modificar
                                     </a>
                                 </li>

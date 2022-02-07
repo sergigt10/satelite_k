@@ -21,12 +21,19 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeBackendController::class, 'index'])->name('home');
 Route::get('backend/index', 'HomeBackendController@index')->name('backend.index');
+/* Artistes */
 Route::get('backend/artistes', 'ArtistaController@index')->name('backend.artistes.index');
 Route::get('backend/artistes/create', 'ArtistaController@create')->name('backend.artistes.create');
 Route::post('backend/artistes', 'ArtistaController@store')->name('backend.artistes.store');
 Route::get('backend/artistes/{artista}/edit', 'ArtistaController@edit')->name('backend.artistes.edit');
 Route::put('backend/artistes/{artista}', 'ArtistaController@update')->name('backend.artistes.update');
 Route::delete('backend/artistes/{artista}', 'ArtistaController@destroy')->name('backend.artistes.destroy');
-
+/* Gèneres */
+Route::get('backend/generes', 'GenereController@index')->name('backend.generes.index');
+Route::get('backend/generes/create', 'GenereController@create')->name('backend.generes.create');
+Route::post('backend/generes', 'GenereController@store')->name('backend.generes.store');
+Route::get('backend/generes/{genere}/edit', 'GenereController@edit')->name('backend.generes.edit');
+Route::put('backend/generes/{genere}', 'GenereController@update')->name('backend.generes.update');
+Route::delete('backend/generes/{genere}', 'GenereController@destroy')->name('backend.generes.destroy');
 
 

@@ -12,7 +12,7 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Modificar notícia</h2>
+                        <h2>Modificar artista</h2>
                         <p> * Camps obligatoris </p>
                         <br>
                         <form class="forms-sample" method="post" action="{{ route('backend.artistes.update', ['artista' => $artista->id]) }}" enctype="multipart/form-data">
