@@ -35,5 +35,12 @@ Route::post('backend/generes', 'GenereController@store')->name('backend.generes.
 Route::get('backend/generes/{genere}/edit', 'GenereController@edit')->name('backend.generes.edit');
 Route::put('backend/generes/{genere}', 'GenereController@update')->name('backend.generes.update');
 Route::delete('backend/generes/{genere}', 'GenereController@destroy')->name('backend.generes.destroy');
+/* Blog */
+Route::get('backend/noticies', 'NoticiaController@index')->name('backend.noticies.index');
+Route::get('backend/noticies/create', 'NoticiaController@create')->name('backend.noticies.create');
+Route::post('backend/noticies', 'NoticiaController@store')->name('backend.noticies.store');
+Route::get('backend/noticies/{noticia}/edit', 'NoticiaController@edit')->name('backend.noticies.edit');
+Route::put('backend/noticies/{noticia}', 'NoticiaController@update')->name('backend.noticies.update');
+Route::delete('backend/noticies/{noticia}', 'NoticiaController@destroy')->name('backend.noticies.destroy');
 
 
