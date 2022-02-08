@@ -42,5 +42,12 @@ Route::post('backend/noticies', 'NoticiaController@store')->name('backend.notici
 Route::get('backend/noticies/{noticia}/edit', 'NoticiaController@edit')->name('backend.noticies.edit');
 Route::put('backend/noticies/{noticia}', 'NoticiaController@update')->name('backend.noticies.update');
 Route::delete('backend/noticies/{noticia}', 'NoticiaController@destroy')->name('backend.noticies.destroy');
+/* Llibres */
+Route::get('backend/llibres', 'LlibreController@index')->name('backend.llibres.index');
+Route::get('backend/llibres/create', 'LlibreController@create')->name('backend.llibres.create');
+Route::post('backend/llibres', 'LlibreController@store')->name('backend.llibres.store');
+Route::get('backend/llibres/{llibre}/edit', 'LlibreController@edit')->name('backend.llibres.edit');
+Route::put('backend/llibres/{llibre}', 'LlibreController@update')->name('backend.llibres.update');
+Route::delete('backend/llibres/{llibre}', 'LlibreController@destroy')->name('backend.llibres.destroy');
 
 

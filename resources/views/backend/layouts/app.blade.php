@@ -208,8 +208,8 @@
     </div>
 </div>
     <script src="{{ asset('backend/vendors/js/vendor.bundle.base.js') }}"></script>
-    <!-- <script src="{{ asset('backend/vendors/js/vendor.bundle.addons.js') }}"></script>
-    <script src="{{ asset('backend/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('backend/vendors/js/vendor.bundle.addons.js') }}"></script>
+    <!-- <script src="{{ asset('backend/js/off-canvas.js') }}"></script>
     <script src="{{ asset('backend/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('backend/js/template.js') }}"></script>
     <script src="{{ asset('backend/js/settings.js') }}"></script>

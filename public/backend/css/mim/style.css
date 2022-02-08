@@ -22751,7 +22751,7 @@ select.form-control, select.asColorPicker-input, .dataTables_wrapper select, .js
 .select2-container--default .select2-search--dropdown .select2-search__field {
   border-radius: 8px;
   background: url(select2.png) right top no-repeat;
-  background-position: right -26px;
+  background-position: right -39px;
 }
 
 /* Textarea trix */
@@ -22771,5 +22771,8 @@ trix-toolbar .trix-button-group {
 trix-toolbar .trix-button--icon {
   border: 1px solid #bbb;
 }
-
 /* Textarea trix */
+
+select.form-control:not([size]):not([multiple]), select.asColorPicker-input:not([size]):not([multiple]), .dataTables_wrapper select:not([size]):not([multiple]), .jsgrid .jsgrid-table .jsgrid-filter-row select:not([size]):not([multiple]), .select2-container--default select.select2-selection--single:not([size]):not([multiple]), .select2-container--default .select2-selection--single select.select2-search__field:not([size]):not([multiple]), select.typeahead:not([size]):not([multiple]), select.tt-query:not([size]):not([multiple]), select.tt-hint:not([size]):not([multiple]) {
+  height: calc(2.65rem + 2px) !important;
+}

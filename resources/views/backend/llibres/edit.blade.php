@@ -2,7 +2,6 @@
 
 @section('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.css" integrity="sha512-494Ejp/5WyoRNfh+nPLhSCQPHhcsbA5PoIGv2/FuEo+QLfW+L7JQGPdh8Qy2ZOmkF27pyYlALrxteMiKau1tyw==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('backend/vendors/css/vendor.bundle.addons.css') }}">
 @endsection
 
 @section('content')
@@ -13,28 +12,23 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Modificar noticia</h2>
+                        <h2>Modificar artista</h2>
                         <p> * Camps obligatoris </p>
                         <br>
-                        <form class="forms-sample" method="post" action="{{ route('backend.noticies.update', ['noticia' => $noticia->id]) }}" enctype="multipart/form-data">
+                        <form class="forms-sample" method="post" action="{{ route('backend.artistes.update', ['artista' => $artista->id]) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            @error('titol_cat')
+                            @error('nom')
                                 <div class='alert alert-danger' role='alert'>
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
-                            @error('titol_esp')
+                            @error('biografia_cat')
                                 <div class='alert alert-danger' role='alert'>
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
-                            @error('descripcio_cat')
-                                <div class='alert alert-danger' role='alert'>
-                                    <strong>{{ $message }}</strong>
-                                </div>
-                            @enderror
-                            @error('descripcio_esp')
+                            @error('biografia_esp')
                                 <div class='alert alert-danger' role='alert'>
                                     <strong>{{ $message }}</strong>
                                 </div>
@@ -46,41 +40,41 @@
                             @enderror
 
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Títol CAT *:</label>
-                                <input name="titol_cat" type="text" class="form-control @error('titol_cat') is-invalid @enderror" id="exampleInputEmail3" placeholder="Títol CAT" value="{{ $noticia->titol_cat }}">
+                                <label for="exampleInputEmail3">Nom artista *:</label>
+                                <input name="nom" type="text" class="form-control @error('nom') is-invalid @enderror" id="exampleInputEmail3" placeholder="Nom artista" value="{{ $artista->nom }}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Títol ESP *:</label>
-                                <input name="titol_esp" type="text" class="form-control @error('titol_esp') is-invalid @enderror" id="exampleInputEmail3" placeholder="Títol ESP" value="{{ $noticia->titol_esp }}">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail3">Descripció CAT *:</label>
-                                <input id="descripcio_cat" type="hidden" name="descripcio_cat" value="{{ $noticia->descripcio_cat }}">
+                                <label for="exampleInputEmail3">Biografia CAT *:</label>
+                                <input id="biografia_cat" type="hidden" name="biografia_cat" value="{{ $artista->biografia_cat }}">
                                 <trix-editor 
-                                    class="form-control @error('descripcio_cat') is-invalid @enderror "
-                                    input="descripcio_cat">
+                                    class="form-control @error('biografia_cat') is-invalid @enderror "
+                                    input="biografia_cat">
                                 </trix-editor>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Descripció ESP *:</label>
-                                <input id="descripcio_esp" type="hidden" name="descripcio_esp" value="{{ $noticia->descripcio_esp }}">
+                                <label for="exampleInputEmail3">Biografia ESP *:</label>
+                                <input id="biografia_esp" type="hidden" name="biografia_esp" value="{{ $artista->biografia_esp }}">
                                 <trix-editor 
-                                    class="form-control @error('descripcio_esp') is-invalid @enderror "
-                                    input="descripcio_esp">
+                                    class="form-control @error('biografia_esp') is-invalid @enderror "
+                                    input="biografia_esp">
                                 </trix-editor>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Artista *:</label>
-                                <select id="artistes_id" name="artistes_id" class="form-control js-example-basic-single w-100">
-                                    @foreach ($artistes as $artista)
+                                <label for="exampleInputEmail3">Gènere musical *:</label>
+                                <select id="generes_id" name="generes_id" class="form-control">
+                                    @foreach ($generes as $genere)
                                         <option 
-                                            value="{{ $artista->id }}"
-                                            {{ $noticia->id == $artista->id ? 'selected' : '' }}
+                                            value="{{ $genere->id }}"
+                                            {{ $artista->id == $genere->id ? 'selected' : '' }}
                                         >
-                                            {{ $artista->nom }}
+                                            {{ $genere->nom_cat }}
                                         </option>
                                     @endforeach
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">URL pàgina web:</label>
+                                <input name="link_web" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL pàgina web" value="{{ $artista->link_web }}">
                             </div>
                             <div class="row grid-margin">
                                 <div class="col-lg-12">
@@ -91,7 +85,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-9">
                                                     <div class="form-group">
-                                                        <label>Imatge noticia</label>
+                                                        <label>Imatge artista</label>
                                                         <input name="foto" type="file" class="file-upload-default">
                                                         <div class="input-group col-xs-12">
                                                             <input name="foto" type="text" class="form-control @error('foto') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto" value="{{ old('foto') }}">
@@ -103,7 +97,7 @@
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <div class="form-check form-check-danger" style="float:right;">
-                                                        <img src="/storage/{{$noticia->foto}}" style="width: 300px">
+                                                        <img src="/storage/{{$artista->foto}}" style="width: 300px">
                                                     </div>
                                                 </div>
                                             </div>
@@ -122,8 +116,6 @@
 @section('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.js" integrity="sha512-wEfICgx3CX6pCmTy6go+PmYVKDdi4KHhKKz5Xx/boKOZOtG7+rrm2fP7RUR2o4m/EbPdwbKWnP05dvj4uzoclA==" crossorigin="anonymous" defer></script>
     <script src="{{ asset('backend/js/file-upload.js') }}"></script>
-    <script src="{{ asset('backend/js/select2.min.js') }}"></script>
-    <script src="{{ asset('backend/js/select2.js') }}"></script>
 @endsection
 
 @endsection
