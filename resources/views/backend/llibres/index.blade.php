@@ -17,7 +17,7 @@
                         </div>
                     @endif
                     <br>
-                    <h2>Artistes</h2>
+                    <h2>Llibres</h2>
                     <br>
                     <div class="row">
                         <div class="col-12">
@@ -31,25 +31,25 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($artistes as $artista)
+                                        @foreach($llibres as $llibre)
                                             <tr>
                                                 <td>
-                                                    <a href="{{ route('backend.artistes.edit', ['artista' => $artista->id]) }}" style="color: black;">
-                                                        {{ $artista->nom }}
+                                                    <a href="{{ route('backend.llibres.edit', ['llibre' => $llibre->id]) }}" style="color: black;">
+                                                        {{ $llibre->titol_cat }}
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('backend.artistes.edit', ['artista' => $artista->id]) }}" style="color: black;">
+                                                    <a href="{{ route('backend.llibres.edit', ['llibre' => $llibre->id]) }}" style="color: black;">
                                                         <i class="mdi mdi-pencil menu-icon"></i>
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a href="" style="color: black;" data-toggle="modal" data-target="#exampleModalCenter{{$artista->id}}">
+                                                    <a href="" style="color: black;" data-toggle="modal" data-target="#exampleModalCenter{{$llibre->id}}">
                                                         <i class="mdi mdi-close-circle menu-icon"></i>
                                                     </a>
                                                 </td>
                                             </tr>
-                                            <div class="modal fade" id="exampleModalCenter{{$artista->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal fade" id="exampleModalCenter{{$llibre->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -59,10 +59,10 @@
                                                             </button>
                                                         </div>
                                                     <div class="modal-body">
-                                                        Segur que vols esborrar: {{ $artista->nom }}
+                                                        Segur que vols esborrar: {{ $llibre->titol_cat }}
                                                     </div>
                                                         <div class="modal-footer">
-                                                            <form class="pull-right" action="{{ route('backend.artistes.destroy', ['artista' => $artista->id]) }}" method="POST">
+                                                            <form class="pull-right" action="{{ route('backend.llibres.destroy', ['llibre' => $llibre->id]) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <input type="submit" value="Esborrar" class="btn btn-danger">

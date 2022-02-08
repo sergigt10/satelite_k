@@ -67,7 +67,7 @@ class NoticiaController extends Controller
         $noticia->save();
 
         // Redireccionar
-        return redirect()->action('NoticiaController@index')->with('estat', 'Noticia actualitzada correctament.');
+        return redirect()->action('NoticiaController@index')->with('estat', 'Noticia inserit correctament.');
     }
 
     /**

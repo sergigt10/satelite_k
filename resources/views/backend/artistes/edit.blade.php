@@ -65,7 +65,7 @@
                                     @foreach ($generes as $genere)
                                         <option 
                                             value="{{ $genere->id }}"
-                                            {{ $artista->id == $genere->id ? 'selected' : '' }}
+                                            {{ $artista->generes_id == $genere->id ? 'selected' : '' }}
                                         >
                                             {{ $genere->nom_cat }}
                                         </option>
@@ -73,7 +73,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">URL pàgina web:</label>
+                                <label for="exampleInputEmail3">URL pàgina web (Ex: https://www.satelitek.com/):</label>
                                 <input name="link_web" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL pàgina web" value="{{ $artista->link_web }}">
                             </div>
                             <div class="row grid-margin">

@@ -72,7 +72,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">URL pàgina web:</label>
+                                    <label for="exampleInputEmail3">URL pàgina web (Ex: https://www.satelitek.com/):</label>
                                     <input name="link_web" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL pàgina web" value="{{ old('link_web') }}">
                                 </div>
                                 <div class="row grid-margin">

@@ -75,7 +75,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#general-pages-1" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"artistes") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-1">
-                            <i class="mdi mdi-music  menu-icon"></i>
+                            <i class="mdi mdi-music menu-icon"></i>
                             <span class="menu-title">Artistes</span>
                             <i class="menu-arrow"></i>
                         </a>
@@ -122,22 +122,22 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#general-pages-3" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-3">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-3" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"llibres") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-3">
                             <i class="mdi mdi-book-open-variant menu-icon"></i>
                             <span class="menu-title">Llibres</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-3">
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"llibres") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-3">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link {{ (request()->is('backend/llibres/create')) ? 'active' : '' }}" href="{{ route('backend.llibres.create') }}">
                                         Inserir
                                     </a>
                                 </li>
                             </ul>
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link {{ ( (request()->is('backend/llibres')) ||  (request()->is('backend/llibres/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.llibres.index') }}">
                                         Modificar
                                     </a>
                                 </li>
@@ -171,7 +171,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#general-pages-5" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"noticies") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-5">
-                            <i class="mdi mdi-table-edit  menu-icon"></i>
+                            <i class="mdi mdi-table-edit menu-icon"></i>
                             <span class="menu-title">Blog</span>
                             <i class="menu-arrow"></i>
                         </a>

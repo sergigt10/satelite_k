@@ -267,6 +267,9 @@ https://stackoverflow.com/questions/63021856/cannot-find-module-webpack-lib-rule
 # public $timestamps = false; -> Añadimos al modelo para que no pida timestamps.
 # protected $table = 'artistes'; -> Indicamos en el modelo que la base de datos tiene otro nombre.
 
+** Tratamiento de fechas **
+https://programmerclick.com/article/30571152395/
+
 
 
 

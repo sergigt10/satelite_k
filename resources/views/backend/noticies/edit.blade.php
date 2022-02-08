@@ -75,7 +75,7 @@
                                     @foreach ($artistes as $artista)
                                         <option 
                                             value="{{ $artista->id }}"
-                                            {{ $noticia->id == $artista->id ? 'selected' : '' }}
+                                            {{ $noticia->artistes_id == $artista->id ? 'selected' : '' }}
                                         >
                                             {{ $artista->nom }}
                                         </option>

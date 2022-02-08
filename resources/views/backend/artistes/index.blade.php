@@ -25,7 +25,7 @@
                                 <table id="order-listing" class="table table-hover table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Títol</th>
+                                            <th>Nom</th>
                                             <th data-orderable="false">Editar</th>
                                             <th data-orderable="false">Eliminar</th>
                                         </tr>
