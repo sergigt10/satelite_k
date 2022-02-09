@@ -54,12 +54,12 @@ class NoticiaController extends Controller
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
             'artistes_id' => '',
-            'foto' => 'required|image|max:10240'
+            'foto' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg'
         ]);/* Max foto 10 MB */
 
         $ruta_foto = $request['foto']->store('backend/noticia', 'public');
 
-        $foto = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1200, 550);
+        $foto = Image::make( storage_path("app/public/{$ruta_foto}") )->resize(1200, 550, function($constraint){$constraint->aspectRatio();});
         $foto->save();
 
         $noticia = new Noticia($data);
@@ -124,7 +124,7 @@ class NoticiaController extends Controller
 
             $ruta_foto = $request['foto']->store('backend/noticia', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1200, 550);
+            $img = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1200, 550, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Llibre;
 use App\Models\Artista;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
@@ -56,7 +55,7 @@ class LlibreController extends Controller
             'ilustrador' => 'required',
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
-            'foto' => 'required|image|max:10240',
+            'foto' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
             'editorial' => 'required',
             'data_publicacio' => 'required|date',
             'link_compra_fisica' => '',
@@ -65,7 +64,7 @@ class LlibreController extends Controller
 
         $ruta_foto = $request['foto']->store('backend/llibres', 'public');
 
-        $foto = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1200, 550);
+        $foto = Image::make( storage_path("app/public/{$ruta_foto}") )->resize(1200, 550, function($constraint){$constraint->aspectRatio();});
         $foto->save();
 
         $llibre = new Llibre($data);

@@ -47,5 +47,12 @@ Route::post('backend/llibres', 'LlibreController@store')->name('backend.llibres.
 Route::get('backend/llibres/{llibre}/edit', 'LlibreController@edit')->name('backend.llibres.edit');
 Route::put('backend/llibres/{llibre}', 'LlibreController@update')->name('backend.llibres.update');
 Route::delete('backend/llibres/{llibre}', 'LlibreController@destroy')->name('backend.llibres.destroy');
+/* Discs */
+Route::get('backend/discs', 'DiscController@index')->name('backend.discs.index');
+Route::get('backend/discs/create', 'DiscController@create')->name('backend.discs.create');
+Route::post('backend/discs', 'DiscController@store')->name('backend.discs.store');
+Route::get('backend/discs/{disc}/edit', 'DiscController@edit')->name('backend.discs.edit');
+Route::put('backend/discs/{disc}', 'DiscController@update')->name('backend.discs.update');
+Route::delete('backend/discs/{disc}', 'DiscController@destroy')->name('backend.discs.destroy');
 
 

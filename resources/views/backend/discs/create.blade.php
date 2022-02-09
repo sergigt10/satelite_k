@@ -13,27 +13,12 @@
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h2>Inserir nou llibre</h2>
+                            <h2>Inserir nou Single, EP, Àlbum o Pack</h2>
                             <p> * Camps obligatoris </p>
                             <br>
-                            <form class="forms-sample" method="POST" action="{{ route('backend.llibres.store') }}" enctype="multipart/form-data" novalidate>
+                            <form class="forms-sample" method="POST" action="{{ route('backend.discs.store') }}" enctype="multipart/form-data" novalidate>
                                 @csrf
-                                @error('titol_cat')
-                                    <div class='alert alert-danger' role='alert'>
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
-                                @error('titol_esp')
-                                    <div class='alert alert-danger' role='alert'>
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
-                                @error('autor')
-                                    <div class='alert alert-danger' role='alert'>
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
-                                @error('ilustrador')
+                                @error('titol')
                                     <div class='alert alert-danger' role='alert'>
                                         <strong>{{ $message }}</strong>
                                     </div>
@@ -48,11 +33,6 @@
                                         <strong>{{ $message }}</strong>
                                     </div>
                                 @enderror
-                                @error('editorial')
-                                    <div class='alert alert-danger' role='alert'>
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
                                 @error('data_publicacio')
                                     <div class='alert alert-danger' role='alert'>
                                         <strong>{{ $message }}</strong>
@@ -60,28 +40,8 @@
                                 @enderror
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Títol llibre CAT *:</label>
-                                    <input name="titol_cat" type="text" class="form-control @error('titol_cat') is-invalid @enderror" id="exampleInputEmail3" placeholder="Títol llibre CAT" value="{{ old('titol_cat') }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail3">Títol llibre ESP *:</label>
-                                    <input name="titol_esp" type="text" class="form-control @error('titol_esp') is-invalid @enderror" id="exampleInputEmail3" placeholder="Títol llibre ESP" value="{{ old('titol_esp') }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail3">Autor *:</label>
-                                    <input name="autor" type="text" class="form-control @error('autor') is-invalid @enderror" id="exampleInputEmail3" placeholder="Autor" value="{{ old('autor') }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail3">Ilustrador *:</label>
-                                    <input name="ilustrador" type="text" class="form-control @error('ilustrador') is-invalid @enderror" id="exampleInputEmail3" placeholder="Ilustrador" value="{{ old('ilustrador') }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail3">Editorial *:</label>
-                                    <input name="editorial" type="text" class="form-control @error('editorial') is-invalid @enderror" id="exampleInputEmail3" placeholder="Editorial" value="{{ old('editorial') }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail3">Data de publicació *:</label>
-                                    <input name="data_publicacio" id="data_publicacio" type="date" class="form-control @error('data_publicacio') is-invalid @enderror" id="exampleInputEmail3" value="{{ old('data_publicacio') }}">
+                                    <label for="exampleInputEmail3">Títol *:</label>
+                                    <input name="titol" type="text" class="form-control @error('titol') is-invalid @enderror" id="exampleInputEmail3" placeholder="Títol" value="{{ old('titol') }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Descripció CAT *:</label>
@@ -100,6 +60,36 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputEmail3">Data de publicació *:</label>
+                                    <input name="data_publicacio" id="data_publicacio" type="date" class="form-control @error('data_publicacio') is-invalid @enderror" id="exampleInputEmail3" value="{{ old('data_publicacio') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Tipus *:</label>
+                                    <select id="tipus_id" name="tipus_id" class="form-control js-example-basic-single w-100">
+                                        @foreach ($tipus as $tipu)
+                                            <option 
+                                                value="{{ $tipu->id }}"
+                                                {{ old('tipus_id') == $tipu->id ? 'selected' : '' }}
+                                            >
+                                                {{ $tipu->nom_cat }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Gènere *:</label>
+                                    <select id="generes_id" name="generes_id" class="form-control js-example-basic-single w-100">
+                                        @foreach ($generes as $genere)
+                                            <option 
+                                                value="{{ $genere->id }}"
+                                                {{ old('generes_id') == $genere->id ? 'selected' : '' }}
+                                            >
+                                                {{ $genere->nom_cat }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail3">Artista *:</label>
                                     <select id="artistes_id" name="artistes_id" class="form-control js-example-basic-single w-100">
                                         @foreach ($artistes as $artista)
@@ -113,8 +103,20 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3"><i class="mdi mdi-shopping"></i> URL compra física (Ex: https://www.amazon.es/):</label>
-                                    <input name="link_compra_fisica" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL compra física" value="{{ old('link_compra_fisica') }}">
+                                    <label for="exampleInputEmail3"><i class="mdi mdi-spotify"></i> Embed Spotify:</label>
+                                    <input name="embed_spotify" type="text" class="form-control" id="exampleInputEmail3" placeholder="Embed Spotify" value="{{ old('embed_spotify') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3"><i class="mdi mdi-spotify"></i> Link Spotify:</label>
+                                    <input name="link_spotify" type="text" class="form-control" id="exampleInputEmail3" placeholder="Link Spotify" value="{{ old('link_spotify') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3"><i class="mdi mdi-apple"></i> Link Apple Music:</label>
+                                    <input name="link_apple_music" type="text" class="form-control" id="exampleInputEmail3" placeholder="Link Apple Music" value="{{ old('link_apple_music') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3"><i class="mdi mdi-shopping"></i> URL venda física:</label>
+                                    <input name="link_venda_fisica" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL venda física" value="{{ old('link_venda_fisica') }}">
                                 </div>
                                 <div class="row grid-margin">
                                     <div class="col-lg-12">
@@ -125,7 +127,7 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
                                                     <div class="form-group">
-                                                        <label>Imatge llibre</label>
+                                                        <label>Imatge Single, EP, Àlbum o Pack</label>
                                                         <input name="foto" type="file" class="file-upload-default">
                                                         <div class="input-group col-xs-12">
                                                             <input name="foto" type="text" class="form-control @error('foto') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto" value="{{ old('foto') }}">

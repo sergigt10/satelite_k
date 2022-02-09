@@ -7,7 +7,7 @@
                 <div class="col-md-12 grid-margin">
                         <div class="row">
                             <div class="col-md-3 grid-margin stretch-card">
-                                <div class="card border-0 border-radius-2 bg-dark">
+                                <div class="card border-radius-2 bg-dark">
                                     <a href="{{ route('backend.artistes.index') }}">
                                         <div class="card-body">
                                             <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
@@ -23,8 +23,8 @@
                                 </div>
                             </div>
                             <div class="col-md-3 grid-margin stretch-card">
-                                <div class="card border-0 border-radius-2 bg-dark">
-                                    <a href="{{ route('backend.artistes.index') }}">
+                                <div class="card border-radius-2 bg-dark">
+                                    <a href="{{ route('backend.discs.index') }}">
                                         <div class="card-body">
                                             <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
                                                 <div class="icon-rounded-inverse-success icon-rounded-lg">
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 grid-margin stretch-card">
-                                <div class="card border-0 border-radius-2 bg-dark">
+                                <div class="card border-radius-2 bg-dark">
                                     <a href="{{ route('backend.llibres.index') }}">
                                         <div class="card-body">
                                             <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 grid-margin stretch-card">
-                                <div class="card border-0 border-radius-2 bg-dark">
+                                <div class="card border-radius-2 bg-dark">
                                     <a href="{{ route('backend.noticies.index') }}">
                                         <div class="card-body">
                                             <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">

@@ -8824,7 +8824,7 @@ a {
 
 a:hover {
   color: #0056b3;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:not([href]):not([tabindex]) {
@@ -26524,7 +26524,7 @@ body.avgrund-active {
 .select2-container--default .select2-selection--single,
 .select2-container--default .select2-dropdown,
 .select2-container--default .select2-selection--multiple {
-  border-color: #f3f3f3;
+  border-color: #dadada;
 }
 
 .select2-container--default .select2-selection--single .select2-search__field,

@@ -98,22 +98,22 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#general-pages-2" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-2">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-2" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"discs") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-2">
                             <i class="mdi mdi-disc menu-icon"></i>
                             <span class="menu-title">Single, EP, Àlbum</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"blogs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-2">
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"discs") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-2">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link {{ (request()->is('backend/discs/create')) ? 'active' : '' }}" href="{{ route('backend.discs.create') }}">
                                         Inserir
                                     </a>
                                 </li>
                             </ul>
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link {{ ( (request()->is('backend/discs')) ||  (request()->is('backend/discs/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.discs.index') }}">
                                         Modificar
                                     </a>
                                 </li>
