@@ -138,7 +138,7 @@
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <div class="form-check form-check-danger" style="float:right;">
-                                                        <img src="/storage/{{$llibre->foto}}" style="width: 300px">
+                                                        <img src="/storage/thumb_img/thumb.php?src=../{{$llibre->foto}}&size=200x92&crop=0&trim=1">
                                                     </div>
                                                 </div>
                                             </div>
