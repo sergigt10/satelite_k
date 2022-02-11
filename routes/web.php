@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeBackendController@index')->name('backend.index');
+// Route::get('/', 'HomeBackendController@index')->name('backend.index');
 
 Auth::routes();
 
