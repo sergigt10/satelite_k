@@ -278,7 +278,9 @@ https://programmerclick.com/article/30571152395/
 # https://www.nigmacode.com/laravel/subir-proyecto-laravel-a-hosting/
 # https://laravel.com/docs/8.x/deployment
 # https://laratutorials.com/how-to-deploy-laravel-8-project-on-shared-hosting-cpanel/
-
+# https://dumpcoder.com/symlink-laravel-storage-folder-on-shared-hosting/
+# https://www.youtube.com/watch?v=6g8G3YQtQt4
+# https://stackoverflow.com/questions/45825889/how-to-create-laravel-storage-symbolic-link-for-production-or-sub-domain-system
 
 
 

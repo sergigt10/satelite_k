@@ -30,7 +30,7 @@
     <div class="container-scroller">
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="{{ route('backend.index') }}"><img src="{{ asset('backend/images/logo.png') }}" alt="logo"/></a>
+                <a class="navbar-brand brand-logo" href="{{ route('backend.inici.index') }}"><img src="{{ asset('backend/images/logo.png') }}" alt="logo"/></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center">
                 <ul class="navbar-nav navbar-nav-left">
@@ -65,7 +65,7 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('backend.index') }}">
+                        <a class="nav-link" href="{{ route('backend.inici.index') }}">
                             <i class="mdi mdi-home menu-icon"></i>
                             <span class="menu-title">
                                 Inici
