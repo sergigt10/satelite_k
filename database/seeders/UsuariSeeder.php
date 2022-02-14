@@ -16,10 +16,15 @@ class UsuariSeeder extends Seeder
      */
     public function run()
     {
+        // $user = User::create([
+        //     'name' => 'Sergi',
+        //     'email' => 'sergi@sergi.com',
+        //     'password' => Hash::make('123456789'), 
+        // ]);
         $user = User::create([
-            'name' => 'Sergi',
-            'email' => 'sergi@sergi.com',
-            'password' => Hash::make('123456789'), 
+            'name' => 'Satelite K',
+            'email' => 'info@satelitek.com',
+            'password' => Hash::make('58c1qp-P'), 
         ]);
     }
 }
