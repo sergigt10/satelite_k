@@ -140,7 +140,7 @@
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <div class="form-check form-check-danger" style="float:right;">
-                                                        <img src="/storage/thumb_img/thumb.php?src=../{{$disc->foto}}&size=200x92&crop=0&trim=1">
+                                                        <img src="{{env('APP_URL')}}/storage/thumb_img/thumb.php?src=../{{$disc->foto}}&size=200x92&crop=0&trim=1">
                                                     </div>
                                                 </div>
                                             </div>

@@ -29540,7 +29540,7 @@ div.tagsinput span.tag a {
 .navbar .navbar-brand-wrapper .navbar-brand img{
   height: 59px !important;
   position: relative;
-  top: 8px;
+  top: 0px;
 }
 
 .sidebar .nav .nav-item .nav-link i.menu-icon::before{
