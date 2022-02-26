@@ -79,7 +79,7 @@ class DiscController extends Controller
         $disc->save();
 
         // Redireccionar
-        return redirect()->action('DiscController@index')->with('estat', 'Inserit correctament.');
+        return redirect()->action('DiscController@index')->with('estat', 'Inserit correctament');
     }
 
     /**
@@ -164,7 +164,7 @@ class DiscController extends Controller
         $disc->save();
 
         // Redireccionar
-        return redirect()->action('DiscController@index')->with('estat', 'Modificat correctament.');
+        return redirect()->action('DiscController@index')->with('estat', 'Modificat correctament');
     }
 
     /**

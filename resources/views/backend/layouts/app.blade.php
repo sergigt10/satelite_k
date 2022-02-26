@@ -193,6 +193,30 @@
                         </div>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-6" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"sliders") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-6">
+                            <i class="mdi mdi-image-multiple menu-icon"></i>
+                            <span class="menu-title">Slides</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"sliders") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-6">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link {{ (request()->is('backend/sliders/create')) ? 'active' : '' }}" href="{{ route('backend.sliders.create') }}">
+                                        Inserir
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link {{ ( (request()->is('backend/sliders')) ||  (request()->is('backend/sliders/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.sliders.index') }}">
+                                        Modificar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
                 </ul>
             </nav>
             <!-- NAVBAR FI -->

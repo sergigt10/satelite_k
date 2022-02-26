@@ -51,7 +51,7 @@ class GenereController extends Controller
         $genere->save();
 
         // Redireccionar
-        return redirect()->action('GenereController@index')->with('estat', 'Gènere actualitzat correctament.');
+        return redirect()->action('GenereController@index')->with('estat', 'Gènere actualitzat correctament');
     }
 
     /**
@@ -98,7 +98,7 @@ class GenereController extends Controller
         $genere->save();
 
         // Redireccionar
-        return redirect()->action('GenereController@index')->with('estat', 'Gèneres modificat correctament.');
+        return redirect()->action('GenereController@index')->with('estat', 'Gèneres modificat correctament');
     }
 
     /**

@@ -1,61 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// FrontEnd
 
-// Route::get('/', 'HomeBackendController@index')->name('backend.index');
+/* Inici */
+Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
+
+// BackEnd
 
 Auth::routes();
-
-// Remove route cache
-Route::get('/clear-route-cache', function() {
-    $exitCode = Artisan::call('route:cache');
-    return 'All routes cache has just been removed';
-});
-//Remove config cache
-Route::get('/clear-config-cache', function() {
-    $exitCode = Artisan::call('config:cache');
-    return 'Config cache has just been removed';
-}); 
-// Remove application cache
-Route::get('/clear-app-cache', function() {
-    $exitCode = Artisan::call('cache:clear');
-    return 'Application cache has just been removed';
-});
-// Remove view cache
-Route::get('/clear-view-cache', function() {
-    $exitCode = Artisan::call('view:clear');
-    return 'View cache has jut been removed';
-});
-// New key
-Route::get('/new-key', function() {
-    $exitCode = Artisan::call('key:generate');
-    return 'Keys';
-});
-
-Route::get('/generate', function () {
-    $exitCode = Artisan::call('storage:link');
-    return 'Storage Link created!!! :)';
-});
-
-Route::get('/link', function () {        
-    $target = '/domains/satelitek.com/public_html/storage/app/public';
-    $shortcut = '/domains/satelitek.com/public_html/public/storage';
-    symlink($target, $shortcut);
-});
-
-// Route::get('/home', [App\Http\Controllers\HomeBackendController::class, 'index'])->name('home');
 Route::get('backend/inici', 'HomeBackendController@index')->name('backend.inici.index');
 /* Artistes */
 Route::get('backend/artistes', 'ArtistaController@index')->name('backend.artistes.index');
@@ -92,5 +46,12 @@ Route::post('backend/discs', 'DiscController@store')->name('backend.discs.store'
 Route::get('backend/discs/{disc}/edit', 'DiscController@edit')->name('backend.discs.edit');
 Route::put('backend/discs/{disc}', 'DiscController@update')->name('backend.discs.update');
 Route::delete('backend/discs/{disc}', 'DiscController@destroy')->name('backend.discs.destroy');
+/* Sliders */
+Route::get('backend/sliders', 'SliderController@index')->name('backend.sliders.index');
+Route::get('backend/sliders/create', 'SliderController@create')->name('backend.sliders.create');
+Route::post('backend/sliders', 'SliderController@store')->name('backend.sliders.store');
+Route::get('backend/sliders/{slider}/edit', 'SliderController@edit')->name('backend.sliders.edit');
+Route::put('backend/sliders/{slider}', 'SliderController@update')->name('backend.sliders.update');
+Route::delete('backend/sliders/{slider}', 'SliderController@destroy')->name('backend.sliders.destroy');
 
 

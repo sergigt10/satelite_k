@@ -68,7 +68,7 @@ class ArtistaController extends Controller
         $artista->save();
 
         // Redireccionar
-        return redirect()->action('ArtistaController@index')->with('estat', 'Artista actualitzat correctament.');
+        return redirect()->action('ArtistaController@index')->with('estat', 'Artista actualitzat correctament');
     }
 
     /**
@@ -139,7 +139,7 @@ class ArtistaController extends Controller
         $artista->save();
 
         // Redireccionar
-        return redirect()->action('ArtistaController@index')->with('estat', 'Artista modificat correctament.');
+        return redirect()->action('ArtistaController@index')->with('estat', 'Artista modificat correctament');
     }
 
     /**

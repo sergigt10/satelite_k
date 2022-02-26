@@ -72,7 +72,7 @@ class LlibreController extends Controller
         $llibre->save();
 
         // Redireccionar
-        return redirect()->action('LlibreController@index')->with('estat', 'Llibre inserit correctament.');
+        return redirect()->action('LlibreController@index')->with('estat', 'Llibre inserit correctament');
     }
 
     /**
@@ -153,7 +153,7 @@ class LlibreController extends Controller
         $llibre->save();
 
         // Redireccionar
-        return redirect()->action('LlibreController@index')->with('estat', 'Llibre modificat correctament.');
+        return redirect()->action('LlibreController@index')->with('estat', 'Llibre modificat correctament');
     }
 
     /**

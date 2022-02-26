@@ -67,7 +67,7 @@ class NoticiaController extends Controller
         $noticia->save();
 
         // Redireccionar
-        return redirect()->action('NoticiaController@index')->with('estat', 'Noticia inserit correctament.');
+        return redirect()->action('NoticiaController@index')->with('estat', 'Noticia inserit correctament');
     }
 
     /**
@@ -138,7 +138,7 @@ class NoticiaController extends Controller
         $noticia->save();
 
         // Redireccionar
-        return redirect()->action('NoticiaController@index')->with('estat', 'Noticia modificada correctament.');
+        return redirect()->action('NoticiaController@index')->with('estat', 'Noticia modificada correctament');
     }
 
     /**
