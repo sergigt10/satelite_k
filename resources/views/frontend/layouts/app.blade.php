@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Satélite K | Segell Discografic i Producció</title>
+    <title>Satélite K, Segell Discogràfic i Producció</title>
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
     
     @yield('styles')
