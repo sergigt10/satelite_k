@@ -135,7 +135,7 @@ class LlibreController extends Controller
 
             $ruta_foto = $request['foto']->store('backend/llibres', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1200, 550, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_foto}") )->resize(1200, 550, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior

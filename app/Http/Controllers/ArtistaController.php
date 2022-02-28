@@ -150,8 +150,38 @@ class ArtistaController extends Controller
             File::delete(storage_path("app/public/$artista->foto"));
         }
 
-        $artista->delete();
+        if($artista->discs) {
+            /* Eliminar imatges de discs */
+            $artista->discs->each(function ($disc) {
+                if (File::exists(storage_path("app/public/$disc->foto"))) {
+                    File::delete(storage_path("app/public/$disc->foto"));
+                }
+                $disc->delete();
+            });
+        }
+        
+        if($artista->llibres) {
+            /* Eliminar imatges de llibres */
+            $artista->llibres->each(function ($llibre) {
+                if (File::exists(storage_path("app/public/$llibre->foto"))) {
+                    File::delete(storage_path("app/public/$llibre->foto"));
+                }
+                $llibre->delete();
+            });
+        }
 
+        if($artista->noticies) {
+            /* Eliminar imatges de notícies */
+            $artista->noticies->each(function ($noticia) {
+                if (File::exists(storage_path("app/public/$noticia->foto"))) {
+                    File::delete(storage_path("app/public/$noticia->foto"));
+                }
+                $noticia->delete();
+            });
+        }
+
+        $artista->delete();
+        
         return redirect()->action('ArtistaController@index');
     }
 }
