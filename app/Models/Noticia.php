@@ -18,4 +18,10 @@ class Noticia extends Model
         'foto',
         'artistes_id'
     ];
+
+    // Relació 1:n noticia i artista
+    public function artista()
+    {
+        return $this->hasMany(Tipu::class, 'artistes_id');
+    }
 }

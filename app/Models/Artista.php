@@ -17,4 +17,10 @@ class Artista extends Model
         'link_web',
         'generes_id'
     ];
+
+    // Relació 1:1 artista i gènere
+    public function genere()
+    {
+        return $this->belongsTo(Genere::class, 'generes_id');
+    }
 }

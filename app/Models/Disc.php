@@ -23,4 +23,22 @@ class Disc extends Model
         'artistes_id',
         'tipus_id'
     ];
+
+    // Relació 1:1 disc i gènere
+    public function genere()
+    {
+        return $this->belongsTo(Genere::class, 'generes_id');
+    }
+
+    // Relació 1:1 disc i tipu
+    public function tipu()
+    {
+        return $this->belongsTo(Tipu::class, 'tipus_id');
+    }
+
+    // Relació 1:n disc i artista
+    public function artista()
+    {
+        return $this->belongsTo(Artista::class, 'artistes_id');
+    }
 }

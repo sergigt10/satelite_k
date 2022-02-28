@@ -23,4 +23,10 @@ class Llibre extends Model
         'link_compra_fisica',
         'artistes_id'
     ];
+
+    // Relació 1:n llibre i artista
+    public function artista()
+    {
+        return $this->hasMany(Tipu::class, 'artistes_id');
+    }
 }

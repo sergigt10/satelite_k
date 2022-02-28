@@ -8,24 +8,23 @@
             data-owl-mousedrag="on">
             <div class="ps-banner--3 bg--top-right" data-background="{{ asset('frontend/img/slide-1.jpg') }}">
                 <div class="ps-banner__content">
-                    <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">Marina Rossell</p>
-                    <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">300 crits
-                    </h3>
-                    <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">Ja disponible!</a>
+                    <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_artista}}</p>
+                    <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_disc}}</h3>
+                    <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
                 </div>
             </div>
             <div class="ps-banner--3 bg--top-left right" data-background="{{ asset('frontend/img/slide-2.jpg') }}">
                 <div class="ps-banner__content">
-                    <p data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">GREEN VALLEY</p>
-                    <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">Trendy <br> Pink</h3>
-                    <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">Mira el videoclip</a>
+                    <p data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_artista}}</p>
+                    <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_disc}}</h3>
+                    <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
                 </div>
             </div>
             <div class="ps-banner--3 bg--top-right" data-background="{{ asset('frontend/img/slide-3.jpg') }}">
                 <div class="ps-banner__content">
-                    <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">JUANITO MAKANDÉ</p>
-                    <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">El Tango de <br> las Ratas</h3>
-                    <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">Ja disponible a totes les plataformes</a>
+                    <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_artista}}</p>
+                    <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_disc}}</h3>
+                    <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
                 </div>
             </div>
         </div>
@@ -47,181 +46,21 @@
             <div class="ps-tabs">
                 <div class="ps-tab active" id="tab-1">
                     <div class="row row--5-columns">
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/1.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#"> Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Carmen Valenzuela</a></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/2.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#"> Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Ágora</a></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/3.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#"> Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Dolce Vita</a></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/4.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#"> Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">El Tiempo Entre Dos Es Secreto</a></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/5.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#"> Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Maken Row</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ps-tab" id="tab-2">
-                    <div class="row row--5-columns">
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/1.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#"> Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Carmen Valenzuela</a></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                <a class="ps-post__overlay" href="#">
-                                    <img class="ps-product__image" src="{{ asset('frontend/img/2.jpg') }}" alt="Satélite K"/>
-                                </a>
-                                <div class="ps-product__actions"><a href="#">Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Ágora</a></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/3.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#">Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Dolce Vita</a></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/4.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#">Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">El Tiempo Entre Dos Es Secreto</a></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/5.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#">Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Maken Row</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ps-tab" id="tab-3">
-                    <div class="row row--5-columns">
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/1.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#">Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content">
-                                    <a class="ps-product__title" href="#">Carmen Valenzuela</a>
+                        @foreach ($discs as $disc)
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
+                                <div class="ps-product">
+                                    <div class="ps-product__thumbnail">
+                                        <a class="ps-post__overlay" href="#">
+                                            <img class="ps-product__image" src="{{ asset('frontend/img/1.jpg') }}" alt="Satélite K"/>
+                                        </a>
+                                        <div class="ps-product__actions"><a href="#">Veure disc</a></div>
+                                    </div>
+                                    <div class="ps-product__content">
+                                        <a class="ps-product__title" href="#">{{ $disc->artista->nom }} - {{ $disc->titol }}</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/2.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#">Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Ágora</a></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/3.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#">Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Dolce Vita</div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                        <div class="ps-product">
-                            <div class="ps-product__thumbnail">
-                                <a class="ps-post__overlay" href="#">
-                                    <img class="ps-product__image" src="{{ asset('frontend/img/4.jpg') }}" alt="Satélite K"/>
-                                </a>
-                                <div class="ps-product__actions"><a href="#">Veure disc</a></div>
-                            </div>
-                            <div class="ps-product__content"><a class="ps-product__title" href="#">El Tiempo Entre Dos Es Secreto</a></div>
-                        </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
-                            <div class="ps-product">
-                                <div class="ps-product__thumbnail">
-                                    <a class="ps-post__overlay" href="#">
-                                        <img class="ps-product__image" src="{{ asset('frontend/img/5.jpg') }}" alt="Satélite K"/>
-                                    </a>
-                                    <div class="ps-product__actions"><a href="#">Veure disc</a></div>
-                                </div>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">Maken Row</a></div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -243,38 +82,16 @@
                             <div class="ps-portfolio-box">
                                 <div class="ps-section__content">
                                     <div class="row">
+                                    @foreach ($artistes as $artista)
                                         <div class="col-sm-12 col-xl-3">
                                             <div class="ps-block--portfolio">
-                                                <div class="ps-block__thumbnail"><a class="ps-block__overlay" href="#"></a><img src="{{ asset('frontend/img/1-2.jpg') }}" alt="Satélite K"></div>
-                                                <div class="ps-block__content"><a href="#">Maruja Límon</a>
-                                                    <p>Ritmes llatins</p>
+                                                <div class="ps-block__thumbnail"><a class="ps-block__overlay" href="#"></a><img src='{{ asset("/storage/$artista->foto") }}' alt="Satélite K"></div>
+                                                <div class="ps-block__content"><a href="#">{{ $artista->nom }}</a>
+                                                    <p>{{ $artista->genere->nom_cat }}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-xl-3">
-                                            <div class="ps-block--portfolio">
-                                                <div class="ps-block__thumbnail"><a class="ps-block__overlay" href="#"></a><img src="{{ asset('frontend/img/1-1.jpg') }}" alt="Satélite K"></div>
-                                                <div class="ps-block__content"><a href="#">Xicu</a>
-                                                    <p>Musica urbana</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-xl-3">
-                                            <div class="ps-block--portfolio">
-                                                <div class="ps-block__thumbnail"><a class="ps-block__overlay" href="#"></a><img src="{{ asset('frontend/img/1-3.jpg') }}" alt="Satélite K"></div>
-                                                <div class="ps-block__content"><a href="#">Maken Row</a>
-                                                    <p>Hip-Hop</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-xl-3">
-                                            <div class="ps-block--portfolio">
-                                                <div class="ps-block__thumbnail"><a class="ps-block__overlay" href="#"></a><img src="{{ asset('frontend/img/1-4.jpg') }}" alt="Satélite K"></div>
-                                                <div class="ps-block__content"><a href="#">Dem</a>
-                                                    <p>Regae</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    @endforeach
                                     </div>
                                 </div>
                                 <div class="ps-section__footer text-center"><a class="ps-link--under" href="#">Descobreix-ne més</a></div>
@@ -283,8 +100,8 @@
                     </div>
                 </div>
             </div>
-            </div>
         </div>
+    </div>
     <div class="ps-section--instagram">
         <div class="ps-section__header">
             <div class="container">
