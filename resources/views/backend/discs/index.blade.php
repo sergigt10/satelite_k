@@ -26,6 +26,7 @@
                                     <thead>
                                         <tr>
                                             <th>Títol</th>
+                                            <th>Tipus</th>
                                             <th data-orderable="false">Editar</th>
                                             <th data-orderable="false">Eliminar</th>
                                         </tr>
@@ -36,6 +37,11 @@
                                                 <td>
                                                     <a href="{{ route('backend.discs.edit', ['disc' => $disc->id]) }}" style="color: black;">
                                                         {{ $disc->titol }}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('backend.discs.edit', ['disc' => $disc->id]) }}" style="color: black;">
+                                                        {{ $disc->tipu->nom_cat }}
                                                     </a>
                                                 </td>
                                                 <td>
