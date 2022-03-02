@@ -51,7 +51,7 @@ class SliderController extends Controller
 
         $ruta_foto = $request['foto']->store('backend/slides', 'public');
 
-        $foto = Image::make( storage_path("app/public/{$ruta_foto}") )->resize(1200, 550, function($constraint){$constraint->aspectRatio();});
+        $foto = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1020, 1024, function($constraint){$constraint->aspectRatio();});
         $foto->save();
 
         $artista = new Slider($data);
@@ -113,7 +113,7 @@ class SliderController extends Controller
 
             $ruta_foto = $request['foto']->store('backend/slides', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_foto}") )->resize(1200, 550, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1020, 1024, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
