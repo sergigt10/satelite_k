@@ -51,7 +51,7 @@
                                 <div class="ps-product">
                                     <div class="ps-product__thumbnail">
                                         <a class="ps-post__overlay" href="#">
-                                            <img class="ps-product__image" src="{{ asset('frontend/img/1.jpg') }}" alt="Satélite K"/>
+                                            <img class="ps-product__image" src='{{ asset("/storage/$disc->foto") }}' alt="Satélite K"/>
                                         </a>
                                         <div class="ps-product__actions"><a href="#">Veure disc</a></div>
                                     </div>
