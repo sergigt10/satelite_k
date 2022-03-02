@@ -13585,6 +13585,10 @@ input[type="button"].btn-block {
   border-radius: 15px;
 }
 
+.inici-backend .card:hover {
+  background-color: #000 !important;
+}
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;

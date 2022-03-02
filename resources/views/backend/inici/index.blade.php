@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('content')
-    <div class="main-panel">
+    <div class="main-panel inici-backend">
         <div class="content-wrapper">
             <div class="row">
                 <div class="col-md-12 grid-margin">
