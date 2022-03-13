@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artista;
 use App\Models\Genere;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str as Str;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
@@ -59,6 +60,8 @@ class ArtistaController extends Controller
         $foto->save();
 
         $artista = new Artista($data);
+        $numerosRandom = uniqid();
+        $artista->slug = Str::of($request['nom'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         $artista->foto = $ruta_foto;
         $artista->save();
 
@@ -107,7 +110,12 @@ class ArtistaController extends Controller
             'link_web' => '',
             'generes_id' => '',
         ]);
-
+        
+        // Si canviem el nom actualitzem slug
+        if($artista->nom !== $request['nom']) {
+            $numerosRandom = uniqid();
+            $artista->slug = Str::of($request['nom'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        }
         // Asignar los valores
         $artista->nom = $data['nom'];
         $artista->biografia_cat = $data['biografia_cat'];

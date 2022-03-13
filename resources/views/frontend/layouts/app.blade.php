@@ -30,17 +30,16 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/home-default.css') }}">
 </head>
 <body>
-<header class="header header--standard transparent" data-sticky="true">
+<header class="header header--standard {{ (request()->is('/')) ? 'transparent' : '' }}" data-sticky="true">
     <div class="header__left"><a class="ps-logo" href="{{ route('frontend.inici.index') }}"><img src="{{ asset('frontend/img/logo.png') }}" alt="Satélite K"></a></div>
     <div class="header__right">
         <div class="header__navigation">
             <ul class="menu">
-                <li><a href="#">Qui Som </a></li>
-                <li><a href="#">Artistes</a></li>
+                <li><a href="#">Qui Som</a></li>
+                <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
                 <li><a href="#">Catàleg</a></li>
                 <li><a href="#">Vídeos</a></li>
                 <li><a href="#">Serveis</a></li>
-                <li><a href="#">Blog</a></li>
                 <li><a href="#">Contacte</a></li>
             </ul>
         </div>
@@ -71,7 +70,7 @@
         <div class="header__actions"><a class="header__menu-toggle ps-toggle--sidebar" href="#navigation-mobile"><i class="icon-menu"></i></a></div>
     </div>
 </header>
-<div id="homepage-default">
+<div id="{{ (request()->is('/')) ? 'homepage-default' : '' }}" class="{{ (request()->is('/')) ? '' : 'ps-shop' }}">
 
     @yield('content')
 
@@ -90,11 +89,10 @@
                         <aside class="widget widget_footer widget_align-right">
                             <h3 class="widget-title">Satélite K</h3>
                             <ul class="ps-list--line">
-                                <li><a href="#">Artistes</a></li>
+                                <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
                                 <li><a href="#">Catàleg</a></li>
                                 <li><a href="#">Vídeos</a></li>
                                 <li><a href="#">Serveis</a></li>
-                                <li><a href="#">Blog</a></li>
                                 <li><a href="#">Contacte</a></li>
                             </ul>
                         </aside>

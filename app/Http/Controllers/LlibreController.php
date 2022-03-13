@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Llibre;
 use App\Models\Artista;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str as Str;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
@@ -64,6 +65,8 @@ class LlibreController extends Controller
         $foto->save();
 
         $llibre = new Llibre($data);
+        $numerosRandom = uniqid();
+        $llibre->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         $llibre->foto = $ruta_foto;
         $llibre->save();
 
@@ -118,6 +121,11 @@ class LlibreController extends Controller
             'artistes_id' => '',
         ]);
 
+        // Si canviem el nom actualitzem slug
+        if($llibre->titol_cat !== $request['titol_cat']) {
+            $numerosRandom = uniqid();
+            $llibre->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        }
         // Asignar los valores
         $llibre->titol_cat = $data['titol_cat'];
         $llibre->titol_esp = $data['titol_esp'];

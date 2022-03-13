@@ -7,6 +7,7 @@ use App\Models\Disc;
 use App\Models\Genere;
 use App\Models\Tipu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str as Str;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
@@ -71,6 +72,8 @@ class DiscController extends Controller
         $foto->save();
 
         $disc = new Disc($data);
+        $numerosRandom = uniqid();
+        $disc->slug = Str::of($request['titol'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         $disc->foto = $ruta_foto;
         $disc->save();
 
@@ -128,6 +131,11 @@ class DiscController extends Controller
             'tipus_id' => '',
         ]);
 
+        // Si canviem el nom actualitzem slug
+        if($disc->nom !== $request['titol']) {
+            $numerosRandom = uniqid();
+            $disc->slug = Str::of($request['titol'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        }
         // Asignar los valores
         $disc->titol = $data['titol'];
         $disc->embed_spotify = $data['embed_spotify'];

@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 /* Inici */
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
+Route::get('/artistes', 'ArtistesFrontendController@index')->name('frontend.artistes.index');
+Route::get('/artistes/{artista}', 'ArtistesFrontendController@show')->name('frontend.artistes.show');
 
 // BackEnd
 

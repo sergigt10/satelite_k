@@ -85,8 +85,10 @@
                                     @foreach ($artistes as $artista)
                                         <div class="col-sm-12 col-xl-3">
                                             <div class="ps-block--portfolio">
-                                                <div class="ps-block__thumbnail"><a class="ps-block__overlay" href="#"></a><img src='{{ asset("/storage/$artista->foto") }}' alt="Satélite K"></div>
-                                                <div class="ps-block__content"><a href="#">{{ $artista->nom }}</a>
+                                                <div class="ps-block__thumbnail">
+                                                    <a class="ps-block__overlay" href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}"></a>
+                                                    <img src='{{ asset("/storage/$artista->foto") }}' alt="Satélite K"></div>
+                                                <div class="ps-block__content"><a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">{{ $artista->nom }}</a>
                                                     <p>{{ $artista->genere->nom_cat }}</p>
                                                 </div>
                                             </div>
@@ -94,7 +96,7 @@
                                     @endforeach
                                     </div>
                                 </div>
-                                <div class="ps-section__footer text-center"><a class="ps-link--under" href="#">Descobreix-ne més</a></div>
+                                <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.artistes.index') }}">Descobreix-ne més</a></div>
                             </div>
                         </div>
                     </div>

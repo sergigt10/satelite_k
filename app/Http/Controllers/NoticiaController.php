@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artista;
 use App\Models\Noticia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str as Str;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
@@ -59,6 +60,8 @@ class NoticiaController extends Controller
         $foto->save();
 
         $noticia = new Noticia($data);
+        $numerosRandom = uniqid();
+        $noticia->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         $noticia->foto = $ruta_foto;
         $noticia->save();
 
@@ -108,6 +111,11 @@ class NoticiaController extends Controller
             'artistes_id' => '',
         ]);/* Max foto 10 MB */
 
+        // Si canviem el nom actualitzem slug
+        if($noticia->titol_cat !== $request['titol_cat']) {
+            $numerosRandom = uniqid();
+            $noticia->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        }
         // Asignar los valores
         $noticia->titol_cat = $data['titol_cat'];
         $noticia->titol_esp = $data['titol_esp'];

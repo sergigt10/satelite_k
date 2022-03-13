@@ -446,7 +446,8 @@ figure {
   display: inline-block;
   padding: 5px 0;
   line-height: 20px;
-  color: #999; }
+  color: #999;
+  font-size: 14px; }
   .ps-link--line:before {
     content: '';
     position: absolute;
