@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-02-2022 a las 21:24:18
+-- Tiempo de generación: 13-03-2022 a las 19:03:04
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `artistes` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
+  `slug` text NOT NULL,
   `foto` text NOT NULL,
   `biografia_cat` text NOT NULL,
   `biografia_esp` text NOT NULL,
@@ -41,9 +42,10 @@ CREATE TABLE `artistes` (
 -- Volcado de datos para la tabla `artistes`
 --
 
-INSERT INTO `artistes` (`id`, `nom`, `foto`, `biografia_cat`, `biografia_esp`, `link_web`, `generes_id`) VALUES
-(7, 'Prova', 'backend/artistes/6ox1IdVEAcShrZ0a87l1yWejMyyIbnLQHatNz5MW.png', '<div>Prova</div>', '<div>Prova</div>', NULL, 1),
-(8, 'Prova 2', 'backend/artistes/tu1MLUWP1mWDZwsa0dEU2yqN04wvo2ROUpXX656N.png', '<div>Prova 2</div>', '<div>Prova 2</div>', 'dasda', 1);
+INSERT INTO `artistes` (`id`, `nom`, `slug`, `foto`, `biografia_cat`, `biografia_esp`, `link_web`, `generes_id`) VALUES
+(22, 'ssS', 'sss', 'backend/artistes/kOukkKGEzGkfsMG7fU9KX0bDM3SAMR27LYv5ljNM.jpg', '<div>ASASA</div>', '<div>asAS</div>', NULL, 1),
+(23, 'prova', 'prova', 'backend/artistes/o7n2790UGlqzTtLoNDrOzieya4y5S9lUn7Umi07m.jpg', '<div>dfsfsf</div>', '<div>dfsfdfs</div>', NULL, 1),
+(25, 'Prova Hola ep', 'prova-hola-ep-622e239246e61', 'backend/artistes/huYpuROOZhwdSUTVO8QiaUvJ51ol8rZdof4IYFA0.png', '<div>dasd</div>', '<div>dasda</div>', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -55,6 +57,7 @@ CREATE TABLE `blog` (
   `id` int(11) NOT NULL,
   `titol_cat` varchar(255) NOT NULL,
   `titol_esp` varchar(255) NOT NULL,
+  `slug` text NOT NULL,
   `descripcio_cat` text NOT NULL,
   `descripcio_esp` text NOT NULL,
   `artistes_id` int(11) NOT NULL,
@@ -70,6 +73,7 @@ CREATE TABLE `blog` (
 CREATE TABLE `discs` (
   `id` int(11) NOT NULL,
   `titol` varchar(255) NOT NULL,
+  `slug` text NOT NULL,
   `foto` varchar(255) NOT NULL,
   `data_publicacio` date NOT NULL,
   `embed_spotify` text DEFAULT NULL,
@@ -87,10 +91,9 @@ CREATE TABLE `discs` (
 -- Volcado de datos para la tabla `discs`
 --
 
-INSERT INTO `discs` (`id`, `titol`, `foto`, `data_publicacio`, `embed_spotify`, `descripcio_cat`, `descripcio_esp`, `link_spotify`, `link_apple_music`, `link_venda_fisica`, `generes_id`, `artistes_id`, `tipus_id`) VALUES
-(2, 'Prova', 'backend/discs/5d6s4sz9MgkAHFqunsyzkz1MrmeaqSPt5d1cvKZH.png', '2022-02-09', NULL, '<div>dasdas</div>', '<div>dasda</div>', NULL, NULL, NULL, 1, 7, 1),
-(3, 'ddsad', 'backend/discs/ouMvEM9XlkLf0dk2dDVb0r0jzKLcdq9cr1xCVg97.png', '2022-02-23', NULL, '<div>sdsa</div>', '<div>dasdas</div>', NULL, NULL, NULL, 1, 7, 1),
-(4, 'dsada', 'backend/discs/aVZAV0NDFQVBBlwO4dxl6DOMYPy4yoZjCgPLZKAR.jpg', '2022-02-09', NULL, '<div>dasdasd</div>', '<div>sdasda</div>', NULL, NULL, NULL, 1, 7, 1);
+INSERT INTO `discs` (`id`, `titol`, `slug`, `foto`, `data_publicacio`, `embed_spotify`, `descripcio_cat`, `descripcio_esp`, `link_spotify`, `link_apple_music`, `link_venda_fisica`, `generes_id`, `artistes_id`, `tipus_id`) VALUES
+(14, 'Prova', 'prova', 'backend/discs/Ihy4C2G8rLSwhTa8w0NMdxdyzmaCKSQ1Cpxg21kT.jpg', '2022-03-24', NULL, '<div>dsadsa</div>', '<div>dasdsa</div>', NULL, NULL, NULL, 1, 22, 1),
+(15, 'Hola', 'hola', 'backend/discs/UpE8v4IqSixmag3oc6ojXdBsAQMKHZ537MHxzAz0.jpg', '2022-03-25', NULL, '<div>dadas</div>', '<div>dasdas</div>', NULL, NULL, NULL, 1, 22, 3);
 
 -- --------------------------------------------------------
 
@@ -138,6 +141,7 @@ CREATE TABLE `llibres` (
   `id` int(11) NOT NULL,
   `titol_cat` varchar(255) NOT NULL,
   `titol_esp` varchar(255) NOT NULL,
+  `slug` text NOT NULL,
   `autor` varchar(255) NOT NULL,
   `ilustrador` varchar(255) NOT NULL,
   `descripcio_cat` text NOT NULL,
@@ -153,8 +157,8 @@ CREATE TABLE `llibres` (
 -- Volcado de datos para la tabla `llibres`
 --
 
-INSERT INTO `llibres` (`id`, `titol_cat`, `titol_esp`, `autor`, `ilustrador`, `descripcio_cat`, `descripcio_esp`, `foto`, `editorial`, `data_publicacio`, `link_compra_fisica`, `artistes_id`) VALUES
-(1, 'Prova', 'Prova', 'Prova', 'Prova', '<div>Prova</div>', '<div>Prova</div>', 'backend/llibres/RTEB2xwX6ZhN3jSQ1y5cCB24TwrcdRiiDJt6BbtN.png', 'Prova', '2022-02-12', NULL, 8);
+INSERT INTO `llibres` (`id`, `titol_cat`, `titol_esp`, `slug`, `autor`, `ilustrador`, `descripcio_cat`, `descripcio_esp`, `foto`, `editorial`, `data_publicacio`, `link_compra_fisica`, `artistes_id`) VALUES
+(2, 'Provasa ads ad', 'Provasa ads ad', 'provasa-ads-ad-622e25573cd96', 'dasd', 'dasdas', '<div>dddsf</div>', '<div>fdsfsd</div>', 'backend/llibres/Zdf39ll6ffP0gbp0w7Rxl9lswyrormTLCFkiIEli.jpg', 'daddas', '2022-03-10', NULL, 23);
 
 -- --------------------------------------------------------
 
@@ -207,6 +211,31 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` int(11) NOT NULL,
+  `nom_disc` varchar(255) NOT NULL,
+  `nom_artista` varchar(255) NOT NULL,
+  `titol_link_cat` varchar(255) DEFAULT NULL,
+  `titol_link_esp` varchar(255) DEFAULT NULL,
+  `url_link` text DEFAULT NULL,
+  `foto` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `nom_disc`, `nom_artista`, `titol_link_cat`, `titol_link_esp`, `url_link`, `foto`) VALUES
+(1, 'Prova disc', 'Prova artista', 'dsad', 'dasdas', '#', 'backend/slides/bNl10ztj6qKTH8iL7axgdWrztN3JhfsMcMI7jwav.jpg'),
+(2, 'adasd', 'dads', 'dasdas', 'dasda', 'dasda', 'backend/slides/VDDoqXjNDoFnCsiffrD7VtbaWPiPAKOyoVd2bcHh.jpg'),
+(3, 'sadasd', 'dasdas', 'asdasdas', 'dasdsa', 'sadsadas', 'backend/slides/klAGB0HtFAHFiEWt669VawX1HjqRrNeaVFGemyvR.jpg');
 
 -- --------------------------------------------------------
 
@@ -327,6 +356,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indices de la tabla `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `tipus`
 --
 ALTER TABLE `tipus`
@@ -348,7 +383,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `artistes`
 --
 ALTER TABLE `artistes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `blog`
@@ -360,7 +395,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT de la tabla `discs`
 --
 ALTER TABLE `discs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `failed_jobs`
@@ -378,7 +413,7 @@ ALTER TABLE `generes`
 -- AUTO_INCREMENT de la tabla `llibres`
 --
 ALTER TABLE `llibres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `migrations`
@@ -391,6 +426,12 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tipus`
