@@ -81,8 +81,7 @@
                     <div class="col-xl-4 col-lg-5 col-md-4 col-sm-6 col-6 ">
                         <aside class="widget widget_footer widget_align-right">
                             <img src="{{ asset('frontend/img/logo.png') }}" alt="Satélite K">
-                            <br><br>
-                            <p>Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament musical de talents i propostes d'interès i risc cultural.</p>
+                            <p class="mt-20">Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament musical de talents i propostes d'interès i risc cultural.</p>
                         </aside>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
