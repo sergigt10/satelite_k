@@ -56,7 +56,7 @@
                                         <div class="ps-product__actions"><a href="#">Veure disc</a></div>
                                     </div>
                                     <div class="ps-product__content">
-                                        <a class="ps-product__title" href="#">{{ $disc->artista->nom }} - {{ $disc->titol }}</a>
+                                        <a class="ps-product__title" href="#">{{ $disc->titol }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -87,8 +87,10 @@
                                             <div class="ps-block--portfolio">
                                                 <div class="ps-block__thumbnail">
                                                     <a class="ps-block__overlay" href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}"></a>
-                                                    <img src='{{ asset("/storage/$artista->foto") }}' alt="Satélite K"></div>
-                                                <div class="ps-block__content"><a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">{{ $artista->nom }}</a>
+                                                    <img src='{{ asset("/storage/$artista->foto") }}' alt="Satélite K">
+                                                </div>
+                                                <div class="ps-block__content">
+                                                    <a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">{{ $artista->nom }}</a>
                                                     <p>{{ $artista->genere->nom_cat }}</p>
                                                 </div>
                                             </div>

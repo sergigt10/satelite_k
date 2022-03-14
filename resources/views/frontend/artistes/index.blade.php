@@ -25,7 +25,9 @@
                         </div>
                     </div>
                 @endforeach
-                <!-- {{ $artistes->links() }} -->
+            </div>
+            <div>
+                {{ $artistes->links() }}
             </div>
         </div>
     </div>

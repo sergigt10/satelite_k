@@ -36,7 +36,7 @@
         <div class="header__navigation">
             <ul class="menu">
                 <li><a href="#">Qui Som</a></li>
-                <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
+                <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) ? 'active' : '' }}">Artistes</a></li>
                 <li><a href="#">Catàleg</a></li>
                 <li><a href="#">Vídeos</a></li>
                 <li><a href="#">Serveis</a></li>

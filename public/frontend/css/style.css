@@ -506,8 +506,8 @@ body {
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      color: #636363;
-      border: 1px solid #404040; }
+      color: #222;
+      border: 1px solid #222; }
       .ps-list--social li a i {
         position: absolute;
         top: 50%;
@@ -2963,6 +2963,10 @@ textarea.form-control {
   -ms-flex-pack: start;
   justify-content: flex-start; }
 
+.widget_footer p {
+  text-align: justify;
+}
+
 .widget_footer .widget-title {
   font-size: 14px;
   margin-bottom: 15px;
@@ -4737,6 +4741,9 @@ textarea.form-control {
   line-height: 1.4em;
   color: #222; }
 
+a.ps-product__title:hover {
+  color: #429798;
+}
 .ps-product .ps-product__rating .br-wrapper .br-widget a {
   font-size: 13px; }
 
@@ -5125,7 +5132,7 @@ textarea.form-control {
   .ps-product--detail .ps-product__price {
     margin-bottom: 20px;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     color: #222; }
     .ps-product--detail .ps-product__price del {
       font-style: normal;
@@ -5469,11 +5476,11 @@ textarea.form-control {
         color: #999;
         border: 1px solid transparent; }
         .ps-product--detail .ps-tab-list li a:hover {
-          color: #222; }
+          color: #429798; }
       .ps-product--detail .ps-tab-list li:last-child {
         margin-right: 0; }
       .ps-product--detail .ps-tab-list li.active a {
-        color: #222; }
+        color: #429798; }
   .ps-product--detail .ps-tab .ps-document h4 {
     margin-bottom: 40px;
     font-weight: 400; }
@@ -5527,12 +5534,12 @@ textarea.form-control {
       max-width: 500px; } }
   @media (min-width: 992px) {
     .ps-product--detail .ps-product__title {
-      font-size: 30px; }
+      font-size: 35px; }
     .ps-product--detail .ps-product__desc p {
       font-size: 16px; }
     .ps-product--detail .ps-product__price {
       margin-bottom: 30px;
-      font-size: 20px;
+      font-size: 18px;
       text-transform: capitalize; }
     .ps-product--detail .ps-product__sharing {
       padding-top: 20px; }
@@ -9794,6 +9801,10 @@ textarea.form-control {
         transform-origin: 0 50%;
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1); }
+  .menu > li > a.active {
+    color: #429798;
+    font-weight: bold;
+  }
   .menu > li:first-child {
     padding-left: 0; }
   .menu > li:last-child {
