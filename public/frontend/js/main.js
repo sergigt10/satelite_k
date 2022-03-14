@@ -301,11 +301,11 @@
             } else {
                 readOnly = false;
             }
-            $(this).barrating({
-                theme: 'fontawesome-stars',
-                readonly: readOnly,
-                emptyValue: '0'
-            });
+            // $(this).barrating({
+            //     theme: 'fontawesome-stars',
+            //     readonly: readOnly,
+            //     emptyValue: '0'
+            // });
         });
     }
 

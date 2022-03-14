@@ -5125,7 +5125,7 @@ textarea.form-control {
   .ps-product--detail .ps-product__price {
     margin-bottom: 20px;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: bold;
     color: #222; }
     .ps-product--detail .ps-product__price del {
       font-style: normal;
@@ -5158,7 +5158,8 @@ textarea.form-control {
         font-size: 8px;
         background-color: #999; }
   .ps-product--detail .ps-product__desc {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    text-align: justify; }
     .ps-product--detail .ps-product__desc p {
       margin-bottom: 0;
       color: #777777;
@@ -5449,7 +5450,7 @@ textarea.form-control {
   .ps-product--detail .ps-tab-list {
     position: relative;
     display: block;
-    margin: 0 0 100px;
+    margin: 0 0 50px;
     padding: 20px 0;
     border-top: 1px solid #eaeaea;
     border-bottom: 1px solid #eaeaea;
@@ -5485,7 +5486,8 @@ textarea.form-control {
     font-size: 18px;
     color: #222; }
   .ps-product--detail .ps-product__content {
-    padding-top: 50px; }
+    /* padding-top: 50px;  */
+  }
   .ps-product--detail.has-background .ps-product__background {
     padding: 100px 0;
     background-color: #f2f1f0; }
@@ -5530,7 +5532,8 @@ textarea.form-control {
       font-size: 16px; }
     .ps-product--detail .ps-product__price {
       margin-bottom: 30px;
-      font-size: 24px; }
+      font-size: 20px;
+      text-transform: capitalize; }
     .ps-product--detail .ps-product__sharing {
       padding-top: 20px; }
     .ps-product--detail .ps-product__header {
@@ -5549,7 +5552,8 @@ textarea.form-control {
     .ps-product--detail .ps-product__review h4 {
       font-size: 24px; }
     .ps-product--detail .ps-product__content {
-      padding-top: 100px; } }
+      /* padding-top: 100px;  */
+    } }
   @media (min-width: 1200px) {
     .ps-product--detail .ps-product__thumbnail {
       -webkit-box-orient: horizontal;
@@ -5564,7 +5568,7 @@ textarea.form-control {
     .ps-product--detail .ps-product__variants {
       max-width: 80px; }
     .ps-product--detail .ps-product__info {
-      padding-left: 100px; }
+      padding-left: 20px; }
     .ps-product--detail.has-background .ps-product__background {
       padding: 100px 0 160px;
       padding-left: calc((100% - 1170px) / 2);
