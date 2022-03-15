@@ -22,7 +22,7 @@
                 <div class="ps-product__info">
                     <div class="ps-product__info-header" style="border-bottom: 1px solid #eaeaea;">
                         <h2 class="ps-product__title">{{ $artista->nom }}</h2>
-                        <h4 class="ps-product__price"><span style="color: #999999; font-size: 17px;">Gènere:</span> {{ $artista->genere->nom_cat }}</h4>
+                        <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">Gènere:</span> {{ $artista->genere->nom_cat }}</h4>
                     </div>
                     @if ($artista->link_web)
                         <div class="ps-list--social mt-30">
@@ -48,13 +48,13 @@
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
                                         <div class="ps-product">
                                             <div class="ps-product__thumbnail">
-                                                <a class="ps-post__overlay" href="#">
+                                                <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">
                                                     <img class="ps-product__image" src='{{ asset("/storage/$discsArtista->foto") }}' alt="Satélite K"/>
                                                 </a>
-                                                <div class="ps-product__actions"><a href="#">Veure disc</a></div>
+                                                <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">Veure disc</a></div>
                                             </div>
                                             <div>
-                                                <a href="#">{{ $discsArtista->titol }}</a>
+                                                <a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">{{ $discsArtista->titol }}</a>
                                             </div>
                                         </div>
                                     </div>

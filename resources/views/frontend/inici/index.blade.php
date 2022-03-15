@@ -50,13 +50,13 @@
                             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
                                 <div class="ps-product">
                                     <div class="ps-product__thumbnail">
-                                        <a class="ps-post__overlay" href="#">
+                                        <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
                                             <img class="ps-product__image" src='{{ asset("/storage/$disc->foto") }}' alt="Satélite K"/>
                                         </a>
-                                        <div class="ps-product__actions"><a href="#">Veure disc</a></div>
+                                        <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">Veure disc</a></div>
                                     </div>
                                     <div class="ps-product__content">
-                                        <a class="ps-product__title" href="#">{{ $disc->titol }}</a>
+                                        <a class="ps-product__title" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">{{ $disc->titol }}</a>
                                     </div>
                                 </div>
                             </div>

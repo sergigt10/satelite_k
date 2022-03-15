@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="{{ asset('frontend/fonts/Linearicons/Linearicons/Font/demo-files/demo.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/home-default.css') }}">
+
+    <link rel="shortcut icon" href="{{ asset('frontend/img/favicon.ico') }}" />
+
 </head>
 <body>
 <header class="header header--standard {{ (request()->is('/')) ? 'transparent' : '' }}" data-sticky="true">
@@ -37,7 +40,13 @@
             <ul class="menu">
                 <li><a href="#">Qui Som</a></li>
                 <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) ? 'active' : '' }}">Artistes</a></li>
-                <li><a href="#">Catàleg</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#" class="{{ (request()->is('discs*') || request()->is('llibres*')) ? 'active' : '' }}">Catàleg</a><span class="sub-toggle"></span>
+                    <ul class="sub-menu">
+                        <li><a href="{{ route('frontend.discs.index') }}">Discs</a></li>
+                        <li><a href="{{ route('frontend.llibres.index') }}">Llibres</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Vídeos</a></li>
                 <li><a href="#">Serveis</a></li>
                 <li><a href="#">Contacte</a></li>
@@ -149,29 +158,22 @@
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
 </div>
-<div class="ps-search" id="site-search"><a class="ps-btn--close" href="#"></a>
-    <div class="ps-search__content">
-        <form class="ps-form--primary-search" action="do_action" method="post">
-            <input class="form-control" type="text" placeholder="Search for...">
-            <button><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-</div>
-    <!-- Plugins-->
-    <script src="{{ asset('frontend/plugins/jquery-1.12.4.min.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/bootstrap4/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/imagesloaded.pkgd.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/masonry.pkgd.min.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/jquery.matchHeight-min.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/slick/slick/slick.min.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/lightGallery-master/dist/js/lightgallery-all.min.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/sticky-sidebar/dist/sticky-sidebar.min.js') }}"></script>
-    <script src="{{ asset('frontend/plugins/select2/dist/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/main.js') }}"></script>
 
-    @yield('scripts')
+<!-- Plugins-->
+<script src="{{ asset('frontend/plugins/jquery-1.12.4.min.js') }}"></script>
+<script src="{{ asset('frontend/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('frontend/plugins/bootstrap4/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('frontend/plugins/imagesloaded.pkgd.js') }}"></script>
+<script src="{{ asset('frontend/plugins/masonry.pkgd.min.js') }}"></script>
+<script src="{{ asset('frontend/plugins/jquery.matchHeight-min.js') }}"></script>
+<script src="{{ asset('frontend/plugins/slick/slick/slick.min.js') }}"></script>
+<script src="{{ asset('frontend/plugins/lightGallery-master/dist/js/lightgallery-all.min.js') }}"></script>
+<script src="{{ asset('frontend/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('frontend/plugins/sticky-sidebar/dist/sticky-sidebar.min.js') }}"></script>
+<script src="{{ asset('frontend/plugins/select2/dist/js/select2.full.min.js') }}"></script>
+<script src="{{ asset('frontend/js/main.js') }}"></script>
+
+@yield('scripts')
 
 </body>
 </html>

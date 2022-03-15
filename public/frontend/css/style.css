@@ -4750,13 +4750,13 @@ a.ps-product__title:hover {
 .ps-product .ps-product__rating .br-wrapper .br-widget .br-selected:after {
   color: #429798; }
 
-.ps-product .ps-product__price {
+.ps-product .ps-product__referencia {
   color: #bbbbbb;
   margin-bottom: 0;
   color: #bbb; }
-  .ps-product .ps-product__price.sale {
+  .ps-product .ps-product__referencia.sale {
     color: #222; }
-    .ps-product .ps-product__price.sale del {
+    .ps-product .ps-product__referencia.sale del {
       margin-right: 10px;
       color: #bbb; }
 
@@ -4797,12 +4797,12 @@ a.ps-product__title:hover {
   max-width: 450px; }
   .ps-product--horizontal .ps-product__title {
     font-size: 24px; }
-  .ps-product--horizontal .ps-product__price {
+  .ps-product--horizontal .ps-product__referencia {
     font-size: 16px;
     font-weight: 600;
     margin-top: 8px;
     color: #bbb; }
-    .ps-product--horizontal .ps-product__price span {
+    .ps-product--horizontal .ps-product__referencia span {
       font-weight: inherit; }
   .ps-product--horizontal .ps-product__desc {
     position: relative; }
@@ -4880,7 +4880,7 @@ a.ps-product__title:hover {
   .ps-product--outside .ps-product__title:hover {
     color: #429798; }
 
-.ps-product--outside .ps-product__price {
+.ps-product--outside .ps-product__referencia {
   font-size: 16px;
   line-height: 1em; }
 
@@ -4902,7 +4902,7 @@ a.ps-product__title:hover {
     font-size: 24px;
     margin-bottom: 22px;
     line-height: 1.1em; }
-  .ps-product--outside.small .ps-product__price {
+  .ps-product--outside.small .ps-product__referencia {
     margin-bottom: 22px; }
   .ps-product--outside.small .ps-product__content {
     position: relative; }
@@ -4926,7 +4926,7 @@ a.ps-product__title:hover {
     margin-bottom: 20px;
     font-size: 24px;
     line-height: 1.1em; }
-  .ps-product--outside.large .ps-product__price {
+  .ps-product--outside.large .ps-product__referencia {
     margin-bottom: 20px; }
   @media (min-width: 568px) {
     .ps-product--outside.large {
@@ -4945,7 +4945,7 @@ a.ps-product__title:hover {
       .ps-product--outside.large .ps-product__title {
         margin-bottom: 40px;
         font-size: 48px; }
-      .ps-product--outside.large .ps-product__price {
+      .ps-product--outside.large .ps-product__referencia {
         margin-bottom: 40px; } }
 
 @media (min-width: 992px) {
@@ -5129,27 +5129,27 @@ a.ps-product__title:hover {
       letter-spacing: .2em; }
   .ps-product--detail .ps-product__info {
     text-align: left; }
-  .ps-product--detail .ps-product__price {
+  .ps-product--detail .ps-product__referencia {
     margin-bottom: 20px;
     font-size: 18px;
     font-weight: 600;
     color: #222; }
-    .ps-product--detail .ps-product__price del {
+    .ps-product--detail .ps-product__referencia del {
       font-style: normal;
       color: #bcbcbc;
       font-size: 1.3rem; }
-    .ps-product--detail .ps-product__price.sale {
+    .ps-product--detail .ps-product__referencia.sale {
       color: #222; }
-      .ps-product--detail .ps-product__price.sale del {
+      .ps-product--detail .ps-product__referencia.sale del {
         margin-right: 20px;
         font-size: 22px;
         color: #999; }
-    .ps-product--detail .ps-product__price.out-stock span {
+    .ps-product--detail .ps-product__referencia.out-stock span {
       position: relative;
       font-size: 14px;
       color: #222;
       margin-left: 40px; }
-      .ps-product--detail .ps-product__price.out-stock span:before {
+      .ps-product--detail .ps-product__referencia.out-stock span:before {
         position: relative;
         top: -2px;
         display: inline-block;
@@ -5535,12 +5535,15 @@ a.ps-product__title:hover {
   @media (min-width: 992px) {
     .ps-product--detail .ps-product__title {
       font-size: 35px; }
+    .ps-product--detail .ps-product__subtitle a {
+      font-size: 25px;
+      font-weight: 600; }
     .ps-product--detail .ps-product__desc p {
       font-size: 16px; }
-    .ps-product--detail .ps-product__price {
-      margin-bottom: 30px;
-      font-size: 18px;
-      text-transform: capitalize; }
+    .ps-product--detail .ps-product__referencia {
+      margin-bottom: 15px;
+      font-size: 18px; 
+    }
     .ps-product--detail .ps-product__sharing {
       padding-top: 20px; }
     .ps-product--detail .ps-product__header {
@@ -5651,7 +5654,7 @@ a.ps-product__title:hover {
 .ps-product-carousel .ps-product__sku {
   margin-bottom: 40px; }
 
-.ps-product-carousel .ps-product__price {
+.ps-product-carousel .ps-product__referencia {
   margin-bottom: 40px; }
 
 .ps-product-carousel .ps-product__shopping {
@@ -5818,7 +5821,7 @@ a.ps-product__title:hover {
     font-size: 16px;
     color: #999;
     margin-bottom: 0; }
-  .ps-product--mini-cart .ps-product__price {
+  .ps-product--mini-cart .ps-product__referencia {
     color: #cc0000; }
   .ps-product--mini-cart .ps-product__remove {
     position: absolute;

@@ -5,9 +5,23 @@ use Illuminate\Support\Facades\Route;
 // FrontEnd
 
 /* Inici */
+
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
+
+/* Artistes */
+
 Route::get('/artistes', 'ArtistesFrontendController@index')->name('frontend.artistes.index');
 Route::get('/artistes/{artista}', 'ArtistesFrontendController@show')->name('frontend.artistes.show');
+
+/* Discs */
+
+Route::get('/discs', 'DiscsFrontendController@index')->name('frontend.discs.index');
+Route::get('/discs/{disc}', 'DiscsFrontendController@show')->name('frontend.discs.show');
+
+/* Llibres */
+
+Route::get('/llibres', 'LlibresFrontendController@index')->name('frontend.llibres.index');
+Route::get('/llibres/{llibre}', 'LlibresFrontendController@show')->name('frontend.llibres.show');
 
 // BackEnd
 
