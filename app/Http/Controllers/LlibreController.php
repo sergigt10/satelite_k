@@ -55,8 +55,7 @@ class LlibreController extends Controller
             'foto' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
             'editorial' => 'required',
             'data_publicacio' => 'required|date',
-            'link_compra_fisica' => '',
-            'artistes_id' => '',
+            'link_compra_fisica' => ''
         ]);/* Max foto 10 MB */
 
         $ruta_foto = $request['foto']->store('backend/llibres', 'public');
@@ -117,8 +116,7 @@ class LlibreController extends Controller
             'descripcio_esp' => 'required',
             'editorial' => 'required',
             'data_publicacio' => 'required|date',
-            'link_compra_fisica' => '',
-            'artistes_id' => '',
+            'link_compra_fisica' => ''
         ]);
 
         // Si canviem el nom actualitzem slug
@@ -136,7 +134,6 @@ class LlibreController extends Controller
         $llibre->editorial = $data['editorial'];
         $llibre->data_publicacio = $data['data_publicacio'];
         $llibre->link_compra_fisica = $data['link_compra_fisica'];
-        $llibre->artistes_id = $data['artistes_id'];
 
         // Si el usuario sube una nueva imagen
         if($request['foto']) {

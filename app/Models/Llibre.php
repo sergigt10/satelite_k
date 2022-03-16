@@ -20,13 +20,6 @@ class Llibre extends Model
         'foto',
         'editorial',
         'data_publicacio',
-        'link_compra_fisica',
-        'artistes_id'
+        'link_compra_fisica'
     ];
-
-    // Relació 1:n llibre i artista
-    public function artista()
-    {
-        return $this->hasMany(Tipu::class, 'artistes_id');
-    }
 }

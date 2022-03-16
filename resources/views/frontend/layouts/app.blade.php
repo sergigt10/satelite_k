@@ -38,7 +38,7 @@
     <div class="header__right">
         <div class="header__navigation">
             <ul class="menu">
-                <li><a href="#">Qui Som</a></li>
+                <li><a href="#" class="{{ (request()->is('qui-som-satelitek')) ? 'active' : '' }}">Qui som</a></li>
                 <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) ? 'active' : '' }}">Artistes</a></li>
                 <li class="menu-item-has-children">
                     <a href="#" class="{{ (request()->is('discs*') || request()->is('llibres*')) ? 'active' : '' }}">Catàleg</a><span class="sub-toggle"></span>
@@ -48,7 +48,14 @@
                     </ul>
                 </li>
                 <li><a href="#">Vídeos</a></li>
-                <li><a href="#">Serveis</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#">Serveis</a><span class="sub-toggle"></span>
+                    <ul class="sub-menu">
+                        <li><a href="#" target="_blank">Distribució física</a></li>
+                        <li><a href="#" target="_blank">Distribució i màrqueting digital</a></li>
+                        <li><a href="https://autoeditarte.com/" target="_blank">Autoedició</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Contacte</a></li>
             </ul>
         </div>
@@ -135,11 +142,11 @@
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
                         <div class="ps-list--social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fa fa-spotify"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/satelitek" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/satelitek" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://open.spotify.com/user/1125413741" target="_blank"><i class="fa fa-spotify"></i></a></li>
+                            <li><a href="https://www.instagram.com/satelite_k/" target="_blank"><i class="fa fa-instagram"></i></a></li>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">

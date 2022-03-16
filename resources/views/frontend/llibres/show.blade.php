@@ -39,4 +39,7 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid mt-50 mb-30">
+        <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.llibres.index') }}">Descobreix-ne més</a></div>
+    </div>
 @endsection

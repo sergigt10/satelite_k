@@ -23,12 +23,14 @@
                     <div class="ps-product__info-header" style="border-bottom: 1px solid #eaeaea;">
                         <h2 class="ps-product__title">{{ $artista->nom }}</h2>
                         <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">Gènere:</span> {{ $artista->genere->nom_cat }}</h4>
+                        @if ($artista->link_web)
+                            <h4 class="ps-product__referencia">
+                                <a href="{{ $artista->link_web }}" target="_blank">
+                                    <span style="color: #999999; font-size: 17px;">Pàgina web:</span> <i style="font-size: 20px;" class="fa fa-globe"></i>
+                                </a>
+                            </h4>
+                        @endif
                     </div>
-                    @if ($artista->link_web)
-                        <div class="ps-list--social mt-30">
-                            <a href="{{ $artista->link_web }}" target="_blank">Pàgina web: <i style="font-size: 20px;" class="fa fa-globe"></i></a>
-                        </div>
-                    @endif
                     <div class="ps-product__desc mt-30">
                         {!! $artista->biografia_cat !!}
                     </div>
@@ -38,8 +40,7 @@
                 <div class="container">
                     <ul class="ps-tab-list">
                         <li class="active"><a href="#tab-1">Edicions</a></li>
-                        <li class=""><a href="#tab-2">Llibres</a></li>
-                        <li class=""><a href="#tab-3">Notícies</a></li>
+                        <li class=""><a href="#tab-2">Notícies</a></li>
                     </ul>
                     <div class="ps-tabs">
                         <div class="ps-tab active" id="tab-1">
@@ -63,43 +64,29 @@
                         </div>
                         <div class="ps-tab" id="tab-2">
                             <div class="row">
-                                <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 ">
-                                    <div class="ps-document">
-                                        <h4>Introduction</h4>
-                                        <p>With ultralight, quality cotton canvas, the JanSport Houston backpack is ideal for a life-on-the-go. This backpack features premium faux leather bottom and trim details, padded 15 in laptop sleeve and tricot lined tablet sleeve</p>
-                                        <h4>Features</h4>
-                                        <ul>
-                                        <li>Fully padded back panel, web hauded handle</li>
-                                        <li>Internal padded sleeve fits 15″ laptop &amp; unique fabric application</li>
-                                        <li>Internal tricot lined tablet sleeve</li>
-                                        <li>One large main compartment and zippered</li>
-                                        <li>Premium cotton canvas fabric</li>
-                                        </ul>
+                                @foreach ($artista->noticies as $noticiesArtista)
+                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                        <div class="ps-product">
+                                            <div class="ps-product__thumbnail">
+                                                <a class="ps-post__overlay" href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">
+                                                    <img class="ps-product__image" src='{{ asset("/storage/$noticiesArtista->foto") }}' alt="Satélite K"/>
+                                                </a>
+                                                <div class="ps-product__actions"><a href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">Veure noticia</a></div>
+                                            </div>
+                                            <div>
+                                                <a href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">{{ $noticiesArtista->titol_cat }}</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ps-tab" id="tab-3">
-                            <div class="row">
-                                <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 ">
-                                    <div class="ps-document">
-                                        <h4>Introduction</h4>
-                                        <p>With ultralight, quality cotton canvas, the JanSport Houston backpack is ideal for a life-on-the-go. This backpack features premium faux leather bottom and trim details, padded 15 in laptop sleeve and tricot lined tablet sleeve</p>
-                                        <h4>Features</h4>
-                                        <ul>
-                                        <li>Fully padded back panel, web hauded handle</li>
-                                        <li>Internal padded sleeve fits 15″ laptop &amp; unique fabric application</li>
-                                        <li>Internal tricot lined tablet sleeve</li>
-                                        <li>One large main compartment and zippered</li>
-                                        <li>Premium cotton canvas fabric</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid mt-50 mb-30">
+        <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.artistes.index') }}">Descobreix-ne més</a></div>
     </div>
 @endsection

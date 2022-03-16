@@ -5,6 +5,10 @@
         <div class="ps-shop__header">
             <div class="ps-shop__left">
                 <h1>Artistes</h1>
+                <ul class="ps-breadcrumb">
+                    <li><a href="{{ route('frontend.inici.index') }}">Inici</a></li>
+                    <li>Artistes</li>
+                </ul>
             </div>
         </div>
         <div class="ps-shop__content">

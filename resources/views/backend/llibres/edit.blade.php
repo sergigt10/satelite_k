@@ -59,6 +59,11 @@
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
+                            @error('foto')
+                                <div class='alert alert-danger' role='alert'>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
 
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Títol llibre CAT *:</label>
@@ -99,19 +104,6 @@
                                     class="form-control @error('descripcio_esp') is-invalid @enderror "
                                     input="descripcio_esp">
                                 </trix-editor>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail3">Artista *:</label>
-                                <select id="artistes_id" name="artistes_id" class="form-control js-example-basic-single w-100">
-                                    @foreach ($artistes as $artista)
-                                        <option 
-                                            value="{{ $artista->id }}"
-                                            {{ $llibre->artistes_id == $artista->id ? 'selected' : '' }}
-                                        >
-                                            {{ $artista->nom }}
-                                        </option>
-                                    @endforeach
-                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail3"><i class="mdi mdi-shopping"></i> URL compra física (Ex: https://www.amazon.es/):</label>

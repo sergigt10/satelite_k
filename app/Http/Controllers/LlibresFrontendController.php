@@ -14,7 +14,7 @@ class LlibresFrontendController extends Controller
 
     public function index()
     {
-        $llibres = Llibre::paginate(2, ['*'], 'pagina');
+        $llibres = Llibre::paginate(12, ['*'], 'pagina');
         return view('frontend.llibres.index', compact('llibres'));
     }
 

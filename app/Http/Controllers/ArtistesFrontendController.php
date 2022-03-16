@@ -14,7 +14,7 @@ class ArtistesFrontendController extends Controller
      */
     public function index()
     {
-        $artistes = Artista::paginate(2, ['*'], 'pagina');
+        $artistes = Artista::paginate(12, ['*'], 'pagina');
         return view('frontend.artistes.index', compact('artistes'));
     }
 

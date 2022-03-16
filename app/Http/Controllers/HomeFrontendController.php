@@ -23,4 +23,8 @@ class HomeFrontendController extends Controller
         $discs = Disc::latest('data_publicacio')->take(5)->get();
         return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'artistes', 'discs'));
     }
+
+    public function about(){
+        return view('frontend.about.index');
+    }
 }

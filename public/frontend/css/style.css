@@ -1810,12 +1810,13 @@ textarea.form-control {
 
 .ps-post--detail {
   padding-bottom: 60px;
-  border-bottom: 1px solid #eaeaea; }
+  }
   .ps-post--detail h4 {
     font-size: 18px; }
   .ps-post--detail .ps-post__text {
     max-width: 800px;
-    margin: 0 auto 60px; }
+    margin: 0 auto 60px;
+    text-align: justify; }
   .ps-post--detail .ps-post__tags span {
     margin-right: 10px; }
   .ps-post--detail .ps-post__tags a {
@@ -1920,7 +1921,7 @@ textarea.form-control {
       font-size: 36px; } }
   @media (min-width: 992px) {
     .ps-post--detail {
-      padding-bottom: 100px; }
+      padding-bottom: 1px; }
       .ps-post--detail .ps-post__header {
         margin-bottom: 60px; }
         .ps-post--detail .ps-post__header h2 {
@@ -2068,7 +2069,7 @@ textarea.form-control {
 .ps-breadcrumb li {
   position: relative;
   display: inline-block;
-  color: #222;
+  color: #429798;
   font-size: 14px; }
   .ps-breadcrumb li:before {
     content: '';
@@ -9694,7 +9695,6 @@ a.ps-product__title:hover {
       width: 100%;
       font-size: 15px;
       color: #999;
-      text-transform: capitalize;
       -webkit-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
       -o-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
       transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1); }
@@ -9775,7 +9775,6 @@ a.ps-product__title:hover {
     font-weight: 400;
     line-height: 20px;
     color: #222;
-    text-transform: capitalize;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d; }
     .menu > li > a:after {
@@ -12113,3 +12112,8 @@ html .bg--parallax {
 .zoomOut {
   -webkit-animation-name: zoomOut;
   animation-name: zoomOut; }
+
+.qui-som p{
+  font-size: 16px;
+  color: #222;
+}

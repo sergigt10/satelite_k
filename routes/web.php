@@ -2,11 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-// FrontEnd
+// FrontEnd //
 
 /* Inici */
 
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
+
+/* Qui som */
+
+Route::get('/qui-som-satelitek', 'HomeFrontendController@about')->name('frontend.about.index');
 
 /* Artistes */
 
@@ -23,7 +27,12 @@ Route::get('/discs/{disc}', 'DiscsFrontendController@show')->name('frontend.disc
 Route::get('/llibres', 'LlibresFrontendController@index')->name('frontend.llibres.index');
 Route::get('/llibres/{llibre}', 'LlibresFrontendController@show')->name('frontend.llibres.show');
 
-// BackEnd
+/* Blog */
+
+Route::get('/noticies', 'NoticiesFrontendController@index')->name('frontend.noticies.index');
+Route::get('/noticies/{noticia}', 'NoticiesFrontendController@show')->name('frontend.noticies.show');
+
+// BackEnd //
 
 Auth::routes();
 
