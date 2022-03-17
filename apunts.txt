@@ -282,6 +282,12 @@ https://programmerclick.com/article/30571152395/
 # https://www.youtube.com/watch?v=6g8G3YQtQt4
 # https://stackoverflow.com/questions/45825889/how-to-create-laravel-storage-symbolic-link-for-production-or-sub-domain-system
 
+** php artisan route:cache y cuándo hacemos un cambio y para que se entere el servidor, subimos la carpeta bootstrap.
+
+
+https://laracasts.com/discuss/channels/laravel/the-get-method-is-not-supported-for-this-route-supported-methods-head-1
+https://stackoverflow.com/questions/65069616/getting-error-the-get-method-is-not-supported-for-this-route-supported-methods
+
 
 
 
