@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-<div class="ps-home-banner">
+    <div class="ps-home-banner">
         <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7500"
             data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1"
             data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000"
@@ -154,7 +154,8 @@
                     </figure>
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12 ">
-                    <form class="ps-form--keep-connected" action="index.html" method="get"><i class="icon-envelope"></i>
+                    <form class="ps-form--keep-connected" action="index.html" method="POST"><i class="icon-envelope"></i>
+                        @csrf
                         <input class="form-control" type="text" placeholder="Correu electrònic">
                         <button>Subscriu-te</button>
                     </form>

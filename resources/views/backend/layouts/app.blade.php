@@ -200,13 +200,13 @@
                             <i class="menu-arrow"></i>
                         </a>
                         <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"sliders") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-6">
-                            <ul class="nav flex-column sub-menu">
+                            <!-- <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
                                     <a class="nav-link {{ (request()->is('backend/sliders/create')) ? 'active' : '' }}" href="{{ route('backend.sliders.create') }}">
                                         Inserir
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> -->
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
                                     <a class="nav-link {{ ( (request()->is('backend/sliders')) ||  (request()->is('backend/sliders/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.sliders.index') }}">

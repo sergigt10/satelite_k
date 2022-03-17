@@ -61,7 +61,8 @@
         </div>
         <div class="header__container">
             <div class="header__search">
-                <form class="ps-form--header-search" action="#" method="get">
+                <form class="ps-form--header-search" action="#" method="POST">
+                    @csrf
                     <input class="form-control" type="text" placeholder="Cercador...">
                     <button><i class="icon-magnifier"></i></button>
                 </form>
