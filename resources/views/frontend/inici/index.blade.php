@@ -36,7 +36,7 @@
                     <div class="ps-section__header">
                     <figure>
                         <figcaption>Catàleg</figcaption>
-                        <p>Àlbums, biografies i fotos dels artistes de Satélite K</p>
+                        <p>Single, EP, Àlbum, Pack i llibres dels artistes de Satélite K</p>
                     </figure>
                     </div>
                 </div>

@@ -8404,7 +8404,8 @@ a.ps-product__title:hover {
         width: auto; } }
   @media (min-width: 1200px) {
     .ps-shop {
-      padding: 100px 0; }
+      padding: 100px 0;
+      padding-bottom: 1px; }
       .ps-shop .ps-shop__layouts {
         display: inline-block; }
       .ps-shop .ps-shop__filter-toggle--mobile {
@@ -9242,7 +9243,7 @@ a.ps-product__title:hover {
       -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
       flex-flow: row nowrap;
-      padding-top: 100px; }
+      padding-top: 10px; }
       .ps-contact .ps-section__left {
         padding-right: 135px; }
       .ps-contact .ps-section__right {

@@ -38,7 +38,7 @@
     <div class="header__right">
         <div class="header__navigation">
             <ul class="menu">
-                <li><a href="#" class="{{ (request()->is('qui-som-satelitek')) ? 'active' : '' }}">Qui som</a></li>
+                <li><a href="{{ route('frontend.about.index') }}" class="{{ (request()->is('qui-som-satelitek')) ? 'active' : '' }}">Qui som</a></li>
                 <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) ? 'active' : '' }}">Artistes</a></li>
                 <li class="menu-item-has-children">
                     <a href="#" class="{{ (request()->is('discs*') || request()->is('llibres*')) ? 'active' : '' }}">Catàleg</a><span class="sub-toggle"></span>
@@ -56,7 +56,7 @@
                         <li><a href="https://autoeditarte.com/" target="_blank">Autoedició</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Contacte</a></li>
+                <li><a href="{{ route('frontend.contact.index') }}" class="{{ (request()->is('contacte-satelitek')) ? 'active' : '' }}">Contacte</a></li>
             </ul>
         </div>
         <div class="header__container">
@@ -70,8 +70,8 @@
             <div class="header__actions">
                 <div class="ps-banner__social">
                     <ul class="ps-list--social">
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/satelite_k/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;CAT / ESP

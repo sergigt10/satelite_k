@@ -13,7 +13,7 @@ class DiscsFrontendController extends Controller
      */
     public function index()
     {
-        $discs = Disc::paginate(2, ['*'], 'pagina');
+        $discs = Disc::paginate(12, ['*'], 'pagina');
         return view('frontend.discs.index', compact('discs'));
     }
 

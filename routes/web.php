@@ -12,6 +12,10 @@ Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
 
 Route::get('/qui-som-satelitek', 'HomeFrontendController@about')->name('frontend.about.index');
 
+/* Qui som */
+
+Route::get('/contacte-satelitek', 'HomeFrontendController@contact')->name('frontend.contact.index');
+
 /* Artistes */
 
 Route::get('/artistes', 'ArtistesFrontendController@index')->name('frontend.artistes.index');

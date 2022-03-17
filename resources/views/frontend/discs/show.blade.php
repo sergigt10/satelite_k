@@ -19,7 +19,8 @@
                         </div>
                     </figure>
                     <div class="mt-30">
-                        <iframe src="https://open.spotify.com/embed/album/6ZG5lRT77aJ3btmArcykra?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen=""></iframe>
+                        <!-- <iframe src="https://open.spotify.com/embed/album/6ZG5lRT77aJ3btmArcykra?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen=""></iframe> -->
+                        {!! $disc->embed_spotify !!}
                     </div>
                 </div>
                 <div class="ps-product__info">
