@@ -33,8 +33,12 @@
                         <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">Format:</span> {{ $disc->tipu->nom_cat }}</h4>
                         <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">Data de publicació:</span> {{ (new DateTime($disc->data_publicacio))->format('d-m-Y') }}</h4>
                         <div class="mb-30">
-                            <a href="{{ $disc->link_spotify }}" target="_blank"><i style="font-size: 30px; position: relative; top: 2px;" class="fa fa-spotify mr-2"></i></a>
-                            <a href="{{ $disc->link_apple_music }}" target="_blank"><i style="font-size: 30px;" class="fa fa-apple mr-2"></i></a>
+                            @if ($disc->link_spotify)
+                                <a href="{{ $disc->link_spotify }}" target="_blank"><i style="font-size: 30px; position: relative; top: 2px;" class="fa fa-spotify mr-2"></i></a>
+                            @endif
+                            @if ($disc->link_apple_music)
+                                <a href="{{ $disc->link_apple_music }}" target="_blank"><i style="font-size: 30px;" class="fa fa-apple mr-2"></i></a>
+                            @endif
                             @if ($disc->link_venda_fisica)
                                 <a href="{{ $disc->link_venda_fisica }}" target="_blank"><i style="font-size: 30px;" class="fa fa-shopping-cart mr-2"></i></a>
                             @endif

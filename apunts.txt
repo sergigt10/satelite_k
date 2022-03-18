@@ -287,6 +287,7 @@ https://programmerclick.com/article/30571152395/
 
 https://laracasts.com/discuss/channels/laravel/the-get-method-is-not-supported-for-this-route-supported-methods-head-1
 https://stackoverflow.com/questions/65069616/getting-error-the-get-method-is-not-supported-for-this-route-supported-methods
+https://www.youtube.com/watch?v=LZwEv0DISU8
 
 
 
