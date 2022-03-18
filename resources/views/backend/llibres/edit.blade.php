@@ -107,7 +107,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail3"><i class="mdi mdi-shopping"></i> URL compra física (Ex: https://www.amazon.es/):</label>
-                                <input name="link_compra_fisica" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL compra física" value="{{ $artista->link_compra_fisica }}">
+                                <input name="link_compra_fisica" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL compra física" value="{{ $llibre->link_compra_fisica }}">
                             </div>
                             <div class="row grid-margin">
                                 <div class="col-lg-12">
@@ -130,7 +130,7 @@
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <div class="form-check form-check-danger" style="float:right;">
-                                                        <img src="{{env('APP_URL')}}/storage/thumb_img/thumb.php?src=../{{$llibre->foto}}&size=200x92&crop=0&trim=1">
+                                                        <img src='{{ asset("/storage/$llibre->foto") }}' alt="Satélite K" with=200 height=92>
                                                     </div>
                                                 </div>
                                             </div>

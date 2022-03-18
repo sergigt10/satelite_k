@@ -132,7 +132,7 @@ class DiscController extends Controller
         ]);
 
         // Si canviem el nom actualitzem slug
-        if($disc->nom !== $request['titol']) {
+        if($disc->titol !== $data['titol']) {
             $numerosRandom = uniqid();
             $disc->slug = Str::of($request['titol'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         }

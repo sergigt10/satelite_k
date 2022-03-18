@@ -112,7 +112,7 @@ class NoticiaController extends Controller
         ]);/* Max foto 10 MB */
 
         // Si canviem el nom actualitzem slug
-        if($noticia->titol_cat !== $request['titol_cat']) {
+        if($noticia->titol_cat !== $data['titol_cat']) {
             $numerosRandom = uniqid();
             $noticia->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         }

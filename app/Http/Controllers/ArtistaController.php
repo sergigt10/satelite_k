@@ -112,7 +112,7 @@ class ArtistaController extends Controller
         ]);
         
         // Si canviem el nom actualitzem slug
-        if($artista->nom !== $request['nom']) {
+        if($artista->nom !== $data['nom']) {
             $numerosRandom = uniqid();
             $artista->slug = Str::of($request['nom'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         }

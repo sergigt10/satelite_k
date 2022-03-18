@@ -120,7 +120,7 @@ class LlibreController extends Controller
         ]);
 
         // Si canviem el nom actualitzem slug
-        if($llibre->titol_cat !== $request['titol_cat']) {
+        if($llibre->titol_cat !== $data['titol_cat']) {
             $numerosRandom = uniqid();
             $llibre->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         }

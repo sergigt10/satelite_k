@@ -6,21 +6,21 @@
             data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1"
             data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000"
             data-owl-mousedrag="on">
-            <div class="ps-banner--3 bg--top-right" data-background="{{ asset('frontend/img/slide-1.jpg') }}">
+            <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider1->foto") }}'>
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_artista}}</p>
                     <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_disc}}</h3>
                     <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
                 </div>
             </div>
-            <div class="ps-banner--3 bg--top-left right" data-background="{{ asset('frontend/img/slide-2.jpg') }}">
+            <div class="ps-banner--3 bg--top-left right" data-background='{{ asset("/storage/$slider2->foto") }}'>
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_artista}}</p>
                     <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_disc}}</h3>
                     <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
                 </div>
             </div>
-            <div class="ps-banner--3 bg--top-right" data-background="{{ asset('frontend/img/slide-3.jpg') }}">
+            <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider3->foto") }}'>
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_artista}}</p>
                     <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_disc}}</h3>
