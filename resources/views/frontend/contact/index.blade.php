@@ -40,6 +40,9 @@
                     </form>
                 </div>
                 <div class="ps-section__right">
+                    <figure>
+                        <figcaption>Segueix-nos!</figcaption>
+                    </figure>
                     <ul class="ps-list--social">
                         <li><a href="https://www.facebook.com/satelitek" target="_blank"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://twitter.com/satelitek" target="_blank"><i class="fa fa-twitter"></i></a></li>

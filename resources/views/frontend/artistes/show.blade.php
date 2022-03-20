@@ -40,7 +40,9 @@
                 <div class="container">
                     <ul class="ps-tab-list">
                         <li class="active"><a href="#tab-1">Edicions</a></li>
-                        <li class=""><a href="#tab-2">Notícies</a></li>
+                        @if (count($artista->noticies) > 0)
+                            <li class=""><a href="#tab-2">Notícies</a></li>
+                        @endif
                     </ul>
                     <div class="ps-tabs">
                         <div class="ps-tab active" id="tab-1">

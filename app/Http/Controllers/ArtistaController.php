@@ -167,16 +167,6 @@ class ArtistaController extends Controller
                 $disc->delete();
             });
         }
-        
-        if($artista->llibres) {
-            /* Eliminar imatges de llibres */
-            $artista->llibres->each(function ($llibre) {
-                if (File::exists(storage_path("app/public/$llibre->foto"))) {
-                    File::delete(storage_path("app/public/$llibre->foto"));
-                }
-                $llibre->delete();
-            });
-        }
 
         if($artista->noticies) {
             /* Eliminar imatges de notícies */

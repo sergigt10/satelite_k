@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Artista;
 use App\Models\Disc;
+use App\Models\Llibre;
+use App\Models\Noticia;
 
 class HomeFrontendController extends Controller
 {
@@ -30,5 +32,21 @@ class HomeFrontendController extends Controller
 
     public function contact(){
         return view('frontend.contact.index');
+    }
+
+    public function search(Request $request) {
+
+        if($request->input('cercar') === null ||  $request->input('cercar') === '') {
+            abort(404);
+        } else {
+            $artistaCercar = $discCercar = $noticiaCercar = $llibreCercar = $request->input('cercar') ;
+        
+            $filterArtista = Artista::where('nom','LIKE','%'.$artistaCercar.'%')->paginate(12, ['*'], 'pagina');
+            $filterDisc = Disc::where('titol','LIKE','%'.$discCercar.'%')->paginate(12, ['*'], 'pagina');
+            $filterNoticia = Noticia::where('titol_cat','LIKE','%'.$noticiaCercar.'%')->paginate(12, ['*'], 'pagina');
+            $filterLlibre = Llibre::where('titol_cat','LIKE','%'.$llibreCercar.'%')->paginate(12, ['*'], 'pagina');
+
+            return view('frontend.search.index', compact('filterArtista', 'filterDisc', 'filterLlibre', 'filterNoticia'));
+        }
     }
 }

@@ -2,17 +2,15 @@
 
 @section('content')
     <div class="container">
-        <div class="ps-section__header">
-            <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
-                <div class="ps-section__header">
+        <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
+            <div class="ps-section__header">
                 <figure>
                     <figcaption>Llibres</figcaption>
                     <p>Llibres de Satélite K</p>
                 </figure>
-                </div>
             </div>
         </div>
-        <div class="ps-shop__content">
+        <div class="ps-web__content">
             <div class="row">
                 @foreach ($llibres as $llibre)
                     <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6 col-6 ">

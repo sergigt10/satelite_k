@@ -438,7 +438,7 @@
             })
         }
 
-        $('.ps-shop__filter-toggle').on('click', function(e) {
+        $('.ps-web__filter-toggle').on('click', function(e) {
             e.preventDefault();
             $('#shop-filter').slideToggle();
         });
@@ -492,8 +492,10 @@
 
     function select2Cofig() {
         $('select.ps-select').select2({
-            placeholder: $(this).data('placeholder'),
-            minimumResultsForSearch: -1
+            placeholder: "-",
+            allowClear: true
+            // placeholder: $(this).data('placeholder'),
+            // minimumResultsForSearch: -1
         });
     }
 

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/plugins/bootstrap4/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/plugins/owl-carousel/assets/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/plugins/slick/slick/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/plugins/lightGallery-master/dist/css/lightgallery.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('frontend/plugins/lightGallery-master/dist/css/lightgallery.min.css') }}"> -->
     <link rel="stylesheet" href="{{ asset('frontend/plugins/jquery-ui/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/plugins/select2/dist/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/fonts/Linearicons/Linearicons/Font/demo-files/demo.css') }}">
@@ -61,12 +61,11 @@
         </div>
         <div class="header__container">
             <div class="header__search">
-                <form class="ps-form--header-search" action="#" method="POST">
+                <form class="ps-form--header-search" action="{{ route('frontend.search.index') }}" method="POST">
                     @csrf
-                    <input class="form-control" type="text" placeholder="Cercador...">
+                    <input class="form-control" type="text" placeholder="Cercador..." name="cercar" required>
                     <button><i class="icon-magnifier"></i></button>
                 </form>
-                <a class="header__search-mini" href="#"><i class="icon-magnifier"></i></a>
             </div>
             <div class="header__actions">
                 <div class="ps-banner__social">
@@ -87,7 +86,7 @@
         <div class="header__actions"><a class="header__menu-toggle ps-toggle--sidebar" href="#navigation-mobile"><i class="icon-menu"></i></a></div>
     </div>
 </header>
-<div id="{{ (request()->is('/')) ? 'homepage-default' : '' }}" class="{{ (request()->is('/')) ? '' : 'ps-shop' }}">
+<div id="{{ (request()->is('/')) ? 'homepage-default' : '' }}" class="{{ (request()->is('/')) ? '' : 'ps-web' }}">
 
     @yield('content')
 
@@ -172,8 +171,8 @@
 <script src="{{ asset('frontend/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('frontend/plugins/bootstrap4/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('frontend/plugins/imagesloaded.pkgd.js') }}"></script>
-<script src="{{ asset('frontend/plugins/masonry.pkgd.min.js') }}"></script>
-<script src="{{ asset('frontend/plugins/jquery.matchHeight-min.js') }}"></script>
+<!-- <script src="{{ asset('frontend/plugins/masonry.pkgd.min.js') }}"></script> -->
+<!-- <script src="{{ asset('frontend/plugins/jquery.matchHeight-min.js') }}"></script> -->
 <script src="{{ asset('frontend/plugins/slick/slick/slick.min.js') }}"></script>
 <script src="{{ asset('frontend/plugins/lightGallery-master/dist/js/lightgallery-all.min.js') }}"></script>
 <script src="{{ asset('frontend/plugins/jquery-ui/jquery-ui.min.js') }}"></script>

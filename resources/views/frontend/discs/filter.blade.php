@@ -14,9 +14,14 @@
                             <div class="ps-web__sorting">
                                 <span>Artista</span>
                                 <select class="ps-select" name="artista" style="width: 100%">
-                                    <option></option>
                                     @foreach ($artistes as $artista)
-                                        <option value="{{ $artista->id }}">{{ $artista->nom }}</option>
+                                        <option></option>
+                                        <option 
+                                            value="{{ $artista->id }}" 
+                                            {{ request()->get('artista') == $artista->id ? 'selected' : '' }}
+                                        >
+                                            {{ $artista->nom }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -25,7 +30,12 @@
                                 <select class="ps-select" name="tipus" style="width: 100%">
                                     <option></option>
                                     @foreach ($tipus as $tipu)
-                                        <option value="{{ $tipu->id }}">{{ $tipu->nom_cat }}</option>
+                                        <option 
+                                            value="{{ $tipu->id }}" 
+                                            {{ request()->get('tipus') == $tipu->id ? 'selected' : '' }}
+                                        >
+                                            {{ $tipu->nom_cat }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -34,15 +44,21 @@
                                 <select class="ps-select" name="genere" style="width: 100%">
                                     <option></option>
                                     @foreach ($generes as $genere)
-                                        <option value="{{ $genere->id }}">{{ $genere->nom_cat }}</option>
+                                        <option 
+                                            value="{{ $genere->id }}" 
+                                            {{ request()->get('genere') == $genere->id ? 'selected' : '' }}
+                                        >
+                                            {{ $genere->nom_cat }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="ps-web__sorting">
                                 <span>Any</span>
-                                <input name="any" type="number" min="2000" max="2099" step="1" value="" style="width: 100%" placeholder="0000" onKeyDown="return false"/>
+                                <input name="any" type="number" min="2000" max="2099" step="1" value="{{ request()->get('any') }}" style="width: 100%" placeholder="0000" onKeyDown="return false"/>
                             </div>
                             <div class="ps-web__footer mt-20"><a class="ps-link--under" href="javascript:;" onclick="document.getElementById('filtre').submit();">Filtrar</a></div>
+                            <div class="ps-web__footer mt-20"><a class="ps-link--under" href="{{ route('frontend.discs.index') }}">Reiniciar</a></div>
                         </form>
                     </aside>
                 </div>
@@ -50,9 +66,11 @@
                     <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
                         <div class="ps-section__header">
                             <figure>
-                                <figcaption>Discs</figcaption>
-                                <p>Single, EP, Àlbum i Packs dels artistes de Satélite K</p>
+                                <figcaption>Resultats</figcaption>
                             </figure>
+                            @if((count($discs) == 0))
+                                <p class="mt-20">No hi ha cap resultat, torna a fer una nova cerca.</p>
+                            @endif
                         </div>
                     </div>
                     <div class="ps-web__content">

@@ -8,11 +8,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
 
+/* Cercador */
+
+Route::post('/cercador-satelitek', 'HomeFrontendController@search')->name('frontend.search.index');
+
 /* Qui som */
 
 Route::get('/qui-som-satelitek', 'HomeFrontendController@about')->name('frontend.about.index');
 
-/* Qui som */
+/* Contacte */
 
 Route::get('/contacte-satelitek', 'HomeFrontendController@contact')->name('frontend.contact.index');
 
@@ -25,6 +29,7 @@ Route::get('/artistes/{artista}', 'ArtistesFrontendController@show')->name('fron
 
 Route::get('/discs', 'DiscsFrontendController@index')->name('frontend.discs.index');
 Route::get('/discs/{disc}', 'DiscsFrontendController@show')->name('frontend.discs.show');
+Route::post('/discs/filtre', 'DiscsFrontendController@filter')->name('frontend.discs.filter');
 
 /* Llibres */
 
