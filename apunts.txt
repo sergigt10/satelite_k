@@ -290,6 +290,9 @@ https://www.youtube.com/watch?v=LZwEv0DISU8
 ** php artisan route:cache y cuándo hacemos un cambio y para que se entere el servidor, subimos la carpeta bootstrap.
 ** Optimizar laravel -> https://www.cloudways.com/blog/laravel-performance-optimization/
 
+** Contacto enviar correos **
+# https://www.youtube.com/watch?v=Ei3RVhdcE0A
+
 
 
 

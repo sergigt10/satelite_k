@@ -18,7 +18,8 @@ Route::get('/qui-som-satelitek', 'HomeFrontendController@about')->name('frontend
 
 /* Contacte */
 
-Route::get('/contacte-satelitek', 'HomeFrontendController@contact')->name('frontend.contact.index');
+Route::get('/contacte-satelitek', 'ContactFrontendController@index')->name('frontend.contact.index');
+Route::post('/contacte-satelitek/enviat', 'ContactFrontendController@sendEmail')->name('frontend.sendMail');
 
 /* Artistes */
 

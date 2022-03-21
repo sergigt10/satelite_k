@@ -15,24 +15,30 @@
             </div>
             <div class="ps-contact">
                 <div class="ps-section__left">
-                    <form class="ps-form--contact" action="contact-us.html" method="get">
+                    @if(session('message_mail'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('message_mail') }}
+                        </div>
+                    @endif
+                    <form class="ps-form--contact" action="{{route('frontend.sendMail')}}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                                 <div class="form-group">
                                     <label>Nom i cognoms <sup>*<sup></sup></sup></label>
-                                    <input class="form-control" type="text" placeholder="">
+                                    <input class="form-control" type="text" placeholder="" name="name" required>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                                 <div class="form-group">
                                     <label>Correu electrònic<sup>*<sup></sup></sup></label>
-                                    <input class="form-control" type="email" placeholder="">
+                                    <input class="form-control" type="email" placeholder="" name="mail" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Missatge<sup>*<sup></sup></sup></label>
-                            <textarea class="form-control" rows="6" placeholder=""></textarea>
+                            <textarea class="form-control" rows="6" placeholder="" name="msg" required></textarea>
                         </div>
                             <div class="form-group submit">
                             <button class="ps-btn ps-btn--black">Enviar missatge</button>

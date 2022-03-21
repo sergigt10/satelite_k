@@ -26,14 +26,6 @@ class HomeFrontendController extends Controller
         return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'artistes', 'discs'));
     }
 
-    public function about(){
-        return view('frontend.about.index');
-    }
-
-    public function contact(){
-        return view('frontend.contact.index');
-    }
-
     public function search(Request $request) {
 
         if($request->input('cercar') === null ||  $request->input('cercar') === '') {
