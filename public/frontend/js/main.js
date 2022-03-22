@@ -146,7 +146,7 @@
                         margin: dataGap,
                         autoplay: dataAuto,
                         autoplayTimeout: dataSpeed,
-                        autoplayHoverPause: true,
+                        autoplayHoverPause: false,
                         loop: dataLoop,
                         nav: dataNav,
                         mouseDrag: datamouseDrag,

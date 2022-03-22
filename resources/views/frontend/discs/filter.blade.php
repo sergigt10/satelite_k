@@ -12,7 +12,7 @@
                         <form id="filtre" action="{{ route('frontend.discs.filter') }}" method="POST">
                             @csrf
                             <div class="ps-web__sorting">
-                                <span>Artista</span>
+                                <span>Artista:</span>
                                 <select class="ps-select" name="artista" style="width: 100%">
                                     @foreach ($artistes as $artista)
                                         <option></option>
@@ -26,7 +26,7 @@
                                 </select>
                             </div>
                             <div class="ps-web__sorting">
-                                <span>Tipus</span>
+                                <span>Tipus:</span>
                                 <select class="ps-select" name="tipus" style="width: 100%">
                                     <option></option>
                                     @foreach ($tipus as $tipu)
@@ -40,7 +40,7 @@
                                 </select>
                             </div>
                             <div class="ps-web__sorting">
-                                <span>Gènere</span>
+                                <span>Gènere:</span>
                                 <select class="ps-select" name="genere" style="width: 100%">
                                     <option></option>
                                     @foreach ($generes as $genere)
@@ -54,7 +54,7 @@
                                 </select>
                             </div>
                             <div class="ps-web__sorting">
-                                <span>Any</span>
+                                <span>Any:</span>
                                 <input name="any" type="number" min="2000" max="2099" step="1" value="{{ request()->get('any') }}" style="width: 100%" placeholder="0000" onKeyDown="return false"/>
                             </div>
                             <div class="ps-web__footer mt-20"><a class="ps-link--under" href="javascript:;" onclick="document.getElementById('filtre').submit();">Filtrar</a></div>

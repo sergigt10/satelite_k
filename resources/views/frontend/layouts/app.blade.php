@@ -38,10 +38,11 @@
     <div class="header__right">
         <div class="header__navigation">
             <ul class="menu">
+                <li><a href="{{ route('frontend.inici.index') }}" class="{{ (request()->is('/')) ? 'active' : '' }}">Inici</a></li>
                 <li><a href="{{ route('frontend.about.index') }}" class="{{ (request()->is('qui-som-satelitek')) ? 'active' : '' }}">Qui som</a></li>
                 <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) ? 'active' : '' }}">Artistes</a></li>
                 <li class="menu-item-has-children">
-                    <a href="#" class="{{ (request()->is('discs*') || request()->is('llibres*')) ? 'active' : '' }}">Catàleg</a><span class="sub-toggle"></span>
+                    <a href="{{ route('frontend.discs.index') }}" class="{{ (request()->is('discs*') || request()->is('llibres*')) ? 'active' : '' }}">Catàleg</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
                         <li><a href="{{ route('frontend.discs.index') }}">Discs</a></li>
                         <li><a href="{{ route('frontend.llibres.index') }}">Llibres</a></li>

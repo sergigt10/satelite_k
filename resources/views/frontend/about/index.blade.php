@@ -19,7 +19,7 @@
                     <p>A finales de 1997 se constituye formalmente el propio sello Satélite K dando salida a importantes producciones</p>
                 </blockquote>
                 <figure>
-                    <small>CARLES SANTOS</small>
+                    <small>Enric Pedascoll</small>
                     <h4>CEO</h4>
                     <p>El primero de ellos en cronología, el sello K Industria Cultural, es desde dónde a partir del año 1992 se editan los primeros trabajos, coincidiendo y por encargo de las Olimpiadas de Barcelona, para las cuales se crean los toques que acompañaron a los atletas en los podios, también conocidos como los toques de entrega de medallas, y las fanfarrias de las ceremonias de inauguración, bajo la dirección del músico y compositor Carles Santos.</p>
                 </figure>
