@@ -42,6 +42,10 @@ Route::get('/llibres/{llibre}', 'LlibresFrontendController@show')->name('fronten
 Route::get('/noticies', 'NoticiesFrontendController@index')->name('frontend.noticies.index');
 Route::get('/noticies/{noticia}', 'NoticiesFrontendController@show')->name('frontend.noticies.show');
 
+/* Videos */
+
+Route::get('/videos', 'YoutubeController@index')->name('frontend.videos.index');
+
 // BackEnd //
 
 Auth::routes();

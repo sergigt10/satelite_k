@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="ps-section__header">
-            <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
+            <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                 <div class="ps-section__header">
                 <figure>
                     <figcaption>Resultats de la cerca: {{ htmlspecialchars(request()->get('cercar')) }}</figcaption>
@@ -16,7 +16,7 @@
         </div>
         @if(count($filterArtista) > 0)
             <div class="ps-section__header">
-                <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
+                <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                     <div class="ps-section__header">
                     <figure>
                         <figcaption>Artistes</figcaption>
@@ -51,7 +51,7 @@
 
         @if(count($filterDisc) > 0)
             <div class="ps-section__header">
-                <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
+                <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                     <div class="ps-section__header">
                     <figure>
                         <figcaption>Discs</figcaption>
@@ -86,7 +86,7 @@
 
         @if(count($filterLlibre) > 0)
             <div class="ps-section__header">
-                <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
+                <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                     <div class="ps-section__header">
                     <figure>
                         <figcaption>Llibres</figcaption>

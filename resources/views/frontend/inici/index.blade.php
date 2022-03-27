@@ -32,7 +32,7 @@
     <div class="ps-home-product--fullwidth ps-tab-root">
         <div class="ps-section__header">
             <div class="container">
-                <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
+                <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                     <div class="ps-section__header">
                     <figure>
                         <figcaption>Catàleg</figcaption>
@@ -67,7 +67,7 @@
             <div class="ps-section__footer text-center"><a class="ps-link--under" href="#">Descobreix-ne més</a></div>
         </div>
     </div>
-    <div class="ps-section ps-home-top-sellers">
+    <div class="ps-section ps-home-top-web">
         <div class="container">
             <div class="ps-section__header">
                 <figure>
@@ -109,10 +109,11 @@
     <div class="ps-section--instagram">
         <div class="ps-section__header">
             <div class="container">
-                <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
+                <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                     <div class="ps-section__header">
                     <figure>
                         <figcaption>Segueix-nos!</figcaption>
+                        <p>Les últimes novetats de Satélite K</p>
                     </figure>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
+        <div class="ps-section ps-home-top-web" style="padding-top: 0px">
             <div class="ps-section__header">
                 <figure>
                     <figcaption>Artistes</figcaption>

@@ -7679,18 +7679,18 @@ a.ps-product__title:hover {
       .ps-home-product--fullwidth .container-fluid {
         padding: 0 80px; } }
 
-.ps-home-top-sellers .ps-product-box {
+.ps-home-top-web .ps-product-box {
   margin-bottom: 50px; }
-  .ps-home-top-sellers .ps-product-box.reverse {
+  .ps-home-top-web .ps-product-box.reverse {
     margin-bottom: 0; }
-    .ps-home-top-sellers .ps-product-box.reverse .ps-product--outside.large {
+    .ps-home-top-web .ps-product-box.reverse .ps-product--outside.large {
       margin-left: 0; }
 
-.ps-home-top-sellers .ps-section__header {
+.ps-home-top-web .ps-section__header {
   margin-bottom: 50px; }
 
 @media (min-width: 1200px) {
-  .ps-home-top-sellers .ps-product-box {
+  .ps-home-top-web .ps-product-box {
     margin-bottom: 150px; } }
 
 .ps-deal-of-day {
@@ -9474,7 +9474,7 @@ a.ps-product__title:hover {
       font-size: 32px; }
   @media (min-width: 1200px) {
     .ps-page--default {
-      padding: 50px 0 30px; }
+      padding: 50px 0 100px; }
       .ps-page--default .ps-page__header {
         padding-bottom: 80px; }
         .ps-page--default .ps-page__header h3 {

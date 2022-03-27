@@ -63,7 +63,7 @@
                     </aside>
                 </div>
                 <div class="ps-web__wrapper">
-                    <div class="ps-section ps-home-top-sellers" style="padding-top: 0px">
+                    <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                         <div class="ps-section__header">
                             <figure>
                                 <figcaption>Resultats</figcaption>
