@@ -2411,7 +2411,7 @@ textarea.form-control {
 
 @media (min-width: 992px) {
   .ps-block--portfolio .ps-block__content > a {
-    font-size: 24px; } }
+    font-size: 20px; } }
 
 .ps-block--portfolio-2 {
   position: relative; }

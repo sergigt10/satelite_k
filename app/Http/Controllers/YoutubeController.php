@@ -14,7 +14,7 @@ class YouTubeController extends Controller
         } else {
             $videoLists = $this->_videoLists('laravel chat');
         }
-        return view('index', compact('videoLists'));
+        return view('frontend.videos.index', compact('videoLists'));
     }
 
     public function watch($id)
@@ -32,13 +32,12 @@ class YouTubeController extends Controller
     {
         $part = 'snippet';
         $channel_ID = "UC7sXT1HaXxJEcEqxd3KFY-w";
-        $country = 'BD';
         $apiKey = config('services.youtube.api_key');
-        $maxResults = 12;
+        $maxResults = 15;
         $youTubeEndPoint = config('services.youtube.search_endpoint');
         $type = 'video';
 
-        $url = "$youTubeEndPoint?part=$part&maxResults=$maxResults&regionCode=$country&type=$type&key=$apiKey&q=$keywords";
+        $url = "$youTubeEndPoint?order=date&part=$part&channelId=$channel_ID&maxResults=$maxResults&type=$type&key=$apiKey";
         $response = Http::get($url);
         $results = json_decode($response);
 

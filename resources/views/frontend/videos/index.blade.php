@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="ps-page ps-page--default">
+    <div class="ps-page ps-page--default" style="padding-top: 0px">
         <div class="container">
             <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                 <div class="ps-section__header">
@@ -20,7 +20,7 @@
                                     <div class="ps-block--portfolio">
                                         <div class="ps-block__thumbnail">
                                             <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->id->videoId }}"></a>
-                                            <img src="{{ $item->snippet->thumbnails->medium->url }}" alt="Satélite K">
+                                            <img src="{{ $item->snippet->thumbnails->high->url }}" alt="Satélite K">
                                         </div>
                                         <div class="ps-block__content">
                                             <a target="_blank" href="https://www.youtube.com/watch?v={{ $item->id->videoId }}">

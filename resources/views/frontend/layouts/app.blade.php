@@ -48,7 +48,7 @@
                         <li><a href="{{ route('frontend.llibres.index') }}">Llibres</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Vídeos</a></li>
+                <li><a href="{{ route('frontend.videos.index') }}" class="{{ (request()->is('videos')) ? 'active' : '' }}">Vídeos</a></li>
                 <li class="menu-item-has-children">
                     <a href="#">Serveis</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
