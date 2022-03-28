@@ -1,13 +1,13 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="ps-page ps-page--default" style="padding-top: 0px">
+    <div class="ps-page ps-page--default">
         <div class="container">
             <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                 <div class="ps-section__header">
                     <figure>
                         <figcaption>Vídeos</figcaption>
-                        <p>Últims vídeoclips publicats de Satélite K</p>
+                        <p>Últims videoclips publicats de Satélite K</p>
                     </figure>
                 </div>
             </div>

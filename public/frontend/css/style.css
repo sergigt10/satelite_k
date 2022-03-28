@@ -9474,7 +9474,7 @@ a.ps-product__title:hover {
       font-size: 32px; }
   @media (min-width: 1200px) {
     .ps-page--default {
-      padding: 50px 0 100px; }
+      padding: 0px 0 100px; }
       .ps-page--default .ps-page__header {
         padding-bottom: 80px; }
         .ps-page--default .ps-page__header h3 {

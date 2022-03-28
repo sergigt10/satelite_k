@@ -105,6 +105,44 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="ps-section__header">
+                <figure>
+                    <figcaption>Videoclips</figcaption>
+                    <p>Últims vídeos de Satélite K</p>
+                </figure>
+            </div>
+            <div class="ps-page">
+                <div class="ps-page ps-page--default">
+                    <div class="container">
+                        <div class="ps-page__content">
+                            <div class="ps-portfolio-box">
+                                <div class="ps-section__content">
+                                    <div class="row">
+                                    @foreach ($videoLists->items as $item)
+                                        <div class="col-sm-12 col-xl-3">
+                                            <div class="ps-block--portfolio">
+                                                <div class="ps-block__thumbnail">
+                                                    <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->id->videoId }}"></a>
+                                                    <img src="{{ $item->snippet->thumbnails->high->url }}" alt="Satélite K">
+                                                </div>
+                                                <div class="ps-block__content">
+                                                    <a target="_blank" href="https://www.youtube.com/watch?v={{ $item->id->videoId }}">
+                                                        {{ \Illuminate\Support\Str::limit($item->snippet->title, $limit = 150, $end = ' ...') }}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                    </div>
+                                </div>
+                                <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.videos.index') }}">Descobreix-ne més</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="ps-section--instagram">
         <div class="ps-section__header">

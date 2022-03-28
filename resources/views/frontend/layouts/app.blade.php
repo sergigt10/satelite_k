@@ -106,10 +106,10 @@
                             <h3 class="widget-title">Satélite K</h3>
                             <ul class="ps-list--line">
                                 <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
-                                <li><a href="#">Catàleg</a></li>
-                                <li><a href="#">Vídeos</a></li>
+                                <li><a href="{{ route('frontend.discs.index') }}">Catàleg</a></li>
+                                <li><a href="{{ route('frontend.videos.index') }}">Vídeos</a></li>
                                 <li><a href="#">Serveis</a></li>
-                                <li><a href="#">Contacte</a></li>
+                                <li><a href="{{ route('frontend.contact.index') }}">Contacte</a></li>
                             </ul>
                         </aside>
                     </div>

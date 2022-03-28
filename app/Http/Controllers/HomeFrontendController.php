@@ -23,7 +23,8 @@ class HomeFrontendController extends Controller
         $slider3 = Slider::all()->get(2);
         $artistes = Artista::latest('id')->take(4)->get();
         $discs = Disc::latest('data_publicacio')->take(5)->get();
-        return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'artistes', 'discs'));
+        $videoLists = videoLists(4);
+        return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'artistes', 'discs', 'videoLists'));
     }
 
     public function about(){
