@@ -19,11 +19,11 @@
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="ps-block--portfolio">
                                         <div class="ps-block__thumbnail">
-                                            <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->id->videoId }}"></a>
+                                            <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}"></a>
                                             <img src="{{ $item->snippet->thumbnails->high->url }}" alt="Satélite K">
                                         </div>
                                         <div class="ps-block__content">
-                                            <a target="_blank" href="https://www.youtube.com/watch?v={{ $item->id->videoId }}">
+                                            <a target="_blank" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}">
                                                 {{ \Illuminate\Support\Str::limit($item->snippet->title, $limit = 150, $end = ' ...') }}
                                             </a>
                                         </div>

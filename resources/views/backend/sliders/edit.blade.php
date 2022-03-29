@@ -51,7 +51,7 @@
                                 <input name="titol_link_cat" type="text" class="form-control" id="exampleInputEmail3" placeholder="Títol URL CAT" value="{{ $slider->titol_link_cat }}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Títol URL CAT:</label>
+                                <label for="exampleInputEmail3">Títol URL ESP:</label>
                                 <input name="titol_link_esp" type="text" class="form-control" id="exampleInputEmail3" placeholder="Títol URL ESP" value="{{ $slider->titol_link_esp }}">
                             </div>
                             <div class="row grid-margin">

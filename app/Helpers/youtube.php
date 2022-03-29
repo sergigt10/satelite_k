@@ -5,12 +5,13 @@
     function videoLists($maxResults)
     {
         $part = 'snippet';
-        $channel_ID = "UC7sXT1HaXxJEcEqxd3KFY-w";
+        $channel_ID = 'UC7sXT1HaXxJEcEqxd3KFY-w';
+        $playlistId = 'PLQV1V6xyRqS8izvqRvMEWEcNthuVRqLIU';
         $apiKey = config('services.youtube.api_key');
         $youTubeEndPoint = config('services.youtube.search_endpoint');
         $type = 'video';
 
-        $url = "$youTubeEndPoint?order=date&part=$part&channelId=$channel_ID&maxResults=$maxResults&type=$type&key=$apiKey";
+        $url = "$youTubeEndPoint?part=$part&maxResults=$maxResults&playlistId=$playlistId&key=$apiKey";
         $response = Http::get($url);
         $results = json_decode($response);
 

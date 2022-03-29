@@ -25,6 +25,7 @@
                                 <table id="order-listing" class="table table-hover table-bordered">
                                     <thead>
                                         <tr>
+                                            <th>Núm. slider</th>
                                             <th>Nom artista</th>
                                             <th>Nom disc</th>
                                             <th data-orderable="false">Editar</th>
@@ -34,6 +35,11 @@
                                     <tbody>
                                         @foreach($sliders as $slide)
                                             <tr>
+                                                <td>
+                                                    <a href="{{ route('backend.sliders.edit', ['slider' => $slide->id]) }}" style="color: black;">
+                                                        {{ $slide->id }}
+                                                    </a>
+                                                </td>
                                                 <td>
                                                     <a href="{{ route('backend.sliders.edit', ['slider' => $slide->id]) }}" style="color: black;">
                                                         {{ $slide->nom_artista }}

@@ -10,21 +10,28 @@
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_artista}}</p>
                     <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_disc}}</h3>
-                    <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
+                    <a class="ps-link--under" href="{{$slider1->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
                 </div>
             </div>
             <div class="ps-banner--3 bg--top-left right" data-background='{{ asset("/storage/$slider2->foto") }}'>
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_artista}}</p>
                     <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_disc}}</h3>
-                    <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
+                    <a class="ps-link--under" href="{{$slider2->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider2->titol_link_cat}}</a>
                 </div>
             </div>
             <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider3->foto") }}'>
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_artista}}</p>
                     <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_disc}}</h3>
-                    <a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
+                    <a class="ps-link--under" href="{{$slider3->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider3->titol_link_cat}}</a>
+                </div>
+            </div>
+            <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider4->foto") }}'>
+                <div class="ps-banner__content">
+                    <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider4->nom_artista}}</p>
+                    <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider4->nom_disc}}</h3>
+                    <a class="ps-link--under" href="{{$slider4->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider4->titol_link_cat}}</a>
                 </div>
             </div>
         </div>
@@ -123,11 +130,11 @@
                                         <div class="col-sm-12 col-xl-3">
                                             <div class="ps-block--portfolio">
                                                 <div class="ps-block__thumbnail">
-                                                    <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->id->videoId }}"></a>
+                                                    <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}"></a>
                                                     <img src="{{ $item->snippet->thumbnails->high->url }}" alt="Satélite K">
                                                 </div>
                                                 <div class="ps-block__content">
-                                                    <a target="_blank" href="https://www.youtube.com/watch?v={{ $item->id->videoId }}">
+                                                    <a target="_blank" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}">
                                                         {{ \Illuminate\Support\Str::limit($item->snippet->title, $limit = 150, $end = ' ...') }}
                                                     </a>
                                                 </div>
