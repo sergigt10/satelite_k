@@ -20,7 +20,7 @@ class DiscsFrontendController extends Controller
         $artistes = Artista::all();
         $generes = Genere::all();
         $tipus = Tipu::all();
-        $discs = Disc::paginate(11, ['*'], 'pagina');
+        $discs = Disc::latest('id')->paginate(11, ['*'], 'pagina');
         return view('frontend.discs.index', compact('discs','artistes','generes','tipus'));
     }
 

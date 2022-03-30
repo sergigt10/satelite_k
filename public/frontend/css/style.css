@@ -9469,7 +9469,8 @@ a.ps-product__title:hover {
     padding-left: 55px; } }
 
 .ps-page--default {
-  padding: 0px 0 100px; }
+  /* padding: 0px 0 100px;  */
+  }
   .ps-page--default .ps-page__header {
     text-align: center;
     padding-bottom: 60px; }
