@@ -83,7 +83,7 @@
 <header class="header header--mobile" data-sticky="true">
     <div class="header__left"><a class="ps-logo" href="{{ route('frontend.inici.index') }}"><img src="{{ asset('frontend/img/logo.png') }}" alt="Satélite K"></a></div>
     <div class="header__right">
-        <div class="header__container"><a class="header__search-mini" href="#"><i class="icon-magnifier"></i></a></div>
+        <!-- <div class="header__container"><a class="header__search-mini" href="#"><i class="icon-magnifier"></i></a></div> -->
         <div class="header__actions"><a class="header__menu-toggle ps-toggle--sidebar" href="#navigation-mobile"><i class="icon-menu"></i></a></div>
     </div>
 </header>
@@ -95,7 +95,7 @@
         <div class="container">
             <div class="ps-footer__content">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-5 col-md-4 col-sm-6 col-6 ">
+                    <div class="col-xl-4 col-lg-5 col-md-4 col-sm-12">
                         <aside class="widget widget_footer widget_align-right">
                             <img src="{{ asset('frontend/img/logo.png') }}" alt="Satélite K">
                             <p class="mt-20">Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament musical de talents i propostes d'interès i risc cultural.</p>
@@ -122,7 +122,7 @@
                             </ul>
                         </aside>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-12">
                         <aside class="widget widget_footer widget_align-right">
                             <h3 class="widget-title">Contacte</h3>
                             <p><i class="fa fa-location-arrow"></i> C/ Pallars,65, 2 4</p>
@@ -139,7 +139,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
-                        <p class="ps-footer__copyright"><a target="_blank" href="https://www.webmastervic.com/"></a>Disseny web Webmastervic</p>
+                        <p class="ps-footer__copyright">
+                            <a target="_blank" href="https://www.webmastervic.com/" style="font-size:14px">Disseny web Webmastervic</a>
+                        </p>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
                         <div class="ps-list--social">
@@ -165,6 +167,41 @@
 <div id="loader-wrapper">
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
+</div>
+<div class="ps-panel--sidebar" id="navigation-mobile">
+    <div class="ps-panel__header"><a class="ps-panel__close" href="#"><i class="icon-cross"></i></a></div>
+    <div class="ps-panel__content">
+        <nav class="ps-navigation--mobile">
+            <div class="ps-navigation__menu">
+            <ul class="menu--mobile">
+                <li><a href="{{ route('frontend.inici.index') }}">Inici</a></li>
+                <li><a href="{{ route('frontend.about.index') }}">Qui som</a></li>
+                <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
+                <li class="menu-item-has-children">
+                    <a href="{{ route('frontend.discs.index') }}">Catàleg</a><span class="sub-toggle"></span>
+                    <ul class="sub-menu">
+                        <li><a href="{{ route('frontend.discs.index') }}">Discs</a></li>
+                        <li><a href="{{ route('frontend.llibres.index') }}">Llibres</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ route('frontend.videos.index') }}">Vídeos</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#">Serveis</a><span class="sub-toggle"></span>
+                    <ul class="sub-menu">
+                        <li><a href="#" target="_blank">Distribució física</a></li>
+                        <li><a href="#" target="_blank">Distribució i màrqueting digital</a></li>
+                        <li><a href="#" target="_blank">Autoedició</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ route('frontend.contact.index') }}">Contacte</a></li>
+            </ul>
+            </div>
+            <figure class="ps-navigation__bottom">
+                <figcaption>Satélite K</figcaption>
+                <p>C/ Pallars,65, 2 4 - 08018 Barcelona <br> +34 93 320 86 08 - info@satelitek.com</p>
+            </figure>
+        </nav>
+    </div>
 </div>
 
 <!-- Plugins-->

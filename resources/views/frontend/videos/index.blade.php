@@ -16,7 +16,7 @@
                     <div class="ps-section__content">
                         <div class="row">
                             @foreach ($videoLists->items as $item)
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                                     <div class="ps-block--portfolio">
                                         <div class="ps-block__thumbnail">
                                             <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}"></a>

@@ -8,13 +8,7 @@
                     <figure>
                         <div class="ps-wrapper">
                             <div class="ps-product__gallery" data-arrow="true">
-                                <div aria-live="polite" class="slick-list draggable">
-                                    <div class="slick-track" style="opacity: 1; width: 1665px;" role="listbox">
-                                        <div class="item slick-slide slick-current slick-active" style="width: 555px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
-                                            <img src='{{ asset("/storage/$llibre->foto") }}' alt="Satélite K">
-                                        </div>
-                                    </div>
-                                </div>
+                                <img src='{{ asset("/storage/$llibre->foto") }}' alt="Satélite K">
                             </div>
                         </div>
                     </figure>

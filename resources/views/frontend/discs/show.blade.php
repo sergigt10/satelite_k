@@ -8,18 +8,11 @@
                     <figure>
                         <div class="ps-wrapper">
                             <div class="ps-product__gallery" data-arrow="true">
-                                <div aria-live="polite" class="slick-list draggable">
-                                    <div class="slick-track" style="opacity: 1; width: 1665px;" role="listbox">
-                                        <div class="item slick-slide slick-current slick-active" style="width: 555px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
-                                            <img src='{{ asset("/storage/$disc->foto") }}' alt="Satélite K">
-                                        </div>
-                                    </div>
-                                </div>
+                                <img src='{{ asset("/storage/$disc->foto") }}' alt="Satélite K">
                             </div>
                         </div>
                     </figure>
                     <div class="mt-30">
-                        <!-- <iframe src="https://open.spotify.com/embed/album/6ZG5lRT77aJ3btmArcykra?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen=""></iframe> -->
                         {!! $disc->embed_spotify !!}
                     </div>
                 </div>

@@ -4737,7 +4737,7 @@ textarea.form-control {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.4em;
   color: #222; }
@@ -6104,6 +6104,9 @@ a.ps-product__title:hover {
       .ps-banner--3.classic .ps-btn:hover {
         background-color: #fff; }
   @media (max-width: 767px) {
+    .ps-banner--3 {
+      height: 65vh;
+    }
     .ps-banner--3 h3 {
       font-size: 50px; }
     .ps-banner--3 .ps-list--social {
@@ -7514,7 +7517,7 @@ a.ps-product__title:hover {
 .ps-section .ps-section__header figcaption {
   margin-bottom: 0;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 30px;
   color: #222;
   line-height: 1.2em; }
 
@@ -7537,7 +7540,7 @@ a.ps-product__title:hover {
   .ps-home-subscribe figcaption {
     margin-bottom: 0;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 34px;
     color: #222;
     line-height: 1.2em; }
   .ps-home-subscribe figure {
@@ -7662,7 +7665,7 @@ a.ps-product__title:hover {
       .ps-home-product--fullwidth .ps-tab-list li.active a, .ps-home-product--fullwidth .ps-tab-list li:hover a {
         color: #429798; }
   .ps-home-product--fullwidth .ps-section__header {
-    padding-bottom: 60px; }
+    padding-bottom: 0px; }
   @media (min-width: 768px) {
     .ps-home-product--fullwidth .ps-tab-list li {
       margin-right: 64px; }
@@ -8306,8 +8309,17 @@ a.ps-product__title:hover {
         margin-right: 0; }
       .ps-web .ps-web__layouts a.active {
         color: #222; }
-  .ps-web .ps-web__sorting {
-     }
+    .ps-web .ps-web__sorting {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eaeaea;
+      padding-top: 30px; 
+    }
     .ps-web .ps-web__sorting > span {
       font-weight: 700;
       color: #222;
@@ -8386,16 +8398,6 @@ a.ps-product__title:hover {
     .ps-web .ps-web__header h1 {
       font-size: 36px; }
   @media (min-width: 768px) {
-    .ps-web .ps-web__sorting {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eaeaea;
-      padding-top: 30px; }
     .ps-web .ps-product--horizontal {
       padding-bottom: 70px;
       margin-bottom: 70px; }
@@ -8573,9 +8575,10 @@ a.ps-product__title:hover {
 .ps-web--sidebar .ps-web__banner {
   margin-bottom: 30px; }
 
-.ps-web--sidebar .ps-web__sidebar {
+/* .ps-web--sidebar .ps-web__sidebar {
   max-width: 300px;
-  padding-top: 80px; }
+  padding-top: 80px; 
+} */
 
 .ps-web--sidebar .ps-web__container {
   display: -webkit-box;
@@ -8723,7 +8726,7 @@ a.ps-product__title:hover {
         color: #222; }
 
 .ps-portfolio-box .ps-section__footer {
-  padding-top: 50px; }
+  padding-top: 0px; }
 
 .ps-portfolio-box.carousel .owl-slider .owl-dots {
   bottom: 0; }
@@ -9205,7 +9208,7 @@ a.ps-product__title:hover {
   -webkit-box-direction: normal;
   -ms-flex-flow: column wrap;
   flex-flow: column wrap;
-  padding-top: 60px; }
+  }
   .ps-contact .ps-section__right figure {
     margin-bottom: 25px; }
     .ps-contact .ps-section__right figure figcaption {
@@ -9466,7 +9469,7 @@ a.ps-product__title:hover {
     padding-left: 55px; } }
 
 .ps-page--default {
-  padding: 75px 0 50px; }
+  padding: 0px 0 100px; }
   .ps-page--default .ps-page__header {
     text-align: center;
     padding-bottom: 60px; }
@@ -9946,7 +9949,7 @@ a.ps-product__title:hover {
     font-weight: 600;
     font-size: 20px;
     color: #999;
-    text-transform: capitalize; }
+    }
     .menu--mobile > li > a:hover {
       padding-left: 5px;
       color: #429798; }
@@ -10087,7 +10090,7 @@ a.ps-product__title:hover {
       align-items: center;
       vertical-align: top;
       width: 40px;
-      font-size: 22px;
+      font-size: 35px;
       margin-right: 4px; }
       .header .header__actions a:last-child {
         margin-right: 0; }
@@ -11142,7 +11145,8 @@ a.ps-product__title:hover {
     padding-bottom: 50px; }
   .ps-footer--2 .ps-footer__bottom {
     padding: 20px 0;
-    border-top: 1px solid #eaeaea; }
+    border-top: 1px solid #eaeaea;
+    text-align: center; }
     .ps-footer--2 .ps-footer__bottom p {
       margin-bottom: 0;
       font-size: 15px;

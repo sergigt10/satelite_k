@@ -54,7 +54,7 @@
                 <div class="ps-tab active" id="tab-1">
                     <div class="row row--5-columns">
                         @foreach ($discs as $disc)
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6 ">
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
                                 <div class="ps-product">
                                     <div class="ps-product__thumbnail">
                                         <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">

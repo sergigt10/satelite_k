@@ -48,7 +48,10 @@ Route::get('/videos', 'YoutubeController@index')->name('frontend.videos.index');
 
 // BackEnd //
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+    'reset' => false
+]);
 
 Route::group(['middleware' => ['auth']], function() {
     /* Inici */

@@ -27,7 +27,7 @@
             <div class="ps-web__content">
                 <div class="row">
                     @foreach ($filterArtista as $artista)
-                        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6 col-6 ">
+                        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-12">
                             <div class="ps-product">
                                 <div class="ps-product__thumbnail">
                                     <img class="ps-product__image" src='{{ asset("/storage/$artista->foto") }}' alt="Satélite K"/>

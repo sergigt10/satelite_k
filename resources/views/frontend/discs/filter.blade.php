@@ -76,7 +76,7 @@
                     <div class="ps-web__content">
                         <div class="row">
                             @foreach ($discs as $disc)
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                                     <div class="ps-product">
                                         <div class="ps-product__thumbnail">
                                             <img class="ps-product__image" src='{{ asset("/storage/$disc->foto") }}' alt="Satélite K"/>
