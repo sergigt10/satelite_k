@@ -105,10 +105,10 @@
                         <aside class="widget widget_footer widget_align-right">
                             <h3 class="widget-title">Satélite K</h3>
                             <ul class="ps-list--line">
+                                <li><a href="{{ route('frontend.about.index') }}">Qui som</a></li>
                                 <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
                                 <li><a href="{{ route('frontend.discs.index') }}">Catàleg</a></li>
                                 <li><a href="{{ route('frontend.videos.index') }}">Vídeos</a></li>
-                                <li><a href="#">Serveis</a></li>
                                 <li><a href="{{ route('frontend.contact.index') }}">Contacte</a></li>
                             </ul>
                         </aside>
@@ -173,33 +173,39 @@
     <div class="ps-panel__content">
         <nav class="ps-navigation--mobile">
             <div class="ps-navigation__menu">
-            <ul class="menu--mobile">
-                <li><a href="{{ route('frontend.inici.index') }}">Inici</a></li>
-                <li><a href="{{ route('frontend.about.index') }}">Qui som</a></li>
-                <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
-                <li class="menu-item-has-children">
-                    <a href="{{ route('frontend.discs.index') }}">Catàleg</a><span class="sub-toggle"></span>
-                    <ul class="sub-menu">
-                        <li><a href="{{ route('frontend.discs.index') }}">Discs</a></li>
-                        <li><a href="{{ route('frontend.llibres.index') }}">Llibres</a></li>
-                    </ul>
-                </li>
-                <li><a href="{{ route('frontend.videos.index') }}">Vídeos</a></li>
-                <li class="menu-item-has-children">
-                    <a href="#">Serveis</a><span class="sub-toggle"></span>
-                    <ul class="sub-menu">
-                        <li><a href="#" target="_blank">Distribució física</a></li>
-                        <li><a href="#" target="_blank">Distribució i màrqueting digital</a></li>
-                        <li><a href="#" target="_blank">Autoedició</a></li>
-                    </ul>
-                </li>
-                <li><a href="{{ route('frontend.contact.index') }}">Contacte</a></li>
-            </ul>
+                <ul class="menu--mobile">
+                    <li><a href="{{ route('frontend.inici.index') }}">Inici</a></li>
+                    <li><a href="{{ route('frontend.about.index') }}">Qui som</a></li>
+                    <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="{{ route('frontend.discs.index') }}">Catàleg</a><span class="sub-toggle"></span>
+                        <ul class="sub-menu">
+                            <li><a href="{{ route('frontend.discs.index') }}">Discs</a></li>
+                            <li><a href="{{ route('frontend.llibres.index') }}">Llibres</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ route('frontend.videos.index') }}">Vídeos</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Serveis</a><span class="sub-toggle"></span>
+                        <ul class="sub-menu">
+                            <li><a href="#" target="_blank">Distribució física</a></li>
+                            <li><a href="#" target="_blank">Distribució i màrqueting digital</a></li>
+                            <li><a href="#" target="_blank">Autoedició</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ route('frontend.contact.index') }}">Contacte</a></li>
+                </ul>
             </div>
             <figure class="ps-navigation__bottom">
                 <figcaption>Satélite K</figcaption>
                 <p>C/ Pallars,65, 2 4 - 08018 Barcelona <br> +34 93 320 86 08 - info@satelitek.com</p>
             </figure>
+            <div class="ps-banner__social">
+                <ul class="ps-list--social">
+                    <li><a href="https://www.instagram.com/satelite_k/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
         </nav>
     </div>
 </div>

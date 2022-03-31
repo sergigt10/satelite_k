@@ -40,7 +40,7 @@
                             </div>
                             <div class="ps-web__sorting">
                                 <span>Any</span>
-                                <input name="any" type="number" min="2000" max="2099" step="1" value="" style="width: 100%; text-align: center" placeholder="0000" onKeyDown="return false"/>
+                                <input name="any" type="number" min="2000" max="2099" step="1" value="" style="width: 100%; text-align: center" placeholder="0000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
                             </div>
                             <div class="ps-web__footer mt-20"><a class="ps-link--under" href="javascript:;" onclick="document.getElementById('filtre').submit();">Filtrar</a></div>
                         </form>
