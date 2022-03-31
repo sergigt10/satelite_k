@@ -14,7 +14,7 @@ class LlibresFrontendController extends Controller
 
     public function index()
     {
-        $llibres = Llibre::latest('id')->paginate(12, ['*'], 'pagina');
+        $llibres = Llibre::latest('data_publicacio')->paginate(12, ['*'], 'pagina');
         return view('frontend.llibres.index', compact('llibres'));
     }
 
