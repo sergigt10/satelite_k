@@ -47,4 +47,26 @@ class HomeFrontendController extends Controller
             return view('frontend.search.index', compact('filterArtista', 'filterDisc', 'filterLlibre', 'filterNoticia'));
         }
     }
+
+    // https://github.com/mailerlite/mailerlite-api-v2-php-sdk
+    // https://developers.mailerlite.com/reference/add-single-subscriber
+    // Request $request
+    public function subscribeNewsletter(){
+        // $groupsApi = (new \MailerLiteApi\MailerLite('your-api-key'))->groups();
+
+        // $groupId = 123;
+
+        // $subscriber = [
+        //     'email' => 'johndoe@mailerlite.com',
+        //     'name' => 'John',
+        //     'fields' => [
+        //         'surname' => 'Doe',
+        //         'company' => 'MailerLite'
+        //     ]
+        // ];
+        // $addedSubscriber = $groupsApi->addSubscriber($groupId, $subscriber); // returns added subscriber
+
+        // return view('frontend.index.index');
+    }
+
 }

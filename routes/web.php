@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 /* Inici */
 
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
+// Route::post('/newsletter', 'HomeFrontendController@subscribeNewsletter');
 
 /* Cercador */
 
