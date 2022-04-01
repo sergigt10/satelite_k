@@ -3,11 +3,29 @@
 @section('content')
     <div class="container">
         <div class="ps-section ps-home-top-web" style="padding-top: 0px">
-            <div class="ps-section__header">
-                <figure>
-                    <figcaption>Artistes</figcaption>
-                    <p>Àlbums, biografies i fotos dels artistes de Satélite K</p>
-                </figure>
+            <div class="ps-web__header" style="padding-bottom: 30px">
+                <div class="ps-web__left">
+                    <div class="ps-section__header">
+                        <figure>
+                            <figcaption>Artistes</figcaption>
+                            <p>Àlbums, biografies i fotos dels artistes de Satélite K</p>
+                        </figure>
+                    </div>
+                </div>
+                <div class="ps-web__right">
+                    <div class="ps-web__actions">
+                        <form action="ordre" method="POST">
+                            @csrf
+                            <div class="ps-web__sorting mobile-sorting">
+                                <span>Ordenar per</span>
+                                <select class="" name="ordre" onchange="this.form.submit()">
+                                    <option value="id" {{ request()->get('ordre') === 'id' ? 'selected' : '' }}>Addició</option>
+                                    <option value="nom" {{ request()->get('ordre') === 'nom' ? 'selected' : '' }}>Alfabet</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="ps-web__content">

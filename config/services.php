@@ -33,6 +33,10 @@ return [
     'youtube' => [
         'api_key' => env('API_KEY'),
         'search_endpoint' => env('SEARCH_ENDPOINT')
+    ],
+
+    'mailerlite' => [
+        'api_key_mailerlite' => env('API_KEY_MAILERLITE'),
     ]
 
 ];

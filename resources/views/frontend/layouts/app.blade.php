@@ -40,11 +40,11 @@
             <ul class="menu">
                 <li><a href="{{ route('frontend.inici.index') }}" class="{{ (request()->is('/')) ? 'active' : '' }}">Inici</a></li>
                 <li><a href="{{ route('frontend.about.index') }}" class="{{ (request()->is('qui-som-satelitek')) ? 'active' : '' }}">Qui som</a></li>
-                <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) ? 'active' : '' }}">Artistes</a></li>
+                <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) || (request()->is('ordre')) ? 'active' : '' }}">Artistes</a></li>
                 <li class="menu-item-has-children">
                     <a href="{{ route('frontend.discs.index') }}" class="{{ (request()->is('discs*') || request()->is('llibres*')) ? 'active' : '' }}">Catàleg</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
-                        <li><a href="{{ route('frontend.discs.index') }}">Discs</a></li>
+                        <li><a href="{{ route('frontend.discs.index') }}">Discos</a></li>
                         <li><a href="{{ route('frontend.llibres.index') }}">Llibres</a></li>
                     </ul>
                 </li>
@@ -98,7 +98,7 @@
                     <div class="col-xl-4 col-lg-5 col-md-4 col-sm-12">
                         <aside class="widget widget_footer widget_align-right">
                             <img src="{{ asset('frontend/img/logo.png') }}" alt="Satélite K">
-                            <p class="mt-20">Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament musical de talents i propostes d'interès i risc cultural.</p>
+                            <p class="mt-20">Satélite K es una compañía discográfica nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas eclécticas y de alto valor musical.</p>
                         </aside>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">

@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 /* Inici */
 
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
-// Route::post('/newsletter', 'HomeFrontendController@subscribeNewsletter');
+Route::post('/newsletter', 'HomeFrontendController@subscribeNewsletter');
+Route::get('/newsletter-subscrit', 'HomeFrontendController@subscribeNewsletterOk')->name('frontend.inici.newsletterOk');
 
 /* Cercador */
 
@@ -25,13 +26,14 @@ Route::post('/contacte-satelitek/enviat', 'ContactFrontendController@sendEmail')
 /* Artistes */
 
 Route::get('/artistes', 'ArtistesFrontendController@index')->name('frontend.artistes.index');
+Route::post('/ordre', 'ArtistesFrontendController@ordre');
 Route::get('/artistes/{artista}', 'ArtistesFrontendController@show')->name('frontend.artistes.show');
 
 /* Discs */
 
-Route::get('/discs', 'DiscsFrontendController@index')->name('frontend.discs.index');
-Route::get('/discs/{disc}', 'DiscsFrontendController@show')->name('frontend.discs.show');
-Route::post('/discs/filtre', 'DiscsFrontendController@filter')->name('frontend.discs.filter');
+Route::get('/discos', 'DiscsFrontendController@index')->name('frontend.discs.index');
+Route::get('/discos/{disc}', 'DiscsFrontendController@show')->name('frontend.discs.show');
+Route::post('/discos/filtre', 'DiscsFrontendController@filter')->name('frontend.discs.filter');
 
 /* Llibres */
 

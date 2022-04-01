@@ -43,7 +43,7 @@
                     <div class="ps-section__header">
                     <figure>
                         <figcaption>Catàleg</figcaption>
-                        <p>Single, EP, Àlbum, Pack i llibres dels artistes de Satélite K</p>
+                        <p>Referències musicals de tots els artistes de Satélite K</p>
                     </figure>
                     </div>
                 </div>
@@ -200,10 +200,11 @@
                     </figure>
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12 ">
-                    <form class="ps-form--keep-connected" action="index.html" method="POST"><i class="icon-envelope"></i>
+                    <form class="ps-form--keep-connected" action="newsletter" method="POST">
                         @csrf
-                        <input class="form-control" type="text" placeholder="Correu electrònic">
-                        <button>Subscriu-te</button>
+                        <i class="icon-envelope"></i>
+                        <input class="form-control" type="email" name="nouSubscriptor" placeholder="Correu electrònic" required>
+                        <button type="submit">Subscriu-te</button>
                     </form>
                 </div>
             </div>

@@ -20,7 +20,7 @@ class DiscsFrontendController extends Controller
         $artistes = Artista::all();
         $generes = Genere::all();
         $tipus = Tipu::all();
-        $discs = Disc::latest('data_publicacio')->paginate(11, ['*'], 'pagina');
+        $discs = Disc::latest('data_publicacio')->paginate(17, ['*'], 'pagina');
         return view('frontend.discs.index', compact('discs','artistes','generes','tipus'));
     }
 
@@ -38,7 +38,7 @@ class DiscsFrontendController extends Controller
                     ->where('generes_id','LIKE','%'.$filtreGenere.'%')
                     ->where('tipus_id','LIKE','%'.$filtreTipus.'%')
                     ->where('data_publicacio','LIKE','%'.$filtreAny.'%')
-                    ->paginate(12, ['*'], 'pagina');
+                    ->paginate(17, ['*'], 'pagina');
         return view('frontend.discs.filter', compact('discs','artistes','generes','tipus'));
     }
 

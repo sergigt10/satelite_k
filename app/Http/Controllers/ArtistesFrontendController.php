@@ -14,7 +14,18 @@ class ArtistesFrontendController extends Controller
      */
     public function index()
     {
-        $artistes = Artista::latest('id')->paginate(12, ['*'], 'pagina');
+        $artistes = Artista::latest('id')->paginate(16, ['*'], 'pagina');
+        return view('frontend.artistes.index', compact('artistes'));
+    }
+
+    public function ordre(Request $request)
+    {
+        if ( $request->input('ordre') === 'id' ) {
+            $artistes = Artista::latest('id')->paginate(16, ['*'], 'pagina');
+        } else {
+            $artistes = Artista::orderBy('nom')->paginate(16, ['*'], 'pagina');
+        }
+        
         return view('frontend.artistes.index', compact('artistes'));
     }
 

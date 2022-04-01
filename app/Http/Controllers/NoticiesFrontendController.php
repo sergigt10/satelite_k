@@ -14,7 +14,7 @@ class NoticiesFrontendController extends Controller
      */
     public function index()
     {
-        $noticies = Noticia::latest('id')->paginate(12, ['*'], 'pagina');
+        $noticies = Noticia::latest('id')->paginate(16, ['*'], 'pagina');
         return view('frontend.noticies.index', compact('noticies'));
     }
 

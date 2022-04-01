@@ -39,10 +39,10 @@ class HomeFrontendController extends Controller
         } else {
             $artistaCercar = $discCercar = $noticiaCercar = $llibreCercar = $request->input('cercar') ;
         
-            $filterArtista = Artista::where('nom','LIKE','%'.$artistaCercar.'%')->paginate(12, ['*'], 'pagina');
-            $filterDisc = Disc::where('titol','LIKE','%'.$discCercar.'%')->paginate(12, ['*'], 'pagina');
-            $filterNoticia = Noticia::where('titol_cat','LIKE','%'.$noticiaCercar.'%')->paginate(12, ['*'], 'pagina');
-            $filterLlibre = Llibre::where('titol_cat','LIKE','%'.$llibreCercar.'%')->paginate(12, ['*'], 'pagina');
+            $filterArtista = Artista::where('nom','LIKE','%'.$artistaCercar.'%')->paginate(16, ['*'], 'pagina');
+            $filterDisc = Disc::where('titol','LIKE','%'.$discCercar.'%')->paginate(16, ['*'], 'pagina');
+            $filterNoticia = Noticia::where('titol_cat','LIKE','%'.$noticiaCercar.'%')->paginate(16, ['*'], 'pagina');
+            $filterLlibre = Llibre::where('titol_cat','LIKE','%'.$llibreCercar.'%')->paginate(16, ['*'], 'pagina');
 
             return view('frontend.search.index', compact('filterArtista', 'filterDisc', 'filterLlibre', 'filterNoticia'));
         }
@@ -51,22 +51,21 @@ class HomeFrontendController extends Controller
     // https://github.com/mailerlite/mailerlite-api-v2-php-sdk
     // https://developers.mailerlite.com/reference/add-single-subscriber
     // Request $request
-    public function subscribeNewsletter(){
-        // $groupsApi = (new \MailerLiteApi\MailerLite('your-api-key'))->groups();
+    public function subscribeNewsletter(Request $request){
+        $groupsApi = (new \MailerLiteApi\MailerLite(config('services.mailerlite.api_key_mailerlite')))->groups();
 
-        // $groupId = 123;
+        $groupId = 111106111;
 
-        // $subscriber = [
-        //     'email' => 'johndoe@mailerlite.com',
-        //     'name' => 'John',
-        //     'fields' => [
-        //         'surname' => 'Doe',
-        //         'company' => 'MailerLite'
-        //     ]
-        // ];
-        // $addedSubscriber = $groupsApi->addSubscriber($groupId, $subscriber); // returns added subscriber
+        $subscriber = [
+            'email' => $request->input("nouSubscriptor")
+        ];
+        $addedSubscriber = $groupsApi->addSubscriber($groupId, $subscriber); // returns added subscriber
 
-        // return view('frontend.index.index');
+        return redirect()->action('HomeFrontendController@subscribeNewsletterOk');
+    }
+
+    public function subscribeNewsletterOk(){
+        return view('frontend.inici.newsletterOk');
     }
 
 }

@@ -50,8 +50,8 @@
                     <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                         <div class="ps-section__header">
                             <figure>
-                                <figcaption>Discs</figcaption>
-                                <p>Single, EP, Àlbum i Packs dels artistes de Satélite K</p>
+                                <figcaption>Discos</figcaption>
+                                <p>Referències musicals de tots els artistes de Satélite K</p>
                             </figure>
                         </div>
                     </div>
