@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="{{ Config::get('app.locale') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <title>Satélite K, Segell Discogràfic i Producció</title>
+
+    <!-- SEO -->
+    {!! SEO::generate() !!}
+
+    <meta name="author" content="Satélite K">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
     
+    <!-- estils personalitzats -->
     @yield('styles')
 
     <!-- Styles -->
@@ -30,7 +33,6 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/home-default.css') }}">
 
     <link rel="shortcut icon" href="{{ asset('frontend/img/favicon.ico') }}" />
-
 </head>
 <body>
 <header class="header header--standard {{ (request()->is('/')) ? 'transparent' : '' }}" data-sticky="true">
@@ -38,33 +40,33 @@
     <div class="header__right">
         <div class="header__navigation">
             <ul class="menu">
-                <li><a href="{{ route('frontend.inici.index') }}" class="{{ (request()->is('/')) ? 'active' : '' }}">Inici</a></li>
-                <li><a href="{{ route('frontend.about.index') }}" class="{{ (request()->is('qui-som-satelitek')) ? 'active' : '' }}">Qui som</a></li>
-                <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) || (request()->is('ordre')) ? 'active' : '' }}">Artistes</a></li>
+                <li><a href="{{ route('frontend.inici.index') }}" class="{{ (request()->is('/')) ? 'active' : '' }}">@lang('Inici')</a></li>
+                <li><a href="{{ route('frontend.about.index') }}" class="{{ (request()->is('qui-som-satelitek')) ? 'active' : '' }}">@lang('Qui som')</a></li>
+                <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) || (request()->is('ordre')) ? 'active' : '' }}">@lang('Artistes')</a></li>
                 <li class="menu-item-has-children">
-                    <a href="{{ route('frontend.discs.index') }}" class="{{ (request()->is('discs*') || request()->is('llibres*')) ? 'active' : '' }}">Catàleg</a><span class="sub-toggle"></span>
+                    <a href="{{ route('frontend.discs.index') }}" class="{{ (request()->is('discs*') || request()->is('llibres*')) ? 'active' : '' }}">@lang('Catàleg')</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
-                        <li><a href="{{ route('frontend.discs.index') }}">Discos</a></li>
-                        <li><a href="{{ route('frontend.llibres.index') }}">Llibres</a></li>
+                        <li><a href="{{ route('frontend.discs.index') }}">@lang('Discos')</a></li>
+                        <li><a href="{{ route('frontend.llibres.index') }}">@lang('Llibres')</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ route('frontend.videos.index') }}" class="{{ (request()->is('videos')) ? 'active' : '' }}">Vídeos</a></li>
+                <li><a href="{{ route('frontend.videos.index') }}" class="{{ (request()->is('videos')) ? 'active' : '' }}">@lang('Vídeos')</a></li>
                 <li class="menu-item-has-children">
-                    <a href="#">Serveis</a><span class="sub-toggle"></span>
+                    <a href="#">@lang('Serveis')</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
-                        <li><a href="#" target="_blank">Distribució física</a></li>
-                        <li><a href="#" target="_blank">Distribució i màrqueting digital</a></li>
-                        <li><a href="https://autoeditarte.com/" target="_blank">Autoedició</a></li>
+                        <li><a href="#" target="_blank">@lang('Distribució física')</a></li>
+                        <li><a href="#" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
+                        <li><a href="https://autoeditarte.com/" target="_blank">@lang('Autoedició')</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ route('frontend.contact.index') }}" class="{{ (request()->is('contacte-satelitek')) ? 'active' : '' }}">Contacte</a></li>
+                <li><a href="{{ route('frontend.contact.index') }}" class="{{ (request()->is('contacte-satelitek')) ? 'active' : '' }}">@lang('Contacte')</a></li>
             </ul>
         </div>
         <div class="header__container">
             <div class="header__search">
                 <form class="ps-form--header-search" action="{{ route('frontend.search.index') }}" method="POST">
                     @csrf
-                    <input class="form-control" type="text" placeholder="Cercador..." name="cercar" required>
+                    <input class="form-control" type="text" placeholder="@lang('Cercador...')" name="cercar" required>
                     <button><i class="icon-magnifier"></i></button>
                 </form>
             </div>
@@ -75,7 +77,7 @@
                         <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;CAT / ESP
+                &nbsp;&nbsp;&nbsp;&nbsp;<a class="idiomes-link {{ ( session()->get('locale') === 'ca' ) ? 'bold-idioma' : '' }}" href="lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( session()->get('locale') === 'es' ) ? 'bold-idioma' : '' }}" href="lang/es">ESP</a>
             </div>
         </div>
     </div>
@@ -196,6 +198,8 @@
                     <li><a href="{{ route('frontend.contact.index') }}">Contacte</a></li>
                 </ul>
             </div>
+            <a class="idiomes-link {{ ( session()->get('locale') === 'ca' ) ? 'bold-idioma' : '' }}" href="lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( session()->get('locale') === 'es' ) ? 'bold-idioma' : '' }}" href="lang/es">ESP</a>
+            <br><br>
             <figure class="ps-navigation__bottom">
                 <figcaption>Satélite K</figcaption>
                 <p>C/ Pallars,65, 2 4 - 08018 Barcelona <br> +34 93 320 86 08 - info@satelitek.com</p>

@@ -293,6 +293,10 @@ https://www.youtube.com/watch?v=LZwEv0DISU8
 ** Contacto enviar correos **
 # https://www.youtube.com/watch?v=Ei3RVhdcE0A
 
+** Aplicar idiomas y traducciones **
+# https://www.ibidemgroup.com/edu/traducciones-laravel-8/
+# https://lokalise.com/blog/laravel-localization-step-by-step/
+
 
 
 

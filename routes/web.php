@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 // FrontEnd //
 
+/* Idiomes */
+
+Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class, 'index']);
+
 /* Inici */
 
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');

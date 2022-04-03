@@ -66,6 +66,7 @@
                 </div>
             </div>
         </div>
+        <br><br>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.0655956117903!2d2.186374388442384!3d41.394381806166415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a31c14800d29%3A0xba8a7ec5f3a22df!2sKZoo%20Music%2C%20S.L!5e0!3m2!1ses!2ses!4v1647511386079!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 @endsection

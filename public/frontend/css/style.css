@@ -12132,3 +12132,11 @@ html .bg--parallax {
   font-size: 16px;
   color: #222;
 }
+
+.idiomes-link {
+  font-size: 20px !important;
+}
+
+.idiomes-link.bold-idioma {
+  font-weight: 900;
+}
