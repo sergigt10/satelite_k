@@ -68,4 +68,8 @@ class HomeFrontendController extends Controller
         return view('frontend.inici.newsletterOk');
     }
 
+    public function avisLegal(){
+        return view('frontend.inici.avisLegal');
+    }
+
 }

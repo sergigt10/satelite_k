@@ -23,7 +23,7 @@
                 </figure>
             </div>
         </div>
-      </div>
+    </div>
     <div class="ps-about-moments">
         <div class="container">
             <div class="row">

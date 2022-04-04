@@ -13,6 +13,7 @@ Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class,
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
 Route::post('/newsletter', 'HomeFrontendController@subscribeNewsletter');
 Route::get('/newsletter-subscrit', 'HomeFrontendController@subscribeNewsletterOk')->name('frontend.inici.newsletterOk');
+Route::get('/avis-legal', 'HomeFrontendController@avisLegal')->name('frontend.inici.avisLegal');
 
 /* Cercador */
 

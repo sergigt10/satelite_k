@@ -24,10 +24,10 @@ class Artista extends Model
         return $this->belongsTo(Genere::class, 'generes_id');
     }
 
-    // Relació 1:n artista i disc (S'utilitza en el destroy)
+    // Relació 1:n artista i disc (S'utilitza en el destroy), ordenat per data de publicació
     public function discs()
     { 
-        return $this->hasMany(Disc::class, 'artistes_id'); 
+        return $this->hasMany(Disc::class, 'artistes_id')->latest('data_publicacio'); 
     } 
 
     // Relació 1:n artista i noticia (S'utilitza en el destroy)

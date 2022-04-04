@@ -10,28 +10,28 @@
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_artista}}</p>
                     <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_disc}}</h3>
-                    <a class="ps-link--under" href="{{$slider1->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider1->titol_link_cat}}</a>
+                    <a class="ps-link--under" href="{{$slider1->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{ ( app()->getLocale() === 'ca' ) ? $slider1->titol_link_cat : $slider1->titol_link_esp }}</a>
                 </div>
             </div>
             <div class="ps-banner--3 bg--top-left right" data-background='{{ asset("/storage/$slider2->foto") }}'>
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_artista}}</p>
                     <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_disc}}</h3>
-                    <a class="ps-link--under" href="{{$slider2->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider2->titol_link_cat}}</a>
+                    <a class="ps-link--under" href="{{$slider2->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{ ( app()->getLocale() === 'ca' ) ? $slider2->titol_link_cat : $slider2->titol_link_esp }}</a>
                 </div>
             </div>
             <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider3->foto") }}'>
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_artista}}</p>
                     <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_disc}}</h3>
-                    <a class="ps-link--under" href="{{$slider3->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider3->titol_link_cat}}</a>
+                    <a class="ps-link--under" href="{{$slider3->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{ ( app()->getLocale() === 'ca' ) ? $slider3->titol_link_cat : $slider3->titol_link_esp }}</a>
                 </div>
             </div>
             <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider4->foto") }}'>
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider4->nom_artista}}</p>
                     <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider4->nom_disc}}</h3>
-                    <a class="ps-link--under" href="{{$slider4->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{$slider4->titol_link_cat}}</a>
+                    <a class="ps-link--under" href="{{$slider4->url_link}}" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{ ( app()->getLocale() === 'ca' ) ? $slider4->titol_link_cat : $slider4->titol_link_esp }}</a>
                 </div>
             </div>
         </div>
@@ -42,8 +42,8 @@
                 <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                     <div class="ps-section__header">
                     <figure>
-                        <figcaption>Catàleg</figcaption>
-                        <p>Referències musicals de tots els artistes de Satélite K</p>
+                        <figcaption>@lang('Catàleg')</figcaption>
+                        <p>@lang('Referències musicals de tots els artistes de Satélite K')</p>
                     </figure>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                                         <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
                                             <img class="ps-product__image" src='{{ asset("/storage/$disc->foto") }}' alt="Satélite K"/>
                                         </a>
-                                        <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">Veure disc</a></div>
+                                        <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">@lang('Veure disc')</a></div>
                                     </div>
                                     <div class="ps-product__content">
                                         <a class="ps-product__title" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">{{ $disc->titol }}</a>
@@ -71,15 +71,15 @@
                     </div>
                 </div>
             </div>
-            <div class="ps-section__footer text-center"><a class="ps-link--under" href="#">Descobreix-ne més</a></div>
+            <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.discs.index') }}">@lang('Descobreix-ne més')</a></div>
         </div>
     </div>
     <div class="ps-section ps-home-top-web">
         <div class="container">
             <div class="ps-section__header">
                 <figure>
-                    <figcaption>Artistes</figcaption>
-                    <p>Àlbums, biografies i fotos dels artistes de Satélite K</p>
+                    <figcaption>@lang('Artistes')</figcaption>
+                    <p>@lang('Àlbums, biografies i fotos dels artistes de Satélite K')</p>
                 </figure>
             </div>
             <div class="ps-page">
@@ -98,14 +98,14 @@
                                                 </div>
                                                 <div class="ps-block__content">
                                                     <a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">{{ $artista->nom }}</a>
-                                                    <p>{{ $artista->genere->nom_cat }}</p>
+                                                    <p>{{ ( app()->getLocale() === 'ca' ) ? $artista->genere->nom_cat : $artista->genere->nom_esp }}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
                                     </div>
                                 </div>
-                                <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.artistes.index') }}">Descobreix-ne més</a></div>
+                                <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.artistes.index') }}">@lang('Descobreix-ne més')</a></div>
                             </div>
                         </div>
                     </div>
@@ -115,8 +115,8 @@
         <div class="container">
             <div class="ps-section__header">
                 <figure>
-                    <figcaption>Videoclips</figcaption>
-                    <p>Últims vídeos de Satélite K</p>
+                    <figcaption>@lang('Videoclips')</figcaption>
+                    <p>@lang('Últims vídeos de Satélite K')</p>
                 </figure>
             </div>
             <div class="ps-page">
@@ -143,7 +143,7 @@
                                     @endforeach
                                     </div>
                                 </div>
-                                <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.videos.index') }}">Descobreix-ne més</a></div>
+                                <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.videos.index') }}">@lang('Descobreix-ne més')</a></div>
                             </div>
                         </div>
                     </div>
@@ -157,8 +157,8 @@
                 <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                     <div class="ps-section__header">
                     <figure>
-                        <figcaption>Segueix-nos!</figcaption>
-                        <p>Les últimes novetats de Satélite K</p>
+                        <figcaption>@lang('Segueix-nos!')</figcaption>
+                        <p>@lang('Les últimes novetats de Satélite K')</p>
                     </figure>
                     </div>
                 </div>
@@ -195,16 +195,16 @@
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12 ">
                     <figure>
-                        <figcaption>Newsletter</figcaption>
-                        <p>Rebeu actualitzacions al nostre butlletí</p>
+                        <figcaption>@lang('Newsletter')</figcaption>
+                        <p>@lang('Rebeu actualitzacions al nostre butlletí')</p>
                     </figure>
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12 ">
                     <form class="ps-form--keep-connected" action="newsletter" method="POST">
                         @csrf
                         <i class="icon-envelope"></i>
-                        <input class="form-control" type="email" name="nouSubscriptor" placeholder="Correu electrònic" required>
-                        <button type="submit">Subscriu-te</button>
+                        <input class="form-control" type="email" name="nouSubscriptor" placeholder="@lang('Correu electrònic')" required>
+                        <button type="submit">@lang('Subscriu-te')</button>
                     </form>
                 </div>
             </div>

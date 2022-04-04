@@ -11,7 +11,7 @@ return [
         'defaults'       => [
             'title'        => "Satélite K, Segell Discogràfic i Producció", // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'Satélite K es una compañía discográfica nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas eclécticas', // set false to total remove
+            'description'  => "Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament de propostes artístiques eclèctiques", // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [],
             'canonical'    => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
@@ -37,7 +37,7 @@ return [
          */
         'defaults' => [
             'title'       => 'Satélite K, Segell Discogràfic i Producció', // set false to total remove
-            'description' => 'Satélite K es una compañía discográfica nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas eclécticas', // set false to total remove
+            'description' => "Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament de propostes artístiques eclèctiques", // set false to total remove
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,
@@ -59,7 +59,7 @@ return [
          */
         'defaults' => [
             'title'       => 'Satélite K, Segell Discogràfic i Producció', // set false to total remove
-            'description' => 'Satélite K es una compañía discográfica nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas eclécticas', // set false to total remove
+            'description' => 'Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament de propostes artístiques eclèctiques', // set false to total remove
             'url'         => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => [],

@@ -77,7 +77,7 @@
                         <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a class="idiomes-link {{ ( session()->get('locale') === 'ca' ) ? 'bold-idioma' : '' }}" href="lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( session()->get('locale') === 'es' ) ? 'bold-idioma' : '' }}" href="lang/es">ESP</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'ca' ) ? 'bold-idioma' : '' }}" href="lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'es' ) ? 'bold-idioma' : '' }}" href="lang/es">ESP</a>
             </div>
         </div>
     </div>
@@ -100,36 +100,36 @@
                     <div class="col-xl-4 col-lg-5 col-md-4 col-sm-12">
                         <aside class="widget widget_footer widget_align-right">
                             <img src="{{ asset('frontend/img/logo.png') }}" alt="Satélite K">
-                            <p class="mt-20">Satélite K es una compañía discográfica nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas eclécticas y de alto valor musical.</p>
+                            <p class="mt-20">@lang("Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament de propostes artístiques eclèctiques i d'alt valor musical.")</p>
                         </aside>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
                         <aside class="widget widget_footer widget_align-right">
                             <h3 class="widget-title">Satélite K</h3>
                             <ul class="ps-list--line">
-                                <li><a href="{{ route('frontend.about.index') }}">Qui som</a></li>
-                                <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
-                                <li><a href="{{ route('frontend.discs.index') }}">Catàleg</a></li>
-                                <li><a href="{{ route('frontend.videos.index') }}">Vídeos</a></li>
-                                <li><a href="{{ route('frontend.contact.index') }}">Contacte</a></li>
+                                <li><a href="{{ route('frontend.about.index') }}">@lang('Qui som')</a></li>
+                                <li><a href="{{ route('frontend.artistes.index') }}">@lang('Artistes')</a></li>
+                                <li><a href="{{ route('frontend.discs.index') }}">@lang('Catàleg')</a></li>
+                                <li><a href="{{ route('frontend.videos.index') }}">@lang('Vídeos')</a></li>
+                                <li><a href="{{ route('frontend.contact.index') }}">@lang('Contacte')</a></li>
                             </ul>
                         </aside>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
                         <aside class="widget widget_footer widget_align-right">
-                            <h3 class="widget-title">Idioma</h3>
+                            <h3 class="widget-title">@lang('Idioma')</h3>
                             <ul class="ps-list--line">
-                                <li><a href="#">Español</a></li>
-                                <li><a href="#">Català</a></li>
+                                <li><a href="lang/ca">Català</a></li>
+                                <li><a href="lang/es">Español</a></li>
                             </ul>
                         </aside>
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-12">
                         <aside class="widget widget_footer widget_align-right">
-                            <h3 class="widget-title">Contacte</h3>
+                            <h3 class="widget-title">@lang('Contacte')</h3>
                             <p><i class="fa fa-location-arrow"></i> C/ Pallars,65, 2 4</p>
                             <p>08018 Barcelona</p>
-                            <p>Espanya</p>
+                            <p>@lang('Espanya')</p>
                             <p><i class="fa fa-phone"></i> +34 93 320 86 08</p>
                             <p><i class="fa fa-envelope"></i> info@satelitek.com</p>
                         </aside>
@@ -156,8 +156,8 @@
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
                         <p class="ps-footer__links">
-                        <a class="ps-link--line" href="#">Política de privacitat</a>
-                        <a class="ps-link--line" href="#">Avís legal</a></p>
+                        <!-- <a class="ps-link--line" href="#">@lang('Política de privacitat')</a> -->
+                        <a class="ps-link--line" href="{{ route('frontend.inici.avisLegal') }}">@lang('Avís legal')</a></p>
                     </div>
                 </div>
             </div>
@@ -176,29 +176,29 @@
         <nav class="ps-navigation--mobile">
             <div class="ps-navigation__menu">
                 <ul class="menu--mobile">
-                    <li><a href="{{ route('frontend.inici.index') }}">Inici</a></li>
-                    <li><a href="{{ route('frontend.about.index') }}">Qui som</a></li>
-                    <li><a href="{{ route('frontend.artistes.index') }}">Artistes</a></li>
+                    <li><a href="{{ route('frontend.inici.index') }}">@lang('Inici')</a></li>
+                    <li><a href="{{ route('frontend.about.index') }}">@lang('Qui som')</a></li>
+                    <li><a href="{{ route('frontend.artistes.index') }}">@lang('Artistes')</a></li>
                     <li class="menu-item-has-children">
-                        <a href="{{ route('frontend.discs.index') }}">Catàleg</a><span class="sub-toggle"></span>
+                        <a href="{{ route('frontend.discs.index') }}">@lang('Catàleg')</a><span class="sub-toggle"></span>
                         <ul class="sub-menu">
-                            <li><a href="{{ route('frontend.discs.index') }}">Discs</a></li>
-                            <li><a href="{{ route('frontend.llibres.index') }}">Llibres</a></li>
+                            <li><a href="{{ route('frontend.discs.index') }}">@lang('Discs')</a></li>
+                            <li><a href="{{ route('frontend.llibres.index') }}">@lang('Llibres')</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ route('frontend.videos.index') }}">Vídeos</a></li>
+                    <li><a href="{{ route('frontend.videos.index') }}">@lang('Vídeos')</a></li>
                     <li class="menu-item-has-children">
-                        <a href="#">Serveis</a><span class="sub-toggle"></span>
+                        <a href="#">@lang('Serveis')</a><span class="sub-toggle"></span>
                         <ul class="sub-menu">
-                            <li><a href="#" target="_blank">Distribució física</a></li>
-                            <li><a href="#" target="_blank">Distribució i màrqueting digital</a></li>
-                            <li><a href="#" target="_blank">Autoedició</a></li>
+                            <li><a href="#" target="_blank">@lang('Distribució física')</a></li>
+                            <li><a href="#" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
+                            <li><a href="#" target="_blank">@lang('Autoedició')</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ route('frontend.contact.index') }}">Contacte</a></li>
+                    <li><a href="{{ route('frontend.contact.index') }}">@lang('Contacte')</a></li>
                 </ul>
             </div>
-            <a class="idiomes-link {{ ( session()->get('locale') === 'ca' ) ? 'bold-idioma' : '' }}" href="lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( session()->get('locale') === 'es' ) ? 'bold-idioma' : '' }}" href="lang/es">ESP</a>
+            <a class="idiomes-link {{ ( app()->getLocale() === 'ca' ) ? 'bold-idioma' : '' }}" href="lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'es' ) ? 'bold-idioma' : '' }}" href="lang/es">ESP</a>
             <br><br>
             <figure class="ps-navigation__bottom">
                 <figcaption>Satélite K</figcaption>
