@@ -42,6 +42,36 @@
                     </div>
                 </div>
             </div>
+            <div class="ps-product__content ps-tab-root">
+                <div class="container">
+                    <ul class="ps-tab-list">
+                        <li class="active"><a href="#tab-1">Edicions de l'artista</a></li>
+                    </ul>
+                    <div class="ps-tabs">
+                        <div class="ps-tab active" id="tab-1">
+                            <div class="row">
+                                @foreach ( $disc->artista->discs as $discsArtista)
+                                    @if( $discsArtista->id != $disc->id)
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                            <div class="ps-product">
+                                                <div class="ps-product__thumbnail">
+                                                    <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">
+                                                        <img class="ps-product__image" src='{{ asset("/storage/$discsArtista->foto") }}' alt="Satélite K"/>
+                                                    </a>
+                                                    <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">Veure disc</a></div>
+                                                </div>
+                                                <div>
+                                                    <a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">{{ $discsArtista->titol }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
     <div class="container-fluid mt-50 mb-30">

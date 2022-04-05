@@ -72,6 +72,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Artista *:</label>
                                 <select id="artistes_id" name="artistes_id" class="form-control js-example-basic-single w-100">
+                                    <option></option>
                                     @foreach ($artistes as $artista)
                                         <option 
                                             value="{{ $artista->id }}"

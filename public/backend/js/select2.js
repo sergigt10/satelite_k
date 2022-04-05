@@ -3,6 +3,7 @@
 
   if ($(".js-example-basic-single").length) {
     $(".js-example-basic-single").select2({
+			placeholder: "Seleccionar...",
 			language: {
 				noResults: function() {
 					return " ... ";        

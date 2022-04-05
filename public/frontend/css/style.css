@@ -4742,6 +4742,11 @@ textarea.form-control {
   line-height: 1.4em;
   color: #222; }
 
+.ps-product__title.little {
+  font-size: 14px !important;
+  color: #999;
+}
+
 a.ps-product__title:hover {
   color: #429798;
 }

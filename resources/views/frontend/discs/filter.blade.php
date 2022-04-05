@@ -87,6 +87,7 @@
                                         </div>
                                         <div class="ps-product__content">
                                             <a class="ps-product__title" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">{{ $disc->titol }}</a>
+                                            <a class="ps-product__title little" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">{{ $disc->artista->nom }}</a>
                                         </div>
                                     </div>
                                 </div>

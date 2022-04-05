@@ -71,10 +71,11 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Tipus *:</label>
                                     <select id="tipus_id" name="tipus_id" class="form-control js-example-basic-single w-100">
+                                        <option></option>
                                         @foreach ($tipus as $tipu)
                                             <option 
                                                 value="{{ $tipu->id }}"
-                                                {{ old('tipus_id') == $tipu->id ? 'selected' : '' }}
+                                                {{ old('tipus_id') === $tipu->id ? 'selected' : '' }}
                                             >
                                                 {{ $tipu->nom_cat }}
                                             </option>
@@ -84,6 +85,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Gènere *:</label>
                                     <select id="generes_id" name="generes_id" class="form-control js-example-basic-single w-100">
+                                        <option></option>
                                         @foreach ($generes as $genere)
                                             <option 
                                                 value="{{ $genere->id }}"
@@ -97,6 +99,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Artista *:</label>
                                     <select id="artistes_id" name="artistes_id" class="form-control js-example-basic-single w-100">
+                                        <option></option>
                                         @foreach ($artistes as $artista)
                                             <option 
                                                 value="{{ $artista->id }}"
