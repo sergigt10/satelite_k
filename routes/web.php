@@ -54,6 +54,14 @@ Route::get('/noticies/{noticia}', 'NoticiesFrontendController@show')->name('fron
 
 Route::get('/videos', 'YoutubeController@index')->name('frontend.videos.index');
 
+/* Sitemap */
+
+Route::get('/sitemap.xml', 'SitemapController@index');
+Route::get('/sitemap.xml/statics', 'SitemapController@statics');
+Route::get('/sitemap.xml/artistes', 'SitemapController@artistes');
+Route::get('/sitemap.xml/discos', 'SitemapController@discos');
+Route::get('/sitemap.xml/llibres', 'SitemapController@llibres');
+
 // BackEnd //
 
 Auth::routes([

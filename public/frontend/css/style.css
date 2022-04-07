@@ -5022,7 +5022,7 @@ a.ps-product__title:hover {
 .ps-product--detail {
   /*product content*/ }
   .ps-product--detail .ps-product__title {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
     color: #222;
     line-height: 1.3em;
@@ -5538,12 +5538,15 @@ a.ps-product__title:hover {
   @media (min-width: 768px) {
     .ps-product--detail .ps-product__thumbnail {
       max-width: 500px; } }
+    .ps-product--detail .ps-product__subtitle a {
+      font-size: 20px;
+      font-weight: 400; }
   @media (min-width: 992px) {
     .ps-product--detail .ps-product__title {
-      font-size: 35px; }
+      font-size: 30px; }
     .ps-product--detail .ps-product__subtitle a {
-      font-size: 25px;
-      font-weight: 600; }
+      font-size: 23px;
+      font-weight: 400; }
     .ps-product--detail .ps-product__desc p {
       font-size: 16px; }
     .ps-product--detail .ps-product__referencia {
