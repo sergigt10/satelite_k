@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Noticia;
+
+use Artesaos\SEOTools\Facades\SEOTools;
 
 class NoticiesFrontendController extends Controller
 {
@@ -14,6 +15,8 @@ class NoticiesFrontendController extends Controller
      */
     public function index()
     {
+        SEOTools::setTitle('Notícies Satélite K');
+
         $noticies = Noticia::latest('id')->paginate(16, ['*'], 'pagina');
         return view('frontend.noticies.index', compact('noticies'));
     }
@@ -21,6 +24,9 @@ class NoticiesFrontendController extends Controller
     public function show($slug)
     {
         $noticia = Noticia::where('slug','=', $slug)->firstOrFail();
+
+        SEOTools::setTitle($noticia->titol_cat);
+
         return view('frontend.noticies.show', compact('noticia'));
     }
 }
