@@ -58,7 +58,7 @@
                                 <div class="ps-product">
                                     <div class="ps-product__thumbnail">
                                         <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
-                                            <img class="ps-product__image" src='{{ asset("/storage/$disc->foto") }}' alt="Satélite K"/>
+                                            <img class="ps-product__image" src='{{ asset("/storage/$disc->foto") }}' alt="{{ $disc->titol }} - Satélite K"/>
                                         </a>
                                         <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">@lang('Veure disc')</a></div>
                                     </div>
@@ -94,7 +94,7 @@
                                             <div class="ps-block--portfolio">
                                                 <div class="ps-block__thumbnail">
                                                     <a class="ps-block__overlay" href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}"></a>
-                                                    <img src='{{ asset("/storage/$artista->foto") }}' alt="Satélite K">
+                                                    <img src='{{ asset("/storage/$artista->foto") }}' alt="{{ $artista->nom }} - Satélite K">
                                                 </div>
                                                 <div class="ps-block__content">
                                                     <a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">{{ $artista->nom }}</a>
@@ -131,7 +131,7 @@
                                             <div class="ps-block--portfolio">
                                                 <div class="ps-block__thumbnail">
                                                     <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}"></a>
-                                                    <img src="{{ $item->snippet->thumbnails->high->url }}" alt="Satélite K">
+                                                    <img src="{{ $item->snippet->thumbnails->high->url }}" alt="{{ $item->snippet->title }} - Satélite K">
                                                 </div>
                                                 <div class="ps-block__content">
                                                     <a target="_blank" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}">

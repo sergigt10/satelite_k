@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Missatge del formulari web</title>
+        <title>Missatge del formulari web - Satelíte K</title>
     </head>
     <body>
-        <h3>Missatge: </h3>
+        <h3>Contingut: </h3>
         <p>
             <strong>Nom i cognoms:</strong> {{ $data['name'] }}<br>
             <strong>Correu electrònic:</strong> {{ $data['mail'] }}<br>

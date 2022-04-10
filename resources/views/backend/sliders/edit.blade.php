@@ -54,6 +54,35 @@
                                 <label for="exampleInputEmail3">Títol URL ESP:</label>
                                 <input name="titol_link_esp" type="text" class="form-control" id="exampleInputEmail3" placeholder="Títol URL ESP" value="{{ $slider->titol_link_esp }}">
                             </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Ordre slide *:</label>
+                                <select id="ordre" name="ordre" class="form-control js-example-basic-single w-100">
+                                        <option 
+                                            value="1"
+                                            {{ $slider->ordre == 1 ? 'selected' : '' }}
+                                        >
+                                            1
+                                        </option>
+                                        <option 
+                                            value="2"
+                                            {{ $slider->ordre == 2 ? 'selected' : '' }}
+                                        >
+                                            2
+                                        </option>
+                                        <option 
+                                            value="3"
+                                            {{ $slider->ordre == 3 ? 'selected' : '' }}
+                                        >
+                                            3
+                                        </option>
+                                        <option 
+                                            value="4"
+                                            {{ $slider->ordre == 4 ? 'selected' : '' }}
+                                        >
+                                            4
+                                        </option>
+                                </select>
+                            </div>
                             <div class="row grid-margin">
                                 <div class="col-lg-12">
                                     <div class="card">

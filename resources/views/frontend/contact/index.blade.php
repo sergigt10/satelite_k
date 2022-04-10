@@ -7,8 +7,8 @@
                 <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                     <div class="ps-section__header">
                     <figure>
-                        <figcaption>Contacte</figcaption>
-                        <p>Facilita'ns les teves dades i t'atendrem com més aviat millor:</p>
+                        <figcaption>@lang("Contacte")</figcaption>
+                        <p>@lang("Facilita'ns les teves dades i t'atendrem com més aviat millor")</p>
                     </figure>
                     </div>
                 </div>
@@ -25,29 +25,29 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                                 <div class="form-group">
-                                    <label>Nom i cognoms <sup>*<sup></sup></sup></label>
+                                    <label>@lang("Nom i cognoms") <sup>*<sup></sup></sup></label>
                                     <input class="form-control" type="text" placeholder="" name="name" required>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                                 <div class="form-group">
-                                    <label>Correu electrònic<sup>*<sup></sup></sup></label>
+                                    <label>@lang("Correu electrònic")<sup>*<sup></sup></sup></label>
                                     <input class="form-control" type="email" placeholder="" name="mail" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Missatge<sup>*<sup></sup></sup></label>
+                            <label>@lang("Missatge")<sup>*<sup></sup></sup></label>
                             <textarea class="form-control" rows="6" placeholder="" name="msg" required></textarea>
                         </div>
                             <div class="form-group submit">
-                            <button class="ps-btn ps-btn--black">Enviar missatge</button>
+                            <button class="ps-btn ps-btn--black">@lang("Enviar missatge")</button>
                         </div>
                     </form>
                 </div>
                 <div class="ps-section__right">
                     <figure>
-                        <figcaption>Segueix-nos!</figcaption>
+                        <figcaption>@lang("Segueix-nos!")</figcaption>
                     </figure>
                     <ul class="ps-list--social">
                         <li><a href="https://www.facebook.com/satelitek" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -60,7 +60,7 @@
                         <figcaption>Satélite K</figcaption>
                         <p>C/Pallars 65, 2º 4ª</p>
                         <p>08018 Barcelona</p>
-                        <p>T.+34 933208608</p>
+                        <p>T.+34 93 320 86 08</p>
                         <p>info@satelitek.com</p>
                     </figure>
                 </div>

@@ -25,7 +25,7 @@
                                 <table id="order-listing" class="table table-hover table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Núm. slider</th>
+                                            <th>Ordre slide</th>
                                             <th>Nom artista</th>
                                             <th>Nom disc</th>
                                             <th data-orderable="false">Editar</th>
@@ -37,7 +37,7 @@
                                             <tr>
                                                 <td>
                                                     <a href="{{ route('backend.sliders.edit', ['slider' => $slide->id]) }}" style="color: black;">
-                                                        {{ $slide->id }}
+                                                        {{ $slide->ordre }}
                                                     </a>
                                                 </td>
                                                 <td>

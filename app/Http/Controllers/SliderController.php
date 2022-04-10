@@ -98,15 +98,33 @@ class SliderController extends Controller
             'nom_disc' => 'required',
             'titol_link_cat' => '',
             'titol_link_esp' => '',
-            'url_link' => ''
+            'url_link' => '',
+            'ordre' => ''
         ]);
 
-        // Asignar los valores
+        // Asignar valors
         $slider->nom_artista = $data['nom_artista'];
         $slider->nom_disc = $data['nom_disc'];
         $slider->titol_link_cat = $data['titol_link_cat'];
         $slider->titol_link_esp = $data['titol_link_esp'];
         $slider->url_link = $data['url_link'];
+
+        /* Si modifiquem l'ordre */
+        if($slider->ordre !== $data['ordre']) {
+            /* Ordre actual del slide que volem canviar */
+            $ordreActual = $slider->ordre;
+
+            /* Cercar quin slide tenim que modificar el seu ordre */
+            $ordreModificar = $slider::where('ordre','LIKE','%'.$data['ordre'].'%');
+            /* Assignem l'anterior ordre en aquest slide */
+            foreach($ordreModificar->get() as $slide) {
+                $slide->ordre = $ordreActual;
+                $slide->save();
+            }
+
+            /* Canviem l'ordre amb el nou ordre que volem */
+            $slider->ordre = $data['ordre'];
+        }
 
         // Si el usuario sube una nueva imagen
         if($request['foto']) {

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Llibre;
 
+use Artesaos\SEOTools\Facades\SEOTools;
+
 class LlibresFrontendController extends Controller
 {
     /**
@@ -14,6 +16,8 @@ class LlibresFrontendController extends Controller
 
     public function index()
     {
+        SEOTools::setTitle('Llibres Satélite K');
+
         $llibres = Llibre::latest('data_publicacio')->paginate(16, ['*'], 'pagina');
         return view('frontend.llibres.index', compact('llibres'));
     }
@@ -21,6 +25,9 @@ class LlibresFrontendController extends Controller
     public function show($slug)
     {
         $llibre = Llibre::where('slug','=', $slug)->firstOrFail();
+
+        SEOTools::setTitle($llibre->titol_cat);
+
         return view('frontend.llibres.show', compact('llibre'));
     }
 }

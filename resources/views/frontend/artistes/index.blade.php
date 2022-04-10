@@ -7,8 +7,8 @@
                 <div class="ps-web__left">
                     <div class="ps-section__header">
                         <figure>
-                            <figcaption>Artistes</figcaption>
-                            <p>Àlbums, biografies i fotos dels artistes de Satélite K</p>
+                            <figcaption>@lang("Artistes")</figcaption>
+                            <p>@lang("Àlbums, biografies i fotos dels artistes de Satélite K")</p>
                         </figure>
                     </div>
                 </div>
@@ -17,10 +17,10 @@
                         <form action="ordre" method="POST">
                             @csrf
                             <div class="ps-web__sorting mobile-sorting">
-                                <span>Ordenar per</span>
+                                <span>@lang("Ordenar per")</span>
                                 <select class="" name="ordre" onchange="this.form.submit()">
-                                    <option value="id" {{ request()->get('ordre') === 'id' ? 'selected' : '' }}>Addició</option>
-                                    <option value="nom" {{ request()->get('ordre') === 'nom' ? 'selected' : '' }}>Alfabet</option>
+                                    <option value="id" {{ request()->get('ordre') === 'id' ? 'selected' : '' }}>@lang("Addició")</option>
+                                    <option value="nom" {{ request()->get('ordre') === 'nom' ? 'selected' : '' }}>@lang("Alfabet")</option>
                                 </select>
                             </div>
                         </form>
@@ -34,10 +34,10 @@
                     <div class="col-xl-3 col-lg-4 col-md-3 col-sm-12">
                         <div class="ps-product">
                             <div class="ps-product__thumbnail">
-                                <img class="ps-product__image" src='{{ asset("/storage/$artista->foto") }}' alt="Satélite K"/>
+                                <img class="ps-product__image" src='{{ asset("/storage/$artista->foto") }}' alt="{{ $artista->nom }} - Satélite K"/>
                                 <a class="ps-product__overlay" href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}"></a>
                                 <div class="ps-product__actions">
-                                    <a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">Veure artista</a>
+                                    <a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">@lang("Veure artista")</a>
                                 </div>
                             </div>
                             <div class="ps-product__content">

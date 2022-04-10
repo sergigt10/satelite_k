@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Artesaos\SEOTools\Facades\SEOTools;
+
 class YoutubeController extends Controller
 {
     /**
@@ -11,6 +13,8 @@ class YoutubeController extends Controller
      */
     public function index()
     {
+        SEOTools::setTitle('Videoclips Satélite K');
+
         $videoLists = videoLists(12);
         return view('frontend.videos.index', compact('videoLists'));
     }

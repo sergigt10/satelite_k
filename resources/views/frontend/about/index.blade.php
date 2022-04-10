@@ -4,9 +4,9 @@
     <div class="ps-about-intro">
         <div class="ps-section__left">
             <div class="ps-section__content">
-                <h5>QUIÉNES SOMOS</h5>
-                <h3>Satélite K es una compañía discográfica nacida en Barcelona</h3>
-                <p>Satélite K es una compañía discográfica nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas eclécticas y de alto valor musical. <br><br>Especializada en distribución digital, física y en la promoción, Satélite K es uno de los sellos de referencia a nivel estatal y que ha contado en sus filas con los más prestigiosos proyectos musicales durante años, donde se ha consolidado como una oficina de ayuda y acompañamiento para el artista.</p>
+                <h5>@lang('QUI SOM')</h5>
+                <h3>@lang('Satélite K és una companyia discogràfica nascuda a Barcelona')</h3>
+                <p>@lang("Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament de propostes artístiques eclèctiques i d'alt valor musical. <br><br>Especialitzada en distribució digital, física i en la promoció, Satélite K és un dels segells de referència a nivell estatal i que ha comptat a les seves files amb els més prestigiosos projectes musicals durant anys, on s'ha consolidat com una oficina d'ajuda i acompanyament per l'artista.")</p>
             </div>
         </div>
         <div class="ps-section__right"><img src="{{ asset('frontend/img/empresa.jpg') }}" alt="Satélite k"></div>
@@ -16,10 +16,10 @@
             <div class="ps-section__left"><img src="{{ asset('frontend/img/empresa2.jpg') }}" alt="Satélite k"></div>
             <div class="ps-section__right">
                 <blockquote>
-                    <p>Especializada en distribución digital, física y promoción, Satélite K es uno de los sellos de referencia a nivel estatal</p>
+                    <p>@lang("Especialitzada en distribució digital, física i promoció, Satélite K és un dels segells de referència a nivell estatal")</p>
                 </blockquote>
                 <figure>
-                    <p>Creada a partir del año 1992 se editan los primeros trabajos, coincidiendo y por encargo de las Olimpiadas de Barcelona, para las cuales se crean los toques que acompañaron a los atletas en los podios, también conocidos como los toques de entrega de medallas, y las fanfarrias de las ceremonias de inauguración, bajo la dirección del músico y compositor Carles Santos.</p>
+                    <p>@lang("Creada a partir de l'any 1992 s'editen els primers treballs, coincidint i per encàrrec de les Olimpíades de Barcelona, per a les quals es creen els tocs que van acompanyar els atletes als podis, també coneguts com els tocs de lliurament de medalles, i les fanfàrries de les cerimònies d'inauguració, sota la direcció del músic i compositor Carles Santos.")</p>
                 </figure>
             </div>
         </div>
@@ -29,9 +29,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="ps-section__header" style="max-width: 100%;">
-                        <h4>Diversidad musical</h4>
-                        <p>Bajo esta diversidad musical, forman o han formado parte de la compañía artistas de la talla de Fundación Tony Manero, Ojos de Brujo, Love of Lesbian, Muchachito Bombo Infierno, Roger Mas, Sisa, Pau Riba, Judit Neddermann, Mayte Martín, Moncho, Che Sudaka, Manu Chao, Juanito Makandé, Kiko Veneno o Carlinhos Brown. Así como también forman parte del catálogo los últimos trabajos de Peret, Patriarcas de la Rumba, o Green Valley, entre otros.<br><br>Fiel a su filosofía, Satélite K continúa en la actualidad dando soporte a nuevos talentos tales como BGKO, INTANA o Green Valley, en lo que representa una producción limitada a la par que selecta, mientras que en términos de desarrollo la compañía apuesta por la especialización y una fuerte orientación hacia los servicios de apoyo a los creadores.<br><br>
-                        Por todo ello y más, Satélite K está considerada en el presente como una compañía de referencia a nivel independiente. Su visión de futuro a nivel organizativo pasa por una estructura interna flexible, con una gran capacidad para la adaptación al cambio y mediante una permanente atención hacia su sector y a las nuevas tecnologías.</p>
+                        <h4>@lang("Diversitat musical")</h4>
+                        <p>@lang("Sota aquesta diversitat musical, formen o han format part de la companyia artistes de la talla de Fundació Tony Manero, Ulls de Bruixot, Love of Lesbian, Muchachito Bombo Infierno, Roger Mas, Sisa, Pau Riba, Judit Neddermann, Mayte Martín, Moncho, Che Sudaka, Manu Chao, Juanito Makandé, Kiko Veneno o Carlinhos Brown. Així com també formen part del catàleg els darrers treballs de Peret, Patriarques de la Rumba, o Green Valley, entre d'altres.<br><br> Fidel a la seva filosofia, Satélite K continua actualment donant suport a nous talents com BGKO, INTANA o Green Valley, en el que representa una producció limitada alhora que selecta, mentre que en termes de desenvolupament la companyia aposta per l'especialització i una forta orientació cap als serveis de suport als creadors.<br><br> Per tot això i més, Satélite K està considerada en el present com una companyia de referència a nivell independent. La seva visió de futur a nivell organitzatiu passa per una estructura interna flexible, amb una gran capacitat per a l'adaptació al canvi i mitjançant una atenció permanent cap al seu sector i les noves tecnologies.")</p>
                     </div>
                 </div>
             </div>

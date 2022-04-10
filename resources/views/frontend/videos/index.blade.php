@@ -6,8 +6,8 @@
             <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                 <div class="ps-section__header">
                     <figure>
-                        <figcaption>Vídeos</figcaption>
-                        <p>Últims videoclips publicats de Satélite K</p>
+                        <figcaption>@lang("Vídeos")</figcaption>
+                        <p>@lang("Últims videoclips publicats de Satélite K")</p>
                     </figure>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                                     <div class="ps-block--portfolio">
                                         <div class="ps-block__thumbnail">
                                             <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}"></a>
-                                            <img src="{{ $item->snippet->thumbnails->high->url }}" alt="Satélite K">
+                                            <img src="{{ $item->snippet->thumbnails->high->url }}" alt="{{ $item->snippet->title }} - Satélite K">
                                         </div>
                                         <div class="ps-block__content">
                                             <a target="_blank" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="ps-section__footer text-center">
-                        <a class="ps-link--under" target="_blank" href="https://www.youtube.com/user/SateliteKVideos">Descobreix-ne més</a>
+                        <a class="ps-link--under" target="_blank" href="https://www.youtube.com/user/SateliteKVideos">@lang("Descobreix-ne més")</a>
                     </div>
                 </div>
             </div>

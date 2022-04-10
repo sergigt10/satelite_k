@@ -9,6 +9,8 @@ use App\Models\Disc;
 use App\Models\Llibre;
 use App\Models\Noticia;
 
+use Artesaos\SEOTools\Facades\SEOTools;
+
 class HomeFrontendController extends Controller
 {
     /**
@@ -18,31 +20,36 @@ class HomeFrontendController extends Controller
      */
     public function index()
     {
-        $slider1 = Slider::all()->get(0);
-        $slider2 = Slider::all()->get(1);
-        $slider3 = Slider::all()->get(2);
-        $slider4 = Slider::all()->get(3);
+        $ordreSlide = Slider::orderBy('ordre')->get();
+        $slider1 = $ordreSlide->get(0);
+        $slider2 = $ordreSlide->get(1);
+        $slider3 = $ordreSlide->get(2);
+        $slider4 = $ordreSlide->get(3);
         $artistes = Artista::latest('id')->take(4)->get();
         $discs = Disc::latest('data_publicacio')->take(5)->get();
         $videoLists = videoLists(4);
+        
         return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'slider4', 'artistes', 'discs', 'videoLists'));
     }
 
-    public function about(){
+    public function about()
+    {
+        SEOTools::setTitle('Qui som Satélite K');
+
         return view('frontend.about.index');
     }
 
-    public function search(Request $request) {
-
+    public function search(Request $request) 
+    {
         if($request->input('cercar') === null ||  $request->input('cercar') === '') {
             abort(404);
         } else {
             $artistaCercar = $discCercar = $noticiaCercar = $llibreCercar = $request->input('cercar') ;
         
-            $filterArtista = Artista::where('nom','LIKE','%'.$artistaCercar.'%')->paginate(16, ['*'], 'pagina');
-            $filterDisc = Disc::where('titol','LIKE','%'.$discCercar.'%')->paginate(16, ['*'], 'pagina');
-            $filterNoticia = Noticia::where('titol_cat','LIKE','%'.$noticiaCercar.'%')->paginate(16, ['*'], 'pagina');
-            $filterLlibre = Llibre::where('titol_cat','LIKE','%'.$llibreCercar.'%')->paginate(16, ['*'], 'pagina');
+            $filterArtista = Artista::latest('id')->where('nom','LIKE','%'.$artistaCercar.'%')->paginate(16, ['*'], 'pagina');
+            $filterDisc = Disc::latest('data_publicacio')->where('titol','LIKE','%'.$discCercar.'%')->paginate(16, ['*'], 'pagina');
+            $filterNoticia = Noticia::latest('id')->where('titol_cat','LIKE','%'.$noticiaCercar.'%')->orWhere('titol_esp','LIKE','%'.$noticiaCercar.'%')->paginate(16, ['*'], 'pagina');
+            $filterLlibre = Llibre::latest('data_publicacio')->where('titol_cat','LIKE','%'.$llibreCercar.'%')->orWhere('titol_esp','LIKE','%'.$llibreCercar.'%')->paginate(16, ['*'], 'pagina');
 
             return view('frontend.search.index', compact('filterArtista', 'filterDisc', 'filterLlibre', 'filterNoticia'));
         }
@@ -51,7 +58,8 @@ class HomeFrontendController extends Controller
     // https://github.com/mailerlite/mailerlite-api-v2-php-sdk
     // https://developers.mailerlite.com/reference/add-single-subscriber
     // Request $request
-    public function subscribeNewsletter(Request $request){
+    public function subscribeNewsletter(Request $request)
+    {
         $groupsApi = (new \MailerLiteApi\MailerLite(config('services.mailerlite.api_key_mailerlite')))->groups();
 
         $groupId = 111106111;
@@ -64,11 +72,13 @@ class HomeFrontendController extends Controller
         return redirect()->action('HomeFrontendController@subscribeNewsletterOk');
     }
 
-    public function subscribeNewsletterOk(){
+    public function subscribeNewsletterOk()
+    {
         return view('frontend.inici.newsletterOk');
     }
 
-    public function avisLegal(){
+    public function avisLegal()
+    {
         return view('frontend.inici.avisLegal');
     }
 

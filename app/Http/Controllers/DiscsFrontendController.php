@@ -8,6 +8,8 @@ use App\Models\Disc;
 use App\Models\Genere;
 use App\Models\Tipu;
 
+use Artesaos\SEOTools\Facades\SEOTools;
+
 class DiscsFrontendController extends Controller
 {
     /**
@@ -17,15 +19,19 @@ class DiscsFrontendController extends Controller
      */
     public function index()
     {
-        $artistes = Artista::all();
-        $generes = Genere::all();
-        $tipus = Tipu::all();
+        SEOTools::setTitle('Discos Satélite K');
+
+        $artistes = Artista::orderBy('nom')->get();
+        $generes = Genere::orderBy('nom_cat')->get();
+        $tipus = Tipu::orderBy('nom_cat')->get();
         $discs = Disc::latest('data_publicacio')->paginate(18, ['*'], 'pagina');
         return view('frontend.discs.index', compact('discs','artistes','generes','tipus'));
     }
 
     public function filter(Request $request)
     {
+        SEOTools::setTitle('Discos Satélite K');
+
         $filtreArtista = $request->input('artista');
         $filtreTipus = $request->input('tipus');
         $filtreGenere = $request->input('genere');
@@ -45,6 +51,9 @@ class DiscsFrontendController extends Controller
     public function show($slug)
     {
         $disc = Disc::where('slug','=', $slug)->firstOrFail();
+
+        SEOTools::setTitle($disc->titol);
+
         return view('frontend.discs.show', compact('disc'));
     }
 }
