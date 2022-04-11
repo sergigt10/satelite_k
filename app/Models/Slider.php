@@ -15,6 +15,7 @@ class Slider extends Model
         'titol_link_cat',
         'titol_link_esp',
         'url_link',
-        'foto'
+        'foto',
+        'ordre'
     ];
 }

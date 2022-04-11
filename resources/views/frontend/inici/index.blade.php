@@ -13,7 +13,7 @@
                     <a class="ps-link--under" href="{{$slider1->url_link}}" target="_blank" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{ ( app()->getLocale() === 'ca' ) ? $slider1->titol_link_cat : $slider1->titol_link_esp }}</a>
                 </div>
             </div>
-            <div class="ps-banner--3 bg--top-left right" data-background='{{ asset("/storage/$slider2->foto") }}'>
+            <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider2->foto") }}'>
                 <div class="ps-banner__content">
                     <p data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_artista}}</p>
                     <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_disc}}</h3>
