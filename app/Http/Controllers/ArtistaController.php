@@ -31,7 +31,7 @@ class ArtistaController extends Controller
      */
     public function create()
     {
-        $generes = Genere::all();
+        $generes = Genere::orderBy('nom_cat')->get();
 
         return view('backend.artistes.create')
                     ->with('generes', $generes);
@@ -50,7 +50,7 @@ class ArtistaController extends Controller
             'biografia_cat' => 'required',
             'biografia_esp' => 'required',
             'link_web' => '',
-            'generes_id' => '',
+            'generes_id' => 'required',
             'foto' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg'
         ]);/* Max foto 10 MB */
 
@@ -88,7 +88,7 @@ class ArtistaController extends Controller
      */
     public function edit(Artista $artista)
     {
-        $generes = Genere::all();
+        $generes = Genere::orderBy('nom_cat')->get();
 
         return view('backend.artistes.edit', compact('artista'))->with('generes', $generes);
     }
@@ -108,7 +108,7 @@ class ArtistaController extends Controller
             'biografia_cat' => 'required',
             'biografia_esp' => 'required',
             'link_web' => '',
-            'generes_id' => '',
+            'generes_id' => 'required',
         ]);
         
         // Si canviem el nom actualitzem slug

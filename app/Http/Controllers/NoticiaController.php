@@ -31,7 +31,7 @@ class NoticiaController extends Controller
      */
     public function create()
     {
-        $artistes = Artista::all();
+        $artistes = Artista::orderBy('nom')->get();
 
         return view('backend.noticies.create')
                     ->with('artistes', $artistes);
@@ -50,7 +50,7 @@ class NoticiaController extends Controller
             'titol_esp' => 'required',
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
-            'artistes_id' => '',
+            'artistes_id' => 'required',
             'foto' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg'
         ]);/* Max foto 10 MB */
 
@@ -88,7 +88,7 @@ class NoticiaController extends Controller
      */
     public function edit(Noticia $noticia)
     {
-        $artistes = Artista::all();
+        $artistes = Artista::orderBy('nom')->get();
 
         return view('backend.noticies.edit', compact('noticia'))->with('artistes', $artistes);
     }
@@ -108,7 +108,7 @@ class NoticiaController extends Controller
             'titol_esp' => 'required',
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
-            'artistes_id' => '',
+            'artistes_id' => 'required',
         ]);/* Max foto 10 MB */
 
         // Si canviem el nom actualitzem slug

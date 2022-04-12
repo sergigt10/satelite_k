@@ -31,7 +31,7 @@ class LlibreController extends Controller
      */
     public function create()
     {
-        $artistes = Artista::all();
+        $artistes = Artista::orderBy('nom')->get();
 
         return view('backend.llibres.create')
                     ->with('artistes', $artistes);
@@ -92,7 +92,7 @@ class LlibreController extends Controller
      */
     public function edit(Llibre $llibre)
     {
-        $artistes = Artista::all();
+        $artistes = Artista::orderBy('nom')->get();
 
         return view('backend.llibres.edit', compact('llibre'))->with('artistes', $artistes);
     }

@@ -39,6 +39,11 @@
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
+                            @error('generes_id')
+                                <div class='alert alert-danger' role='alert'>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
 
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Nom artista *:</label>

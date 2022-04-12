@@ -37,9 +37,9 @@ class DiscsFrontendController extends Controller
         $filtreGenere = $request->input('genere');
         $filtreAny = $request->input('any');
 
-        $artistes = Artista::all();
-        $generes = Genere::all();
-        $tipus = Tipu::all();
+        $artistes = Artista::orderBy('nom')->get();
+        $generes = Genere::orderBy('nom_cat')->get();
+        $tipus = Tipu::orderBy('nom_cat')->get();
         $discs = Disc::where('artistes_id','LIKE','%'.$filtreArtista.'%')
                     ->where('generes_id','LIKE','%'.$filtreGenere.'%')
                     ->where('tipus_id','LIKE','%'.$filtreTipus.'%')

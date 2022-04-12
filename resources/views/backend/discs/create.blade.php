@@ -43,6 +43,21 @@
                                         <strong>{{ $message }}</strong>
                                     </div>
                                 @enderror
+                                @error('generes_id')
+                                    <div class='alert alert-danger' role='alert'>
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
+                                @error('artistes_id')
+                                    <div class='alert alert-danger' role='alert'>
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
+                                @error('tipus_id')
+                                    <div class='alert alert-danger' role='alert'>
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Títol *:</label>
@@ -75,7 +90,7 @@
                                         @foreach ($tipus as $tipu)
                                             <option 
                                                 value="{{ $tipu->id }}"
-                                                {{ old('tipus_id') === $tipu->id ? 'selected' : '' }}
+                                                {{ old('tipus_id') == $tipu->id ? 'selected' : '' }}
                                             >
                                                 {{ $tipu->nom_cat }}
                                             </option>

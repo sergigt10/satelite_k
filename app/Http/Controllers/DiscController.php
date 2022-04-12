@@ -33,9 +33,9 @@ class DiscController extends Controller
      */
     public function create()
     {
-        $artistes = Artista::all();
-        $generes = Genere::all();
-        $tipus = Tipu::all();
+        $artistes = Artista::orderBy('nom')->get();
+        $generes = Genere::orderBy('nom_cat')->get();
+        $tipus = Tipu::orderBy('nom_cat')->get();
 
         return view('backend.discs.create')
                     ->with('generes', $generes)
@@ -61,9 +61,9 @@ class DiscController extends Controller
             'link_spotify' => '',
             'link_apple_music' => '',
             'link_venda_fisica' => '',
-            'generes_id' => '',
-            'artistes_id' => '',
-            'tipus_id' => '',
+            'generes_id' => 'required',
+            'artistes_id' => 'required',
+            'tipus_id' => 'required',
         ]);/* Max foto 10 MB */
 
         $ruta_foto = $request['foto']->store('backend/discs', 'public');
@@ -100,9 +100,9 @@ class DiscController extends Controller
      */
     public function edit(Disc $disc)
     {
-        $artistes = Artista::all();
-        $generes = Genere::all();
-        $tipus = Tipu::all();
+        $artistes = Artista::orderBy('nom')->get();
+        $generes = Genere::orderBy('nom_cat')->get();
+        $tipus = Tipu::orderBy('nom_cat')->get();
 
         return view('backend.discs.edit', compact('disc'))->with('artistes', $artistes)->with('generes', $generes)->with('tipus', $tipus);
     }
@@ -126,9 +126,9 @@ class DiscController extends Controller
             'link_spotify' => '',
             'link_apple_music' => '',
             'link_venda_fisica' => '',
-            'generes_id' => '',
-            'artistes_id' => '',
-            'tipus_id' => '',
+            'generes_id' => 'required',
+            'artistes_id' => 'required',
+            'tipus_id' => 'required',
         ]);
 
         // Si canviem el nom actualitzem slug
