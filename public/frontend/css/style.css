@@ -12148,3 +12148,7 @@ html .bg--parallax {
 .idiomes-link.bold-idioma {
   font-weight: 900;
 }
+
+.pagination {
+  flex-wrap: wrap !important;
+}
