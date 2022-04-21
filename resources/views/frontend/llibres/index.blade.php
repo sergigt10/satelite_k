@@ -23,7 +23,8 @@
                                 </div>
                             </div>
                             <div class="ps-product__content">
-                                <a class="ps-product__title" href="{{ route('frontend.llibres.show', ['llibre' => $llibre->slug]) }}">{{ ( app()->getLocale() === 'ca' ) ? $llibre->titol_cat : $llibre->titol_esp }}</a>
+                                <a class="ps-product__title" href="{{ route('frontend.llibres.show', ['llibre' => $llibre->slug]) }}"><b>{{ ( app()->getLocale() === 'ca' ) ? $llibre->titol_cat : $llibre->titol_esp }}</b></a>
+                                <a class="ps-product__title little" href="{{ route('frontend.llibres.show', ['llibre' => $llibre->slug]) }}">{{ $llibre->autor }}</a>
                             </div>
                         </div>
                     </div>

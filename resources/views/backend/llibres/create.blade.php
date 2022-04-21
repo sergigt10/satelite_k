@@ -33,11 +33,6 @@
                                         <strong>{{ $message }}</strong>
                                     </div>
                                 @enderror
-                                @error('ilustrador')
-                                    <div class='alert alert-danger' role='alert'>
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
                                 @error('descripcio_cat')
                                     <div class='alert alert-danger' role='alert'>
                                         <strong>{{ $message }}</strong>
@@ -77,7 +72,7 @@
                                     <input name="autor" type="text" class="form-control @error('autor') is-invalid @enderror" id="exampleInputEmail3" placeholder="Autor" value="{{ old('autor') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Ilustrador *:</label>
+                                    <label for="exampleInputEmail3">Ilustrador:</label>
                                     <input name="ilustrador" type="text" class="form-control @error('ilustrador') is-invalid @enderror" id="exampleInputEmail3" placeholder="Ilustrador" value="{{ old('ilustrador') }}">
                                 </div>
                                 <div class="form-group">
