@@ -41,7 +41,7 @@ return [
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,
-            'images'      => [],
+            'images'      => ['https://www.satelitek.com/frontend/img/empresa2.jpg'],
         ],
     ],
     'twitter' => [
@@ -49,8 +49,9 @@ return [
          * The default values to be used by the twitter cards generator.
          */
         'defaults' => [
-            //'card'        => 'summary',
-            //'site'        => '@LuizVinicius73',
+            'card'        => 'summary',
+            'title'       => 'Satélite K, Segell Discogràfic i Producció',
+            'site'        => '@satelitek',
         ],
     ],
     'json-ld' => [
@@ -62,7 +63,7 @@ return [
             'description' => 'Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament de propostes artístiques eclèctiques', // set false to total remove
             'url'         => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'WebPage',
-            'images'      => [],
+            'images'      => ['https://www.satelitek.com/frontend/img/empresa2.jpg'],
         ],
     ],
 ];

@@ -297,6 +297,8 @@ https://www.youtube.com/watch?v=LZwEv0DISU8
 # https://www.ibidemgroup.com/edu/traducciones-laravel-8/
 # https://lokalise.com/blog/laravel-localization-step-by-step/
 
+** HTTPS **
+https://www.legendblogs.com/how-to-force-redirect-http-to-https-in-laravel-7x-and-6x-and-more
 
 
 

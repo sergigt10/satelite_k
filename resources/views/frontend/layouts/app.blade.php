@@ -55,7 +55,7 @@
                     <a href="#">@lang('Serveis')</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
                         <li><a href="#" target="_blank">@lang('Distribució física')</a></li>
-                        <li><a href="#" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
+                        <li><a href="https://kzoomusic.com/" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
                         <li><a href="https://autoeditarte.com/" target="_blank">@lang('Autoedició')</a></li>
                     </ul>
                 </li>
@@ -77,7 +77,7 @@
                         <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'ca' ) ? 'bold-idioma' : '' }}" href="lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'es' ) ? 'bold-idioma' : '' }}" href="lang/es">ESP</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'ca' ) ? 'bold-idioma' : '' }}" href="{{ Request::root() }}/lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'es' ) ? 'bold-idioma' : '' }}" href="{{ Request::root() }}/lang/es">ESP</a>
             </div>
         </div>
     </div>
@@ -119,8 +119,8 @@
                         <aside class="widget widget_footer widget_align-right">
                             <h3 class="widget-title">@lang('Idioma')</h3>
                             <ul class="ps-list--line">
-                                <li><a href="lang/ca">Català</a></li>
-                                <li><a href="lang/es">Español</a></li>
+                                <li><a href="{{ Request::root() }}/lang/ca">Català</a></li>
+                                <li><a href="{{ Request::root() }}/lang/es">Español</a></li>
                             </ul>
                         </aside>
                     </div>
@@ -191,14 +191,14 @@
                         <a href="#">@lang('Serveis')</a><span class="sub-toggle"></span>
                         <ul class="sub-menu">
                             <li><a href="#" target="_blank">@lang('Distribució física')</a></li>
-                            <li><a href="#" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
-                            <li><a href="#" target="_blank">@lang('Autoedició')</a></li>
+                            <li><a href="https://kzoomusic.com/" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
+                            <li><a href="https://autoeditarte.com/" target="_blank">@lang('Autoedició')</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ route('frontend.contact.index') }}">@lang('Contacte')</a></li>
                 </ul>
             </div>
-            <a class="idiomes-link {{ ( app()->getLocale() === 'ca' ) ? 'bold-idioma' : '' }}" href="lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'es' ) ? 'bold-idioma' : '' }}" href="lang/es">ESP</a>
+            <a class="idiomes-link {{ ( app()->getLocale() === 'ca' ) ? 'bold-idioma' : '' }}" href="{{ Request::root() }}/lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'es' ) ? 'bold-idioma' : '' }}" href="{{ Request::root() }}/lang/es">ESP</a>
             <br><br>
             <figure class="ps-navigation__bottom">
                 <figcaption>Satélite K</figcaption>

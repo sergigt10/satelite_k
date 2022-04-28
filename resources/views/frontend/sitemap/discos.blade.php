@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     @foreach ($discos as $disc)
         <url>
-            <loc>http://164.138.210.158/~satelitek9/discos/{{ $disc->slug }}</loc>
+            <loc>https://www.satelitek.com/discos/{{ $disc->slug }}</loc>
             <lastmod>{{ $startOfMonth }}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.9</priority>
