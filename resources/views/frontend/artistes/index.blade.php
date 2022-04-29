@@ -14,7 +14,7 @@
                 </div>
                 <div class="ps-web__right">
                     <div class="ps-web__actions">
-                        <form action="ordre" method="POST">
+                        <form action="orden" method="POST">
                             @csrf
                             <div class="ps-web__sorting mobile-sorting">
                                 <span>@lang("Ordenar per")</span>

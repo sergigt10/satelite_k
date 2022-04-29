@@ -19,12 +19,12 @@ class SitemapController extends Controller
         $startOfMonth = Carbon::now()->startOfMonth()->format('c');
         $statics = [
             '',
-            'qui-som-satelitek',
-            'artistes',
+            'quines-somos-satelitek',
+            'artistas',
             'discos',
-            'llibres',
+            'libros',
             'videos',
-            'contacte-satelitek'
+            'contacto-satelitek'
         ];
         return response()->view('frontend.sitemap.statics', [
             'statics' => $statics,

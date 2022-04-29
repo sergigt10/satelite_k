@@ -19,7 +19,8 @@ class DiscsFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Discos Satélite K');
+        SEOTools::setTitle('Discos Satélite K Barcelona, Discográfica independiente, Servicios musicales');
+        SEOTools::opengraph()->setUrl('https://www.satelitek.com/discos');
 
         $artistes = Artista::orderBy('nom')->get();
         $generes = Genere::orderBy('nom_cat')->get();
@@ -30,7 +31,8 @@ class DiscsFrontendController extends Controller
 
     public function filter(Request $request)
     {
-        SEOTools::setTitle('Discos Satélite K');
+        SEOTools::setTitle('Discos Satélite K, Discográfica independiente, Servicios musicales');
+        SEOTools::setCanonical('https://www.satelitek.com/discos');
 
         $filtreArtista = $request->input('artista');
         $filtreTipus = $request->input('tipus');

@@ -16,7 +16,8 @@ class LlibresFrontendController extends Controller
 
     public function index()
     {
-        SEOTools::setTitle('Llibres Satélite K');
+        SEOTools::setTitle('Compañia discográfica Barcelona, Servicios musicales Barcelona');
+        SEOTools::opengraph()->setUrl('https://www.satelitek.com/libros');
 
         $llibres = Llibre::latest('data_publicacio')->paginate(16, ['*'], 'pagina');
         return view('frontend.llibres.index', compact('llibres'));

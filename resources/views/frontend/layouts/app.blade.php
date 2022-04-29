@@ -41,10 +41,10 @@
         <div class="header__navigation">
             <ul class="menu">
                 <li><a href="{{ route('frontend.inici.index') }}" class="{{ (request()->is('/')) ? 'active' : '' }}">@lang('Inici')</a></li>
-                <li><a href="{{ route('frontend.about.index') }}" class="{{ (request()->is('qui-som-satelitek')) ? 'active' : '' }}">@lang('Qui som')</a></li>
-                <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistes*')) || (request()->is('ordre')) ? 'active' : '' }}">@lang('Artistes')</a></li>
+                <li><a href="{{ route('frontend.about.index') }}" class="{{ (request()->is('quienes-somos-satelitek')) ? 'active' : '' }}">@lang('Qui som')</a></li>
+                <li><a href="{{ route('frontend.artistes.index') }}" class="{{ (request()->is('artistas*')) || (request()->is('orden')) ? 'active' : '' }}">@lang('Artistes')</a></li>
                 <li class="menu-item-has-children">
-                    <a href="{{ route('frontend.discs.index') }}" class="{{ (request()->is('discos*') || request()->is('llibres*')) ? 'active' : '' }}">@lang('Catàleg')</a><span class="sub-toggle"></span>
+                    <a href="{{ route('frontend.discs.index') }}" class="{{ (request()->is('discos*') || request()->is('libros*')) ? 'active' : '' }}">@lang('Catàleg')</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
                         <li><a href="{{ route('frontend.discs.index') }}">@lang('Discos')</a></li>
                         <li><a href="{{ route('frontend.llibres.index') }}">@lang('Llibres')</a></li>
@@ -59,7 +59,7 @@
                         <li><a href="https://autoeditarte.com/" target="_blank">@lang('Autoedició')</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ route('frontend.contact.index') }}" class="{{ (request()->is('contacte-satelitek')) ? 'active' : '' }}">@lang('Contacte')</a></li>
+                <li><a href="{{ route('frontend.contact.index') }}" class="{{ (request()->is('contacto-satelitek')) ? 'active' : '' }}">@lang('Contacte')</a></li>
             </ul>
         </div>
         <div class="header__container">

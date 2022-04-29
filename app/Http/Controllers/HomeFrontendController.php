@@ -20,6 +20,8 @@ class HomeFrontendController extends Controller
      */
     public function index()
     {
+        SEOTools::setTitle('Satélite K, Discográfica Barcelona, Discográfica independiente');
+
         $ordreSlide = Slider::orderBy('ordre')->get();
         $slider1 = $ordreSlide->get(0);
         $slider2 = $ordreSlide->get(1);
@@ -34,13 +36,16 @@ class HomeFrontendController extends Controller
 
     public function about()
     {
-        SEOTools::setTitle('Qui som Satélite K');
+        SEOTools::setTitle('Discográfica Barcelona, Servicios musicales, Compañia discográfica');
+        SEOTools::opengraph()->setUrl('https://www.satelitek.com/quienes-somos-satelitek');
 
         return view('frontend.about.index');
     }
 
     public function search(Request $request) 
     {
+        SEOTools::setTitle('Artistas Satélite K, Discos Satélite K, Libros Satélite K');
+
         if($request->input('cercar') === null ||  $request->input('cercar') === '') {
             abort(404);
         } else {
@@ -79,6 +84,8 @@ class HomeFrontendController extends Controller
 
     public function avisLegal()
     {
+        SEOTools::setTitle('Aviso legal Satélite K, Discográfica Barcelona');
+
         return view('frontend.inici.avisLegal');
     }
 

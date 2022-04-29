@@ -4,7 +4,7 @@
         <url>
             <loc>https://www.satelitek.com/{{ $static }}</loc>
             <lastmod>{{ $startOfMonth }}</lastmod>
-            <changefreq>{{ ( $static !== 'contacte-satelitek' && $static !== 'qui-som-satelitek' ) ? 'monthly' : 'yearly' }}</changefreq>
+            <changefreq>{{ ( $static !== 'contacto-satelitek' && $static !== 'quines-somos-satelitek' ) ? 'monthly' : 'yearly' }}</changefreq>
             <priority>0.9</priority>
         </url>
     @endforeach

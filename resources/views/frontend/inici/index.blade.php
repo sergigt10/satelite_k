@@ -165,31 +165,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="owl-slider" data-owl-auto="false" data-owl-loop="false" data-owl-speed="10000" data-owl-gap="0"
-                data-owl-nav="false" data-owl-dots="false" data-owl-item="7" data-owl-item-xs="3" data-owl-item-sm="4"
-                data-owl-item-md="5" data-owl-item-lg="6" data-owl-duration="1000" data-owl-mousedrag="off">
-            <div class="ps-block--instagram">
-                <img src="{{ asset('frontend/img/instagram/1.jpg') }}" alt="Satélite K"><a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="ps-block--instagram">
-                <img src="{{ asset('frontend/img/instagram/2.jpg') }}" alt="Satélite K"><a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="ps-block--instagram">
-                <img src="{{ asset('frontend/img/instagram/3.jpg') }}" alt="Satélite K"><a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="ps-block--instagram">
-                <img src="{{ asset('frontend/img/instagram/4.jpg') }}" alt="Satélite K"><a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="ps-block--instagram">
-                <img src="{{ asset('frontend/img/instagram/5.jpg') }}" alt="Satélite K"><a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="ps-block--instagram">
-                <img src="{{ asset('frontend/img/instagram/6.jpg') }}" alt="Satélite K"><a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="ps-block--instagram">
-                <img src="{{ asset('frontend/img/instagram/7.jpg') }}" alt="Satélite K"><a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-        </div> -->
         <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/b5143cf8f3b05b20b51643d0d1364681.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
     </div>
     <div class="ps-home-subscribe">

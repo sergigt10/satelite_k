@@ -15,7 +15,8 @@ class NoticiesFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Notícies Satélite K');
+        SEOTools::setTitle('Noticias Satélite K, Discográfica Barcelona, Servicios musicales');
+        SEOTools::opengraph()->setUrl('https://www.satelitek.com/noticias');
 
         $noticies = Noticia::latest('id')->paginate(16, ['*'], 'pagina');
         return view('frontend.noticies.index', compact('noticies'));

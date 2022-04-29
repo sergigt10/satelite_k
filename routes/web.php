@@ -13,42 +13,42 @@ Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class,
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
 Route::post('/newsletter', 'HomeFrontendController@subscribeNewsletter');
 Route::get('/newsletter-subscrit', 'HomeFrontendController@subscribeNewsletterOk')->name('frontend.inici.newsletterOk');
-Route::get('/avis-legal', 'HomeFrontendController@avisLegal')->name('frontend.inici.avisLegal');
+Route::get('/aviso-legal', 'HomeFrontendController@avisLegal')->name('frontend.inici.avisLegal');
 
 /* Cercador */
 
-Route::post('/cercador-satelitek', 'HomeFrontendController@search')->name('frontend.search.index');
+Route::post('/buscador-satelitek', 'HomeFrontendController@search')->name('frontend.search.index');
 
 /* Qui som */
 
-Route::get('/qui-som-satelitek', 'HomeFrontendController@about')->name('frontend.about.index');
+Route::get('/quienes-somos-satelitek', 'HomeFrontendController@about')->name('frontend.about.index');
 
 /* Contacte */
 
-Route::get('/contacte-satelitek', 'ContactFrontendController@index')->name('frontend.contact.index');
-Route::post('/contacte-satelitek/enviat', 'ContactFrontendController@sendEmail')->name('frontend.sendMail');
+Route::get('/contacto-satelitek', 'ContactFrontendController@index')->name('frontend.contact.index');
+Route::post('/contacto-satelitek/enviat', 'ContactFrontendController@sendEmail')->name('frontend.sendMail');
 
 /* Artistes */
 
-Route::get('/artistes', 'ArtistesFrontendController@index')->name('frontend.artistes.index');
-Route::post('/ordre', 'ArtistesFrontendController@ordre');
-Route::get('/artistes/{artista}', 'ArtistesFrontendController@show')->name('frontend.artistes.show');
+Route::get('/artistas', 'ArtistesFrontendController@index')->name('frontend.artistes.index');
+Route::post('/orden', 'ArtistesFrontendController@ordre');
+Route::get('/artistas/{artista}', 'ArtistesFrontendController@show')->name('frontend.artistes.show');
 
 /* Discs */
 
 Route::get('/discos', 'DiscsFrontendController@index')->name('frontend.discs.index');
 Route::get('/discos/{disc}', 'DiscsFrontendController@show')->name('frontend.discs.show');
-Route::post('/discos/filtre', 'DiscsFrontendController@filter')->name('frontend.discs.filter');
+Route::post('/discos/filtro', 'DiscsFrontendController@filter')->name('frontend.discs.filter');
 
 /* Llibres */
 
-Route::get('/llibres', 'LlibresFrontendController@index')->name('frontend.llibres.index');
-Route::get('/llibres/{llibre}', 'LlibresFrontendController@show')->name('frontend.llibres.show');
+Route::get('/libros', 'LlibresFrontendController@index')->name('frontend.llibres.index');
+Route::get('/libros/{llibre}', 'LlibresFrontendController@show')->name('frontend.llibres.show');
 
 /* Blog */
 
-Route::get('/noticies', 'NoticiesFrontendController@index')->name('frontend.noticies.index');
-Route::get('/noticies/{noticia}', 'NoticiesFrontendController@show')->name('frontend.noticies.show');
+Route::get('/noticias', 'NoticiesFrontendController@index')->name('frontend.noticies.index');
+Route::get('/noticias/{noticia}', 'NoticiesFrontendController@show')->name('frontend.noticies.show');
 
 /* Videos */
 

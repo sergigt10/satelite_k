@@ -16,7 +16,8 @@ class ArtistesFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Artistes Satélite K');
+        SEOTools::setTitle('Artistas Satélite K, Discográfica Barcelona, Compañia discográfica');
+        SEOTools::opengraph()->setUrl('https://www.satelitek.com/artistas');
 
         $artistes = Artista::latest('id')->paginate(16, ['*'], 'pagina');
         return view('frontend.artistes.index', compact('artistes'));
@@ -24,7 +25,8 @@ class ArtistesFrontendController extends Controller
 
     public function ordre(Request $request)
     {
-        SEOTools::setTitle('Artistes Satélite K');
+        SEOTools::setTitle('Artistas Satélite K, Discográfica Barcelona, Compañia discográfica');
+        SEOTools::setCanonical('https://www.satelitek.com/artistas');
 
         if ( $request->input('ordre') === 'id' ) {
             $artistes = Artista::latest('id')->paginate(16, ['*'], 'pagina');

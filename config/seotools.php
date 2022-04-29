@@ -9,11 +9,11 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "Satélite K, Segell Discogràfic i Producció", // set false to total remove
+            'title'        => "", // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => "Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament de propostes artístiques eclèctiques", // set false to total remove
+            'description'  => "Satélite K es una compañía discográfica independiente nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas.", // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => ['Satélite K', 'Segell Discogràfic i Producció'],
+            'keywords'     => ['Satélite K', 'Sello Discográfico y Producción', 'Satelite K', 'Discográfica  Barcelona', 'Discográfica independiente', 'Servicios musicales Barcelona', 'Compañia discográfica Barcelona'],
             'canonical'    => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'robots'       => 'all', // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
         ],
@@ -36,11 +36,12 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'       => 'Satélite K, Segell Discogràfic i Producció', // set false to total remove
-            'description' => "Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament de propostes artístiques eclèctiques", // set false to total remove
-            'url'         => false, // Set null for using Url::current(), set false to total remove
-            'type'        => false,
-            'site_name'   => false,
+            'title'       => 'Satélite K, Discográfica Barcelona, Discográfica independiente', // set false to total remove
+            'description' => "Satélite K es una compañía discográfica independiente nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas.", // set false to total remove
+            'url'         => null, // Set null for using Url::current(), set false to total remove
+            'type'        => 'website',
+            'site_name'   => 'Satélite K',
+            'locale'   => 'es_ES',
             'images'      => ['https://www.satelitek.com/frontend/img/empresa2.jpg'],
         ],
     ],
@@ -50,7 +51,7 @@ return [
          */
         'defaults' => [
             'card'        => 'summary',
-            'title'       => 'Satélite K, Segell Discogràfic i Producció',
+            'title'       => 'Satélite K, Discográfica Barcelona, Discográfica independiente',
             'site'        => '@satelitek',
         ],
     ],
@@ -59,9 +60,9 @@ return [
          * The default configurations to be used by the json-ld generator.
          */
         'defaults' => [
-            'title'       => 'Satélite K, Segell Discogràfic i Producció', // set false to total remove
-            'description' => 'Satélite K és una companyia discogràfica nascuda a Barcelona, especialitzada en la producció, promoció i desenvolupament de propostes artístiques eclèctiques', // set false to total remove
-            'url'         => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
+            'title'       => 'Satélite K, Discográfica Barcelona, Discográfica independiente', // set false to total remove
+            'description' => 'Satélite K es una compañía discográfica independiente nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas.', // set false to total remove
+            'url'         => 'https://www.satelitek.com/', // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => ['https://www.satelitek.com/frontend/img/empresa2.jpg'],
         ],
