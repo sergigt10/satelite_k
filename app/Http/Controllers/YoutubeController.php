@@ -14,7 +14,6 @@ class YoutubeController extends Controller
     public function index()
     {
         SEOTools::setTitle('Discográfica Barcelona, Servicios musicales Barcelona');
-        SEOTools::opengraph()->setUrl('https://www.satelitek.com/videos');
 
         $videoLists = videoLists(12);
         return view('frontend.videos.index', compact('videoLists'));

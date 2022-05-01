@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Artista;
+use Illuminate\Support\Str as Str;
 
 use Artesaos\SEOTools\Facades\SEOTools;
 
@@ -17,7 +18,6 @@ class ArtistesFrontendController extends Controller
     public function index()
     {
         SEOTools::setTitle('Artistas Satélite K, Discográfica Barcelona, Compañia discográfica');
-        SEOTools::opengraph()->setUrl('https://www.satelitek.com/artistas');
 
         $artistes = Artista::latest('id')->paginate(16, ['*'], 'pagina');
         return view('frontend.artistes.index', compact('artistes'));
@@ -41,7 +41,8 @@ class ArtistesFrontendController extends Controller
     {
         $artista = Artista::where('slug','=', $slug)->firstOrFail();
 
-        SEOTools::setTitle($artista->nom);
+        SEOTools::setTitle($artista->nom.', Satélite K');
+        SEOTools::setDescription(Str::limit(strip_tags($artista->biografia_esp)), 155, ' (...)');
 
         return view('frontend.artistes.show', compact('artista'));
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Noticia;
+use Illuminate\Support\Str as Str;
 
 use Artesaos\SEOTools\Facades\SEOTools;
 
@@ -16,7 +17,6 @@ class NoticiesFrontendController extends Controller
     public function index()
     {
         SEOTools::setTitle('Noticias Satélite K, Discográfica Barcelona, Servicios musicales');
-        SEOTools::opengraph()->setUrl('https://www.satelitek.com/noticias');
 
         $noticies = Noticia::latest('id')->paginate(16, ['*'], 'pagina');
         return view('frontend.noticies.index', compact('noticies'));
@@ -26,7 +26,8 @@ class NoticiesFrontendController extends Controller
     {
         $noticia = Noticia::where('slug','=', $slug)->firstOrFail();
 
-        SEOTools::setTitle($noticia->titol_cat);
+        SEOTools::setTitle($noticia->titol_esp);
+        SEOTools::setDescription(Str::limit(strip_tags($noticia->descripcio_esp)), 155, ' (...)');
 
         return view('frontend.noticies.show', compact('noticia'));
     }

@@ -36,8 +36,7 @@ class HomeFrontendController extends Controller
 
     public function about()
     {
-        SEOTools::setTitle('Discográfica Barcelona, Servicios musicales, Compañia discográfica');
-        SEOTools::opengraph()->setUrl('https://www.satelitek.com/quienes-somos-satelitek');
+        SEOTools::setTitle('Discográfica Barcelona independiente, Servicios musicales Barcelona');
 
         return view('frontend.about.index');
     }

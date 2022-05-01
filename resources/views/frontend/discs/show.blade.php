@@ -22,8 +22,8 @@
                         <h2 class="ps-product__subtitle">
                             <a href="{{ route('frontend.artistes.show', ['artista' => $disc->artista->slug]) }}">{{ $disc->artista->nom }}</a>
                         </h2>
-                        <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">@lang('Gènere'):</span> {{ $disc->genere->nom_cat }}</h4>
-                        <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">@lang("Format"):</span> {{ $disc->tipu->nom_cat }}</h4>
+                        <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">@lang('Gènere'):</span> {{ ( app()->getLocale() === 'ca' ) ? $disc->genere->nom_cat : $disc->genere->nom_esp }}</h4>
+                        <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">@lang("Format"):</span> {{ ( app()->getLocale() === 'ca' ) ? $disc->tipu->nom_cat : $disc->tipu->nom_esp }}</h4>
                         <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">@lang("Data de publicació"):</span> {{ (new DateTime($disc->data_publicacio))->format('d-m-Y') }}</h4>
                         <div class="mb-30">
                             @if ($disc->link_spotify)

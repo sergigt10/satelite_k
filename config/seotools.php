@@ -9,11 +9,11 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "", // set false to total remove
+            'title'        => false, // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
             'description'  => "Satélite K es una compañía discográfica independiente nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas.", // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => ['Satélite K', 'Sello Discográfico y Producción', 'Satelite K', 'Discográfica  Barcelona', 'Discográfica independiente', 'Servicios musicales Barcelona', 'Compañia discográfica Barcelona'],
+            'keywords'     => ['Satélite K', 'Sello Discográfico y Producción', 'Satelite K', 'Discográfica Barcelona', 'Discográfica independiente', 'Servicios musicales Barcelona', 'Compañia discográfica Barcelona'],
             'canonical'    => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'robots'       => 'all', // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
         ],
@@ -41,7 +41,7 @@ return [
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'website',
             'site_name'   => 'Satélite K',
-            'locale'   => 'es_ES',
+            'locale'      => 'es_ES',
             'images'      => ['https://www.satelitek.com/frontend/img/empresa2.jpg'],
         ],
     ],
@@ -53,6 +53,7 @@ return [
             'card'        => 'summary',
             'title'       => 'Satélite K, Discográfica Barcelona, Discográfica independiente',
             'site'        => '@satelitek',
+            'creator'     => '@satelitek',
         ],
     ],
     'json-ld' => [

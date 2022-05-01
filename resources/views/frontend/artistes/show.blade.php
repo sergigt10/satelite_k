@@ -16,7 +16,7 @@
                 <div class="ps-product__info">
                     <div class="ps-product__info-header" style="border-bottom: 1px solid #eaeaea;">
                         <h2 class="ps-product__title">{{ $artista->nom }}</h2>
-                        <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">@lang('Gènere'):</span> {{ $artista->genere->nom_cat }}</h4>
+                        <h4 class="ps-product__referencia"><span style="color: #999999; font-size: 17px;">@lang('Gènere'):</span> {{ ( app()->getLocale() === 'ca' ) ? $artista->genere->nom_cat : $artista->genere->nom_esp }} </h4>
                         @if ($artista->link_web)
                             <h4 class="ps-product__referencia">
                                 <a href="{{ $artista->link_web }}" target="_blank">

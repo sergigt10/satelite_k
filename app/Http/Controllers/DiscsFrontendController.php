@@ -7,6 +7,7 @@ use App\Models\Artista;
 use App\Models\Disc;
 use App\Models\Genere;
 use App\Models\Tipu;
+use Illuminate\Support\Str as Str;
 
 use Artesaos\SEOTools\Facades\SEOTools;
 
@@ -19,8 +20,7 @@ class DiscsFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Discos Satélite K Barcelona, Discográfica independiente, Servicios musicales');
-        SEOTools::opengraph()->setUrl('https://www.satelitek.com/discos');
+        SEOTools::setTitle('Discos Satélite K, Discográfica independiente Barcelona');
 
         $artistes = Artista::orderBy('nom')->get();
         $generes = Genere::orderBy('nom_cat')->get();
@@ -31,7 +31,7 @@ class DiscsFrontendController extends Controller
 
     public function filter(Request $request)
     {
-        SEOTools::setTitle('Discos Satélite K, Discográfica independiente, Servicios musicales');
+        SEOTools::setTitle('Discos Satélite K, Discográfica independiente Barcelona');
         SEOTools::setCanonical('https://www.satelitek.com/discos');
 
         $filtreArtista = $request->input('artista');
@@ -54,7 +54,8 @@ class DiscsFrontendController extends Controller
     {
         $disc = Disc::where('slug','=', $slug)->firstOrFail();
 
-        SEOTools::setTitle($disc->titol);
+        SEOTools::setTitle($disc->titol.', Satélite K');
+        SEOTools::setDescription(Str::limit(strip_tags($disc->descripcio_esp)), 155, ' (...)');
 
         return view('frontend.discs.show', compact('disc'));
     }

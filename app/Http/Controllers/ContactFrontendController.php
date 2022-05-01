@@ -18,7 +18,6 @@ class ContactFrontendController extends Controller
     public function index(){
 
         SEOTools::setTitle('Servicios musicales Barcelona, Discográfica independiente Barcelona');
-        SEOTools::opengraph()->setUrl('https://www.satelitek.com/contacto-satelitek');
 
         return view('frontend.contact.index');
     }

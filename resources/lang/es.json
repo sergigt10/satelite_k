@@ -27,6 +27,8 @@
     "Subscriu-te" : "Suscríbete",
 
     "Subscripció realitzada correctament. Gràcies!" : "Suscripción realizada correctamente. ¡Gracias!" ,
+
+    "Error 404. Pàgina no disponible." : "Error 404. Página no disponible.",
     "Torna a la" : "Volver a la",
     "pàgina d'inici" : "página de inicio",
     
@@ -69,6 +71,5 @@
     "Resultats de la cerca:" : "Resultados de la busqueda:",
 
     "Últims videoclips publicats de Satélite K" : "Últimos videoclips publicados de Satélite K"
-
 
 }

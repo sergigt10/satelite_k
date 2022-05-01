@@ -10204,11 +10204,16 @@ a.ps-product__title:hover {
     -ms-flex: 2 1 100%;
     flex: 2 1 100%; }
   .header--standard .header__search {
-    padding-right: 0; } }
+    padding-right: 0px; } }
 
-@media (min-width: 1366px) {
+@media (max-width: 1460px) {
   .header--standard .header__search {
-    padding-right: 30px;
+    padding-right: 5px; 
+  } 
+}
+
+@media (min-width: 1461px) {
+  .header--standard .header__search {
     padding-right: 30px; 
   } 
 }
