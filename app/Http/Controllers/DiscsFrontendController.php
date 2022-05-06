@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Models\Artista;
 use App\Models\Disc;
 use App\Models\Genere;
@@ -34,10 +35,23 @@ class DiscsFrontendController extends Controller
         SEOTools::setTitle('Discos Satélite K, Discográfica independiente Barcelona');
         SEOTools::setCanonical('https://www.satelitek.com/discos');
 
-        $filtreArtista = $request->input('artista');
-        $filtreTipus = $request->input('tipus');
-        $filtreGenere = $request->input('genere');
-        $filtreAny = $request->input('any');
+        // Si el request és buit el guardem al session anterior
+        if( $request->input('artista') === null && $request->input('tipus') === null && $request->input('genere') === null && $request->input('any') !== 0000 ) {
+            $filtreArtista = Session::get('filtreArtista');
+            $filtreTipus = Session::get('filtreTipus');
+            $filtreGenere = Session::get('filtreGenere');
+            $filtreAny = Session::get('filtreAny');
+        } else {
+            $filtreArtista = $request->input('artista');
+            $filtreTipus = $request->input('tipus');
+            $filtreGenere = $request->input('genere');
+            $filtreAny = $request->input('any');
+
+            Session::put('filtreArtista', $filtreArtista);
+            Session::put('filtreTipus', $filtreTipus);
+            Session::put('filtreGenere', $filtreGenere);
+            Session::put('filtreAny', $filtreAny);
+        }
 
         $artistes = Artista::orderBy('nom')->get();
         $generes = Genere::orderBy('nom_cat')->get();
@@ -47,6 +61,7 @@ class DiscsFrontendController extends Controller
                     ->where('tipus_id','LIKE','%'.$filtreTipus.'%')
                     ->where('data_publicacio','LIKE','%'.$filtreAny.'%')
                     ->paginate(21, ['*'], 'pagina');
+        
         return view('frontend.discs.filter', compact('discs','artistes','generes','tipus'));
     }
 

@@ -12,7 +12,7 @@ return [
             'title'        => false, // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
             'description'  => "Satélite K es una compañía discográfica independiente nacida en Barcelona, especializada en la producción, promoción y desarrollo de propuestas artísticas.", // set false to total remove
-            'separator'    => ' - ',
+            'separator'    => ', ',
             'keywords'     => ['Satélite K', 'Sello Discográfico y Producción', 'Satelite K', 'Discográfica Barcelona', 'Discográfica independiente', 'Servicios musicales Barcelona', 'Compañia discográfica Barcelona'],
             'canonical'    => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'robots'       => 'all', // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow

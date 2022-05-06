@@ -17,7 +17,7 @@ Route::get('/aviso-legal', 'HomeFrontendController@avisLegal')->name('frontend.i
 
 /* Cercador */
 
-Route::post('/buscador-satelitek', 'HomeFrontendController@search')->name('frontend.search.index');
+Route::match(['get', 'post'],'/buscador-satelitek', 'HomeFrontendController@search')->name('frontend.search.index');
 
 /* Qui som */
 
@@ -31,14 +31,14 @@ Route::post('/contacto-satelitek/enviat', 'ContactFrontendController@sendEmail')
 /* Artistes */
 
 Route::get('/artistas', 'ArtistesFrontendController@index')->name('frontend.artistes.index');
-Route::post('/orden', 'ArtistesFrontendController@ordre');
+Route::match(['get', 'post'],'/orden', 'ArtistesFrontendController@ordre');
 Route::get('/artistas/{artista}', 'ArtistesFrontendController@show')->name('frontend.artistes.show');
 
 /* Discs */
 
 Route::get('/discos', 'DiscsFrontendController@index')->name('frontend.discs.index');
 Route::get('/discos/{disc}', 'DiscsFrontendController@show')->name('frontend.discs.show');
-Route::post('/discos/filtro', 'DiscsFrontendController@filter')->name('frontend.discs.filter');
+Route::match(['get', 'post'],'/discos-filtro', 'DiscsFrontendController@filter')->name('frontend.discs.filter');
 
 /* Llibres */
 

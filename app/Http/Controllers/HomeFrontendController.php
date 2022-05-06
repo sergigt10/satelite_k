@@ -44,6 +44,7 @@ class HomeFrontendController extends Controller
     public function search(Request $request) 
     {
         SEOTools::setTitle('Artistas Satélite K, Discos Satélite K, Libros Satélite K');
+        SEOTools::setCanonical('https://www.satelitek.com/');
 
         if($request->input('cercar') === null ||  $request->input('cercar') === '') {
             abort(404);

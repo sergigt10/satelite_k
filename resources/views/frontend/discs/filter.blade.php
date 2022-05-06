@@ -18,7 +18,7 @@
                                         <option></option>
                                         <option 
                                             value="{{ $artista->id }}" 
-                                            {{ request()->get('artista') == $artista->id ? 'selected' : '' }}
+                                            {{ session()->get('filtreArtista') == $artista->id ? 'selected' : '' }}
                                         >
                                             {{ $artista->nom }}
                                         </option>
@@ -32,7 +32,7 @@
                                     @foreach ($tipus as $tipu)
                                         <option 
                                             value="{{ $tipu->id }}" 
-                                            {{ request()->get('tipus') == $tipu->id ? 'selected' : '' }}
+                                            {{ session()->get('filtreTipus') == $tipu->id ? 'selected' : '' }}
                                         >
                                             {{ ( app()->getLocale() === 'ca' ) ? $tipu->nom_cat : $tipu->nom_esp }}
                                         </option>
@@ -46,7 +46,7 @@
                                     @foreach ($generes as $genere)
                                         <option 
                                             value="{{ $genere->id }}" 
-                                            {{ request()->get('genere') == $genere->id ? 'selected' : '' }}
+                                            {{ session()->get('filtreGenere') == $genere->id ? 'selected' : '' }}
                                         >
                                             {{ ( app()->getLocale() === 'ca' ) ? $genere->nom_cat : $genere->nom_esp }}
                                         </option>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="ps-web__sorting">
                                 <span>Any:</span>
-                                <input name="any" type="number" min="2000" max="2099" step="1" value="{{ request()->get('any') }}" style="width: 100%; text-align: center" placeholder="0000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                                <input name="any" type="number" min="2000" max="2099" step="1" value="{{ session()->get('filtreAny') }}" style="width: 100%; text-align: center" placeholder="0000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
                             </div>
                             <div class="ps-web__footer mt-20"><a class="ps-link--under" href="javascript:;" onclick="document.getElementById('filtre').submit();">@lang("Filtrar")</a></div>
                             <div class="ps-web__footer mt-20"><a class="ps-link--under" href="{{ route('frontend.discs.index') }}">@lang("Reiniciar")</a></div>
