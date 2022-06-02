@@ -21,10 +21,5 @@ class UsuariSeeder extends Seeder
         //     'email' => 'sergi@sergi.com',
         //     'password' => Hash::make('123456789'), 
         // ]);
-        $user = User::create([
-            'name' => 'Satelite K',
-            'email' => 'info@satelitek.com',
-            'password' => Hash::make('58c1qp-P'), 
-        ]);
     }
 }
