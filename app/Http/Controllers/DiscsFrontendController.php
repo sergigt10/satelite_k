@@ -69,7 +69,7 @@ class DiscsFrontendController extends Controller
     {
         $disc = Disc::where('slug','=', $slug)->firstOrFail();
 
-        SEOTools::setTitle($disc->titol.', Satélite K');
+        SEOTools::setTitle($disc->titol.', '.$disc->artista->nom.', Satélite K');
         SEOTools::setDescription(Str::limit(strip_tags($disc->descripcio_esp)), 155, ' (...)');
 
         return view('frontend.discs.show', compact('disc'));
