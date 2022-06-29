@@ -126,6 +126,10 @@ El ORM usualmente funciona sobre la MVC, cada tabla en tu base de datos deberá 
 ---------
 # Siempre que trabajemos con vue tenemos que tener activado en el terminal la opcion npm run watch
 
+** Factories **
+---------------
+# Permitre hacer testing a tu base de datos. Sólo usar en desarrollo.
+
 ** Políticas usuarios (privilegios) **
 --------------------------------------
 # php artisan make:policy NombreDelPolicy -m NombreModelo -> Crear una política 
@@ -133,6 +137,24 @@ El ORM usualmente funciona sobre la MVC, cada tabla en tu base de datos deberá 
 ** Helpers laravel **
 ---------------------
 # Auth::user() -> permite acceder a información del usuario que ha iniciado sesión (desde cualquier lugar).
+
+** Componentes Laravel **
+-------------------------
+# Dividir el codigo en partes.
+# php artisan make:component NombreComponente
+# Crea dos archivos: 
+# app/View/Components/NombreComponente.php -> Esta la logica del componente
+# resources/views/components -> Esta es la vista blade del componente
+# Un componente se editifica por una x al principio -> Ej: <x-listar-post />
+# Un $slot sirve para pasar información al componente.
+
+** Livewire **
+--------------
+# Para poder interectuar vía HTTP request ej: AJAX.  
+# Livewire es una mezcla cliente / servidor. 
+# Peticiones Ajax para actualizar y enviar información al servidor.
+# composer require livewire/livewire -> Para instalar
+# php artisan make:livewire NombreLivewire -> Para crear un componente
 
 ** Paginación **
 ----------------
