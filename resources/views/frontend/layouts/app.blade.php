@@ -55,7 +55,7 @@
                     <a href="#">@lang('Serveis')</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
                         <li><a href="#" target="_blank">@lang('Distribució física')</a></li>
-                        <li><a href="https://kzoomusic.com/" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
+                        <li><a href="https://autoeditarte.com/" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
                         <li><a href="https://autoeditarte.com/" target="_blank">@lang('Autoedició')</a></li>
                     </ul>
                 </li>

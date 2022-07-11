@@ -40,7 +40,6 @@
         <div class="container">
             <div class="ps-section__content">
                 <a href="#"><img src="{{ asset('frontend/img/tsunami.png') }}" alt="Tsunami"></a>
-                <a href="https://kzoomusic.com/" target="_blank"><img src="{{ asset('frontend/img/kzoo.png') }}" alt="Kzoomusic"></a>
                 <a href="https://autoeditarte.com/" target="_blank"><img src="{{ asset('frontend/img/autoeditarte.png') }}" alt="Autoeditarte"></a>
                 <a href="http://www.diggersmusic.com/" target="_blank"><img src="{{ asset('frontend/img/diggers.png') }}" alt="Satélite K"></a>
                 <a href="https://www.rhrn.es/es/" target="_blank"><img src="{{ asset('frontend/img/rhrn.png') }}" alt="RHRN"></a>
