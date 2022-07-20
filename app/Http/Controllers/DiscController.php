@@ -72,8 +72,9 @@ class DiscController extends Controller
         $foto->save();
 
         $disc = new Disc($data);
-        $numerosRandom = uniqid();
-        $disc->slug = Str::of($request['titol'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        // $numerosRandom = uniqid();
+        // $disc->slug = Str::of($request['titol'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        $disc->slug = Str::of($request['titol'])->slug("-");
         $disc->foto = $ruta_foto;
         $disc->save();
 
@@ -133,8 +134,9 @@ class DiscController extends Controller
 
         // Si canviem el nom actualitzem slug
         if($disc->titol !== $data['titol']) {
-            $numerosRandom = uniqid();
-            $disc->slug = Str::of($request['titol'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+            // $numerosRandom = uniqid();
+            // $disc->slug = Str::of($request['titol'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+            $disc->slug = Str::of($request['titol'])->slug("-");
         }
         // Asignar los valores
         $disc->titol = $data['titol'];

@@ -60,8 +60,9 @@ class ArtistaController extends Controller
         $foto->save();
 
         $artista = new Artista($data);
-        $numerosRandom = uniqid();
-        $artista->slug = Str::of($request['nom'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        // $numerosRandom = uniqid();
+        // $artista->slug = Str::of($request['nom'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        $artista->slug = Str::of($request['nom'])->slug("-");
         $artista->foto = $ruta_foto;
         $artista->save();
 
@@ -113,8 +114,9 @@ class ArtistaController extends Controller
         
         // Si canviem el nom actualitzem slug
         if($artista->nom !== $data['nom']) {
-            $numerosRandom = uniqid();
-            $artista->slug = Str::of($request['nom'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+            // $numerosRandom = uniqid();
+            // $artista->slug = Str::of($request['nom'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+            $artista->slug = Str::of($request['nom'])->slug("-");
         }
         // Asignar los valores
         $artista->nom = $data['nom'];

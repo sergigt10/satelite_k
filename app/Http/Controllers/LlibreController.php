@@ -64,8 +64,9 @@ class LlibreController extends Controller
         $foto->save();
 
         $llibre = new Llibre($data);
-        $numerosRandom = uniqid();
-        $llibre->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        // $numerosRandom = uniqid();
+        // $llibre->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        $llibre->slug = Str::of($request['titol_cat'])->slug("-");
         $llibre->foto = $ruta_foto;
         $llibre->save();
 
@@ -121,8 +122,9 @@ class LlibreController extends Controller
 
         // Si canviem el nom actualitzem slug
         if($llibre->titol_cat !== $data['titol_cat']) {
-            $numerosRandom = uniqid();
-            $llibre->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+            // $numerosRandom = uniqid();
+            // $llibre->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+            $llibre->slug = Str::of($request['titol_cat'])->slug("-");
         }
         // Asignar los valores
         $llibre->titol_cat = $data['titol_cat'];

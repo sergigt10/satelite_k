@@ -60,8 +60,9 @@ class NoticiaController extends Controller
         $foto->save();
 
         $noticia = new Noticia($data);
-        $numerosRandom = uniqid();
-        $noticia->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        // $numerosRandom = uniqid();
+        // $noticia->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+        $noticia->slug = Str::of($request['titol_cat'])->slug("-");
         $noticia->foto = $ruta_foto;
         $noticia->save();
 
@@ -113,8 +114,9 @@ class NoticiaController extends Controller
 
         // Si canviem el nom actualitzem slug
         if($noticia->titol_cat !== $data['titol_cat']) {
-            $numerosRandom = uniqid();
-            $noticia->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+            // $numerosRandom = uniqid();
+            // $noticia->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+            $noticia->slug = Str::of($request['titol_cat'])->slug("-");
         }
         // Asignar los valores
         $noticia->titol_cat = $data['titol_cat'];
