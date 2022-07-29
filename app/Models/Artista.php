@@ -15,7 +15,8 @@ class Artista extends Model
         'biografia_cat',
         'biografia_esp',
         'link_web',
-        'generes_id'
+        'generes_id',
+        'portada'
     ];
 
     // Relació 1:1 artista i gènere
@@ -35,4 +36,10 @@ class Artista extends Model
     { 
         return $this->hasMany(Noticia::class, 'artistes_id'); 
     } 
+
+    // Saber quins artistes estan a portada
+    public function scopePortada($query) 
+    {
+        return $query->whereIn('portada',[1, 2, 3, 4])->pluck('portada')->toArray();
+    }
 }

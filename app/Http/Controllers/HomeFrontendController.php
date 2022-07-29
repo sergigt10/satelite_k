@@ -27,8 +27,8 @@ class HomeFrontendController extends Controller
         $slider2 = $ordreSlide->get(1);
         $slider3 = $ordreSlide->get(2);
         $slider4 = $ordreSlide->get(3);
-        $artistes = Artista::latest('id')->take(4)->get();
-        $discs = Disc::latest('data_publicacio')->take(5)->get();
+        $artistes = Artista::whereIn('portada',[1, 2, 3, 4])->orderBy('portada')->get();
+        $discs = Disc::whereIn('portada',[1, 2, 3, 4, 5])->orderBy('portada')->get();
         $videoLists = videoLists(4);
         
         return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'slider4', 'artistes', 'discs', 'videoLists'));

@@ -78,6 +78,24 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                @php 
+                                    $numbers = array(1, 2, 3, 4);
+                                    $availables = array_diff($numbers, $artistesPortada);
+                                @endphp
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Portada *:</label>
+                                    <select id="portada" name="portada" class="form-control js-example-basic-single w-100">
+                                        <option value=0>No</option>
+                                        @foreach ($availables as $available)
+                                            <option 
+                                                value="{{ $available }}"
+                                                {{ old('portada') == $available ? 'selected' : '' }}
+                                            >
+                                                Si - {{ $available }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">URL pàgina web (Ex: https://www.satelitek.com/):</label>
                                     <input name="link_web" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL pàgina web" value="{{ old('link_web') }}">

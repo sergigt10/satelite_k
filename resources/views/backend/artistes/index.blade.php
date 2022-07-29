@@ -26,6 +26,7 @@
                                     <thead>
                                         <tr>
                                             <th>Nom</th>
+                                            <th>Portada</th>
                                             <th data-orderable="false">Editar</th>
                                             <th data-orderable="false">Eliminar</th>
                                         </tr>
@@ -36,6 +37,11 @@
                                                 <td>
                                                     <a href="{{ route('backend.artistes.edit', ['artista' => $artista->id]) }}" style="color: black;">
                                                         {{ $artista->nom }}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('backend.artistes.edit', ['artista' => $artista->id]) }}" style="color: black;">
+                                                        {{ ($artista->portada) == 0 ? "No" : "Si - ".$artista->portada}}
                                                     </a>
                                                 </td>
                                                 <td>

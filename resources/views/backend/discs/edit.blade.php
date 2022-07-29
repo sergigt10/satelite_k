@@ -123,6 +123,36 @@
                                     @endforeach
                                 </select>
                             </div>
+                            @php 
+                                $numbers = array(1, 2, 3, 4, 5);
+                                $availables = array_diff($numbers, $discosPortada);
+                            @endphp
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Portada:</label>
+                                <select id="portada" name="portada" class="form-control js-example-basic-single w-100">
+
+                                    <option 
+                                        value="{{ $disc->portada }}"
+                                        selected
+                                    >
+                                        {{ ($disc->portada) == 0 ? "No" : "Si - ".$disc->portada}}
+                                    </option>
+
+                                    @foreach ($availables as $available)
+                                        <option 
+                                            value="{{ $available }}"
+                                            {{ old('portada') == $available ? 'selected' : '' }}
+                                        >
+                                            Si - {{ $available }}
+                                        </option>
+                                    @endforeach
+
+                                    @if ($disc->portada != 0)
+                                        <option value="0">No</option>
+                                    @endif
+
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail3"><i class="mdi mdi-spotify"></i> Embed Spotify:</label>
                                 <input name="embed_spotify" type="text" class="form-control" id="exampleInputEmail3" placeholder="Embed Spotify" value="{{ $disc->embed_spotify }}">

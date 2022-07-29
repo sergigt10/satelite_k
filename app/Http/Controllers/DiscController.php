@@ -36,11 +36,13 @@ class DiscController extends Controller
         $artistes = Artista::orderBy('nom')->get();
         $generes = Genere::orderBy('nom_cat')->get();
         $tipus = Tipu::orderBy('nom_cat')->get();
+        $discosPortada = Disc::portada();
 
         return view('backend.discs.create')
                     ->with('generes', $generes)
                     ->with('artistes', $artistes)
-                    ->with('tipus', $tipus);
+                    ->with('tipus', $tipus)
+                    ->with('discosPortada', $discosPortada);
     }
 
     /**
@@ -64,6 +66,7 @@ class DiscController extends Controller
             'generes_id' => 'required',
             'artistes_id' => 'required',
             'tipus_id' => 'required',
+            'portada' => 'required',
         ]);/* Max foto 10 MB */
 
         $ruta_foto = $request['foto']->store('backend/discs', 'public');
@@ -104,8 +107,9 @@ class DiscController extends Controller
         $artistes = Artista::orderBy('nom')->get();
         $generes = Genere::orderBy('nom_cat')->get();
         $tipus = Tipu::orderBy('nom_cat')->get();
+        $discosPortada = Disc::portada();
 
-        return view('backend.discs.edit', compact('disc'))->with('artistes', $artistes)->with('generes', $generes)->with('tipus', $tipus);
+        return view('backend.discs.edit', compact('disc'))->with('artistes', $artistes)->with('generes', $generes)->with('tipus', $tipus)->with('discosPortada', $discosPortada);
     }
 
     /**
@@ -130,6 +134,7 @@ class DiscController extends Controller
             'generes_id' => 'required',
             'artistes_id' => 'required',
             'tipus_id' => 'required',
+            'portada' => 'required',
         ]);
 
         // Si canviem el nom actualitzem slug
@@ -150,6 +155,7 @@ class DiscController extends Controller
         $disc->generes_id = $data['generes_id'];
         $disc->artistes_id = $data['artistes_id'];
         $disc->tipus_id = $data['tipus_id'];
+        $disc->portada = $data['portada'];
 
         // Si el usuario sube una nueva imagen
         if($request['foto']) {

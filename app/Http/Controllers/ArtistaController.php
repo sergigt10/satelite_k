@@ -32,9 +32,10 @@ class ArtistaController extends Controller
     public function create()
     {
         $generes = Genere::orderBy('nom_cat')->get();
-
+        $artistesPortada = Artista::portada();
         return view('backend.artistes.create')
-                    ->with('generes', $generes);
+                    ->with('generes', $generes)
+                    ->with('artistesPortada', $artistesPortada);
     }
 
     /**
@@ -51,6 +52,7 @@ class ArtistaController extends Controller
             'biografia_esp' => 'required',
             'link_web' => '',
             'generes_id' => 'required',
+            'portada' => 'required',
             'foto' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg'
         ]);/* Max foto 10 MB */
 
@@ -90,8 +92,9 @@ class ArtistaController extends Controller
     public function edit(Artista $artista)
     {
         $generes = Genere::orderBy('nom_cat')->get();
+        $artistesPortada = Artista::portada();
 
-        return view('backend.artistes.edit', compact('artista'))->with('generes', $generes);
+        return view('backend.artistes.edit', compact('artista'))->with('generes', $generes)->with('artistesPortada', $artistesPortada);
     }
 
     /**
@@ -110,6 +113,7 @@ class ArtistaController extends Controller
             'biografia_esp' => 'required',
             'link_web' => '',
             'generes_id' => 'required',
+            'portada' => 'required',
         ]);
         
         // Si canviem el nom actualitzem slug
@@ -124,6 +128,7 @@ class ArtistaController extends Controller
         $artista->biografia_esp = $data['biografia_esp'];
         $artista->link_web = $data['link_web'];
         $artista->generes_id = $data['generes_id'];
+        $artista->portada = $data['portada'];
 
         // Si el usuario sube una nueva imagen
         if($request['foto']) {

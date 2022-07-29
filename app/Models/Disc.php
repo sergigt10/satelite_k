@@ -21,7 +21,8 @@ class Disc extends Model
         'link_venda_fisica',
         'generes_id',
         'artistes_id',
-        'tipus_id'
+        'tipus_id',
+        'model'
     ];
 
     // Relació 1:1 disc i gènere
@@ -40,5 +41,11 @@ class Disc extends Model
     public function artista()
     {
         return $this->belongsTo(Artista::class, 'artistes_id');
+    }
+
+    // Detectar quins disc estan a portada
+    public function scopePortada($query) 
+    {
+        return $query->whereIn('portada',[1, 2, 3, 4, 5])->pluck('portada')->toArray();
     }
 }
