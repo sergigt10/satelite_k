@@ -47,7 +47,7 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('backend.discs.edit', ['disc' => $disc->id]) }}" style="color: black;">
-                                                        {{ ($disc->portada) == 0 ? "No" : "Si -".$disc->portada}}
+                                                        {{ ($disc->portada) == 0 ? "No" : "Si - ".$disc->portada}}
                                                     </a>
                                                 </td>
                                                 <td>
