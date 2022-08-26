@@ -142,7 +142,7 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
                         <p class="ps-footer__copyright">
-                            {{ now()->year }} - Satélite K ©
+                            <a target="_blank" href="https://www.webmastervic.com/" style="font-size: 14px;">Disseny web Webmastervic</a> - Satélite K © {{ now()->year }} 
                         </p>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
