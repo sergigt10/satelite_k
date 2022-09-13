@@ -152,7 +152,7 @@
             </div>
         </div>
     </div>
-    <div class="ps-section--instagram">
+    <!-- <div class="ps-section--instagram">
         <div class="ps-section__header">
             <div class="container">
                 <div class="ps-section ps-home-top-web" style="padding-top: 0px">
@@ -165,8 +165,8 @@
                 </div>
             </div>
         </div>
-        <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/b5143cf8f3b05b20b51643d0d1364681.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-    </div>
+        LightWidget WIDGET<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/b5143cf8f3b05b20b51643d0d1364681.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+    </div> -->
     <div class="ps-home-subscribe">
         <div class="container">
             <div class="row">

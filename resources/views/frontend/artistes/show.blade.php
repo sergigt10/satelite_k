@@ -34,56 +34,68 @@
                     </div>
                 </div>
             </div>
-            <div class="ps-product__content ps-tab-root">
-                <div class="container">
-                    <ul class="ps-tab-list">
-                        <li class="active"><a href="#tab-1">@lang("Edicions")</a></li>
-                        @if (count($artista->noticies) > 0)
-                            <li class=""><a href="#tab-2">@lang("Notícies")</a></li>
-                        @endif
-                    </ul>
-                    <div class="ps-tabs">
-                        <div class="ps-tab active" id="tab-1">
-                            <div class="row">
-                                @foreach ($artista->discs as $discsArtista)
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                                        <div class="ps-product">
-                                            <div class="ps-product__thumbnail">
-                                                <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">
-                                                    <img class="ps-product__image" src='{{ asset("/storage/$discsArtista->foto") }}' alt="Satélite K"/>
-                                                </a>
-                                                <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">@lang("Veure disc")</a></div>
-                                            </div>
-                                            <div>
-                                                <a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">{{ $discsArtista->titol }}</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        <div class="ps-tab" id="tab-2">
-                            <div class="row">
-                                @foreach ($artista->noticies as $noticiesArtista)
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                                        <div class="ps-product">
-                                            <div class="ps-product__thumbnail">
-                                                <a class="ps-post__overlay" href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">
-                                                    <img class="ps-product__image" src='{{ asset("/storage/$noticiesArtista->foto") }}' alt="Satélite K"/>
-                                                </a>
-                                                <div class="ps-product__actions"><a href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">@lang("Veure noticia")</a></div>
-                                            </div>
-                                            <div>
-                                                <a href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">{{ ( app()->getLocale() === 'ca' ) ? $noticiesArtista->titol_cat : $noticiesArtista->titol_esp }}</a>
+            @if (count($artista->discs) > 0)
+                <div class="ps-product__content ps-tab-root">
+                    <div class="container">
+                        <ul class="ps-tab-list">
+                            <li class="active"><a href="#tab-1">@lang("Edicions")</a></li>
+                        </ul>
+                        <div class="ps-tabs">
+                            <div class="ps-tab active" id="tab-1">
+                                <div class="row">
+                                    @foreach ($artista->discs as $discsArtista)
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                            <div class="ps-product">
+                                                <div class="ps-product__thumbnail">
+                                                    <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">
+                                                        <img class="ps-product__image" src='{{ asset("/storage/$discsArtista->foto") }}' alt="Satélite K"/>
+                                                    </a>
+                                                    <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">@lang("Veure disc")</a></div>
+                                                </div>
+                                                <div>
+                                                    <a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">{{ $discsArtista->titol }}</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
+            @if (count($artista->noticies) > 0)
+                <div class="ps-product__content ps-tab-root">
+                    <div class="container">
+                        <ul class="ps-tab-list">
+                            <li class="active"><a href="#tab-noticies">@lang("Notícies")</a></li>
+                        </ul>
+                        <div class="ps-tabs">
+                            <div class="ps-tab active" id="tab-noticies">
+                                <div class="row">
+                                    @foreach ($artista->noticies as $noticiesArtista)
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                            <div class="ps-product">
+                                                <div class="ps-product__thumbnail">
+                                                    <a class="ps-post__overlay" href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">
+                                                        <img class="ps-product__image" src='{{ asset("/storage/$noticiesArtista->foto") }}' alt="Satélite K"/>
+                                                    </a>
+                                                    <div class="ps-product__actions"><a href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">@lang("Veure noticia")</a></div>
+                                                </div>
+                                                <div>
+                                                    <a href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">
+                                                        {{ ( app()->getLocale() === 'ca' ) ? $noticiesArtista->titol_cat : $noticiesArtista->titol_esp }}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
     <div class="container-fluid mt-50 mb-30">

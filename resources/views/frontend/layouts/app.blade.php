@@ -51,6 +51,7 @@
                     </ul>
                 </li>
                 <li><a href="{{ route('frontend.videos.index') }}" class="{{ (request()->is('videos')) ? 'active' : '' }}">@lang('Vídeos')</a></li>
+                <li><a href="{{ route('frontend.noticies.index') }}" class="{{ (request()->is('noticias*')) ? 'active' : '' }}">@lang('Blog')</a></li>
                 <li class="menu-item-has-children">
                     <a href="#">@lang('Serveis')</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
@@ -111,6 +112,7 @@
                                 <li><a href="{{ route('frontend.artistes.index') }}">@lang('Artistes')</a></li>
                                 <li><a href="{{ route('frontend.discs.index') }}">@lang('Catàleg')</a></li>
                                 <li><a href="{{ route('frontend.videos.index') }}">@lang('Vídeos')</a></li>
+                                <li><a href="{{ route('frontend.noticies.index') }}">@lang('Blog')</a></li>
                                 <li><a href="{{ route('frontend.contact.index') }}">@lang('Contacte')</a></li>
                             </ul>
                         </aside>

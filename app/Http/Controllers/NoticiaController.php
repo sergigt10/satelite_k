@@ -51,7 +51,9 @@ class NoticiaController extends Controller
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
             'artistes_id' => 'required',
-            'foto' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg'
+            'foto' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
+            'foto2' => 'nullable|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
+            'alt_foto2' => 'nullable'
         ]);/* Max foto 10 MB */
 
         $ruta_foto = $request['foto']->store('backend/noticia', 'public');
@@ -59,11 +61,18 @@ class NoticiaController extends Controller
         $foto = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1020, 1024, function($constraint){$constraint->aspectRatio();});
         $foto->save();
 
+        if($request['foto2']){
+            $ruta_foto_2 = $request['foto2']->store('backend/noticia', 'public');
+            $foto2 = Image::make( storage_path("app/public/{$ruta_foto_2}") )->fit(1170, 500, function($constraint){$constraint->aspectRatio();});
+            $foto2->save();
+        }
+
         $noticia = new Noticia($data);
         // $numerosRandom = uniqid();
         // $noticia->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         $noticia->slug = Str::of($request['titol_cat'])->slug("-");
         $noticia->foto = $ruta_foto;
+        if($request['foto2']) { $noticia->foto2 = $ruta_foto_2; }
         $noticia->save();
 
         // Redireccionar
@@ -110,6 +119,7 @@ class NoticiaController extends Controller
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
             'artistes_id' => 'required',
+            'alt_foto2' => 'nullable',
         ]);/* Max foto 10 MB */
 
         // Si canviem el nom actualitzem slug
@@ -123,7 +133,14 @@ class NoticiaController extends Controller
         $noticia->titol_esp = $data['titol_esp'];
         $noticia->descripcio_cat = $data['descripcio_cat'];
         $noticia->descripcio_esp = $data['descripcio_esp'];
+        $noticia->alt_foto2 = $data['alt_foto2'];
         $noticia->artistes_id = $data['artistes_id'];
+
+        // Eliminar imatge si l'usuari escull l'opció
+        if($request['del_img2'] == "1"){
+            File::delete(storage_path("app/public/$noticia->foto2"));
+            $noticia->foto2 = "";
+        }
 
         // Si el usuario sube una nueva imagen
         if($request['foto']) {
@@ -138,6 +155,20 @@ class NoticiaController extends Controller
                 File::delete(storage_path("app/public/$noticia->foto"));
                 // Asignar al objeto
                 $noticia->foto = $ruta_foto;
+            }  
+        }
+        if($request['foto2']) {
+
+            $ruta_foto_2 = $request['foto2']->store('backend/noticia', 'public');
+
+            $img_2 = Image::make( storage_path("app/public/{$ruta_foto_2}") )->fit(1170, 500, function($constraint){$constraint->aspectRatio();});
+            $img_2->save();
+
+            // Eliminamos la imagen anterior
+            if (File::exists(storage_path("app/public/$noticia->foto2"))) {
+                File::delete(storage_path("app/public/$noticia->foto2"));
+                // Asignar al objeto
+                $noticia->foto2 = $ruta_foto_2;
             }  
         }
 

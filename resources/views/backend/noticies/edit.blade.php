@@ -117,6 +117,44 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row grid-margin">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 style="color:red">Pujar imatges en format: jpg, png o gif</h4>
+                                            <br>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-9">
+                                                    <div class="form-group">
+                                                        <label>Imatge 2 noticia</label>
+                                                        <input name="foto2" type="file" class="file-upload-default">
+                                                        <div class="input-group col-xs-12">
+                                                            <input name="foto2" type="text" class="form-control @error('foto2') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto 2" value="{{ old('foto2') }}">
+                                                            <span class="input-group-append">
+                                                                <button class="file-upload-browse btn btn-primary" type="button">Cercar imatge 2</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @if ($noticia->foto2)
+                                                    <div class="form-group col-md-3">
+                                                        <div class="form-check form-check-danger" style="float:right;">
+                                                            <input type="checkbox" class="form-check-input" name="del_img2" value="1">
+                                                            Esborrar imatge 2?
+                                                            <br><br>
+                                                            <img src='{{ asset("/storage/$noticia->foto2") }}' alt="Satélite K" with=200 height=92>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail3">Alt imatge 2:</label>
+                                                <input name="alt_foto2" type="text" class="form-control @error('alt_foto2') is-invalid @enderror" id="exampleInputEmail3" placeholder="Alt imatge 2" value="{{ $noticia->alt_foto2 }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button type="submit" name="funcioBoto" class="btn btn-primary mr-2" value="Guardar">Guardar</button>
                         </form>
                     </div>

@@ -26,7 +26,7 @@ class NoticiesFrontendController extends Controller
     {
         $noticia = Noticia::where('slug','=', $slug)->firstOrFail();
 
-        SEOTools::setTitle($noticia->titol_esp);
+        SEOTools::setTitle($noticia->titol_esp.', Satélite K');
         SEOTools::setDescription(Str::limit(strip_tags($noticia->descripcio_esp)), 155, ' (...)');
 
         return view('frontend.noticies.show', compact('noticia'));

@@ -5,7 +5,7 @@
         <div class="ps-section ps-home-top-web" style="padding-top: 0px">
             <div class="ps-section__header">
                 <figure>
-                    <figcaption>@lang("Blog")</figcaption>
+                    <figcaption>@lang("Blog Satélite K")</figcaption>
                     <p>@lang("Notícies dels artistes de Satélite K")</p>
                 </figure>
             </div>
@@ -23,7 +23,11 @@
                                 </div>
                             </div>
                             <div class="ps-product__content">
-                                <a class="ps-product__title" href="{{ route('frontend.noticies.show', ['noticia' => $noticia->slug]) }}">{{ ( app()->getLocale() === 'ca' ) ? $noticia->titol_cat : $noticia->titol_esp }}</a>
+                                <a class="ps-product__title" href="{{ route('frontend.noticies.show', ['noticia' => $noticia->slug]) }}">
+                                    {{ ( app()->getLocale() === 'ca' ) ? $noticia->titol_cat : $noticia->titol_esp }}
+                                    <br><br>
+                                    {{ ( app()->getLocale() === 'ca' ) ? Str::limit(strip_tags($noticia->descripcio_cat), 50, '...') : Str::limit(strip_tags($noticia->descripcio_esp), 50, '...') }}
+                                </a>
                             </div>
                         </div>
                     </div>
