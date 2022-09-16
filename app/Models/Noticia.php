@@ -16,6 +16,7 @@ class Noticia extends Model
         'descripcio_cat',
         'descripcio_esp',
         'foto',
+        'foto_mini',
         'foto2',
         'alt_foto2',
         'artistes_id'

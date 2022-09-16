@@ -78,7 +78,7 @@
                                             <div class="ps-product">
                                                 <div class="ps-product__thumbnail">
                                                     <a class="ps-post__overlay" href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">
-                                                        <img class="ps-product__image" src='{{ asset("/storage/$noticiesArtista->foto") }}' alt="Satélite K"/>
+                                                        <img class="ps-product__image" src='{{ asset("/storage/$noticiesArtista->foto_mini") }}' alt="Satélite K"/>
                                                     </a>
                                                     <div class="ps-product__actions"><a href="{{ route('frontend.noticies.show', ['noticia' => $noticiesArtista->slug]) }}">@lang("Veure noticia")</a></div>
                                                 </div>

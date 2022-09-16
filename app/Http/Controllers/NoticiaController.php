@@ -57,13 +57,17 @@ class NoticiaController extends Controller
         ]);/* Max foto 10 MB */
 
         $ruta_foto = $request['foto']->store('backend/noticia', 'public');
+        $ruta_foto_mini = $request['foto']->store('backend/noticia/mini', 'public');
 
-        $foto = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1020, 1024, function($constraint){$constraint->aspectRatio();});
+        $foto = Image::make( storage_path("app/public/{$ruta_foto}"));
         $foto->save();
+
+        $foto_mini = Image::make( storage_path("app/public/{$ruta_foto_mini}") )->fit(1020, 1024, function($constraint){$constraint->aspectRatio();});
+        $foto_mini->save();
 
         if($request['foto2']){
             $ruta_foto_2 = $request['foto2']->store('backend/noticia', 'public');
-            $foto2 = Image::make( storage_path("app/public/{$ruta_foto_2}") )->fit(1170, 500, function($constraint){$constraint->aspectRatio();});
+            $foto2 = Image::make( storage_path("app/public/{$ruta_foto_2}"));
             $foto2->save();
         }
 
@@ -72,6 +76,7 @@ class NoticiaController extends Controller
         // $noticia->slug = Str::of($request['titol_cat'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
         $noticia->slug = Str::of($request['titol_cat'])->slug("-");
         $noticia->foto = $ruta_foto;
+        $noticia->foto_mini = $ruta_foto_mini;
         if($request['foto2']) { $noticia->foto2 = $ruta_foto_2; }
         $noticia->save();
 
@@ -146,22 +151,31 @@ class NoticiaController extends Controller
         if($request['foto']) {
 
             $ruta_foto = $request['foto']->store('backend/noticia', 'public');
+            $ruta_foto_mini = $request['foto']->store('backend/noticia/mini', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_foto}") )->fit(1020, 1024, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_foto}") );
             $img->save();
+
+            $img_mini = Image::make( storage_path("app/public/{$ruta_foto_mini}") )->fit(1020, 1024, function($constraint){$constraint->aspectRatio();});
+            $img_mini->save();
 
             // Eliminamos la imagen anterior
             if (File::exists(storage_path("app/public/$noticia->foto"))) {
                 File::delete(storage_path("app/public/$noticia->foto"));
                 // Asignar al objeto
                 $noticia->foto = $ruta_foto;
-            }  
+            } 
+            if (File::exists(storage_path("app/public/$noticia->foto_mini"))) {
+                File::delete(storage_path("app/public/$noticia->foto_mini"));
+                // Asignar al objeto
+                $noticia->foto_mini = $ruta_foto_mini;
+            }   
         }
         if($request['foto2']) {
 
             $ruta_foto_2 = $request['foto2']->store('backend/noticia', 'public');
 
-            $img_2 = Image::make( storage_path("app/public/{$ruta_foto_2}") )->fit(1170, 500, function($constraint){$constraint->aspectRatio();});
+            $img_2 = Image::make( storage_path("app/public/{$ruta_foto_2}"));
             $img_2->save();
 
             // Eliminamos la imagen anterior
@@ -189,6 +203,12 @@ class NoticiaController extends Controller
         // Eliminar imatges
         if (File::exists(storage_path("app/public/$noticia->foto"))) {
             File::delete(storage_path("app/public/$noticia->foto"));
+        }
+        if (File::exists(storage_path("app/public/$noticia->foto_mini"))) {
+            File::delete(storage_path("app/public/$noticia->foto_mini"));
+        }
+        if (File::exists(storage_path("app/public/$noticia->foto2"))) {
+            File::delete(storage_path("app/public/$noticia->foto2"));
         }
 
         $noticia->delete();

@@ -8,7 +8,7 @@
             </div>
             <div class="ps-post__content ps-document">
                 <div class="mb-60 text-center">
-                    <img src='{{ asset("/storage/$noticia->foto") }}' height=600px alt="{{ $noticia->titol_cat }} - Satélite K">
+                    <img src='{{ asset("/storage/$noticia->foto") }}' alt="{{ $noticia->titol_esp }} - Satélite K">
                 </div>
                 <p class="ps-post__sharing">
                     @lang("Compartir a:")

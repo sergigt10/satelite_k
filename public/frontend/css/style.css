@@ -7261,7 +7261,8 @@ a.ps-product__title:hover {
     height: 40px;
     border: none;
     font-size: 15px;
-    border-bottom: 1px solid transparent; }
+    border-bottom: 1px solid transparent;
+    width: 138px; }
     .ps-form--header-search input::-webkit-input-placeholder {
       color: #bbbbbb;
       font-size: 15px; }
@@ -9785,7 +9786,7 @@ a.ps-product__title:hover {
 
 .menu > li {
   display: inline-block;
-  padding-right: 40px; }
+  padding-right: 35px; }
   .menu > li > a {
     position: relative;
     display: inline-block;
@@ -12156,4 +12157,8 @@ html .bg--parallax {
 
 .pagination {
   flex-wrap: wrap !important;
+}
+
+.ps-product__subtitle-blog {
+  font-size: 14px;
 }
