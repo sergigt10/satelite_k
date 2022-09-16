@@ -189,6 +189,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ route('frontend.videos.index') }}">@lang('Vídeos')</a></li>
+                    <li><a href="{{ route('frontend.noticies.index') }}">@lang('Blog')</a></li>
                     <li class="menu-item-has-children">
                         <a href="#">@lang('Serveis')</a><span class="sub-toggle"></span>
                         <ul class="sub-menu">
