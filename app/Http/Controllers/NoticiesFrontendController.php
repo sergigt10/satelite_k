@@ -28,8 +28,8 @@ class NoticiesFrontendController extends Controller
 
         SEOTools::setTitle($noticia->titol_esp.', Satélite K');
         SEOTools::setDescription(Str::limit(strip_tags($noticia->descripcio_esp)), 155, ' (...)');
-        SEOTools::opengraph()->addImage('https://www.satelitek.com/storage/'.$noticia->foto);
-        SEOTools::jsonLd()->addImage('https://www.satelitek.com/storage/'.$noticia->foto);
+        SEOTools::opengraph()->addImage('https://www.satelitek.com/storage/'.$noticia->foto_mini, ['height' => 300, 'width' => 300]);
+        SEOTools::jsonLd()->addImage('https://www.satelitek.com/storage/'.$noticia->foto_mini, ['height' => 300, 'width' => 300]);
 
         return view('frontend.noticies.show', compact('noticia'));
     }
