@@ -13,7 +13,7 @@
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h2>Inserir nou artista</h2>
+                            <h2>Inserir nova notícia</h2>
                             <p> * Camps obligatoris </p>
                             <br>
                             <form class="forms-sample" method="POST" action="{{ route('backend.noticies.store') }}" enctype="multipart/form-data" novalidate>
