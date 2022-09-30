@@ -22,7 +22,7 @@ class Disc extends Model
         'generes_id',
         'artistes_id',
         'tipus_id',
-        'model'
+        'portada'
     ];
 
     // Relació 1:1 disc i gènere

@@ -97,7 +97,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-9">
                                                     <div class="form-group">
-                                                        <label>Imatge noticia</label>
+                                                        <label>Imatge notícia</label>
                                                         <input name="foto" type="file" class="file-upload-default">
                                                         <div class="input-group col-xs-12">
                                                             <input name="foto" type="text" class="form-control @error('foto') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto" value="{{ old('foto') }}">
@@ -126,7 +126,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-9">
                                                     <div class="form-group">
-                                                        <label>Imatge 2 noticia</label>
+                                                        <label>Imatge notícia 2 </label>
                                                         <input name="foto2" type="file" class="file-upload-default">
                                                         <div class="input-group col-xs-12">
                                                             <input name="foto2" type="text" class="form-control @error('foto2') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto 2" value="{{ old('foto2') }}">

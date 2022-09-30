@@ -146,6 +146,30 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-videoclip" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"videoclips") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-videoclip">
+                            <i class="mdi mdi-video-vintage menu-icon"></i>
+                            <span class="menu-title">Videoclips</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"videoclips") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-videoclip">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link {{ (request()->is('backend/videoclips/create')) ? 'active' : '' }}" href="{{ route('backend.videoclips.create') }}">
+                                        Inserir
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link {{ ( (request()->is('backend/videoclips')) ||  (request()->is('backend/videoclips/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.videoclips.index') }}">
+                                        Modificar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#general-pages-4" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"generes") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-4">
                             <i class="mdi mdi-audiobook  menu-icon"></i>
                             <span class="menu-title">Gèneres</span>

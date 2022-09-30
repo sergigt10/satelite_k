@@ -185,6 +185,13 @@ class ArtistaController extends Controller
             });
         }
 
+        if($artista->videoclips) {
+            /* Eliminar imatges de notícies */
+            $artista->videoclips->each(function ($videoclip) {
+                $videoclip->delete();
+            });
+        }
+
         $artista->delete();
         
         return redirect()->action('ArtistaController@index');

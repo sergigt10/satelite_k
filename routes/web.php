@@ -114,4 +114,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('backend/sliders/{slider}/edit', 'SliderController@edit')->name('backend.sliders.edit');
     Route::put('backend/sliders/{slider}', 'SliderController@update')->name('backend.sliders.update');
     Route::delete('backend/sliders/{slider}', 'SliderController@destroy')->name('backend.sliders.destroy');
+    /* Videoclips */
+    Route::get('backend/videoclips', 'VideoclipController@index')->name('backend.videoclips.index');
+    Route::get('backend/videoclips/create', 'VideoclipController@create')->name('backend.videoclips.create');
+    Route::post('backend/videoclips', 'VideoclipController@store')->name('backend.videoclips.store');
+    Route::get('backend/videoclips/{videoclip}/edit', 'VideoclipController@edit')->name('backend.videoclips.edit');
+    Route::put('backend/videoclips/{videoclip}', 'VideoclipController@update')->name('backend.videoclips.update');
+    Route::delete('backend/videoclips/{videoclip}', 'VideoclipController@destroy')->name('backend.videoclips.destroy');
 });
