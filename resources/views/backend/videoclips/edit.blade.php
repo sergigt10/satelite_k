@@ -83,7 +83,8 @@
                                 </select>
                             </div>
                             @php
-                                echo strrev(strstr(strrev($videoclip->embed_youtube),"="));
+                                $position = strpos($videoclip->embed_youtube, "=");
+                                echo $result = substr($videoclip->embed_youtube,intval($position)+1);
                             @endphp
                             <div class="form-group">
                                 <label for="exampleInputEmail3"><i class="mdi mdi-youtube"></i> Embed Youtube *:</label>
