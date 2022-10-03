@@ -12162,3 +12162,21 @@ html .bg--parallax {
 .ps-product__subtitle-blog {
   font-size: 14px;
 }
+
+.videoclip-titol {
+  font-size: 20px !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  margin-bottom: 6px !important;
+}
+
+.videoclip-artista {
+  margin-bottom: 0 !important;
+  font-size: 16px !important;
+  color: #999 !important;
+  font-weight: 400 !important;
+}
+
+.videoclip-artista:hover  {
+  color: #429798 !important;
+}

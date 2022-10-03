@@ -8,6 +8,7 @@ use App\Models\Artista;
 use App\Models\Disc;
 use App\Models\Llibre;
 use App\Models\Noticia;
+use App\Models\Videoclip;
 
 use Artesaos\SEOTools\Facades\SEOTools;
 
@@ -29,9 +30,9 @@ class HomeFrontendController extends Controller
         $slider4 = $ordreSlide->get(3);
         $artistes = Artista::whereIn('portada',[1, 2, 3, 4])->orderBy('portada')->get();
         $discs = Disc::whereIn('portada',[1, 2, 3, 4, 5])->orderBy('portada')->get();
-        $videoLists = videoLists(4);
+        $videoclips = Videoclip::whereIn('portada',[1, 2, 3, 4])->orderBy('portada')->get();
         
-        return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'slider4', 'artistes', 'discs', 'videoLists'));
+        return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'slider4', 'artistes', 'discs', 'videoclips'));
     }
 
     public function about()

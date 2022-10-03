@@ -25,6 +25,6 @@ class Videoclip extends Model
     // Detectar quins disc estan a portada, es crida en el controlador de videoclips
     public function scopePortada($query) 
     {
-        return $query->whereIn('portada',[1, 2, 3, 4, 5])->pluck('portada')->toArray();
+        return $query->whereIn('portada',[1, 2, 3, 4])->pluck('portada')->toArray();
     }
 }

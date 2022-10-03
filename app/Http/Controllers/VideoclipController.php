@@ -55,8 +55,11 @@ class VideoclipController extends Controller
         ]);/* Max foto 10 MB */
 
         $videoclip = new Videoclip($data);
-        // $numerosRandom = uniqid();
-        // $videoclip->slug = Str::of($request['titol'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
+
+        // Retalla embed de Youtube
+        $position = strpos($videoclip->embed_youtube, "=");
+        $videoclip->embed_youtube = substr($videoclip->embed_youtube,intval($position)+1);
+
         $videoclip->slug = Str::of($request['titol'])->slug("-");
         $videoclip->save();
 
@@ -108,13 +111,21 @@ class VideoclipController extends Controller
 
         // Si canviem el nom actualitzem slug
         if($videoclip->titol !== $data['titol']) {
-            // $numerosRandom = uniqid();
-            // $videoclip->slug = Str::of($request['titol'])->slug("-")->limit(255 - mb_strlen($numerosRandom) - 1, "")->trim("-")->append("-", $numerosRandom);
             $videoclip->slug = Str::of($request['titol'])->slug("-");
         }
+
         // Asignar los valores
         $videoclip->titol = $data['titol'];
-        $videoclip->embed_youtube = $data['embed_youtube'];
+
+        // Si canviem embed de youtube s'actualitza
+        if($videoclip->embed_youtube !== $data['embed_youtube']) {
+            // Retalla embed de Youtube
+            $position = strpos($data['embed_youtube'], "=");
+            $videoclip->embed_youtube = substr($data['embed_youtube'],intval($position)+1);
+        } else {
+            $videoclip->embed_youtube = $data['embed_youtube'];
+        }
+
         $videoclip->artistes_id = $data['artistes_id'];
         $videoclip->portada = $data['portada'];
 

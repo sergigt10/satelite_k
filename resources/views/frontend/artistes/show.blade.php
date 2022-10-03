@@ -96,6 +96,39 @@
                     </div>
                 </div>
             @endif
+            @if (count($artista->videoclips) > 0)
+                <div class="ps-product__content ps-tab-root">
+                    <div class="container">
+                        <ul class="ps-tab-list">
+                            <li class="active"><a href="#tab-noticies">@lang("Videoclips")</a></li>
+                        </ul>
+                        <div class="ps-tabs">
+                            <div class="ps-tab active" id="tab-noticies">
+                                <div class="row">
+                                    @foreach ($artista->videoclips as $videoclipsArtista)
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                            <div class="ps-product">
+                                                <iframe 
+                                                    width="262" height="263" 
+                                                    src="https://www.youtube.com/embed/{{ $videoclipsArtista->embed_youtube }}?rel=0&showinfo=0&modestbranding=1" 
+                                                    title="{{ $videoclipsArtista->titol }}" 
+                                                    frameborder="0" 
+                                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                    allowfullscreen>
+                                                </iframe>
+                                                <div>
+                                                    <br>
+                                                    {{ $videoclipsArtista->titol }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
     <div class="container-fluid mt-50 mb-30">

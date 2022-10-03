@@ -53,7 +53,7 @@
                                     </select>
                                 </div>
                                 @php 
-                                    $numbers = array(1, 2, 3, 4, 5);
+                                    $numbers = array(1, 2, 3, 4);
                                     $availables = array_diff($numbers, $videoclipsPortada);
                                 @endphp
                                 <div class="form-group">
@@ -71,8 +71,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3"><i class="mdi mdi-youtube"></i> Embed Youtube *:</label>
-                                    <input name="embed_youtube" type="text" class="form-control" id="exampleInputEmail3" placeholder="Embed Youtube *" value="{{ old('embed_youtube') }}">
+                                    <label for="exampleInputEmail3"><i class="mdi mdi-youtube"></i> Link Youtube * (Ex: https://www.youtube.com/watch?v=MN81eEaIrmo):</label>
+                                    <input name="embed_youtube" type="text" class="form-control" id="exampleInputEmail3" placeholder="Link Youtube *" value="{{ old('embed_youtube') }}">
                                 </div>
                                 <button type="submit" name="funcioBoto" class="btn btn-primary mr-2" value="Guardar">Guardar</button>
                             </form>

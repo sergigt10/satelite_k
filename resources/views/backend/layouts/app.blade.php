@@ -34,7 +34,7 @@
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center">
                 <ul class="navbar-nav navbar-nav-left">
-                    <a href="http://www.satelitek.com" target="_blank" style="color:black">Veure pàgina web</a>
+                    <a href="https://www.satelitek.com" target="_blank" style="color:black">Veure pàgina web</a>
                 </ul>
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-profile dropdown mr-0 mr-sm-2">
