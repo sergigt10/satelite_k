@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Videoclip;
+
 use Artesaos\SEOTools\Facades\SEOTools;
 
 class YoutubeController extends Controller
@@ -15,8 +17,8 @@ class YoutubeController extends Controller
     {
         SEOTools::setTitle('Discográfica Barcelona, Servicios musicales Barcelona');
 
-        $videoLists = videoLists(12);
-        return view('frontend.videos.index', compact('videoLists'));
+        $videoclips = Videoclip::latest('id')->paginate(15, ['*'], 'pagina');
+        return view('frontend.videos.index', compact('videoclips'));
     }
 
     // public function watch($id)

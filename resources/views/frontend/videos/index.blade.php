@@ -15,21 +15,27 @@
                 <div class="ps-portfolio-box">
                     <div class="ps-section__content">
                         <div class="row">
-                            @foreach ($videoLists->items as $item)
+                            @foreach ($videoclips as $videoclip)
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                                     <div class="ps-block--portfolio">
-                                        <div class="ps-block__thumbnail">
-                                            <a target="_blank" class="ps-block__overlay" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}"></a>
-                                            <img src="{{ $item->snippet->thumbnails->high->url }}" alt="{{ $item->snippet->title }} - Satélite K">
-                                        </div>
+                                        <iframe 
+                                            width="262" height="263" 
+                                            src="https://www.youtube.com/embed/{{ $videoclip->embed_youtube }}?rel=0&showinfo=0&modestbranding=1" 
+                                            title="{{ $videoclip->titol }}" 
+                                            frameborder="0" 
+                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
                                         <div class="ps-block__content">
-                                            <a target="_blank" href="https://www.youtube.com/watch?v={{ $item->snippet->resourceId->videoId }}">
-                                                {{ \Illuminate\Support\Str::limit($item->snippet->title, $limit = 150, $end = ' ...') }}
-                                            </a>
+                                            <p class="videoclip-titol">{{ $videoclip->titol }}</p>
+                                            <a class="videoclip-artista" href="{{ route('frontend.artistes.show', ['artista' => $videoclip->artista->slug]) }}">{{ $videoclip->artista->nom }}</a>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
+                        </div>
+                        <div>
+                            {{ $videoclips->links() }}
                         </div>
                     </div>
                     <div class="ps-section__footer text-center">
