@@ -9,8 +9,8 @@
             @if ($slider1)
                 <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider1->foto") }}'>
                     <div class="ps-banner__content">
-                        <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_artista}}</p>
-                        <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_disc}}</h3>
+                        <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_disc}}</p>
+                        <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider1->nom_artista}}</h3>
                         <a class="ps-link--under" href="{{$slider1->url_link}}" target="_blank" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{ ( app()->getLocale() === 'ca' ) ? $slider1->titol_link_cat : $slider1->titol_link_esp }}</a>
                     </div>
                 </div>
@@ -18,8 +18,8 @@
             @if ($slider2)
                 <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider2->foto") }}'>
                     <div class="ps-banner__content">
-                        <p data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_artista}}</p>
-                        <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_disc}}</h3>
+                        <p data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_disc}}</p>
+                        <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">{{$slider2->nom_artista}}</h3>
                         <a class="ps-link--under" href="{{$slider2->url_link}}" target="_blank" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{ ( app()->getLocale() === 'ca' ) ? $slider2->titol_link_cat : $slider2->titol_link_esp }}</a>
                     </div>
                 </div>
@@ -27,8 +27,8 @@
             @if ($slider3)
                 <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider3->foto") }}'>
                     <div class="ps-banner__content">
-                        <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_artista}}</p>
-                        <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_disc}}</h3>
+                        <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_disc}}</p>
+                        <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider3->nom_artista}}</h3>
                         <a class="ps-link--under" href="{{$slider3->url_link}}" target="_blank" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{ ( app()->getLocale() === 'ca' ) ? $slider3->titol_link_cat : $slider3->titol_link_esp }}</a>
                     </div>
                 </div>
@@ -36,8 +36,8 @@
             @if ($slider4)
                 <div class="ps-banner--3 bg--top-right" data-background='{{ asset("/storage/$slider4->foto") }}'>
                     <div class="ps-banner__content">
-                        <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider4->nom_artista}}</p>
-                        <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider4->nom_disc}}</h3>
+                        <p data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider4->nom_disc}}</p>
+                        <h3 data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutRight">{{$slider4->nom_artista}}</h3>
                         <a class="ps-link--under" href="{{$slider4->url_link}}" target="_blank" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">{{ ( app()->getLocale() === 'ca' ) ? $slider4->titol_link_cat : $slider4->titol_link_esp }}</a>
                     </div>
                 </div>

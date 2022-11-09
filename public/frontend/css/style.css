@@ -6016,15 +6016,15 @@ a.ps-product__title:hover {
   .ps-banner--3 h3 {
     margin-bottom: 20px;
     font-size: 80px;
-    color: #222;
-    line-height: 1.05em; }
-  .ps-banner--3 p {
     color: #429798;
+    line-height: 1.05em;
+    text-shadow: 1px 1px #000; }
+  .ps-banner--3 p {
+    color: #222;
     line-height: 1em;
     margin-bottom: 20px;
     text-transform: uppercase;
     font-size: 30px;
-    text-shadow: 1px 1px #000;
   }
   .ps-banner--3 .ps-list--social {
     position: absolute;
