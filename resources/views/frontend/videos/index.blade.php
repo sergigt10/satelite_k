@@ -19,7 +19,9 @@
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                                     <div class="ps-block--portfolio">
                                         <iframe 
-                                            width="262" height="263" 
+                                            width="262" 
+                                            height="263"
+                                            loading="lazy" 
                                             src="https://www.youtube.com/embed/{{ $videoclip->embed_youtube }}?rel=0&showinfo=0&modestbranding=1" 
                                             title="{{ $videoclip->titol }}" 
                                             frameborder="0" 
