@@ -95,18 +95,24 @@ class SliderController extends Controller
     {
         $data = $request->validate([
             'nom_artista' => 'required',
+            'color_nom_artista' => 'required',
             'nom_disc' => 'required',
+            'color_titol_disc' => 'required',
             'titol_link_cat' => '',
             'titol_link_esp' => '',
+            'color_titol_url' => 'required',
             'url_link' => '',
             'ordre' => ''
         ]);
 
         // Asignar valors
         $slider->nom_artista = $data['nom_artista'];
+        $slider->color_nom_artista = $data['color_nom_artista'];
         $slider->nom_disc = $data['nom_disc'];
+        $slider->color_titol_disc = $data['color_titol_disc'];
         $slider->titol_link_cat = $data['titol_link_cat'];
         $slider->titol_link_esp = $data['titol_link_esp'];
+        $slider->color_titol_url = $data['color_titol_url'];
         $slider->url_link = $data['url_link'];
 
         /* Si modifiquem l'ordre */

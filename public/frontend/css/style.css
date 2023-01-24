@@ -437,7 +437,8 @@ figure {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #222; }
+    /* background-color: #222;  */
+  }
   .ps-link--under:hover:before {
     background-color: #429798; }
 
@@ -10166,7 +10167,9 @@ a.ps-product__title:hover {
       padding: 30px 60px; } }
   @media (min-width: 1680px) {
     .header {
-      padding: 10px 80px; }
+      padding: 10px 80px;
+      background: rgba(255, 255, 255, 0.7);
+    }
       .header .header__right {
         padding-left: 170px; } }
 

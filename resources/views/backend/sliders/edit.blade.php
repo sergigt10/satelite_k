@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('styles')
-    
+    <link rel="stylesheet" href="{{ asset('backend/vendors/jquery-asColorPicker/css/asColorPicker.min.css') }}">
 @endsection
 
 @section('content')
@@ -28,6 +28,21 @@
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
+                            @error('color_nom_artista')
+                                <div class='alert alert-danger' role='alert'>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
+                            @error('color_titol_disc')
+                                <div class='alert alert-danger' role='alert'>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
+                            @error('color_titol_url')
+                                <div class='alert alert-danger' role='alert'>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
                             @error('foto')
                                 <div class='alert alert-danger' role='alert'>
                                     <strong>{{ $message }}</strong>
@@ -39,8 +54,16 @@
                                 <input name="nom_artista" type="text" class="form-control @error('nom_artista') is-invalid @enderror" id="exampleInputEmail3" placeholder="Nom artista" value="{{ $slider->nom_artista }}">
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputEmail3">Color nom de l'artista *:</label>
+                                <input name="color_nom_artista" type='text' class="color-picker @error('color_nom_artista') is-invalid @enderror" value="{{ $slider->color_nom_artista }}" />
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputEmail3">Nom disc *:</label>
                                 <input name="nom_disc" type="text" class="form-control @error('nom_disc') is-invalid @enderror" id="exampleInputEmail3" placeholder="Nom disc" value="{{ $slider->nom_disc }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Color títol del disc *:</label>
+                                <input name="color_titol_disc" type='text' class="color-picker @error('color_titol_disc') is-invalid @enderror" value="{{ $slider->color_titol_disc }}" />
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail3">URL:</label>
@@ -53,6 +76,10 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Títol URL ESP:</label>
                                 <input name="titol_link_esp" type="text" class="form-control" id="exampleInputEmail3" placeholder="Títol URL ESP" value="{{ $slider->titol_link_esp }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Color títol URL *:</label>
+                                <input name="color_titol_url" type='text' class="color-picker @error('color_titol_url') is-invalid @enderror" value="{{ $slider->color_titol_url }}" />
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Ordre slide *:</label>
@@ -122,6 +149,9 @@
 
 @section('scripts')
     <script src="{{ asset('backend/js/file-upload.js') }}"></script>
+    <script src="{{ asset('backend/vendors/jquery-asColorPicker/jquery-asColorPicker.min.js') }}"></script>
+    <script src="{{ asset('backend/vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.js') }}"></script>
+    <script src="{{ asset('backend/js/formpickers.js') }}"></script>
 @endsection
 
 @endsection
