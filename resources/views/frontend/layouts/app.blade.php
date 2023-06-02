@@ -33,6 +33,17 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/home-default.css') }}">
 
     <link rel="shortcut icon" href="{{ asset('frontend/img/favicon.ico') }}" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KG5FKKJ042"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KG5FKKJ042');
+    </script>
+
 </head>
 <body>
 <header class="header header--standard {{ (request()->is('/')) ? 'transparent' : '' }}" data-sticky="true">

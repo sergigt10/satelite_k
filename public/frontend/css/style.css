@@ -10030,7 +10030,9 @@ a.ps-product__title:hover {
 
 .header {
   display: none;
-  border-bottom: 1px solid #eaeaea; }
+  border-bottom: 1px solid #eaeaea;
+  background: rgba(255, 255, 255, 0.7); 
+  }
   .header .header__cart {
     position: relative; }
     .header .header__cart span {
@@ -10153,7 +10155,7 @@ a.ps-product__title:hover {
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between;
-      padding: 0 30px; }
+      padding: 10px 30px; }
       .header.header--mobile {
         display: none; } }
   @media (min-width: 1366px) {
@@ -10168,7 +10170,6 @@ a.ps-product__title:hover {
   @media (min-width: 1680px) {
     .header {
       padding: 10px 80px;
-      background: rgba(255, 255, 255, 0.7);
     }
       .header .header__right {
         padding-left: 170px; } }
