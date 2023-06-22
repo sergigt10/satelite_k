@@ -14,6 +14,9 @@ Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
 Route::post('/newsletter', 'HomeFrontendController@subscribeNewsletter');
 Route::get('/newsletter-subscrit', 'HomeFrontendController@subscribeNewsletterOk')->name('frontend.inici.newsletterOk');
 Route::get('/aviso-legal', 'HomeFrontendController@avisLegal')->name('frontend.inici.avisLegal');
+Route::get('/politica-privacidad', 'HomeFrontendController@politica')->name('frontend.inici.politica');
+Route::get('/politica-privacidad-redes', 'HomeFrontendController@politicaRedes')->name('frontend.inici.politicaRedes');
+Route::get('/politica-cookies', 'HomeFrontendController@politicaCookies')->name('frontend.inici.politicaCookies');
 
 /* Cercador */
 

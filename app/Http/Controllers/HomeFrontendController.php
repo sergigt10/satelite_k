@@ -90,4 +90,25 @@ class HomeFrontendController extends Controller
         return view('frontend.inici.avisLegal');
     }
 
+    public function politica()
+    {
+        SEOTools::setTitle('Política de privacidad Satélite K, Discográfica Barcelona');
+
+        return view('frontend.inici.politica');
+    }
+
+    public function politicaRedes()
+    {
+        SEOTools::setTitle('Política de privacidad Redes Sociales Satélite K, Discográfica Barcelona');
+
+        return view('frontend.inici.politicaRedes');
+    }
+
+    public function politicaCookies()
+    {
+        SEOTools::setTitle('Política de cookies Satélite K, Discográfica Barcelona');
+
+        return view('frontend.inici.politicaCookies');
+    }
+
 }

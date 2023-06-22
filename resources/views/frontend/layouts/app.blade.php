@@ -158,7 +158,7 @@
                             <a target="_blank" href="https://www.webmastervic.com/" style="font-size: 14px;">Disseny web Webmastervic</a> - Satélite K © {{ now()->year }} 
                         </p>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 ">
                         <div class="ps-list--social">
                             <li><a href="https://www.facebook.com/satelitek" target="_blank"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/satelitek" target="_blank"><i class="fa fa-twitter"></i></a></li>
@@ -167,10 +167,13 @@
                             <li><a href="https://www.instagram.com/satelite_k/" target="_blank"><i class="fa fa-instagram"></i></a></li>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
+                    <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 ">
                         <p class="ps-footer__links">
-                        <!-- <a class="ps-link--line" href="#">@lang('Política de privacitat')</a> -->
-                        <a class="ps-link--line" href="{{ route('frontend.inici.avisLegal') }}">@lang('Avís legal')</a></p>
+                            <a class="ps-link--line" href="{{ route('frontend.inici.avisLegal') }}">@lang('Avís legal')</a>
+                            <a class="ps-link--line" href="{{ route('frontend.inici.politica') }}">@lang('Política privacidad')</a>
+                            <a class="ps-link--line" href="{{ route('frontend.inici.politicaCookies') }}">@lang('Política cookies')</a>
+                            <a class="ps-link--line" href="{{ route('frontend.inici.politicaRedes') }}">@lang('Redes sociales')</a>
+                        </p>
                     </div>
                 </div>
             </div>
