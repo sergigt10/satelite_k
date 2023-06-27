@@ -40,7 +40,10 @@
                             <label>@lang("Missatge")<sup>*<sup></sup></sup></label>
                             <textarea class="form-control" rows="6" placeholder="" name="msg" required></textarea>
                         </div>
-                            <div class="form-group submit">
+                        <div class="form-group">
+                            <input type="checkbox" id="privacidad" name="privacidad" value="privacidad" required>&nbsp;&nbsp;<a href="{{ route('frontend.inici.politica') }}" target="_blank">@lang("He llegit i accepto la política de privadesa")</a>
+                        </div>
+                        <div class="form-group submit">
                             <button class="ps-btn ps-btn--black">@lang("Enviar missatge")</button>
                         </div>
                     </form>
@@ -58,7 +61,7 @@
                     </ul>
                     <figure>
                         <figcaption>Satélite K</figcaption>
-                        <p>C/Pallars 65, 2º 4ª</p>
+                        <p>C/Pallars 65, 5º 4ª</p>
                         <p>08018 Barcelona</p>
                         <p>T.+34 93 320 86 08</p>
                         <p>info@satelitek.com</p>

@@ -104,7 +104,9 @@
 <div id="{{ (request()->is('/')) ? 'homepage-default' : '' }}" class="{{ (request()->is('/')) ? '' : 'ps-web' }}">
 
     @yield('content')
-
+    
+    {!! EuCookieConsent::getPopup() !!}
+    
     <footer class="ps-footer--2 ps-footer--fullwidth">
         <div class="container">
             <div class="ps-footer__content">
@@ -140,7 +142,7 @@
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-12">
                         <aside class="widget widget_footer widget_align-right">
                             <h3 class="widget-title">@lang('Contacte')</h3>
-                            <p><i class="fa fa-location-arrow"></i> C/ Pallars,65, 2 4</p>
+                            <p><i class="fa fa-location-arrow"></i> C/ Pallars,65, 5º 4ª</p>
                             <p>08018 Barcelona</p>
                             <p>@lang('Espanya')</p>
                             <p><i class="fa fa-phone"></i> +34 93 320 86 08</p>
@@ -170,9 +172,9 @@
                     <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 ">
                         <p class="ps-footer__links">
                             <a class="ps-link--line" href="{{ route('frontend.inici.avisLegal') }}">@lang('Avís legal')</a>
-                            <a class="ps-link--line" href="{{ route('frontend.inici.politica') }}">@lang('Política privacidad')</a>
+                            <a class="ps-link--line" href="{{ route('frontend.inici.politica') }}">@lang('Política privadesa')</a>
                             <a class="ps-link--line" href="{{ route('frontend.inici.politicaCookies') }}">@lang('Política cookies')</a>
-                            <a class="ps-link--line" href="{{ route('frontend.inici.politicaRedes') }}">@lang('Redes sociales')</a>
+                            <a class="ps-link--line" href="{{ route('frontend.inici.politicaRedes') }}">@lang('Xarxes socials')</a>
                         </p>
                     </div>
                 </div>
@@ -219,7 +221,7 @@
             <br><br>
             <figure class="ps-navigation__bottom">
                 <figcaption>Satélite K</figcaption>
-                <p>C/ Pallars,65, 2 4 - 08018 Barcelona <br> +34 93 320 86 08 - info@satelitek.com</p>
+                <p>C/ Pallars,65, 5º 4ª - 08018 Barcelona <br> +34 93 320 86 08 - info@satelitek.com</p>
             </figure>
             <div class="ps-banner__social">
                 <ul class="ps-list--social">

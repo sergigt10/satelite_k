@@ -12,7 +12,7 @@
         <div class="ps-web__content">
             <div class="row">
                 <div class="col-sm-12">
-                    <p>De conformidad con lo establecido en la norma􀆟va vigente y aplicable de protección de datos de carácter personal y la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), SATELITE K 76 SL informa a los usuarios, que ha procedido a crear un perfil en las Redes Sociales Facebook, Twiter, Instagram, Pinterest e YouTube, con la finalidad principal de publicitar sus productos y servicios.</p>
+                    <p>De conformidad con lo establecido en la normativa vigente y aplicable de protección de datos de carácter personal y la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), SATELITE K 76 SL informa a los usuarios, que ha procedido a crear un perfil en las Redes Sociales Facebook, Twiter, Instagram, Pinterest e YouTube, con la finalidad principal de publicitar sus productos y servicios.</p>
                     <br>
                     <p>Datos de SATELITE K 76 SL:</p>
                     <p>NIF: B61795753</p>
@@ -21,14 +21,14 @@
                     <p>DOMINIO WEB: info@satelitek.com</p>
                     <br><br>
                     <p><b>Protección de datos</b></p>
-                    <p>El usuario dispone de un perfil en la misma Red Social y ha decidido unirse a la página creada por SATELITE K 76 SL, mostrando así interés en la información que se publicite en la Red. Al unirse a nuestra página, nos facilita su consen􀆟miento para el tratamiento de aquellos datos personales publicados en su perfil.<br>
-                    El usuario puede acceder en todo momento a las políticas de privacidad de la propia Red Social, así como configurar su perfil para garan􀆟zar su privacidad.<br>
-                    SATELITE K 76 SL 􀆟ene acceso y trata aquella información pública del usuario, en especial, su nombre de contacto. Estos datos, sólo son u􀆟lizados dentro de la propia Red Social. No son incorporados a ningún sistema de tratamiento.
+                    <p>El usuario dispone de un perfil en la misma Red Social y ha decidido unirse a la página creada por SATELITE K 76 SL, mostrando así interés en la información que se publicite en la Red. Al unirse a nuestra página, nos facilita su consentimiento para el tratamiento de aquellos datos personales publicados en su perfil.<br>
+                    El usuario puede acceder en todo momento a las políticas de privacidad de la propia Red Social, así como configurar su perfil para garantizar su privacidad.<br>
+                    SATELITE K 76 SL tiene acceso y trata aquella información pública del usuario, en especial, su nombre de contacto. Estos datos, sólo son utilizados dentro de la propia Red Social. No son incorporados a ningún sistema de tratamiento.
                     </p>
                     <br><br>
                     <p><b>Derechos de los interesados</b></p>
                     <p>
-                        En relación a los derechos de acceso, rec􀆟ficación, limitación de tratamiento, supresión, portabilidad y oposición al tratamiento de sus datos de carácter personal, de los que usted dispone y que pueden ser ejercitados ante SATELITE K 76 SL, de acuerdo con el RGPD, debe tener en cuenta los siguientes matices:<br>
+                        En relación a los derechos de acceso, rectificación, limitación de tratamiento, supresión, portabilidad y oposición al tratamiento de sus datos de carácter personal, de los que usted dispone y que pueden ser ejercitados ante SATELITE K 76 SL, de acuerdo con el RGPD, debe tener en cuenta los siguientes matices:<br>
                         <b>Derecho de Acceso:</b> Es el derecho del usuario a obtener información sobre sus datos concretos de carácter personal y del tratamiento que se haya realizado o realice, así como de la información disponible sobre el origen de dichos datos y las comunicaciones realizadas o previstas de los mismos.<br>
                         <b>Derecho de Rectificación:</b> Es el derecho del afectado a que se modifiquen los datos que resulten ser inexactos o incompletos. Sólo podrá satisfacerse en relación a aquella información que se encuentre bajo el control de SATELITE K 76 SL, por ejemplo, eliminar comentarios publicados en la propia página, imágenes o contenidos web donde consten datos de carácter personal del usuario.<br>
                         <b>Derecho a la Limitación de tratamiento:</b> Es el derecho a que se limiten los fines del tratamiento previstos de forma original por el responsable del tratamiento.<br>
@@ -59,7 +59,7 @@
                     </p>
                     <p><b>Publicidad</b></p>
                     <p>
-                        SATELITE K 76 SL u􀆟lizará la Red Social para publicitar sus productos y servicios, en todo caso, si decide tratar sus datos de contacto para realizar acciones directas de prospección comercial, será siempre, cumpliendo con las exigencias legales del RGPD y de la LSSI-CE.<br>
+                        SATELITE K 76 SL utlizará la Red Social para publicitar sus productos y servicios, en todo caso, si decide tratar sus datos de contacto para realizar acciones directas de prospección comercial, será siempre, cumpliendo con las exigencias legales del RGPD y de la LSSI-CE.<br>
                         No se considerará publicidad el hecho de recomendar a otros usuarios la página de SATELITE K 76 SL para que también ellos puedan disfrutar de las promociones o estar informados de su actividad.<br>
                         A continuación detallamos el enlace a la política de privacidad de la red social:<br>
                         • Facebook: htps://es-es.facebook.com/privacy/explanation<br>

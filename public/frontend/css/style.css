@@ -7560,6 +7560,7 @@ a.ps-product__title:hover {
       margin-bottom: 0; } }
   @media (min-width: 1200px) {
     .ps-home-subscribe {
+      display: none !important;
       padding: 100px 0; }
       .ps-home-subscribe figcaption {
         font-size: 36px; }
@@ -12183,4 +12184,8 @@ html .bg--parallax {
 
 .videoclip-artista:hover  {
   color: #429798 !important;
+}
+
+.ps-home-subscribe {
+  display: none !important;
 }
