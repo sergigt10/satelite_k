@@ -17,18 +17,18 @@
         /* right: 0px; */
         bottom: 0px;
     }
-    .width-buton {
-        width: 130%;
-    }
+    /* .width-buton {
+        width: 110%;
+    } */
     @media (max-width: 992px) {
         .eu-popup{
             width: 80% !important;
             left: 0px !important;
             right: 0px !important;
         }
-        .width-buton {
+        /* .width-buton {
             width: 100%;
-        }
+        } */
     }
     .eu-popup-button {
         background-color: white;
@@ -85,6 +85,13 @@
                 @include('eu-cookie-consent::category')
             @endforeach
             <div style="margin-top: 5px; display: inline-block; float:right">
+                <button id="saveButton" type="submit" class="eu-popup-button">
+                    @if($multiLanguageSupport)
+                        {{__('eu-cookie-consent::cookies.save')}}
+                    @else
+                        {{ $config['saveButton'] }}
+                    @endif
+                </button>
                 @if(config('eu-cookie-consent.acceptAllButton'))
                     <a style="font-weight: bold; border: 3px lightgray solid;" class="eu-popup-button"
                             onclick="euCookieConsentSetCheckboxesByClassName('eu-cookie-consent-cookie');">
@@ -95,13 +102,6 @@
                         @endif
                     </a>
                 @endif
-                <button id="saveButton" type="submit" class="eu-popup-button">
-                    @if($multiLanguageSupport)
-                        {{__('eu-cookie-consent::cookies.save')}}
-                    @else
-                        {{ $config['saveButton'] }}
-                    @endif
-                </button>
             </div>
         </div>
     </form>
