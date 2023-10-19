@@ -43,6 +43,8 @@ class ArtistesFrontendController extends Controller
 
         SEOTools::setTitle($artista->nom.', Satélite K');
         SEOTools::setDescription(Str::limit(strip_tags($artista->biografia_esp)), 155, ' (...)');
+        SEOTools::opengraph()->addImage('https://www.satelitek.com/storage/'.$artista->foto, ['height' => 300, 'width' => 300]);
+        SEOTools::jsonLd()->addImage('https://www.satelitek.com/storage/'.$artista->foto, ['height' => 300, 'width' => 300]);
 
         return view('frontend.artistes.show', compact('artista'));
     }

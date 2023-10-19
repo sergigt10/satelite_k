@@ -29,6 +29,8 @@ class LlibresFrontendController extends Controller
 
         SEOTools::setTitle($llibre->titol_cat.', Satélite K');
         SEOTools::setDescription(Str::limit(strip_tags($llibre->descripcio_esp)), 155, ' (...)');
+        SEOTools::opengraph()->addImage('https://www.satelitek.com/storage/'.$llibre->foto, ['height' => 300, 'width' => 300]);
+        SEOTools::jsonLd()->addImage('https://www.satelitek.com/storage/'.$llibre->foto, ['height' => 300, 'width' => 300]);
 
         return view('frontend.llibres.show', compact('llibre'));
     }

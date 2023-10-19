@@ -71,6 +71,8 @@ class DiscsFrontendController extends Controller
 
         SEOTools::setTitle($disc->titol.', '.$disc->artista->nom.', Satélite K');
         SEOTools::setDescription(Str::limit(strip_tags($disc->descripcio_esp)), 155, ' (...)');
+        SEOTools::opengraph()->addImage('https://www.satelitek.com/storage/'.$disc->foto, ['height' => 300, 'width' => 300]);
+        SEOTools::jsonLd()->addImage('https://www.satelitek.com/storage/'.$disc->foto, ['height' => 300, 'width' => 300]);
 
         return view('frontend.discs.show', compact('disc'));
     }
