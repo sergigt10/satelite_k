@@ -153,7 +153,7 @@
                 </figure>
             </div>
             <div class="ps-page">
-                <div class="ps-page ps-page--default">
+                <div class="ps-page ps-page--default" style="padding-bottom: 0px">
                     <div class="container">
                         <div class="ps-page__content">
                             <div class="ps-portfolio-box">
