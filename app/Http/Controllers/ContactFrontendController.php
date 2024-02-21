@@ -24,22 +24,40 @@ class ContactFrontendController extends Controller
 
     public function sendEmail(Request $request){
 
-        $data=[
-            'name' => $request->name,
-            'mail' => $request->mail,
-            'msg' => $request->msg
-        ];
+        $captcha = '';
+        $captcha = $_POST['g-recaptcha-response'];
+        if($captcha != ''){
+            // your secret key
+            $secret = env('GOOGLE_SECRET_RECHAPTA');
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $var = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
+            $array = json_decode($var, true);
+            if($array['success']){
 
-        $AdminMessage  = "Formulari de contacte WEB\n\n";
-        $AdminMessage .= "Nom i cogmons: ".utf8_decode($data['name'])."\n";
-        $AdminMessage .= "Correu: ".utf8_decode($data['mail'])."\n";
-        $AdminMessage .= "Comentaris: ".utf8_decode($data['msg'])."\n";
-    
-        mail("info@satelitek.com", "Formulari de contacte WEB", $AdminMessage, "From: ".$data['mail']);
+                $data=[
+                    'name' => $request->name,
+                    'mail' => $request->mail,
+                    'msg' => $request->msg
+                ];
 
-        // Mail::to('phxhollow13@hotmail.com')->send(new ContactMail($data));
+                $AdminMessage  = "Formulari de contacte WEB\n\n";
+                $AdminMessage .= "Nom i cogmons: ".utf8_decode($data['name'])."\n";
+                $AdminMessage .= "Correu: ".utf8_decode($data['mail'])."\n";
+                $AdminMessage .= "Comentaris: ".utf8_decode($data['msg'])."\n";
+            
+                mail("info@satelitek.com", "Formulari de contacte WEB", $AdminMessage, "From: ".$data['mail']);
 
-        return back()->with(['message_mail' => trans('Missatge enviat correctament! En breu ens posarem en contacte. Gràcies')]);
+                // Mail::to('phxhollow13@hotmail.com')->send(new ContactMail($data));
+
+                return back()->with(['message_mail' => trans('Missatge enviat correctament! En breu ens posarem en contacte. Gràcies')]);
+            }else{
+                // bot pasar
+                return back()->with(['error_message_mail' => trans('ERROR! Seleccionar no soy un robot.')]);
+            }
+        }else{
+            // Es un bot
+            return back()->with(['error_message_mail' => trans('ERROR! Seleccionar no soy un robot.')]);
+        }
 
     }
 

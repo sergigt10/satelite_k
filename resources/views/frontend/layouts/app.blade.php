@@ -11,6 +11,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
+    <meta name="facebook-domain-verification" content="3eok39df7bovf1zvinhpolyo877s6c" />
+
     <!-- SEO -->
     {!! SEO::generate() !!}
 
@@ -43,7 +45,6 @@
 
     gtag('config', 'G-KG5FKKJ042');
     </script>
-
 </head>
 <body>
 <header class="header header--standard {{ (request()->is('/')) ? 'transparent' : '' }}" data-sticky="true">
@@ -85,7 +86,7 @@
             <div class="header__actions">
                 <div class="ps-banner__social">
                     <ul class="ps-list--social">
-                        <li><a href="https://www.instagram.com/satelite_k/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.instagram.com/satelitek.label/" target="_blank"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                 </div>
@@ -160,16 +161,18 @@
                             <a target="_blank" href="https://www.webmastervic.com/" style="font-size: 14px;">Disseny web Webmastervic</a> - Satélite K © {{ now()->year }} 
                         </p>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 ">
+                    <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6 col-12 ">
                         <div class="ps-list--social">
-                            <li><a href="https://www.facebook.com/satelitek" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/satelitek" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/satelitek.label" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/satelitek.label/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.tiktok.com/@satelitek.label" target="_blank" style="position:relative;top:-3px;"><img style="position:relative;top:6px;" src="{{ asset('frontend/img/tik-tok-footer.png') }}" alt="Satélite K"></a></li>
+                            <li><a href="https://open.spotify.com/user/3134lwlhwzz6gc7swfngxloal32y?si=dd13e0010f5a45ae" target="_blank"><i class="fa fa-spotify"></i></a></li>
+                            <li><a href="https://www.threads.net/@satelitek.label" target="_blank" style="position:relative;top:-3px;"><img style="position:relative;top:6px" src="{{ asset('frontend/img/threads-footer.png') }}" alt="Satélite K"></a></a></li>
                             <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="https://open.spotify.com/user/1125413741" target="_blank"><i class="fa fa-spotify"></i></a></li>
-                            <li><a href="https://www.instagram.com/satelite_k/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://twitter.com/satelitek" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 ">
+                    <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12 col-12 ">
                         <p class="ps-footer__links">
                             <a class="ps-link--line" href="{{ route('frontend.inici.avisLegal') }}">@lang('Avís legal')</a>
                             <a class="ps-link--line" href="{{ route('frontend.inici.politica') }}">@lang('Política privadesa')</a>
@@ -225,7 +228,7 @@
             </figure>
             <div class="ps-banner__social">
                 <ul class="ps-list--social">
-                    <li><a href="https://www.instagram.com/satelite_k/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.instagram.com/satelitek.label/" target="_blank"><i class="fa fa-instagram"></i></a></li>
                     <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
                 </ul>
             </div>
@@ -246,6 +249,11 @@
 <script src="{{ asset('frontend/plugins/sticky-sidebar/dist/sticky-sidebar.min.js') }}"></script>
 <script src="{{ asset('frontend/plugins/select2/dist/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('frontend/js/main.js') }}"></script>
+
+<!-- Metricool -->
+<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"672cad646a239a28e99d8335c104ab50"})});</script>
+<!-- Pixel de seguiment -->
+<img src="https://tracker.metricool.com/c3po.jpg?hash=672cad646a239a28e99d8335c104ab50"/>
 
 @yield('scripts')
 
