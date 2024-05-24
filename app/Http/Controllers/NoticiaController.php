@@ -51,6 +51,8 @@ class NoticiaController extends Controller
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
             'artistes_id' => 'required',
+            'embed_1' => 'nullable',
+            'embed_2' => 'nullable',
             'foto' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
             'foto2' => 'nullable|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
             'alt_foto2' => 'nullable'
@@ -124,6 +126,8 @@ class NoticiaController extends Controller
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
             'artistes_id' => 'required',
+            'embed_1' => 'nullable',
+            'embed_2' => 'nullable',
             'alt_foto2' => 'nullable',
         ]);/* Max foto 10 MB */
 
@@ -140,6 +144,8 @@ class NoticiaController extends Controller
         $noticia->descripcio_esp = $data['descripcio_esp'];
         $noticia->alt_foto2 = $data['alt_foto2'];
         $noticia->artistes_id = $data['artistes_id'];
+        $noticia->embed_1 = $data['embed_1'];
+        $noticia->embed_2 = $data['embed_2'];
 
         // Eliminar imatge si l'usuari escull l'opció
         if($request['del_img2'] == "1"){

@@ -19,7 +19,9 @@ class Noticia extends Model
         'foto_mini',
         'foto2',
         'alt_foto2',
-        'artistes_id'
+        'artistes_id',
+        'embed_1',
+        'embed_2'
     ];
 
     // Relació 1:n noticia i artista

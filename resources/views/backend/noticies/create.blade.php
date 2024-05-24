@@ -87,6 +87,14 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3"><i class="mdi mdi-spotify"></i><i class="mdi mdi-youtube"></i> Embed 1:</label>
+                                    <input name="embed_1" type="text" class="form-control" id="exampleInputEmail3" placeholder="Embed 1" value="{{ old('embed_1') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3"><i class="mdi mdi-spotify"></i><i class="mdi mdi-youtube"></i> Embed 2:</label>
+                                    <input name="embed_2" type="text" class="form-control" id="exampleInputEmail3" placeholder="Embed 2" value="{{ old('embed_2') }}">
+                                </div>
                                 <div class="row grid-margin">
                                     <div class="col-lg-12">
                                         <div class="card">

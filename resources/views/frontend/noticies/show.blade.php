@@ -23,6 +23,34 @@
                         <p>{!! $noticia->descripcio_esp !!}</p>
                     @endif
                 </div>
+                @if ( ( $noticia->embed_1 ) && ( $noticia->embed_2 ) )
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-60 text-center">
+                                    {!! $noticia->embed_1 !!}
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-60 text-center">
+                                    {!! $noticia->embed_2 !!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    @if ( $noticia->embed_1 )
+                        <div class="mb-60 text-center">
+                            {!! $noticia->embed_1 !!}
+                        </div>
+                    @endif
+                    @if ( $noticia->embed_2 )
+                        <div class="mb-60 text-center">
+                            {!! $noticia->embed_2 !!}
+                        </div>
+                    @endif
+                @endif
+                
                 @if ( $noticia->foto2 )
                     <div class="mb-60 text-center">
                         <img src='{{ asset("/storage/$noticia->foto2") }}' alt="{{ $noticia->alt_foto2 }}">
