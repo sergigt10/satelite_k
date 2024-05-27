@@ -1,5 +1,13 @@
 @extends('frontend.layouts.app')
 
+@section('styles')
+    <style>
+        .single iframe {
+            width: 50% !important;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="ps-post--detail">
@@ -40,12 +48,12 @@
                     </div>
                 @else
                     @if ( $noticia->embed_1 )
-                        <div class="mb-60 text-center">
+                        <div class="mb-60 text-center single">
                             {!! $noticia->embed_1 !!}
                         </div>
                     @endif
                     @if ( $noticia->embed_2 )
-                        <div class="mb-60 text-center">
+                        <div class="mb-60 text-center single">
                             {!! $noticia->embed_2 !!}
                         </div>
                     @endif
