@@ -35,12 +35,12 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="mb-60 text-center">
+                                <div class="mb-20 text-center">
                                     {!! $noticia->embed_1 !!}
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="mb-60 text-center">
+                                <div class="mb-20 text-center">
                                     {!! $noticia->embed_2 !!}
                                 </div>
                             </div>
@@ -48,12 +48,12 @@
                     </div>
                 @else
                     @if ( $noticia->embed_1 )
-                        <div class="mb-60 text-center single">
+                        <div class="mb-20 text-center single">
                             {!! $noticia->embed_1 !!}
                         </div>
                     @endif
                     @if ( $noticia->embed_2 )
-                        <div class="mb-60 text-center single">
+                        <div class="mb-20 text-center single">
                             {!! $noticia->embed_2 !!}
                         </div>
                     @endif
