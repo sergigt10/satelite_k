@@ -36,6 +36,22 @@
 
     <link rel="shortcut icon" href="{{ asset('frontend/img/favicon.ico') }}" />
 
+    <!-- Google consent -->
+    <script>
+        // Define dataLayer and the gtag function.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Set default consent to 'denied' as a placeholder
+        // Determine actual values based on your own requirements
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KG5FKKJ042"></script>
     <script>
@@ -46,7 +62,7 @@
         gtag('config', 'G-KG5FKKJ042');
     </script>
     <!-- Google tag (gtag.js) -->
-
+    
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -74,6 +90,7 @@
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=547708011319583&ev=PageView&noscript=1"/>
     </noscript>
     <!-- End Meta Pixel Code -->
+
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->

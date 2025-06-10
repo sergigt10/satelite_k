@@ -105,8 +105,42 @@
             </div>
         </div>
     </form>
+
+    <!-- Funció granted google consent -->
+    <script>
+        function consentGoogle() {
+            consent1();
+            consent2();
+            consent3();
+            consent4();
+        }
+        function consent1() {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted'
+            });
+        }
+        function consent2() {
+            gtag('consent', 'update', {
+                'ad_user_data': 'granted'
+            });
+        }
+        function consent3() {
+            gtag('consent', 'update', {
+                'ad_personalization': 'granted'
+            });
+        }
+        function consent4() {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+        }
+    </script>
+
     <script>
         function euCookieConsentSetCheckboxesByClassName(classname) {
+
+            consentGoogle();
+
             checkboxes = document.getElementsByClassName('eu-cookie-consent-cookie');
             for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].setAttribute('checked', 'checked');
