@@ -43,6 +43,11 @@
                                         <strong>{{ $message }}</strong>
                                     </div>
                                 @enderror
+                                @error('data')
+                                    <div class='alert alert-danger' role='alert'>
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Nom artista *:</label>
@@ -79,7 +84,7 @@
                                     </select>
                                 </div>
                                 @php 
-                                    $numbers = array(1, 2, 3, 4);
+                                    $numbers = array(1, 2, 3, 4, 5, 6, 7, 8);
                                     $availables = array_diff($numbers, $artistesPortada);
                                 @endphp
                                 <div class="form-group">
@@ -91,7 +96,7 @@
                                                 value="{{ $available }}"
                                                 {{ old('portada') == $available ? 'selected' : '' }}
                                             >
-                                                Si - {{ $available }}
+                                                Si - Posició: {{ $available }}
                                             </option>
                                         @endforeach
                                     </select>
@@ -100,6 +105,35 @@
                                     <label for="exampleInputEmail3">URL pàgina web (Ex: https://www.satelitek.com/):</label>
                                     <input name="link_web" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL pàgina web" value="{{ old('link_web') }}">
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">URL Instagram:</label>
+                                    <input name="link_instagram" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL Instagram" value="{{ old('link_instagram') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">URL Youtube:</label>
+                                    <input name="link_youtube" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL Youtube" value="{{ old('link_youtube') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">URL TikTok:</label>
+                                    <input name="link_tiktok" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL TikTok" value="{{ old('link_tiktok') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">URL Spotify:</label>
+                                    <input name="link_spotify" type="text" class="form-control" id="exampleInputEmail3" placeholder="URL Spotify" value="{{ old('link_spotify') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Data d'addició:</label>
+                                    <input 
+                                        type="date" 
+                                        name="data" 
+                                        class="form-control" 
+                                        id="exampleInputEmail3" 
+                                        data-inputmask="'alias': 'date'" 
+                                        data-inputmask-inputformat="dd/mm/yyyy" 
+                                        value="{{ old('data') }}"
+                                    >
+                                </div>
+
                                 <div class="row grid-margin">
                                     <div class="col-lg-12">
                                         <div class="card">
@@ -109,7 +143,7 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
                                                     <div class="form-group">
-                                                        <label>Imatge artista</label>
+                                                        <label>Imatge 1 artista</label>
                                                         <input name="foto" type="file" class="file-upload-default">
                                                         <div class="input-group col-xs-12">
                                                             <input name="foto" type="text" class="form-control @error('foto') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto" value="{{ old('foto') }}">
@@ -123,6 +157,102 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Alt imatge 1 artista:</label>
+                                    <input name="alt_foto" type="text" class="form-control" id="exampleInputEmail3" placeholder="Alt imatge 1 artista" value="{{ old('alt_foto') }}">
+                                </div>
+                                <div class="row grid-margin">
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 style="color:red">Pujar imatges en format: jpg, png o gif</h4>
+                                                <br>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Imatge 2 artista</label>
+                                                        <input name="foto_2" type="file" class="file-upload-default">
+                                                        <div class="input-group col-xs-12">
+                                                            <input name="foto_2" type="text" class="form-control @error('foto_2') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto 2" value="{{ old('foto_2') }}">
+                                                            <span class="input-group-append">
+                                                                <button class="file-upload-browse btn btn-primary" type="button">Cercar foto 2</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Alt imatge 2 artista:</label>
+                                    <input name="alt_foto_2" type="text" class="form-control" id="exampleInputEmail3" placeholder="Alt imatge 2 artista" value="{{ old('alt_foto_2') }}">
+                                </div>
+                                <div class="row grid-margin">
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 style="color:red">Pujar imatges en format: jpg, png o gif</h4>
+                                                <br>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Imatge 3 artista</label>
+                                                        <input name="foto_3" type="file" class="file-upload-default">
+                                                        <div class="input-group col-xs-12">
+                                                            <input name="foto_3" type="text" class="form-control @error('foto_3') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto 3" value="{{ old('foto_3') }}">
+                                                            <span class="input-group-append">
+                                                                <button class="file-upload-browse btn btn-primary" type="button">Cercar foto 3</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Alt imatge 3 artista:</label>
+                                    <input name="alt_foto_3" type="text" class="form-control" id="exampleInputEmail3" placeholder="Alt imatge 3 artista" value="{{ old('alt_foto_3') }}">
+                                </div>
+                                <div class="row grid-margin">
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 style="color:red">Pujar imatges en format: jpg, png o gif</h4>
+                                                <br>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Imatge 4 artista</label>
+                                                        <input name="foto_4" type="file" class="file-upload-default">
+                                                        <div class="input-group col-xs-12">
+                                                            <input name="foto_4" type="text" class="form-control @error('foto_4') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Foto 4" value="{{ old('foto_4') }}">
+                                                            <span class="input-group-append">
+                                                                <button class="file-upload-browse btn btn-primary" type="button">Cercar foto 4</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Alt imatge 4 artista:</label>
+                                    <input name="alt_foto_4" type="text" class="form-control" id="exampleInputEmail3" placeholder="Alt imatge 4 artista" value="{{ old('alt_foto_4') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Meta Title:</label>
+                                    <input name="title" type="text" class="form-control" id="exampleInputEmail3" placeholder="Title" value="{{ old('title') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">Meta Description:</label>
+                                    <input name="description" type="text" class="form-control" id="exampleInputEmail3" placeholder="Description" value="{{ old('description') }}">
                                 </div>
                                 <button type="submit" name="funcioBoto" class="btn btn-primary mr-2" value="Guardar">Guardar</button>
                             </form>

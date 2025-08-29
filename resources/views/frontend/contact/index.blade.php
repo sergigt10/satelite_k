@@ -73,8 +73,7 @@
                         <li><a href="https://www.tiktok.com/@satelitek.label" target="_blank"><img style="position:relative;left:11px;" src="{{ asset('frontend/img/tik-tok.png') }}" alt="Satélite K"></a></li>
                         <li><a href="https://open.spotify.com/user/3134lwlhwzz6gc7swfngxloal32y?si=dd13e0010f5a45ae" target="_blank"><i class="fa fa-spotify"></i></a></li>
                         <li><a href="https://www.threads.net/@satelitek.label" target="_blank"><img style="position:relative;left:11px;top:2px" src="{{ asset('frontend/img/threads.png') }}" alt="Satélite K"></a></a></li>
-                        <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="https://twitter.com/satelitek" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://bsky.app/profile/satelitek.bsky.social" target="_blank"><img style="position:relative;left:9px;top:2px" src="{{ asset('frontend/img/bluesky-contacte.png') }}" alt="Satélite K"></a></li>
                     </ul>
                     <figure>
                         <figcaption>Satélite K</figcaption>

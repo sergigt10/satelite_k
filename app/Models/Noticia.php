@@ -27,6 +27,6 @@ class Noticia extends Model
     // Relació 1:n noticia i artista
     public function artista()
     {
-        return $this->hasMany(Tipu::class, 'artistes_id');
+        return $this->belongsTo(Artista::class, 'artistes_id');
     }
 }

@@ -28,11 +28,12 @@ class HomeFrontendController extends Controller
         $slider2 = $ordreSlide->get(1);
         $slider3 = $ordreSlide->get(2);
         $slider4 = $ordreSlide->get(3);
-        $artistes = Artista::whereIn('portada',[1, 2, 3, 4])->orderBy('portada')->get();
-        $discs = Disc::whereIn('portada',[1, 2, 3, 4, 5])->orderBy('portada')->get();
-        $videoclips = Videoclip::whereIn('portada',[1, 2, 3, 4])->orderBy('portada')->get();
+        $discs = Disc::whereIn('portada',[1, 2, 3, 4, 5, 6, 7, 8, 9, 10])->orderBy('portada')->get();
+        $artistes = Artista::whereIn('portada',[1, 2, 3, 4, 5, 6, 7, 8])->orderBy('portada')->get();
+        $videoclips = Videoclip::whereIn('portada',[1, 2, 3, 4, 5, 6, 7, 8])->orderBy('portada')->get();
+        $noticies = Noticia::latest('id')->take(4)->get();
         
-        return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'slider4', 'artistes', 'discs', 'videoclips'));
+        return view('frontend.inici.index', compact('slider1', 'slider2', 'slider3', 'slider4', 'artistes', 'discs', 'videoclips', 'noticies'));
     }
 
     public function about()

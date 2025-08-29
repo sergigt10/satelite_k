@@ -69,7 +69,9 @@ pre {
   /* 2 */ }
 
 a {
-  background-color: transparent; }
+  background-color: transparent;
+  color: #429798
+}
 
 abbr[title] {
   border-bottom: none;
@@ -284,10 +286,10 @@ p {
 
 a {
   position: relative;
-  color: inherit;
+  color: #429798;
   text-decoration: none; }
   a:hover {
-    color: #429798; }
+    color: #212529; }
 
 a, button {
   cursor: pointer;
@@ -2399,9 +2401,9 @@ textarea.form-control {
     font-size: 18px;
     line-height: 1.2em;
     font-weight: 700;
-    color: #222; }
+    color: #429798; }
     .ps-block--portfolio .ps-block__content > a:hover {
-      color: #429798; }
+      color: #212529; }
   .ps-block--portfolio .ps-block__content p {
     margin-bottom: 0;
     font-size: 16px;
@@ -3138,7 +3140,7 @@ textarea.form-control {
         -o-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         font-size: 30px;
-        color: #222; }
+        color: #429798; }
       .ps-carousel--nav .owl-nav > *:hover {
         -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
         box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
@@ -3165,8 +3167,8 @@ textarea.form-control {
       .ps-carousel--nav .owl-dots .owl-dot:last-child {
         margin-right: 0; }
       .ps-carousel--nav .owl-dots .owl-dot.active {
-        background-color: #000;
-        border-color: #000; }
+        background-color: #429798;
+        border-color: #429798; }
   .ps-carousel--nav.inside .owl-nav {
     z-index: 20;
     height: 0; }
@@ -4738,18 +4740,18 @@ textarea.form-control {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 400;
   line-height: 1.4em;
-  color: #222; }
+  color: #429798; }
 
 .ps-product__title.little {
   font-size: 14px !important;
-  color: #999;
+  color: #999 !important;
 }
 
 a.ps-product__title:hover {
-  color: #429798;
+  color: #212529;
 }
 .ps-product .ps-product__rating .br-wrapper .br-widget a {
   font-size: 13px; }
@@ -5024,8 +5026,8 @@ a.ps-product__title:hover {
   /*product content*/ }
   .ps-product--detail .ps-product__title {
     font-size: 26px;
-    font-weight: 700;
-    color: #222;
+    /* font-weight: 700; */
+    color: #000;
     line-height: 1.3em;
     text-transform: none; }
   .ps-product--detail .ps-product__variants .item {
@@ -5736,8 +5738,8 @@ a.ps-product__title:hover {
   .ps-product--carousel-2 .ps-product__info {
     padding-left: calc((100vw - 1170px) / 2);
     padding-right: 150px; }
-  .ps-product--carousel-2 .ps-product__header .ps-product__thumbnail {
-    padding-right: 150px; }
+  /* .ps-product--carousel-2 .ps-product__header .ps-product__thumbnail {
+    padding-right: 150px; } */
   .ps-product--carousel-2 .ps-carousel--nav .owl-stage-outer {
     width: calc(100% + 150px); }
   .ps-product--carousel-2 .ps-product__header {
@@ -12169,10 +12171,11 @@ html .bg--parallax {
 }
 
 .videoclip-titol {
-  font-size: 20px !important;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 1.2em;
+  font-weight: 700;
   color: #000 !important;
-  font-weight: 700 !important;
-  margin-bottom: 6px !important;
 }
 
 .videoclip-artista {
@@ -12188,4 +12191,22 @@ html .bg--parallax {
 
 .ps-home-subscribe {
   display: none !important;
+}
+
+.disco {
+  position: absolute;
+  width: 20px !important;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1;
+}
+
+#mes-discos {
+  display: none;
+}
+
+.ps-product .portada {
+  color: #429798;
 }

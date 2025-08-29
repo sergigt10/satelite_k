@@ -110,12 +110,12 @@
                 <li class="menu-item-has-children">
                     <a href="{{ route('frontend.discs.index') }}" class="{{ (request()->is('discos*') || request()->is('libros*')) ? 'active' : '' }}">@lang('Catàleg')</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
-                        <li><a href="{{ route('frontend.discs.index') }}">@lang('Discos')</a></li>
+                        <li><a href="{{ route('frontend.discs.index') }}">@lang('Música')</a></li>
                         <li><a href="{{ route('frontend.llibres.index') }}">@lang('Llibres')</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('frontend.videos.index') }}" class="{{ (request()->is('videos')) ? 'active' : '' }}">@lang('Vídeos')</a></li>
-                <li><a href="{{ route('frontend.noticies.index') }}" class="{{ (request()->is('noticias*')) ? 'active' : '' }}">@lang('Blog')</a></li>
+                <li><a href="{{ route('frontend.noticies.index') }}" class="{{ (request()->is('noticias*')) ? 'active' : '' }}">@lang('Notícies')</a></li>
                 <li class="menu-item-has-children">
                     <a href="#">@lang('Serveis')</a><span class="sub-toggle"></span>
                     <ul class="sub-menu">
@@ -139,7 +139,8 @@
                 <div class="ps-banner__social">
                     <ul class="ps-list--social">
                         <li><a href="https://www.instagram.com/satelitek.label/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@satelitek.label" target="_blank"><img src="{{ asset('frontend/img/tik-tok.png') }}" alt="Tik-Tok Satélite K"></a></li>
+                        <li><a href="https://satelitekshop.com/busqueda?s=sat%C3%A9lite%20k&sidebar=0&page=1&controller=search&limit=5&orderby=position&orderway=desc" target="_blank"><i class="fa fa-shopping-cart mr-2"></i></a></li>
                     </ul>
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'ca' ) ? 'bold-idioma' : '' }}" href="{{ Request::root() }}/lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'es' ) ? 'bold-idioma' : '' }}" href="{{ Request::root() }}/lang/es">ESP</a>
@@ -178,7 +179,7 @@
                                 <li><a href="{{ route('frontend.artistes.index') }}">@lang('Artistes')</a></li>
                                 <li><a href="{{ route('frontend.discs.index') }}">@lang('Catàleg')</a></li>
                                 <li><a href="{{ route('frontend.videos.index') }}">@lang('Vídeos')</a></li>
-                                <li><a href="{{ route('frontend.noticies.index') }}">@lang('Blog')</a></li>
+                                <li><a href="{{ route('frontend.noticies.index') }}">@lang('Notícies')</a></li>
                                 <li><a href="{{ route('frontend.contact.index') }}">@lang('Contacte')</a></li>
                             </ul>
                         </aside>
@@ -221,7 +222,7 @@
                             <li><a href="https://open.spotify.com/user/3134lwlhwzz6gc7swfngxloal32y?si=dd13e0010f5a45ae" target="_blank"><i class="fa fa-spotify"></i></a></li>
                             <li><a href="https://www.threads.net/@satelitek.label" target="_blank" style="position:relative;top:-3px;"><img style="position:relative;top:6px" src="{{ asset('frontend/img/threads-footer.png') }}" alt="Satélite K"></a></a></li>
                             <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="https://twitter.com/satelitek" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://bsky.app/profile/satelitek.bsky.social" target="_blank" style="position:relative;top:-3px;"><img style="position:relative;top:6px" src="{{ asset('frontend/img/bluesky.png') }}" alt="Satélite K"></a></li>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12 col-12 ">
@@ -255,17 +256,17 @@
                     <li class="menu-item-has-children">
                         <a href="{{ route('frontend.discs.index') }}">@lang('Catàleg')</a><span class="sub-toggle"></span>
                         <ul class="sub-menu">
-                            <li><a href="{{ route('frontend.discs.index') }}">@lang('Discos')</a></li>
+                            <li><a href="{{ route('frontend.discs.index') }}">@lang('Música')</a></li>
                             <li><a href="{{ route('frontend.llibres.index') }}">@lang('Llibres')</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ route('frontend.videos.index') }}">@lang('Vídeos')</a></li>
-                    <li><a href="{{ route('frontend.noticies.index') }}">@lang('Blog')</a></li>
+                    <li><a href="{{ route('frontend.noticies.index') }}">@lang('Notícies')</a></li>
                     <li class="menu-item-has-children">
                         <a href="#">@lang('Serveis')</a><span class="sub-toggle"></span>
                         <ul class="sub-menu">
                             <li><a href="#" target="_blank">@lang('Distribució física')</a></li>
-                            <li><a href="https://kzoomusic.com/" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
+                            <li><a href="#" target="_blank">@lang('Distribució i màrqueting digital')</a></li>
                             <li><a href="https://autoeditarte.com/" target="_blank">@lang('Autoedició')</a></li>
                         </ul>
                     </li>
@@ -274,14 +275,17 @@
             </div>
             <a class="idiomes-link {{ ( app()->getLocale() === 'ca' ) ? 'bold-idioma' : '' }}" href="{{ Request::root() }}/lang/ca">CAT</a>&nbsp;<a class="idiomes-link {{ ( app()->getLocale() === 'es' ) ? 'bold-idioma' : '' }}" href="{{ Request::root() }}/lang/es">ESP</a>
             <br><br>
-            <figure class="ps-navigation__bottom">
-                <figcaption>Satélite K</figcaption>
-                <p>C/ Pallars,65, 5º 4ª - 08018 Barcelona <br> +34 93 320 86 08 - info@satelitek.com</p>
-            </figure>
+            <form class="ps-form--header-search" action="{{ route('frontend.search.index') }}" method="POST">
+                @csrf
+                <input class="form-control" type="text" placeholder="@lang('Cercador...')" name="cercar" required>
+                <button><i class="icon-magnifier"></i></button>
+            </form>
+            <br><br>
             <div class="ps-banner__social">
                 <ul class="ps-list--social">
                     <li><a href="https://www.instagram.com/satelitek.label/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="https://www.youtube.com/user/SateliteKVideos" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="https://www.tiktok.com/@satelitek.label" target="_blank" style="position: relative;top: -4px;"><img style="position: relative;left: 10px;top: 8px;" src="{{ asset('frontend/img/tik-tok.png') }}" alt="Tik-Tok Satélite K"></a></li>
+                    <li><a href="https://satelitekshop.com/busqueda?s=sat%C3%A9lite%20k&sidebar=0&page=1&controller=search&limit=5&orderby=position&orderway=desc" target="_blank"><i class="fa fa-shopping-cart mr-2"></i></a></li>
                 </ul>
             </div>
         </nav>

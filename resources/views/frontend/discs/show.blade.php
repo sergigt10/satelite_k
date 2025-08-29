@@ -43,6 +43,25 @@
                         @else
                             {!! $disc->descripcio_esp !!}
                         @endif
+
+                        @if ( $disc->videoclips )
+                            @foreach ($disc->videoclips as $videoclipsDisc)
+                                <br>
+                                <div>
+                                    <div class="ps-product">
+                                        <iframe 
+                                            width="262" height="263" 
+                                            src="https://www.youtube.com/embed/{{ $videoclipsDisc->embed_youtube }}?rel=0&showinfo=0&modestbranding=1" 
+                                            title="{{ $videoclipsDisc->titol }}" 
+                                            frameborder="0" 
+                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+
                     </div>
                 </div>
             </div>
@@ -50,34 +69,52 @@
                 <div class="ps-product__content ps-tab-root">
                     <div class="container">
                         <ul class="ps-tab-list">
-                            <li class="active"><a href="#tab-1">@lang("Edicions de l'artista")</a></li>
+                            <li class="active"><a href="#tab-1">@lang("Más lanzamientos")</a></li>
                         </ul>
                         <div class="ps-tabs">
                             <div class="ps-tab active" id="tab-1">
                                 <div class="row">
-                                    @foreach ( $disc->artista->discs as $discsArtista)
-                                        @if( $discsArtista->id != $disc->id)
-                                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                                                <div class="ps-product">
-                                                    <div class="ps-product__thumbnail">
-                                                        <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">
-                                                            <img class="ps-product__image" src='{{ asset("/storage/$discsArtista->foto") }}' alt="{{ $discsArtista->titol }} - Satélite K"/>
-                                                        </a>
-                                                        <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">@lang("Veure disc")</a></div>
-                                                    </div>
-                                                    <div>
-                                                        <a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">{{ $discsArtista->titol }}</a>
+                                    <div class="col-lg-12">
+                                        <div class="ps-product--detail ps-product--carousel-2">
+                                            <div class="ps-product__header" style="margin-left:10px">
+                                                <div class="ps-product__thumbnail" data-vertical="false">
+                                                    <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="80" data-owl-nav="false" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="2" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-center="true">
+                                                        @foreach ( $disc->artista->discs as $discsArtista)
+                                                            @if( $discsArtista->id != $disc->id)
+                                                                <div class="item">
+                                                                    <div class="ps-product">
+                                                                        <div class="ps-product__thumbnail">
+                                                                            <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">
+                                                                                <img class="ps-product__image" src='{{ asset("/storage/$discsArtista->foto") }}' alt="{{ $discsArtista->titol }} - Satélite K"/>
+                                                                                @if( $discsArtista->tipu->nom_cat === 'Àlbum' )
+                                                                                    <img class="disco" src="{{ asset('frontend/img/disco.png') }}" alt="Satélite K"> 
+                                                                                @endif
+                                                                            </a>
+                                                                            <div class="ps-product__actions">
+                                                                                <a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">
+                                                                                    @lang("Veure "){{ translatePHP($discsArtista->tipu, 'nom') }}
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <a href="{{ route('frontend.discs.show', ['disc' => $discsArtista->slug]) }}">{{ $discsArtista->titol }}</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
-                                        @endif
-                                    @endforeach
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div> 
             @endif
+
         </div>
     </div>
     <div class="container-fluid mt-50 mb-30">

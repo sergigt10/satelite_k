@@ -41,7 +41,7 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('backend.videoclips.edit', ['videoclip' => $videoclip->id]) }}" style="color: black;">
-                                                        {{ ($videoclip->portada) == 0 ? "No" : "Si - ".$videoclip->portada}}
+                                                        {{ ($videoclip->portada) == 0 ? "No" : "Si - Posició: ".$videoclip->portada}}
                                                     </a>
                                                 </td>
                                                 <td>

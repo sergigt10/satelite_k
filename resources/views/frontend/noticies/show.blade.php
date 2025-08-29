@@ -64,7 +64,45 @@
                         <img src='{{ asset("/storage/$noticia->foto2") }}' alt="{{ $noticia->alt_foto2 }}">
                     </div>
                 @endif
+                
             </div>
+
+            @if (count($noticiesArtistes) > 0)
+                <br><br>
+                <div class="ps-product--detail">
+                    <div class="ps-product__content ps-tab-root">
+                        <div class="container">
+                            <ul class="ps-tab-list">
+                                <li class="active"><a href="#tab-noticies">@lang("Notícies relacionades")</a></li>
+                            </ul>
+                            <div class="ps-tabs">
+                                <div class="ps-tab active" id="tab-noticies">
+                                    <div class="row">
+                                        @foreach ($noticiesArtistes as $noticiaArtista)
+                                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                                <div class="ps-product">
+                                                    <div class="ps-product__thumbnail">
+                                                        <a class="ps-post__overlay" href="{{ route('frontend.noticies.show', ['noticia' => $noticiaArtista->slug]) }}">
+                                                            <img class="ps-product__image" src='{{ asset("/storage/$noticiaArtista->foto_mini") }}' alt="Satélite K"/>
+                                                        </a>
+                                                        <div class="ps-product__actions"><a href="{{ route('frontend.noticies.show', ['noticia' => $noticiaArtista->slug]) }}">@lang("Veure noticia")</a></div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="{{ route('frontend.noticies.show', ['noticia' => $noticiaArtista->slug]) }}">
+                                                            {{ ( app()->getLocale() === 'ca' ) ? $noticiaArtista->titol_cat : $noticiaArtista->titol_esp }}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
         </div>
     </div>
     <div class="container-fluid mt-50 mb-30">

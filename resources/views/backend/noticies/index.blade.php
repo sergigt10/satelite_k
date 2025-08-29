@@ -26,6 +26,7 @@
                                     <thead>
                                         <tr>
                                             <th>Títol</th>
+                                            <th>Artista</th>
                                             <th data-orderable="false">Editar</th>
                                             <th data-orderable="false">Eliminar</th>
                                         </tr>
@@ -36,6 +37,11 @@
                                                 <td>
                                                     <a href="{{ route('backend.noticies.edit', ['noticia' => $noticia->id]) }}" style="color: black;">
                                                         {{ $noticia->titol_cat }}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('backend.noticies.edit', ['noticia' => $noticia->id]) }}" style="color: black;">
+                                                        {{ $noticia->artista->nom }}
                                                     </a>
                                                 </td>
                                                 <td>

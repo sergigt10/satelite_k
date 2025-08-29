@@ -34,7 +34,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-3 col-sm-12">
                         <div class="ps-product">
                             <div class="ps-product__thumbnail">
-                                <img class="ps-product__image" src='{{ asset("/storage/$artista->foto") }}' alt="{{ $artista->nom }} - Satélite K"/>
+                                <img class="ps-product__image" src='{{ asset("/storage/$artista->foto") }}' alt="{{ ( $artista->alt_foto != '' ) ? $artista->alt_foto : $artista->nom.', Satélite K' }}"/>
                                 <a class="ps-product__overlay" href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}"></a>
                                 <div class="ps-product__actions">
                                     <a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">@lang("Veure artista")</a>

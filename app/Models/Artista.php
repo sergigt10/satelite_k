@@ -12,11 +12,25 @@ class Artista extends Model
     protected $fillable = [
         'nom',
         'foto',
+        'alt_foto',
+        'foto_2',
+        'alt_foto_2',
+        'foto_3',
+        'alt_foto_3',
+        'foto_4',
+        'alt_foto_4',
         'biografia_cat',
         'biografia_esp',
         'link_web',
+        'link_instagram',
+        'link_youtube',
+        'link_tiktok',
+        'link_spotify',
         'generes_id',
-        'portada'
+        'portada',
+        'data',
+        'title',
+        'description'
     ];
 
     // Relació 1:1 artista i gènere

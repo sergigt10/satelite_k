@@ -124,7 +124,7 @@
                                 </select>
                             </div>
                             @php 
-                                $numbers = array(1, 2, 3, 4, 5);
+                                $numbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
                                 $availables = array_diff($numbers, $discosPortada);
                             @endphp
                             <div class="form-group">
@@ -135,7 +135,7 @@
                                         value="{{ $disc->portada }}"
                                         selected
                                     >
-                                        {{ ($disc->portada) == 0 ? "No" : "Si - ".$disc->portada}}
+                                        {{ ($disc->portada) == 0 ? "No" : "Si - Posició: ".$disc->portada}}
                                     </option>
 
                                     @foreach ($availables as $available)
@@ -143,7 +143,7 @@
                                             value="{{ $available }}"
                                             {{ old('portada') == $available ? 'selected' : '' }}
                                         >
-                                            Si - {{ $available }}
+                                            Si - Posició: {{ $available }}
                                         </option>
                                     @endforeach
 

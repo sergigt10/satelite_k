@@ -43,9 +43,15 @@ class Disc extends Model
         return $this->belongsTo(Artista::class, 'artistes_id');
     }
 
+    // Relació 1:n disc i videoclip (S'utilitza en el destroy)
+    public function videoclips()
+    { 
+        return $this->hasMany(Videoclip::class, 'discos_id'); 
+    } 
+
     // Detectar quins disc estan a portada
     public function scopePortada($query) 
     {
-        return $query->whereIn('portada',[1, 2, 3, 4, 5])->pluck('portada')->toArray();
+        return $query->whereIn('portada',[1, 2, 3, 4, 5, 6, 7, 8, 9, 10])->pluck('portada')->toArray();
     }
 }

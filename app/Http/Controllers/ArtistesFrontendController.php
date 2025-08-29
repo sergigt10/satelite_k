@@ -19,7 +19,7 @@ class ArtistesFrontendController extends Controller
     {
         SEOTools::setTitle('Artistas Satélite K, Discográfica Barcelona, Compañia discográfica');
 
-        $artistes = Artista::latest('id')->paginate(16, ['*'], 'pagina');
+        $artistes = Artista::orderBy('data', 'desc')->latest('id')->paginate(16, ['*'], 'pagina');
         return view('frontend.artistes.index', compact('artistes'));
     }
 
@@ -29,7 +29,7 @@ class ArtistesFrontendController extends Controller
         SEOTools::setCanonical('https://www.satelitek.com/artistas');
 
         if ( $request->input('ordre') === 'id' ) {
-            $artistes = Artista::latest('id')->paginate(16, ['*'], 'pagina');
+            $artistes = Artista::orderBy('data', 'desc')->latest('id')->paginate(16, ['*'], 'pagina');
         } else {
             $artistes = Artista::orderBy('nom')->paginate(16, ['*'], 'pagina');
         }
@@ -41,8 +41,8 @@ class ArtistesFrontendController extends Controller
     {
         $artista = Artista::where('slug','=', $slug)->firstOrFail();
 
-        SEOTools::setTitle($artista->nom.', Satélite K');
-        SEOTools::setDescription(Str::limit(strip_tags($artista->biografia_esp)), 155, ' (...)');
+        SEOTools::setTitle( ( $artista->title != '' ) ? $artista->title : $artista->nom.', Satélite K');
+        SEOTools::setDescription( ( $artista->description != '' ) ? $artista->description : Str::limit(strip_tags($artista->biografia_esp)), 155, ' (...)'  );
         SEOTools::opengraph()->addImage('https://www.satelitek.com/storage/'.$artista->foto, ['height' => 300, 'width' => 300]);
         SEOTools::jsonLd()->addImage('https://www.satelitek.com/storage/'.$artista->foto, ['height' => 300, 'width' => 300]);
 

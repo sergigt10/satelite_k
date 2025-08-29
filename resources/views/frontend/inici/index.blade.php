@@ -74,7 +74,7 @@
                 <div class="ps-section ps-home-top-web" style="padding-top: 0px">
                     <div class="ps-section__header">
                     <figure>
-                        <figcaption>@lang('Catàleg')</figcaption>
+                        <figcaption>@lang('Llançaments')</figcaption>
                         <p>@lang('Referències musicals de tots els artistes de Satélite K')</p>
                     </figure>
                     </div>
@@ -85,22 +85,43 @@
             <div class="ps-tabs">
                 <div class="ps-tab active" id="tab-1">
                     <div class="row row--5-columns">
-                        @foreach ($discs as $disc)
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
-                                <div class="ps-product">
-                                    <div class="ps-product__thumbnail">
-                                        <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
-                                            <img class="ps-product__image" src='{{ asset("/storage/$disc->foto") }}' alt="{{ $disc->titol }} - Satélite K"/>
-                                        </a>
-                                        <div class="ps-product__actions"><a href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">@lang('Veure disc')</a></div>
-                                    </div>
-                                    <div class="ps-product__content">
-                                        <a class="ps-product__title" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}"><b>{{ $disc->titol }}</b></a>
-                                        <a class="ps-product__title little" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">{{ $disc->artista->nom }}</a>
+                        <div class="col-lg-12">
+                            <div class="ps-product--detail ps-product--carousel-2">
+                                <div class="ps-product__header" style="margin-left:50px">
+                                    <div class="ps-product__thumbnail" data-vertical="false">
+                                        <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="30" data-owl-nav="false" data-owl-dots="false" data-owl-item="5" data-owl-item-xs="1" data-owl-item-sm="5" data-owl-item-md="5" data-owl-item-lg="5" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-center="false">
+                                            @foreach ($discs as $disc)
+                                                <div class="item">
+                                                    <div class="ps-product">
+                                                        <div class="ps-product__thumbnail">
+                                                            <a class="ps-post__overlay" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
+                                                                <img class="ps-product__image" src='{{ asset("/storage/$disc->foto") }}' alt="{{ $disc->titol }} - Satélite K"/>
+                                                                @if( $disc->tipu->nom_cat === 'Àlbum' )
+                                                                    <img class="disco" src="{{ asset('frontend/img/disco.png') }}" alt="Satélite K"> 
+                                                                @endif
+                                                            </a>
+                                                            <div class="ps-product__actions">
+                                                                <a href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
+                                                                    @lang("Veure "){{ translatePHP($disc->tipu, 'nom') }}
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ps-product__content" style="padding-top: 0px">
+                                                            <a class="portada ps-product__title" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
+                                                                <b>{{ $disc->artista->nom }}</b>
+                                                            </a>
+                                                            <a class="portada ps-product__title little" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}"> 
+                                                                {{ $disc->titol }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,20 +143,34 @@
                             <div class="ps-portfolio-box">
                                 <div class="ps-section__content">
                                     <div class="row">
-                                    @foreach ($artistes as $artista)
-                                        <div class="col-sm-12 col-xl-3">
-                                            <div class="ps-block--portfolio">
-                                                <div class="ps-block__thumbnail">
-                                                    <a class="ps-block__overlay" href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}"></a>
-                                                    <img src='{{ asset("/storage/$artista->foto") }}' alt="{{ $artista->nom }} - Satélite K">
-                                                </div>
-                                                <div class="ps-block__content">
-                                                    <a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">{{ $artista->nom }}</a>
-                                                    <p>{{ ( app()->getLocale() === 'ca' ) ? $artista->genere->nom_cat : $artista->genere->nom_esp }}</p>
+                                        <div class="col-lg-12">
+                                            <div class="ps-product--detail ps-product--carousel-2">
+                                                <div class="ps-product__header">
+                                                    <div class="ps-product__thumbnail" data-vertical="false">
+                                                        <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="30" data-owl-nav="false" data-owl-dots="false" data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="4" data-owl-item-md="4" data-owl-item-lg="4" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-center="false">
+                                                            @foreach ($artistes as $artista)
+                                                                <div class="item">
+                                                                    <div class="ps-block--portfolio">
+                                                                        <div class="ps-block__thumbnail">
+                                                                            <a class="ps-block__overlay" href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}"></a>
+                                                                            <img src='{{ asset("/storage/$artista->foto") }}' alt="{{ $artista->nom }} - Satélite K">
+                                                                        </div>
+                                                                        <div class="ps-block__content">
+                                                                            <a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">
+                                                                                {{ $artista->nom }}
+                                                                            </a>
+                                                                            <p>
+                                                                                {{ ( app()->getLocale() === 'ca' ) ? $artista->genere->nom_cat : $artista->genere->nom_esp }}
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    @endforeach
                                     </div>
                                 </div>
                                 <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.artistes.index') }}">@lang('Descobreix-ne més')</a></div>
@@ -153,34 +188,85 @@
                 </figure>
             </div>
             <div class="ps-page">
-                <div class="ps-page ps-page--default" style="padding-bottom: 0px">
+                <div class="ps-page ps-page--default">
                     <div class="container">
                         <div class="ps-page__content">
                             <div class="ps-portfolio-box">
                                 <div class="ps-section__content">
                                     <div class="row">
-                                    @foreach ($videoclips as $videoclip)
+                                        <div class="col-lg-12">
+                                            <div class="ps-product--detail ps-product--carousel-2">
+                                                <div class="ps-product__header">
+                                                    <div class="ps-product__thumbnail" data-vertical="false">
+                                                        <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="30" data-owl-nav="false" data-owl-dots="false" data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="4" data-owl-item-md="4" data-owl-item-lg="4" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-center="false">
+                                                            @foreach ($videoclips as $videoclip)
+                                                                <div class="item">
+                                                                    <div class="ps-block--portfolio">
+                                                                        <iframe 
+                                                                            width="262" 
+                                                                            height="263" 
+                                                                            loading="lazy"
+                                                                            src="https://www.youtube.com/embed/{{ $videoclip->embed_youtube }}?rel=0&showinfo=0&modestbranding=1" 
+                                                                            title="{{ $videoclip->titol }}" 
+                                                                            frameborder="0" 
+                                                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                                            allowfullscreen>
+                                                                        </iframe>
+                                                                        <div class="ps-block__content">
+                                                                            <a href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">
+                                                                                {{ $videoclip->titol }}
+                                                                            </a>
+                                                                            <a class="videoclip-artista" href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">{{ $videoclip->artista->nom }}</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.videos.index') }}">@lang('Descobreix-ne més')</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="ps-section__header">
+                <figure>
+                    <figcaption>@lang('Notícies')</figcaption>
+                    <p>@lang('Notícies dels artistes de Satélite K')</p>
+                </figure>
+            </div>
+            <div class="ps-page">
+                <div class="ps-page ps-page--default">
+                    <div class="container">
+                        <div class="ps-page__content">
+                            <div class="ps-portfolio-box">
+                                <div class="ps-section__content">
+                                    <div class="row">
+                                    @foreach ($noticies as $noticia)
                                         <div class="col-sm-12 col-xl-3">
                                             <div class="ps-block--portfolio">
-                                                <iframe 
-                                                    width="262" 
-                                                    height="263" 
-                                                    loading="lazy"
-                                                    src="https://www.youtube.com/embed/{{ $videoclip->embed_youtube }}?rel=0&showinfo=0&modestbranding=1" 
-                                                    title="{{ $videoclip->titol }}" 
-                                                    frameborder="0" 
-                                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                    allowfullscreen>
-                                                </iframe>
+                                                <div class="ps-block__thumbnail">
+                                                    <a class="ps-block__overlay" href="{{ route('frontend.noticies.show', ['noticia' => $noticia->slug]) }}"></a>
+                                                    <img src='{{ asset("/storage/$noticia->foto_mini") }}' alt="{{ $noticia->nom }} - Satélite K">
+                                                </div>
                                                 <div class="ps-block__content">
-                                                    <p class="videoclip-titol">{{ $videoclip->titol }}</p>
-                                                    <a class="videoclip-artista" href="{{ route('frontend.artistes.show', ['artista' => $artista->slug]) }}">{{ $videoclip->artista->nom }}</a>
+                                                    <a href="{{ route('frontend.noticies.show', ['noticia' => $noticia->slug]) }}">
+                                                        {{ ( app()->getLocale() === 'ca' ) ?  Str::limit(strip_tags($noticia->titol_cat), 20, '...') : Str::limit(strip_tags($noticia->titol_esp), 20, '...') }}
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
                                     </div>
                                 </div>
+                                <div class="ps-section__footer text-center"><a class="ps-link--under" href="{{ route('frontend.noticies.index') }}">@lang('Descobreix-ne més')</a></div>
                             </div>
                         </div>
                     </div>
@@ -188,21 +274,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="ps-section--instagram">
-        <div class="ps-section__header">
-            <div class="container">
-                <div class="ps-section ps-home-top-web" style="padding-top: 0px">
-                    <div class="ps-section__header">
-                    <figure>
-                        <figcaption>@lang('Segueix-nos!')</figcaption>
-                        <p>@lang('Les últimes novetats de Satélite K')</p>
-                    </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-        LightWidget WIDGET<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/b5143cf8f3b05b20b51643d0d1364681.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-    </div> -->
     <div class="ps-home-subscribe">
         <div class="container">
             <div class="row">

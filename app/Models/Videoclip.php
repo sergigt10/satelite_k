@@ -13,6 +13,7 @@ class Videoclip extends Model
         'titol',
         'embed_youtube',
         'artistes_id',
+        'discos_id',
         'portada'
     ];
 
@@ -20,6 +21,12 @@ class Videoclip extends Model
     public function artista()
     {
         return $this->belongsTo(Artista::class, 'artistes_id');
+    }
+
+    // Relació 1:n disc i artista
+    public function disc()
+    {
+        return $this->belongsTo(Disc::class, 'discos_id');
     }
 
     // Detectar quins disc estan a portada, es crida en el controlador de videoclips

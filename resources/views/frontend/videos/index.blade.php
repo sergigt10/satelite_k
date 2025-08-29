@@ -40,6 +40,7 @@
                             {{ $videoclips->links() }}
                         </div>
                     </div>
+                    <br><br>
                     <div class="ps-section__footer text-center">
                         <a class="ps-link--under" target="_blank" href="https://www.youtube.com/user/SateliteKVideos">@lang("Descobreix-ne més")</a>
                     </div>

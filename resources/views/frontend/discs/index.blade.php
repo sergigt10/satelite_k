@@ -62,14 +62,23 @@
                                     <div class="ps-product">
                                         <div class="ps-product__thumbnail">
                                             <img class="ps-product__image" src='{{ asset("/storage/$disc->foto") }}' alt="{{ $disc->titol }} - Satélite K"/>
+                                            @if( $disc->tipu->nom_cat === 'Àlbum' )
+                                                <img class="disco" src="{{ asset('frontend/img/disco.png') }}" alt="Satélite K"> 
+                                            @endif
                                             <a class="ps-product__overlay" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}"></a>
                                             <div class="ps-product__actions">
-                                                <a href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">@lang("Veure disc")</a>
+                                                <a href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
+                                                    @lang("Veure "){{ translatePHP($disc->tipu, 'nom') }}
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="ps-product__content">
-                                            <a class="ps-product__title" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}"><b>{{ $disc->titol }}</b></a>
-                                            <a class="ps-product__title little" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">{{ $disc->artista->nom }}</a>
+                                            <a class="ps-product__title" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
+                                                <b>{{ $disc->artista->nom }}</b>
+                                            </a>
+                                            <a class="ps-product__title little" href="{{ route('frontend.discs.show', ['disc' => $disc->slug]) }}">
+                                                {{ $disc->titol }}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

@@ -52,8 +52,27 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Disc:</label>
+                                <select id="discos_id" name="discos_id" class="form-control js-example-basic-single w-100">
+                                    <option 
+                                        value="0"
+                                        {{ $videoclip->discos_id === 0 ? 'selected' : '' }} 
+                                    >
+                                        ** No associar a cap disc **
+                                    </option>
+                                    @foreach ($discos as $disc)
+                                        <option 
+                                            value="{{ $disc->id }}"
+                                            {{ $videoclip->discos_id == $disc->id ? 'selected' : '' }}
+                                        >
+                                            {{ $disc->titol }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                             @php 
-                                $numbers = array(1, 2, 3, 4);
+                                $numbers = array(1, 2, 3, 4, 5, 6, 7, 8);
                                 $availables = array_diff($numbers, $videoclipsPortada);
                             @endphp
                             <div class="form-group">
@@ -64,7 +83,7 @@
                                         value="{{ $videoclip->portada }}"
                                         selected
                                     >
-                                        {{ ($videoclip->portada) == 0 ? "No" : "Si - ".$videoclip->portada}}
+                                        {{ ($videoclip->portada) == 0 ? "No" : "Si - Posició: ".$videoclip->portada}}
                                     </option>
 
                                     @foreach ($availables as $available)
@@ -72,7 +91,7 @@
                                             value="{{ $available }}"
                                             {{ old('portada') == $available ? 'selected' : '' }}
                                         >
-                                            Si - {{ $available }}
+                                            Si - Posició: {{ $available }}
                                         </option>
                                     @endforeach
 

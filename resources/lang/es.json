@@ -2,7 +2,7 @@
     "Inici" : "Inicio",
     "Qui som" : "Quiénes somos",
     "Artistes" : "Artistas",
-    "Catàleg" : "Catálogo",
+    "Llançaments" : "Lanzamientos",
     "Discos" : "Discos",
     "Llibres" : "Libros",
     "Vídeos" : "Videos",
@@ -21,7 +21,7 @@
     "Xarxes socials" : "Redes sociales",
     "Més informació" : "Más información",
     "Referències musicals de tots els artistes de Satélite K" : "Referencias musicales de todos los artistas de Satélite K",
-    "Veure disc" : "Ver disco",
+    "Veure " : "Ver ",
     "Descobreix-ne més" : "Descubre más",
     "Àlbums, biografies i fotos dels artistes de Satélite K" : "Álbumes, biografías y fotos de los artistas de Satélite K",
     "Últims vídeos de Satélite K" : "Últimos vídeos de Satélite K",
@@ -73,6 +73,7 @@
     
     "Notícies dels artistes de Satélite K" : "Noticias de los artistas de Satélite K",
     "Compartir a:" : "Compartir en:",
+    "Notícies relacionades" : "Noticias relacionadas",
 
     "Resultats de la cerca:" : "Resultados de la busqueda:",
 

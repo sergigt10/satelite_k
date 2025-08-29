@@ -5,7 +5,7 @@
         <div class="ps-section ps-home-top-web" style="padding-top: 0px">
             <div class="ps-section__header">
                 <figure>
-                    <figcaption>@lang("Blog Satélite K")</figcaption>
+                    <figcaption>@lang("Notícies Satélite K")</figcaption>
                     <p>@lang("Notícies dels artistes de Satélite K")</p>
                 </figure>
             </div>

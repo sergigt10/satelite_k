@@ -27,6 +27,7 @@
                                         <tr>
                                             <th>Nom</th>
                                             <th>Portada</th>
+                                            <th>Data d'addició</th>
                                             <th data-orderable="false">Editar</th>
                                             <th data-orderable="false">Eliminar</th>
                                         </tr>
@@ -41,7 +42,12 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('backend.artistes.edit', ['artista' => $artista->id]) }}" style="color: black;">
-                                                        {{ ($artista->portada) == 0 ? "No" : "Si - ".$artista->portada}}
+                                                        {{ ($artista->portada) == 0 ? "No" : "Si - Posició: ".$artista->portada}}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('backend.artistes.edit', ['artista' => $artista->id]) }}" style="color: black;">
+                                                        {{ date('d-m-Y', strtotime($artista->data)); }}
                                                     </a>
                                                 </td>
                                                 <td>

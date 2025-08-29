@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artista;
+use App\Models\Disc;
 use App\Models\Videoclip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str as Str;
@@ -32,10 +33,12 @@ class VideoclipController extends Controller
     public function create()
     {
         $artistes = Artista::orderBy('nom')->get();
+        $discos = Disc::orderBy('titol')->get();
         $videoclipsPortada = Videoclip::portada();
 
         return view('backend.videoclips.create')
                     ->with('artistes', $artistes)
+                    ->with('discos', $discos)
                     ->with('videoclipsPortada', $videoclipsPortada);
     }
 
@@ -51,6 +54,7 @@ class VideoclipController extends Controller
             'titol' => 'required',
             'embed_youtube' => 'required',
             'artistes_id' => 'required',
+            'discos_id' => 'nullable',
             'portada' => 'required',
         ]);/* Max foto 10 MB */
 
@@ -87,9 +91,10 @@ class VideoclipController extends Controller
     public function edit(Videoclip $videoclip)
     {
         $artistes = Artista::orderBy('nom')->get();
+        $discos = Disc::orderBy('titol')->get();
         $videoclipsPortada = Videoclip::portada();
 
-        return view('backend.videoclips.edit', compact('videoclip'))->with('artistes', $artistes)->with('videoclipsPortada', $videoclipsPortada);
+        return view('backend.videoclips.edit', compact('videoclip'))->with('artistes', $artistes)->with('discos', $discos)->with('videoclipsPortada', $videoclipsPortada);
     }
 
     /**
@@ -106,6 +111,7 @@ class VideoclipController extends Controller
             'titol' => 'required',
             'embed_youtube' => 'required',
             'artistes_id' => 'required',
+            'discos_id' => 'required',
             'portada' => 'required',
         ]);
 
@@ -127,6 +133,7 @@ class VideoclipController extends Controller
         }
 
         $videoclip->artistes_id = $data['artistes_id'];
+        $videoclip->discos_id = $data['discos_id'];
         $videoclip->portada = $data['portada'];
 
         $videoclip->save();
