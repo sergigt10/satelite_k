@@ -6884,7 +6884,10 @@ a.ps-product__title:hover {
         -moz-transform: translate(0, 0);
         -ms-transform: translate(0, 0);
         -o-transform: translate(0, 0);
-        transform: translate(0, 0); } }
+        transform: translate(0, 0); } 
+      
+      
+    }
   @media (max-width: 479px) {
     .ps-popup {
       padding-top: 50px;
@@ -12201,6 +12204,7 @@ html .bg--parallax {
   right: 10px;
   bottom: 10px;
   z-index: 1;
+  display: none !important;
 }
 
 #mes-discos {
@@ -12209,4 +12213,14 @@ html .bg--parallax {
 
 .ps-product .portada {
   color: #429798;
+}
+
+.carousel-principal {
+  margin-left: 50px
+}
+
+@media (max-width: 991px) {
+  .carousel-principal {
+    margin-left: 0px
+  }
 }

@@ -76,9 +76,9 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="ps-product--detail ps-product--carousel-2">
-                                            <div class="ps-product__header" style="margin-left:10px">
+                                            <div class="ps-product__header">
                                                 <div class="ps-product__thumbnail" data-vertical="false">
-                                                    <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="80" data-owl-nav="false" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="2" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-center="true">
+                                                    <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="80" data-owl-nav="false" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="1" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-center="true">
                                                         @foreach ( $disc->artista->discs as $discsArtista)
                                                             @if( $discsArtista->id != $disc->id)
                                                                 <div class="item">
